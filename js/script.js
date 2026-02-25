@@ -246,9 +246,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div>
                     <a href="tel:${phoneFull.replace(/\s/g, '')}" style="color: var(--primary); text-decoration: none;">📞 ${phoneFull}</a>
                 </div>
-                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 10px; font-weight: 300;">
-                    *(Zmień dane domyślne na swoje w pliku js/script.js (okolice linii 220))*
-                </p>
             `;
 
             revealBtn.style.display = 'none';
