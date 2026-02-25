@@ -2,6 +2,20 @@
 <html lang="pl">
 
 <head>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        // Domyślnie odrzucamy ciasteczka przed załadowaniem GTM
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
@@ -266,6 +280,16 @@
             </div>
         </div>
     </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" class="cookie-consent">
+        <p>Ta strona używa ciasteczek w celach analitycznych, aby lepiej zrozumieć, jak z niej korzystasz. Czy wyrażasz
+            zgodę?</p>
+        <div class="cookie-buttons">
+            <button id="btn-accept" class="btn btn-primary btn-small">Akceptuję</button>
+            <button id="btn-reject" class="btn btn-secondary btn-small">Odrzucam</button>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>

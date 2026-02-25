@@ -850,3 +850,48 @@ textarea.form-control {
 .text-red-500 {
     color: #EF4444;
 }
+/* Cookie Consent Banner */
+.cookie-consent {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    background: rgba(11, 12, 16, 0.95);
+    backdrop-filter: var(--blur-glass);
+    border: 1px solid var(--surface-border);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: var(--shadow-glass);
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.cookie-consent.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.cookie-consent p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.cookie-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-small {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}

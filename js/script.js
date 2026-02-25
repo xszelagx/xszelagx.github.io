@@ -145,4 +145,57 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
         });
     }
+
+    // Google Consent Mode v2 logic
+    const consentBanner = document.getElementById('cookie-consent-banner');
+    const btnAccept = document.getElementById('btn-accept');
+    const btnReject = document.getElementById('btn-reject');
+
+    // Check previous consent
+    const consentStatus = localStorage.getItem('cookieConsent');
+
+    if (consentBanner) {
+        if (!consentStatus) {
+            // Show banner if no consent previously recorded
+            setTimeout(() => {
+                consentBanner.classList.add('show');
+            }, 1000);
+        } else if (consentStatus === 'granted') {
+            // Update GTM if previous consent was granted
+            gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_personalization': 'granted',
+                'analytics_storage': 'granted'
+            });
+        }
+    }
+
+    if (btnAccept && btnReject && consentBanner) {
+        btnAccept.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'granted');
+            consentBanner.classList.remove('show');
+
+            // Update Consent Mode
+            gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_personalization': 'granted',
+                'analytics_storage': 'granted'
+            });
+        });
+
+        btnReject.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'denied');
+            consentBanner.classList.remove('show');
+
+            // Explicitly deny (although it's default in head)
+            gtag('consent', 'update', {
+                'ad_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'analytics_storage': 'denied'
+            });
+        });
+    }
 });
