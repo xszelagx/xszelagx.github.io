@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: Automatyzacja Raportów z API | Mikołaj Szeląg</title>
+    <!-- Google Fonts: Outfit for modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .case-header {
+            padding: 120px 20px 60px;
+            text-align: center;
+        }
+
+        .case-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .case-content {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            line-height: 1.8;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .case-content h2 {
+            color: var(--text-main);
+            margin: 40px 0 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            border: 1px solid var(--surface-border);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        ul.styled-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        ul.styled-list li {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .case-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Animated Background Elements -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="/" class="logo">Portfolio<span>.</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Skontaktuj się</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="case-header">
+            <div class="case-tag"
+                style="display:inline-block; background: rgba(88, 101, 242, 0.15); color: var(--primary); padding: 5px 15px; border-radius: 20px; font-weight: 600; margin-bottom: 20px;">
+                SaaS / Finanse</div>
+            <h1 class="case-title">Automatyzacja Raportów z <span class="gradient-text">API (Apps Script)</span></h1>
+            <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Zastąpienie
+                żmudnego kopiowania danych z narzędzi SaaS zautomatyzowanym procesem zintegrowanym w modelu Google
+                Workspace.</p>
+        </section>
+
+        <section class="case-content glass-card reveal" style="padding: 40px;">
+            <h2>Wyzwanie Biznesowe</h2>
+            <p>Zespół operacyjny w firmie z sektora FinTech poświęcał około kilkunastu godzin tygodniowo na całkowicie
+                powtarzalną pracę "kopiuj wklej". Pracownicy musieli logować się do 4 osobnych bramek API (CRM,
+                płatności, system mailingu), ręcznie eksportować pliki CSV i lepić je wspólnie w gigantyczne arkusze
+                Excel, generując potężne ryzyko błędu ludzkiego oraz paraliżując przepływ informacji decyzyjnej do
+                zarządu o czas weryfikacji danych.</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">15h</div>
+                    <div>Zaoszczędzonych godzin tyg.</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">100%</div>
+                    <div>Eliminacja błędów ludzkich</div>
+                </div>
+            </div>
+
+            <h2>Podjęte Działania</h2>
+            <ul class="styled-list">
+                <li><strong>Implementacja Google Apps Script:</strong> Zastąpienie Excela elastycznym środowiskiem
+                    Google Sheets napędzanym kodem JavaScript i chron boxami.</li>
+                <li><strong>Integracja Zewnętrznych Webhooków API:</strong> Skrypty samodzielnie wykonują polecenia
+                    GET/POST do kluczowych systemów i w locie obrabiają tablice JSON.</li>
+                <li><strong>Generowanie Raportów:</strong> Raporty czyszczą się, tworzą w bezpieczny pod względem
+                    architektonicznym sposób i generują podsumowania dla c-level codziennie o 7:00 rano.</li>
+            </ul>
+
+            <h2>Osiągnięty Rezultat</h2>
+            <p>Rozwiązanie odblokowało pełen potencjał 1 etatu w zespole administracyjnym. Brak luk w wiedzy "kto ma
+                wersję pliku final", ponieważ wszystkie ustrukturyzowane informacje żyją zawsze live zsynchronizowane w
+                ekosystemie Google'a. Projekt zwrócił się firmie po niespełna 3 tygodniach we wdrożeniu.</p>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="/#contact" class="btn btn-primary">Porozmawiajmy o podobnym projekcie</a>
+                <br><br>
+                <a href="/" class="btn btn-secondary btn-small">Wróć do strony głównej</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Data Analytics<span>.</span></div>
+            <p>&copy; <span id="year">2026</span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
