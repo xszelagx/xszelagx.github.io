@@ -90,8 +90,10 @@
                     <p class="hero-subtitle">Specjalizuję się w inżynierii danych BigQuery, automatyzacjach opartych o
                         Google Sheets / Apps Script i budowaniu analitycznych dashboardów.</p>
                     <div class="hero-buttons">
-                        <a href="#services" class="btn btn-primary">Zobacz Moje Usługi</a>
-                        <a href="#contact" class="btn btn-secondary">Porozmawiajmy</a>
+                        <a href="#" class="btn btn-primary btn-calendly"
+                            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/xszelagx'});return false;">📅
+                            Umów spotkanie wideo</a>
+                        <a href="#services" class="btn btn-secondary">Zobacz Moje Usługi</a>
                     </div>
                 </div>
                 <div class="hero-image glass-card reveal code-window">
@@ -117,6 +119,20 @@
                 </div>
             </div>
         </section>
+
+        <!-- Social Proof (Logotypes) -->
+        <div class="social-proof">
+            <div class="container">
+                <p class="text-center text-muted proof-title">Wybrane branże, dla których dostarczałem wartość
+                    biznesową:</p>
+                <div class="logo-grid">
+                    <div class="logo-item glass-card">E-Commerce</div>
+                    <div class="logo-item glass-card">FinTech & SaaS</div>
+                    <div class="logo-item glass-card">Marketing B2B</div>
+                    <div class="logo-item glass-card">Logistyka</div>
+                </div>
+            </div>
+        </div>
 
         <section id="about" class="about section">
             <div class="container">
@@ -220,6 +236,86 @@
             </div>
         </section>
 
+        <!-- Case Studies Section -->
+        <section id="case-studies" class="case-studies section">
+            <div class="container">
+                <h2 class="section-title text-center">Moje <span class="gradient-text">Realizacje</span> (Case Studies)
+                </h2>
+                <p class="section-subtitle text-center">Sprawdź, jakie wyzwania rozwiązałem dla moich klientów B2B ze
+                    stoperem w ręku.</p>
+
+                <div class="cases-grid">
+                    <div class="case-card glass-card reveal">
+                        <div class="case-tag">E-Commerce</div>
+                        <h3>Redukcja Kosztów zapytań w BigQuery o 40%</h3>
+                        <p>Dla dużej platformy E-Commerce zoptymalizowałem kosztowne zapytania analityczne, ulepszając
+                            architekturę o partycjonowanie i klastrowanie tabel.</p>
+                        <ul class="case-results">
+                            <li><span>📉</span> -40% opłat za GCP</li>
+                            <li><span>⚡</span> 3x szybsze ładowanie KPI</li>
+                        </ul>
+                    </div>
+                    <div class="case-card glass-card reveal" style="transition-delay: 0.1s;">
+                        <div class="case-tag">SaaS / Finanse</div>
+                        <h3>Automatyzacja Raportów z API we Frameworku</h3>
+                        <p>Dzięki potędze Google Apps Script spiąłem dziesiątki arkuszy kalkulacyjnych w scentralizowany
+                            dashboard pobierający żywe dane z 4 różnych portali API.</p>
+                        <ul class="case-results">
+                            <li><span>⏱️</span> Uwolnione 15h pracy tygodniowo</li>
+                            <li><span>✅</span> Eliminacja błędów ludzkich 100%</li>
+                        </ul>
+                    </div>
+                    <div class="case-card glass-card reveal" style="transition-delay: 0.2s;">
+                        <div class="case-tag">Spedycja</div>
+                        <h3>Nowoczesne Zestawienia KPI w Looker Studio</h3>
+                        <p>Budowa w 100% interaktywnych dashboardów menedżerskich bazujących na rozproszonych danych ERP
+                            w bezpiecznym modelu kontroli dostępu (SSO).</p>
+                        <ul class="case-results">
+                            <li><span>📊</span> Wyniki finansowe live 24/7</li>
+                            <li><span>🎯</span> 1 źródło prawdy dla zarządu</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq section relative">
+            <div class="container">
+                <h2 class="section-title text-center">Często Zadawane <span class="gradient-text">Pytania</span></h2>
+                <div class="faq-container glass-card reveal">
+                    <div class="faq-item">
+                        <button class="faq-question">W jakich technologiach pracujesz najczęściej? <span
+                                class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>Pracuję głównie w potężnym ekosystemie Google Cloud Platform (BigQuery z wykorzystaniem
+                                SQL i Pythona), buduję wizualizacje biznesowe w Looker i Looker Studio oraz powołuję
+                                biurowe automatyzacje w oparciu o Google Apps Script.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Jak wygląda model i cennik rozliczeniowy (B2B)? <span
+                                class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>Wyceniam projekty na dwa sposoby: Fixed Price (ryczałt), gdy zakres (Scope of Work) jest
+                                nam znany mocno z góry i nie ulegnie zamianom, lub Time & Material oparty na stawce
+                                godzinowej w wypadku długofalowej i elastycznej współpracy bez jasno zdefiniowanych z
+                                góry ram do zamknięcia.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Ile przeciętnie zajmuje wdrożenie? <span
+                                class="icon">+</span></button>
+                        <div class="faq-answer">
+                            <p>Proste skrypty integrujące Arkusze Google to kwestia 3-7 dni roboczych. Rozbudowana
+                                analityka BigQuery wraz the stworzeniem spersonalizowanego od zera dashboardu
+                                decyzyjnego dla zarządu to zazwyczaj projekt trwający 3 do 6 tygodni z testami.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact Section -->
         <section id="contact" class="contact section">
             <div class="container">
@@ -269,12 +365,13 @@
 
     <footer class="glass-footer">
         <div class="container footer-content">
-            <div class="footer-logo">Portfolio<span>.</span></div>
+            <div class="footer-logo">Data Analytics<span>.</span></div>
             <p>&copy; <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
             <div class="social-links">
-                <a href="#" aria-label="LinkedIn">IN</a>
-                <a href="#" aria-label="GitHub">GH</a>
-                <a href="#" aria-label="Twitter">TW</a>
+                <a href="https://linkedin.com/in/mikolajszelag" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">LinkedIn</a>
+                <a href="https://github.com/xszelagx" target="_blank" rel="noopener noreferrer"
+                    aria-label="GitHub">GitHub</a>
             </div>
         </div>
     </footer>
@@ -288,6 +385,16 @@
             <button id="btn-reject" class="btn btn-secondary btn-small">Odrzucam</button>
         </div>
     </div>
+
+    <!-- Pływający Przycisk Calendly -->
+    <a href="#" class="floating-calendly-btn" aria-label="Umów spotkanie video wideo"
+        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/xszelagx'});return false;">
+        <span>📅</span> Umów 15 min rozmowy
+    </a>
+
+    <!-- Calendly Links -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
     <script src="js/script.js"></script>
 </body>

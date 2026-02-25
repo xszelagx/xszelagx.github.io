@@ -942,3 +942,196 @@ textarea.form-control {
     font-size: 0.95rem;
     margin: 0;
 }
+
+/* Social Proof Bar */
+.social-proof {
+    background: rgba(11, 12, 16, 0.6);
+    padding: 30px 0;
+    border-top: 1px solid var(--surface-border);
+    border-bottom: 1px solid var(--surface-border);
+}
+
+.proof-title {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.logo-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.logo-item {
+    padding: 15px 30px;
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.03);
+    min-width: 150px;
+    text-align: center;
+}
+
+/* Case Studies Section */
+.case-studies {
+    background: linear-gradient(to bottom, var(--bg-color), rgba(15, 17, 26, 0.8));
+}
+
+.cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.case-card {
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.case-tag {
+    align-self: flex-start;
+    background: rgba(88, 101, 242, 0.15);
+    color: var(--primary);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.case-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--text-main);
+}
+
+.case-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.case-results {
+    list-style: none;
+    padding: 0;
+    border-top: 1px solid var(--surface-border);
+    padding-top: 15px;
+}
+
+.case-results li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #e6e6e6;
+}
+
+/* FAQ Section */
+.faq-container {
+    max-width: 800px;
+    margin: 40px auto 0;
+    padding: 20px;
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--surface-border);
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 20px 10px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-main);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: inherit;
+    transition: var(--transition-smooth);
+}
+
+.faq-question:hover {
+    color: var(--primary);
+}
+
+.faq-question .icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.faq-answer p {
+    padding: 0 10px 20px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+}
+
+.faq-item.active .faq-question .icon {
+    transform: rotate(45deg);
+}
+
+/* Calendly Floating Button */
+.floating-calendly-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--gradient-1);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 10px 25px rgba(88, 101, 242, 0.4);
+    z-index: 9998;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.floating-calendly-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(88, 101, 242, 0.6);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .floating-calendly-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+}
