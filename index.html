@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-XXXXXXX');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <!-- End Google Analytics -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Data Analyst & GCP Expert</title>
+    <meta name="description"
+        content="Profesjonalne portfolio i wizytówka usług. Oferuję nowoczesne rozwiązania, kompleksowe podejście i dbałość o detale.">
+    <!-- Google Fonts: Outfit for modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Animated Background Elements -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="#" class="logo">Portfolio<span>.</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">O Mnie / CV</a></li>
+                    <li><a href="#services">Usługi</a></li>
+                    <li><a href="#contact" class="btn-primary-small">Skontaktuj się</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <p class="greeting">Cześć 👋 jestem <span class="highlight">Analitykiem Danych</span> i specjalistą
+                        automatyzacji</p>
+                    <h1 class="hero-title">Przekuwam dane w <span class="gradient-text">decyzje biznesowe</span> z
+                        użyciem środowiska <span class="gradient-text">Google Cloud</span>.</h1>
+                    <p class="hero-subtitle">Specjalizuję się w inżynierii danych BigQuery, automatyzacjach opartych o
+                        Google Sheets / Apps Script i budowaniu analitycznych dashboardów.</p>
+                    <div class="hero-buttons">
+                        <a href="#services" class="btn btn-primary">Zobacz Moje Usługi</a>
+                        <a href="#contact" class="btn btn-secondary">Porozmawiajmy</a>
+                    </div>
+                </div>
+                <div class="hero-image glass-card reveal code-window">
+                    <div class="code-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="file-name">query_bigquery.sql</span>
+                    </div>
+                    <pre class="code-content">
+<span class="keyword">SELECT</span>
+  project_id,
+  <span class="function">COUNT</span>(query) <span class="keyword">AS</span> total_queries,
+  <span class="function">SUM</span>(bytes_billed) / <span class="number">1e9</span> <span class="keyword">AS</span> gb_billed
+<span class="keyword">FROM</span>
+  <span class="string">`region-eu`.INFORMATION_SCHEMA.JOBS</span>
+<span class="keyword">WHERE</span>
+  creation_time > <span class="function">TIMESTAMP_SUB</span>(
+    <span class="function">CURRENT_TIMESTAMP</span>(), <span class="keyword">INTERVAL</span> <span class="number">7</span> DAY
+  )
+<span class="keyword">GROUP BY</span> <span class="number">1</span>
+<span class="keyword">ORDER BY</span> gb_billed <span class="keyword">DESC</span>;</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- About / CV Section -->
+        <section id="about" class="about section">
+            <div class="container">
+                <h2 class="section-title">O Mnie & <span class="gradient-text">Doświadczenie</span></h2>
+
+                <div class="about-grid">
+                    <div class="glass-card skills-card reveal">
+                        <h3>Moje Umiejętności & Technologie</h3>
+                        <p class="skills-desc">Oto przegląd kluczowych narzędzi i technologii ze środowiska GCP oraz
+                            automatyzacji, z których korzystam w codziennej pracy.</p>
+                        <div class="skills-container">
+                            <span class="skill-tag">BigQuery</span>
+                            <span class="skill-tag">SQL & Python</span>
+                            <span class="skill-tag">Looker & Looker Studio</span>
+                            <span class="skill-tag">Google Apps Script</span>
+                            <span class="skill-tag">Arkusze Google (Automatyzacje)</span>
+                            <span class="skill-tag">GCP Infrastructure</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline glass-card reveal" style="transition-delay: 0.2s;">
+                        <h3>Ścieżka Kariery (CV)</h3>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Data Analyst & Automation Expert</h4>
+                                <span class="company">Freelance / Projekty | 2023 - Obecnie</span>
+                                <p>Projektowanie architektury danych w BigQuery, budowanie zaawansowanych raportów w
+                                    Looker i wdrażanie automatyzacji biurowych przy użyciu Apps Script.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Specjalista ds. Danych</h4>
+                                <span class="company">Przykładowa Firma | 2020 - 2023</span>
+                                <p>Migracje w hurtowniach danych, automatyczne zestawienia w Google Sheets i analiza
+                                    kluczowych wskaźników biznesowych (KPI).</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Analityk Biznesowy</h4>
+                                <span class="company">Agencja XYZ | 2018 - 2020</span>
+                                <p>Eksploracyjna analiza danych wspierająca działy decyzyjne i sprzedażowe w
+                                    optymalizacji kosztów i zwiększaniu przychodów.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services section relative">
+            <div class="container">
+                <h2 class="section-title text-center">Moje <span class="gradient-text">Usługi</span></h2>
+                <p class="section-subtitle text-center">Odkryj, jak mogę pomóc Twojej firmie osiągnąć sukces. Poniżej
+                    przedstawiam główne obszary mojej działalności.</p>
+
+                <div class="services-grid">
+                    <!-- Service 1 -->
+                    <div class="service-card glass-card reveal">
+                        <div class="service-icon">�</div>
+                        <h3>Inżynieria i Analiza Danych (GCP)</h3>
+                        <p>Projektowanie skalowalnych rozwiązań do zbierania i przetwarzania danych z użyciem ekosystemu
+                            Google Cloud.</p>
+                        <ul class="service-features">
+                            <li>Budowa zapytań SQL w BigQuery</li>
+                            <li>Projektowanie hurtowni danych</li>
+                            <li>Integracja źródeł API</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="service-card glass-card reveal" style="transition-delay: 0.1s;">
+                        <div class="service-icon">�</div>
+                        <h3>Wizualizacja (Looker & Studio)</h3>
+                        <p>Przekształcam surowe dane w interaktywne i przejrzyste dashboardy wspierające kadrę
+                            menadżerską.</p>
+                        <ul class="service-features">
+                            <li>Interaktywne raporty w Looker Studio</li>
+                            <li>Definiowanie warstwy modelowej (LookML)</li>
+                            <li>Monitorowanie kluczowych KPI</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service-card glass-card reveal" style="transition-delay: 0.2s;">
+                        <div class="service-icon">⚙️</div>
+                        <h3>Automatyzacje Google Sheets</h3>
+                        <p>Oszczędność czasu dzięki automatyzacji powtarzalnych, biurowych zadań w ekosystemie Google
+                            Workspace.</p>
+                        <ul class="service-features">
+                            <li>Dedykowane skrypty (Apps Script)</li>
+                            <li>Zaawansowane formuły i makra</li>
+                            <li>Integracje arkuszy ze SLA i mailami</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+            <div class="container">
+                <div class="contact-wrapper glass-card reveal">
+                    <div class="contact-info">
+                        <h2>Zacznijmy <span class="gradient-text">Współpracę!</span></h2>
+                        <p>Masz dane do uporządkowania lub procesy do zautomatyzowania? Skontaktuj się ze mną za pomocą
+                            poniższego formularza – wszystkie Twoje dane bezpośrednie pozostaną poufne i bezpieczne.</p>
+                        <div class="contact-details" style="display: none;">
+                            <div class="contact-item">
+                                <span class="icon">�</span>
+                                <span>Współpraca B2B / Zdalnie</span>
+                            </div>
+                        </div>
+
+                        <!-- Web3Forms Contact Form -->
+                        <form action="https://api.web3forms.com/submit" method="POST" id="contact-form"
+                            class="contact-form">
+                            <!-- Zastąp YOUR_ACCESS_KEY_HERE własnym po darmowej rejestracji na Web3Forms -->
+                            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                            <input type="hidden" name="subject" value="Nowe zapytanie z Portfolio (Analityk Danych)">
+                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control"
+                                    placeholder="Twoje Imię / Nazwa Firmy" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" placeholder="Twój adres E-mail"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" class="form-control"
+                                    placeholder="Krótko opisz swój projekt lub wyzwanie, w którym mogę pomóc..."
+                                    rows="5" required></textarea>
+                            </div>
+
+                            <!-- Przyciski i Notyfikacje -->
+                            <button type="submit" class="btn btn-primary submit-btn">🚀 Wyślij Wiadomość</button>
+                            <p id="form-result" class="form-result"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Portfolio<span>.</span></div>
+            <p>&copy; <span id="year"></span> Jan Kowalski. Wszelkie prawa zastrzeżone.</p>
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn">IN</a>
+                <a href="#" aria-label="GitHub">GH</a>
+                <a href="#" aria-label="Twitter">TW</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
