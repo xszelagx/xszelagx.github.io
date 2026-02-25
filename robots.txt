@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /404.html
 
-Sitemap: https://xszelagx.github.io/portfolio-cv/sitemap.xml
+Sitemap: https://xszelagx.github.io/sitemap.xml
