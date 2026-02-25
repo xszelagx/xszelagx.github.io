@@ -251,5 +251,33 @@ document.addEventListener('DOMContentLoaded', () => {
             revealBtn.style.display = 'none';
             contactRevealed.style.display = 'block';
         });
-    }
-});
+        // Blog "Load More" Pagination Logic
+        const blogGrid = document.querySelector('.blog-grid');
+        const loadMoreBtn = document.getElementById('load-more-btn');
+        const INITIAL_VISIBLE_POSTS = 6;
+
+        if (blogGrid && loadMoreBtn) {
+            const posts = blogGrid.querySelectorAll('.blog-card');
+
+            // Hide all posts beyond initial count
+            posts.forEach((post, index) => {
+                if (index >= INITIAL_VISIBLE_POSTS) {
+                    post.style.display = 'none';
+                }
+            });
+
+            // If total posts <= initial count, hide the button
+            if (posts.length <= INITIAL_VISIBLE_POSTS) {
+                loadMoreBtn.style.display = 'none';
+            }
+
+            loadMoreBtn.addEventListener('click', () => {
+                posts.forEach(post => {
+                    post.style.display = 'flex';
+                    // Trigger reveal animation for newly shown posts
+                    post.classList.add('active');
+                });
+                loadMoreBtn.style.display = 'none';
+            });
+        }
+    });

@@ -17,18 +17,23 @@
 <body>
     <div class="bg-orb orb-1"></div>
     <div class="bg-orb orb-2"></div>
-    <header class="header">
-        <div class="container header-container">
-            <a href="/" class="logo">Portfolio<span class="gradient-text">.</span></a>
-            <nav class="nav">
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="/" class="logo">Portfolio<span>.</span></a>
+            <nav>
                 <ul class="nav-links">
-                    <li><a href="/">Strona Główna</a></li>
-                    <li><a href="/#about">Dlaczego Warto?</a></li>
-                    <li><a href="/#services">Usługi</a></li>
-                    <li><a href="/#case-studies">Realizacje</a></li>
-                    <li><a href="/blog.html">Blog</a></li>
-                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                    <li><a href="/portfolio-cv/">Strona Główna</a></li>
+                    <li><a href="/portfolio-cv/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/portfolio-cv/#services">Usługi</a></li>
+                    <li><a href="/portfolio-cv/#case-studies">Realizacje</a></li>
+                    <li><a href="/portfolio-cv/blog.html">Blog</a></li>
+                    <li><a href="/portfolio-cv/#contact" class="btn-primary-small">Kontakt</a></li>
                 </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </nav>
         </div>
     </header>
@@ -123,10 +128,13 @@
         </article>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-bottom" style="text-align: center;">
-                <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Data Analytics<span>.</span></div>
+            <p>&copy; <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">LinkedIn</a>
             </div>
         </div>
     </footer>
