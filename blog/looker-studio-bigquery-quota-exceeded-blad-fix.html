@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Błąd Quota Exceeded w Looker Studio + BigQuery: Jak naprawić? | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Twoje raporty przestały działać? Dowiedz się, jak naprawić błąd Quota Exceeded w Looker Studio łączącym się z BigQuery. Optymalizacja kosztów i wydajności.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="canonical"
+        href="https://xszelagx.github.io/portfolio-cv/blog/looker-studio-bigquery-quota-exceeded-blad-fix.html" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Jak naprawić błąd Quota Exceeded w Looker Studio i BigQuery?",
+      "description": "Twoje raporty przestały działać? Dowiedz się, jak naprawić błąd Quota Exceeded w Looker Studio łączącym się z BigQuery. Optymalizacja kosztów i wydajności.",
+      "author": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg",
+        "url": "https://xszelagx.github.io/portfolio-cv/"
+      },
+      "datePublished": "2026-02-25",
+      "publisher": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Mikołaj Szeląg",
+        "item": "https://xszelagx.github.io/portfolio-cv/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://xszelagx.github.io/portfolio-cv/blog.html"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Błąd Quota Exceeded Fix",
+        "item": "https://xszelagx.github.io/portfolio-cv/blog/looker-studio-bigquery-quota-exceeded-blad-fix.html"
+      }]
+    }
+    </script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Portfolio<span>.</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Strona Główna</a></li>
+                    <li><a href="../index.html#about">Dlaczego Warto?</a></li>
+                    <li><a href="../index.html#services">Usługi</a></li>
+                    <li><a href="../index.html#case-studies">Realizacje</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../index.html#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="../blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Technical Troubleshooting</span>
+                        <span>25 Lutego 2026</span>
+                        <span>⏱️ 6 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Jak naprawić błąd <span class="gradient-text">Quota Exceeded</span> w Looker
+                        Studio i BigQuery?</h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Jeśli Twój zaawansowany dashboard BI nagle wyświetlił szary komunikat "Quota Exceeded" lub
+                            "Looker Studio has encountered a system error", prawdopodobnie uderzyłeś w limity API Google
+                            Cloud. To częsty problem przy dużych zbiorach danych, ale mam na to sprawdzone rozwiązania.
+                        </p>
+
+                        <h2>Skąd bierze się ten błąd?</h2>
+                        <p>Looker Studio wysyła zapytania do BigQuery przy każdym odświeżeniu wykresu lub zmianie
+                            filtra. Google nakłada limity na liczbę jednoczesnych zapytań (concurrent queries) oraz na
+                            ilość procesowanych danych w czasie. Jeśli Twój raport jest nieoptymalny, a przegląda go 10
+                            osób naraz – blokada gotowa.</p>
+
+                        <h2>TOP 3 Sposoby na naprawę Quota Exceeded:</h2>
+
+                        <h3>1. Ekstrakcja Danych (Data Extraction)</h3>
+                        <p>Zamiast łączyć się bezpośrednio z BigQuery "na żywo", stwórz pośrednie źródło typu "Extract
+                            Data". Looker Studio pobierze dane raz (np. rano) i będzie korzystał z własnego keszu. To
+                            drastycznie odciąża API i przyspiesza raport.</p>
+
+                        <h3>2. BI Engine – Twoja tajna broń</h3>
+                        <p>Włącz <strong>BigQuery BI Engine</strong>. To usługa analizy w pamięci (in-memory), która
+                            pozwala Looker Studio pobierać wyniki niemal natychmiast, eliminując potrzebę ciągłego
+                            skanowania tabel. Pierwszy 1 GB w BI Engine jest często darmowy lub bardzo tani.</p>
+
+                        <h3>3. Optymalizacja zapytań SQL</h3>
+                        <p>Dowiedz się więcej o tym, jak <a
+                                href="./looker-studio-bigquery-integracja-performance.html">zoptymalizować wydajność
+                                duetu Looker + BigQuery</a>. Unikaj Select * i stosuj pre-agregację danych w widokach
+                            zmaterializowanych.</p>
+
+                        <blockquote>
+                            "Błąd Quota to nie znak, że musisz płacić więcej. To znak, że Twoja architektura danych
+                            wymaga sprzątania. Dobrze ułożony dashboard może obsługiwać tysiące użytkowników bez jednego
+                            błędu."
+                        </blockquote>
+
+                        <h2>Podsumowanie</h2>
+                        <p>Naprawa błędów limitów to fundament stabilnego BI. Jeśli nie chcesz, by Twój zarząd widział
+                            błędy zamiast KPI – zadbaj o keszowanie i parametryzację zapytań. Potrzebujesz audytu
+                            wydajności? Chętnie sprawdzę Twoje logi w Google Cloud Console.</p>
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Google Cloud
+                                Architect</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Twoje raporty sypią błędami?</h3>
+                            <p>Wdrożę dla Ciebie BI Engine i optymalizację hurtowni, by dashboardy działały
+                                bezawaryjnie. Zapytaj o pomoc techniczną.</p>
+                            <a href="../index.html#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Napraw moje raporty</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Data Analytics<span>.</span></div>
+            <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

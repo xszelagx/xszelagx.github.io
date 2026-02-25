@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analiza Kohortowa w Looker Studio: Retention Rate z GA4 | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Dowiedz się, jak stworzyć analizę kohortową w Looker Studio, wykorzystując dane z GA4. Mierz retencję użytkowników i lojalność klientów na dashboardzie BI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="canonical"
+        href="https://xszelagx.github.io/portfolio-cv/blog/analiza-kohortowa-looker-studio-ga4-retention.html" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Analiza kohortowa w Looker Studio: Sposób na mierzenie lojalności klientów z GA4",
+      "description": "Dowiedz się, jak stworzyć analizę kohortową w Looker Studio, wykorzystując dane z GA4. Mierz retencję użytkowników i lojalność klientów na dashboardzie BI.",
+      "author": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg",
+        "url": "https://xszelagx.github.io/portfolio-cv/"
+      },
+      "datePublished": "2026-02-25",
+      "publisher": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Mikołaj Szeląg",
+        "item": "https://xszelagx.github.io/portfolio-cv/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://xszelagx.github.io/portfolio-cv/blog.html"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Analiza Kohortowa",
+        "item": "https://xszelagx.github.io/portfolio-cv/blog/analiza-kohortowa-looker-studio-ga4-retention.html"
+      }]
+    }
+    </script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Portfolio<span>.</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Strona Główna</a></li>
+                    <li><a href="../index.html#about">Dlaczego Warto?</a></li>
+                    <li><a href="../index.html#services">Usługi</a></li>
+                    <li><a href="../index.html#case-studies">Realizacje</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../index.html#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="../blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Growth Marketing</span>
+                        <span>25 Lutego 2026</span>
+                        <span>⏱️ 9 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Analiza <span class="gradient-text">Kohortowa</span> w Looker Studio: Jak
+                        mierzyć lojalność klientów z GA4?</h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Większość firm eCommerce skupia się na pozyskiwaniu nowych klientów. Ale czy wiesz, ilu z
+                            nich wraca do Ciebie w drugim, trzecim czy szóstym miesiącu? <strong>Analiza
+                                kohortowa</strong> to jedyny sposób, by sprawdzić, czy Twój biznes faktycznie rośnie,
+                            czy jest tylko "dziurawym wiadrem". Dzięki Looker Studio i GA4, możesz to śledzić
+                            automatycznie.</p>
+
+                        <h2>Czym jest kohorta?</h2>
+                        <p>Kohorta to grupa użytkowników, których połączyło wspólne zdarzenie w tym samym czasie.
+                            Najczęściej analizujemy kohorty miesięczne – np. wszystkie osoby, które dokonały pierwszego
+                            zakupu w styczniu. Analiza kohortowa sprawdza, jaki procent tej konkretnej grupy wrócił do
+                            sklepu w kolejnych miesiącach.</p>
+
+                        <h2>Jak to wdrożyć w Looker Studio?</h2>
+                        <p>Mamy dwie drogi. Pierwsza to natywny wykres "Kohorta" (Cohort Analysis Chart), który pobiera
+                            dane bezpośrednio z API Google Analytics 4. Druga, bardziej profesjonalna, to wykorzystanie
+                            <strong>BigQuery</strong> do wyliczenia retencji na poziomie poszczególnych użytkowników i
+                            wyświetlenie tabeli z mapą ciepła w Lookerze.</p>
+
+                        <ul>
+                            <li><strong>Retention Rate:</strong> Procent użytkowników wracających po transakcji.</li>
+                            <li><strong>LTV by Cohort:</strong> Czy klienci z kampanii bożonarodzeniowej są "lepsi" niż
+                                ci z wyprzedaży letnich?</li>
+                            <li><strong>Churn Rate:</strong> Kiedy tracisz najwięcej klientów?</li>
+                        </ul>
+
+                        <blockquote>
+                            "Wzrost o 5% w retencji klientów może zwiększyć zyski Twojej firmy o 25% do 95%. Analiza
+                            kohortowa to GPS dla Twojej strategii marketingowej."
+                        </blockquote>
+
+                        <h2>Dlaczego GA4 to za mało?</h2>
+                        <p>Natywne raporty w interfejsie GA4 są ograniczone. W Looker Studio możesz połączyć dane o
+                            kohortach z <a href="./analityka-ecommerce-lejki-sprzedazy-looker-studio.html">pełną analizą
+                                lejka sprzedaży</a>. To pozwala zrozumieć nie tylko "kto" wraca, ale "dlaczego" – np.
+                            czy konkretne kategorie produktów budują lepszą lojalność.</p>
+
+                        <p>Zbuduję dla Twojego e-commerce profesjonalny dashboard retencyjny, który pokaże prawdę o
+                            lojalności Twoich klientów. Zapytaj o wdrożenie analityki kohortowej.</p>
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Retention & Growth
+                                Strategist</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Chcesz przestać tracić klientów?</h3>
+                            <p>Wdrożę dla Ciebie system analizy kohortowej i wyliczę Lifetime Value (LTV) Twoich
+                                klientów. Dowiedz się, kto generuje dla Ciebie realny zysk.</p>
+                            <a href="../index.html#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Analizuj moją retencję</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Data Analytics<span>.</span></div>
+            <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
