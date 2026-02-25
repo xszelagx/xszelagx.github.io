@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring dostępów w Looker Studio: Bezpieczeństwo raportów | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Dowiedz się, jak sprawdzić, kto przegląda Twoje raporty w Looker Studio. Monitoring danych, audyt dostępów i bezpieczeństwo analityki w Twojej firmie.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="canonical"
+        href="https://xszelagx.github.io/portfolio-cv/blog/monitoring-dostepow-looker-studio-bezpieczenstwo-danych.html" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Monitoring dostępów w Looker Studio: Jak dbać o bezpieczeństwo danych?",
+      "description": "Dowiedz się, jak sprawdzić, kto przegląda Twoje raporty w Looker Studio. Monitoring danych, audyt dostępów i bezpieczeństwo analityki w Twojej firmie.",
+      "author": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg",
+        "url": "https://xszelagx.github.io/portfolio-cv/"
+      },
+      "datePublished": "2026-02-25",
+      "publisher": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg"
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Portfolio<span>.</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Strona Główna</a></li>
+                    <li><a href="../index.html#about">Dlaczego Warto?</a></li>
+                    <li><a href="../index.html#services">Usługi</a></li>
+                    <li><a href="../index.html#case-studies">Realizacje</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../index.html#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="../blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Security & Governance</span>
+                        <span>25 Lutego 2026</span>
+                        <span>⏱️ 6 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Monitoring <span class="gradient-text">dostępów</span> w Looker Studio: Jak
+                        dbać o bezpieczeństwo danych?</h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>W dobie RODO i rosnącej świadomości o wartości danych, udostępnianie raportów BI nie kończy
+                            się na kliknięciu przycisku "Share". Kluczowe jest wiedzieć: kto, kiedy i z jakiego regionu
+                            przeglądał Twoje dashboardy. Looker Studio, choć darmowe, oferuje zaawansowane mechanizmy
+                            śledzenia aktywności.</p>
+
+                        <h2>Logi aktywności w Google Cloud</h2>
+                        <p>Jeśli korzystasz z Looker Studio w ramach organizacji Google Cloud, Twoje logi są
+                            automatycznie zbierane w usłudze <strong>Cloud Logging</strong>. Możesz tam sprawdzić
+                            historię zmian, próby logowania oraz to, czy wrażliwe raporty nie zostały udostępnione poza
+                            domenę firmy.</p>
+
+                        <h2>Google Analytics na poziomie raportu</h2>
+                        <p>Mało kto wie, że do każdego raportu Looker Studio można podpiąć tracking ID z Google
+                            Analytics. Dzięki temu w GA4 zobaczysz pełen ruch: które strony raportu są najpopularniejsze
+                            i ile czasu menedżerowie spędzają na analizie konkretnych KPI. To świetny sposób na
+                            mierzenie adopcji BI w firmie.</p>
+
+                        <h3>Dobre praktyki bezpieczeństwa:</h3>
+                        <ul>
+                            <li><strong>Whitelisting domen:</strong> Ogranicz możliwość udostępniania tylko do adresów
+                                e-mail w Twojej firmie.</li>
+                            <li><strong>Row-Level Security (RLS):</strong> Dowiedz się jak <a
+                                    href="./bezpieczenstwo-danych-row-level-security-looker-studio.html">wdrożyć
+                                    zabezpieczenia na poziomie wiersza</a>, by handlowiec z Krakowa widział tylko swoje
+                                dane.</li>
+                            <li><strong>Looker Studio Pro:</strong> Rozważ przejście na płatną wersję, o której pisałem
+                                w <a href="./looker-studio-pro-vs-free-roznice-cena.html">porównaniu Looker Pro vs
+                                    Free</a>, aby zyskać Asset Management.</li>
+                        </ul>
+
+                        <blockquote>
+                            "Bezpieczeństwo danych to nie mur, który budujesz raz. To system luster, który pozwala Ci
+                            widzieć wszystko, co dzieje się za Twoimi plecami."
+                        </blockquote>
+
+                        <p>Pomagam firmom wdrażać standardy bezpieczeństwa danych enterprise w darmowych narzędziach
+                            Google. Sprawię, że Twoja analityka będzie nie tylko użyteczna, ale przede wszystkim
+                            bezpieczna.</p>
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Data Security
+                                Specialist</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Obawiasz się o wyciek danych?</h3>
+                            <p>Przeprowadzę audyt Twoich dostępów i skonfiguruję polityki bezpieczeństwa, które ochronią
+                                Twoje tajemnice handlowe. Skontaktuj się ze mną.</p>
+                            <a href="../index.html#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Zamawiam audyt
+                                bezpieczeństwa</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Data Analytics<span>.</span></div>
+            <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

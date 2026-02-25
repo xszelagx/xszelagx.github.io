@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zdjęcia produktów w Looker Studio: Dynamika eCommerce | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Tutorial: Jak wyświetlać zdjęcia produktów prosto z URL w raportach Looker Studio. Wzbogać swoje dashboardy eCommerce o warstwę wizualną.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="canonical"
+        href="https://xszelagx.github.io/portfolio-cv/blog/zdjecia-produktow-w-looker-studio-images-from-url.html" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Jak wyświetlać zdjęcia produktów w Looker Studio? Tutorial Images from URL",
+      "description": "Tutorial: Jak wyświetlać zdjęcia produktów prosto z URL w raportach Looker Studio. Wzbogać swoje dashboardy eCommerce o warstwę wizualną.",
+      "author": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg",
+        "url": "https://xszelagx.github.io/portfolio-cv/"
+      },
+      "datePublished": "2026-02-25",
+      "publisher": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg"
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Portfolio<span>.</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Strona Główna</a></li>
+                    <li><a href="../index.html#about">Dlaczego Warto?</a></li>
+                    <li><a href="../index.html#services">Usługi</a></li>
+                    <li><a href="../index.html#case-studies">Realizacje</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../index.html#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="../blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">eCommerce Growth</span>
+                        <span>25 Lutego 2026</span>
+                        <span>⏱️ 5 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Jak wyświetlać <span class="gradient-text">zdjęcia produktów</span> w Looker
+                        Studio?</h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Raport eCommerce pełen samych tabel i liczb jest poprawny, ale mało intuicyjny. Jeśli chcesz,
+                            aby Twój zespół od razu wiedział, o którym produkcie mowa – dodaj miniatury zdjęć. Looker
+                            Studio posiada natywną funkcję obsługi obrazów z URL, która zmieni Twój dashboard w
+                            interaktywny katalog sprzedaży.</p>
+
+                        <h2>Funkcja IMAGE() – Serce wizualizacji</h2>
+                        <p>Aby wyświetlić obraz, musisz mieć w swoim źródle danych kolumnę z bezpośrednim linkiem do
+                            zdjęcia (np. `.jpg` lub `.png`). Następnie w Looker Studio stwórz pole obliczeniowe o
+                            formule: `IMAGE(URL_do_zdjecia, "Tekst alternatywny")`. To wszystko!</p>
+
+                        <h2>Skąd wziąć linki do zdjęć?</h2>
+                        <ul>
+                            <li><strong>Shopify / WooCommerce:</strong> Możesz wyeksportować linki do grafik produktów
+                                bezpośrednio z bazy danych lub przez GA4 (jeśli przesyłasz `item_image_url`).</li>
+                            <li><strong>Google Drive:</strong> Wymaga specjalnego hacku ze zmianą parametru ID w URL,
+                                aby zdjęcie było publicznie renderowane.</li>
+                            <li><strong>Cloud Storage:</strong> Najbardziej profesjonalne rozwiązanie dla dużych
+                                sklepów.</li>
+                        </ul>
+
+                        <h3>Zalety wizualnego dashboardu:</h3>
+                        <p>Zastosowanie zdjęć drastycznie przyspiesza analizę <a
+                                href="./analityka-ecommerce-lejki-sprzedazy-looker-studio.html">lejka sprzedaży
+                                eCommerce</a>. Menedżer produktu widząc zdjęcie, od razu kojarzy model, kolor i
+                            kolekcję, co pozwala na szybsze podejmowanie decyzji o promocjach czy zatowarowaniu.</p>
+
+                        <blockquote>
+                            "Jeden obraz jest wart więcej niż tysiąc wierszy w Excelu. Szczególnie w e-commerce, gdzie
+                            emocje i estetyka produktu napędzają sprzedaż."
+                        </blockquote>
+
+                        <p>Pomagam scalać dane produktowe z analityką sprzedażową, tworząc dashboardy, które wyglądają i
+                            działają jak narzędzia klasy premium. Chcesz odświeżyć swoje raporty? Napisz do mnie.</p>
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Visual Data
+                                Specialist</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Twój dashboard jest nudny i nieczytelny?</h3>
+                            <p>Wzbogacę Twoją analitykę o elementy wizualne, mapy ciepła i zdjęcia produktów. Sprawię,
+                                że zespół pokocha zaglądanie w dane.</p>
+                            <a href="../index.html#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Projektuję mój dashboard</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Data Analytics<span>.</span></div>
+            <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

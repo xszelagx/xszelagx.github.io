@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obsługa błędów "System Error" i Null w Looker Studio | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Twoje wykresy pokazują Null lub błąd systemowy? Dowiedz się, jak profesjonalnie obsługiwać błędy danych w Looker Studio używając funkcji IFNULL i CASE.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="canonical"
+        href="https://xszelagx.github.io/portfolio-cv/blog/obsluga-bledow-system-error-null-looker-studio.html" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Jak naprawić błędy System Error i wartości Null w Looker Studio?",
+      "description": "Twoje wykresy pokazują Null lub błąd systemowy? Dowiedz się, jak profesjonalnie obsługiwać błędy danych w Looker Studio używając funkcji IFNULL i CASE.",
+      "author": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg",
+        "url": "https://xszelagx.github.io/portfolio-cv/"
+      },
+      "datePublished": "2026-02-25",
+      "publisher": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg"
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Portfolio<span>.</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Strona Główna</a></li>
+                    <li><a href="../index.html#about">Dlaczego Warto?</a></li>
+                    <li><a href="../index.html#services">Usługi</a></li>
+                    <li><a href="../index.html#case-studies">Realizacje</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../index.html#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="../blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Data Quality</span>
+                        <span>25 Lutego 2026</span>
+                        <span>⏱️ 6 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Obsługa błędów <span class="gradient-text">"System Error"</span> i Null w
+                        Looker Studio</h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Dla analityka nie ma nic gorszego niż prezentacja raportu przed zarządem, na którym zamiast
+                            liczb widać napisy "Null" lub różowy komunikat "System Error". To nie tylko psuje estetykę,
+                            ale przede wszystkim podważa zaufanie do danych. Dowiedz się, jak profesjonalnie obsługiwać
+                            "dziury" w danych w Looker Studio.</p>
+
+                        <h2>Dlaczego widzę błąd systemowy?</h2>
+                        <p>Zazwyczaj błąd systemowy pojawia się, gdy Looker Studio nie potrafi przetworzyć
+                            skomplikowanej formuły lub gdy <a
+                                href="./looker-studio-bigquery-quota-exceeded-blad-fix.html">przekroczysz limity Quota w
+                                BigQuery</a>. Czasem winne są puste wartości (null), które powodują błędy w operacjach
+                            matematycznych (np. dzielenie przez zero).</p>
+
+                        <h2>Magiczna funkcja IFNULL()</h2>
+                        <p>To Twoja pierwsza linia obrony. Jeśli kolumna 'Sprzedaż' może posiadać puste wartości, użyj
+                            pola obliczeniowego: `IFNULL(Sprzedaż, 0)`. Looker Studio zamieni każdą lukę na zero, co
+                            pozwoli na poprawne sumowanie i średnie bez sypania błędami.</p>
+
+                        <h2>CASE – Twoje centrum dowodzenia</h2>
+                        <p>Za pomocą instrukcji `CASE` możesz nie tylko zastępować nulle, ale też grupować błędy w
+                            czytelne kategorie. Przykład: `CASE WHEN Nazwa Produktu IS NULL THEN "Inne / Brak nazwy"
+                            ELSE Nazwa Produktu END`. Dzięki temu Twoje tabele zawsze będą kompletne i profesjonalne.
+                        </p>
+
+                        <ul>
+                            <li><strong>Filtracja błędów:</strong> Możesz stworzyć filtr na poziomie raportu, który
+                                automatycznie ukrywa rekordy z błędnymi danymi.</li>
+                            <li><strong>Formatowanie warunkowe:</strong> Pomaluj komórkę na czerwono, jeśli dane są
+                                niekompletne, by menedżer wiedział, że musi je uzupełnić w CRM.</li>
+                        </ul>
+
+                        <blockquote>
+                            "Jakość danych to nie tylko ich poprawność, ale też sposób, w jaki radzisz sobie z ich
+                            brakiem. Dobry dashboard to taki, który opowiada historię nawet wtedy, gdy brakuje kilku
+                            stron."
+                        </blockquote>
+
+                        <p>Uporządkuję Twoje źródła danych i sprawię, że dashboardy będą odporne na błędy, czyste i
+                            godne zaufania. Zapraszam do kontaktu w celu optymalizacji jakości Twoich danych.</p>
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Data Quality
+                                Engineer</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Masz dość błędów w swoich raportach?</h3>
+                            <p>Wdrożę dla Ciebie mechanizmy sanitacji i walidacji danych bezpośrednio w Looker Studio.
+                                Spraw, by Twoje dashboardy były nieomylne.</p>
+                            <a href="../index.html#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Napraw moje dane</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Data Analytics<span>.</span></div>
+            <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
