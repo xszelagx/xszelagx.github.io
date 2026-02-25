@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analityka eCommerce w Looker Studio: Od kliknięcia do zakupu | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Zwiększ sprzedaż w swoim sklepie. Dowiedz się, jak wykorzystać Looker Studio do analizy lejka zakupowego, porzuconych koszyków i ROAS w eCommerce.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="canonical"
+        href="https://xszelagx.github.io/portfolio-cv/blog/analityka-ecommerce-lejki-sprzedazy-looker-studio.html" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Analityka eCommerce w Looker Studio: Jak zoptymalizować lejek sprzedaży i zwiększyć zyski",
+      "description": "Zwiększ sprzedaż w swoim sklepie. Dowiedz się, jak wykorzystać Looker Studio do analizy lejka zakupowego, porzuconych koszyków i ROAS w eCommerce.",
+      "author": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg",
+        "url": "https://xszelagx.github.io/portfolio-cv/"
+      },
+      "datePublished": "2026-02-25",
+      "publisher": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Mikołaj Szeląg",
+        "item": "https://xszelagx.github.io/portfolio-cv/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://xszelagx.github.io/portfolio-cv/blog.html"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "eCommerce Analytics",
+        "item": "https://xszelagx.github.io/portfolio-cv/blog/analityka-ecommerce-lejki-sprzedazy-looker-studio.html"
+      }]
+    }
+    </script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Portfolio<span>.</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Strona Główna</a></li>
+                    <li><a href="../index.html#about">Dlaczego Warto?</a></li>
+                    <li><a href="../index.html#services">Usługi</a></li>
+                    <li><a href="../index.html#case-studies">Realizacje</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../index.html#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="../blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Growth Marketing</span>
+                        <span>25 Lutego 2026</span>
+                        <span>⏱️ 8 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Analityka eCommerce w <span class="gradient-text">Looker Studio</span>: Od
+                        kliknięcia do zakupu</h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>W sklepie internetowym dane płyną szerokim strumieniem: od wejścia na stronę, przez dodanie
+                            do koszyka, aż po płatność. Jeśli nie analizujesz, na którym etapie klienci "uciekają", po
+                            prostu tracisz pieniądze. Looker Studio to idealne narzędzie, by zbudować kompleksowy
+                            dashboard eCommerce.</p>
+
+                        <h2>Wizualizacja Lejka Sprzedaży (Full Funnel)</h2>
+                        <p>Zamiast patrzeć tylko na finalną sprzedaż, stwórz wykres kaskadowy. Widok etapów
+                            (Wyświetlenie produktu -> Dodanie do koszyka -> Checkout -> Zakup) pozwala natychmiast
+                            wykryć problemy techniczne lub zbyt wysokie koszty wysyłki, które zniechęcają w ostatnim
+                            kroku.</p>
+
+                        <h2>Kohorty i Retencja</h2>
+                        <p>Dzięki integracji z BigQuery możemy w Looker Studio zbudować analizę kohortową. Dowiesz się,
+                            czy klienci pozyskani podczas Black Friday wracają do Ciebie w styczniu. To kluczowe, by
+                            wiedzieć, czy budujesz trwały biznes, czy tylko "przepalasz" budżet na jednorazowe strzały.
+                        </p>
+
+                        <ul>
+                            <li><strong>Średnia wartość zamówienia (AOV):</strong> Czy paczki są wystarczająco duże, by
+                                pokryć koszty logistyki?</li>
+                            <li><strong>Repurchase Rate:</strong> Ilu klientów kupuje u Ciebie drugi i trzeci raz?</li>
+                            <li><strong>Profitability by Product:</strong> Bo sprzedawanie hitów z niską marżą nie
+                                zawsze się opłaca.</li>
+                        </ul>
+
+                        <blockquote>
+                            "W eCommerce nie wygrywa ten, kto ma najlepszy produkt, ale ten, kto najdokładniej wie, ile
+                            może zapłacić za pozyskanie klienta, by nadal być na plusie."
+                        </blockquote>
+
+                        <h2>Integracja ze sklepem (Shopify, WooCommerce, Presta)</h2>
+                        <p>Nie musisz ręcznie eksportować zamówień. Możemy połączyć Twój sklep bezpośrednio przez API
+                            lub wtyczki GA4 Ecommerce. Cały proces raportowania stanie się w pełni autonomiczny.</p>
+
+                        <p>Chcesz, abym zbudował dla Twojego sklepu system analityczny, który pozwoli Ci skalować
+                            wydatki na reklamę z pełną kontrolą marży? Sprawdź moje realizacje dla branży eCom.</p>
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">eCommerce Data
+                                Specialist</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Twój sklep nie zarabia tyle, ile powinien?</h3>
+                            <p>Znajdę "dziury" w Twoim lejku sprzedaży i pomogę zoptymalizować współczynnik konwersji
+                                dzięki twardym danym.</p>
+                            <a href="../index.html#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Zamawiam analizę lejka</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Data Analytics<span>.</span></div>
+            <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
