@@ -125,6 +125,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (response.status == 200) {
                         result.textContent = "Wiadomość została wysłana pomyślnie!";
                         result.classList.add("text-green-500");
+
+                        // GA4 Event tracking
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'generate_lead', {
+                                'event_category': 'Contact',
+                                'event_label': 'Web3Forms Success'
+                            });
+                        }
                     } else {
                         console.log(response);
                         result.textContent = jsonResponse.message || "Wystąpił błąd podczas wysyłania.";
@@ -228,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
         revealBtn.addEventListener('click', function (e) {
             e.preventDefault();
 
-            // Prosta obfuskacja rozdzielająca kluczowe dane, by boty nie mogły ich odczytać w locie ze źródła
+            // Prosta obfuskacja rozdzielająca kluczowe dane
             const emailName = 'szelagmikolaj';
             const emailDomain = 'gmail.com';
             const phonePrefix = '+48';
@@ -251,33 +259,35 @@ document.addEventListener('DOMContentLoaded', () => {
             revealBtn.style.display = 'none';
             contactRevealed.style.display = 'block';
         });
-        // Blog "Load More" Pagination Logic
-        const blogGrid = document.querySelector('.blog-grid');
-        const loadMoreBtn = document.getElementById('load-more-btn');
-        const INITIAL_VISIBLE_POSTS = 6;
+    }
 
-        if (blogGrid && loadMoreBtn) {
-            const posts = blogGrid.querySelectorAll('.blog-card');
+    // Blog "Load More" Pagination Logic
+    const blogGrid = document.querySelector('.blog-grid');
+    const loadMoreBtn = document.getElementById('load-more-btn');
+    const INITIAL_VISIBLE_POSTS = 6;
 
-            // Hide all posts beyond initial count
-            posts.forEach((post, index) => {
-                if (index >= INITIAL_VISIBLE_POSTS) {
-                    post.style.display = 'none';
-                }
-            });
+    if (blogGrid && loadMoreBtn) {
+        const posts = blogGrid.querySelectorAll('.blog-card');
 
-            // If total posts <= initial count, hide the button
-            if (posts.length <= INITIAL_VISIBLE_POSTS) {
-                loadMoreBtn.style.display = 'none';
+        // Hide all posts beyond initial count
+        posts.forEach((post, index) => {
+            if (index >= INITIAL_VISIBLE_POSTS) {
+                post.style.display = 'none';
             }
+        });
 
-            loadMoreBtn.addEventListener('click', () => {
-                posts.forEach(post => {
-                    post.style.display = 'flex';
-                    // Trigger reveal animation for newly shown posts
-                    post.classList.add('active');
-                });
-                loadMoreBtn.style.display = 'none';
-            });
+        // If total posts <= initial count, hide the button
+        if (posts.length <= INITIAL_VISIBLE_POSTS) {
+            loadMoreBtn.style.display = 'none';
         }
-    });
+
+        loadMoreBtn.addEventListener('click', () => {
+            posts.forEach(post => {
+                post.style.display = 'flex';
+                // Trigger reveal animation for newly shown posts
+                post.classList.add('active');
+            });
+            loadMoreBtn.style.display = 'none';
+        });
+    }
+});
