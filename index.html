@@ -38,9 +38,15 @@
     <!-- End Google Analytics -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Data Analyst & GCP Expert</title>
+    <title>Mikołaj Szeląg | Automatyzacja Google Sheets, Excel, Looker Studio & Raporty BI</title>
     <meta name="description"
-        content="Profesjonalne portfolio i wizytówka usług. Oferuję nowoczesne rozwiązania, kompleksowe podejście i dbałość o detale.">
+        content="Automatyzacja procesów za pomocą Excel, Google Sheets i Apps Script. Ekspert ds. raportów BI (Looker Studio) oraz analizy danych (BigQuery, GCP). Skaluj i usprawniaj swój biznes.">
+    <meta name="keywords"
+        content="Automatyzacja, Excel, Arkusze Google, Google Sheets, Apps Script, Looker Studio, Raporty BI, Analityka Danych, GCP, BigQuery, Mikołaj Szeląg">
+    <meta property="og:title" content="Mikołaj Szeląg | Ekspert ds. Danych i Automatyzacji">
+    <meta property="og:description"
+        content="Automatyzacja Excel, raporty BI w Looker Studio i inżynieria danych (GCP, BigQuery). Zobacz pełną ofertę na stronie.">
+    <meta property="og:type" content="website">
     <!-- Google Fonts: Outfit for modern look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,10 +96,8 @@
                     <p class="hero-subtitle">Specjalizuję się w inżynierii danych BigQuery, automatyzacjach opartych o
                         Google Sheets / Apps Script i budowaniu analitycznych dashboardów.</p>
                     <div class="hero-buttons">
-                        <a href="#" class="btn btn-primary btn-calendly"
-                            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/xszelagx'});return false;">📅
-                            Umów spotkanie wideo</a>
-                        <a href="#services" class="btn btn-secondary">Zobacz Moje Usługi</a>
+                        <a href="#services" class="btn btn-primary">Zobacz Moje Usługi</a>
+                        <a href="#contact" class="btn btn-secondary">Porozmawiajmy</a>
                     </div>
                 </div>
                 <div class="hero-image glass-card reveal code-window">
@@ -322,12 +326,21 @@
                 <div class="contact-wrapper glass-card reveal">
                     <div class="contact-info">
                         <h2>Zacznijmy <span class="gradient-text">Współpracę!</span></h2>
-                        <p>Masz dane do uporządkowania lub procesy do zautomatyzowania? Skontaktuj się ze mną za pomocą
-                            poniższego formularza – wszystkie Twoje dane bezpośrednie pozostaną poufne i bezpieczne.</p>
-                        <div class="contact-details" style="display: none;">
+                        <p>Masz dane do uporządkowania lub procesy do zautomatyzowania (Excel, Google Sheets)?
+                            Skontaktuj się ze mną za pomocą
+                            poniższego formularza lub napisz maila – wszystkie Twoje dane bezpośrednie pozostaną poufne
+                            i bezpieczne.</p>
+                        <div class="contact-details">
                             <div class="contact-item">
-                                <span class="icon">�</span>
+                                <span class="icon">💼</span>
                                 <span>Współpraca B2B / Zdalnie</span>
+                            </div>
+                            <div class="contact-item secure-contact" style="margin-top: 20px;">
+                                <button id="reveal-contact" class="btn btn-secondary btn-small">Pokaż E-mail i
+                                    Telefon</button>
+                                <div id="contact-revealed" style="display: none; margin-top: 15px; font-weight: 600;">
+                                    <!-- Content injected by anti-scraping JS -->
+                                </div>
                             </div>
                         </div>
 
@@ -368,10 +381,8 @@
             <div class="footer-logo">Data Analytics<span>.</span></div>
             <p>&copy; <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
             <div class="social-links">
-                <a href="https://linkedin.com/in/mikolajszelag" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank" rel="noopener noreferrer"
                     aria-label="LinkedIn">LinkedIn</a>
-                <a href="https://github.com/xszelagx" target="_blank" rel="noopener noreferrer"
-                    aria-label="GitHub">GitHub</a>
             </div>
         </div>
     </footer>
@@ -385,16 +396,6 @@
             <button id="btn-reject" class="btn btn-secondary btn-small">Odrzucam</button>
         </div>
     </div>
-
-    <!-- Pływający Przycisk Calendly -->
-    <a href="#" class="floating-calendly-btn" aria-label="Umów spotkanie video wideo"
-        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/xszelagx'});return false;">
-        <span>📅</span> Umów 15 min rozmowy
-    </a>
-
-    <!-- Calendly Links -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
     <script src="js/script.js"></script>
 </body>

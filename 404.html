@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Nie znaleziono strony | Mikołaj Szeląg</title>
+    <!-- Google Fonts: Outfit for modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Względna ścieżka do stylów, niezależnie od zagłębienia url (dla GitHub Pages poleca się /nazwarepo/css/styles.css lub opartość o bezwzględną -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .error-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 20px;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .error-message {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 30px;
+        }
+
+        .error-desc {
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Animated Background Elements -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <main class="error-section">
+        <div class="container glass-card reveal" style="padding: 60px 40px;">
+            <div class="error-code">404</div>
+            <h1 class="error-message">Oops! Zabłądziłeś w kodzie Danych 🕵️‍♂️</h1>
+            <p class="error-desc">Strona, której szukasz, nie istnieje lub została przeniesiona. Prawdopodobnie jakiś
+                skrypt ją usunął, ale wszystko jest pod kontrolą.</p>
+            <a href="/" class="btn btn-primary">Wróć do Strony Głównej</a>
+        </div>
+    </main>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

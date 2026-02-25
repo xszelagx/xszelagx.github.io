@@ -219,4 +219,40 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Anti-scraping Contact Reveal
+    const revealBtn = document.getElementById('reveal-contact');
+    const contactRevealed = document.getElementById('contact-revealed');
+
+    if (revealBtn && contactRevealed) {
+        revealBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Prosta obfuskacja rozdzielająca kluczowe dane, by boty nie mogły ich odczytać w locie ze źródła
+            const emailName = 'twoj.email';
+            const emailDomain = 'domena.pl';
+            const phonePrefix = '+48';
+            const phoneP1 = ' 123';
+            const phoneP2 = ' 456';
+            const phoneP3 = ' 789';
+
+            const emailFull = emailName + '@' + emailDomain;
+            const phoneFull = phonePrefix + phoneP1 + phoneP2 + phoneP3;
+
+            contactRevealed.innerHTML = `
+                <div style="margin-bottom: 10px;">
+                    <a href="mailto:${emailFull}" style="color: var(--primary); text-decoration: none;">📧 ${emailFull}</a>
+                </div>
+                <div>
+                    <a href="tel:${phoneFull.replace(/\s/g, '')}" style="color: var(--primary); text-decoration: none;">📞 ${phoneFull}</a>
+                </div>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 10px; font-weight: 300;">
+                    *(Zmień dane domyślne na swoje w pliku js/script.js (okolice linii 220))*
+                </p>
+            `;
+
+            revealBtn.style.display = 'none';
+            contactRevealed.style.display = 'block';
+        });
+    }
 });
