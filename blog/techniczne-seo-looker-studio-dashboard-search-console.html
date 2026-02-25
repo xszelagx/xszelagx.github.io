@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techniczne SEO w Looker Studio: Search Console + Crawlery | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Dashboardy SEO w Looker Studio. Dowiedz się, jak połączyć dane z Google Search Console, Screaming Frog i Ahrefs w jeden potężny system monitoringu Twojej strony.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="canonical"
+        href="https://xszelagx.github.io/portfolio-cv/blog/techniczne-seo-looker-studio-dashboard-search-console.html" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Techniczne SEO w Looker Studio: Jak monitorować Search Console i crawlery na jednym dashboardzie?",
+      "description": "Dashboardy SEO w Looker Studio. Dowiedz się, jak połączyć dane z Google Search Console, Screaming Frog i Ahrefs w jeden potężny system monitoringu Twojej strony.",
+      "author": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg",
+        "url": "https://xszelagx.github.io/portfolio-cv/"
+      },
+      "datePublished": "2026-02-25",
+      "publisher": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg"
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Portfolio<span>.</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Strona Główna</a></li>
+                    <li><a href="../index.html#about">Dlaczego Warto?</a></li>
+                    <li><a href="../index.html#services">Usługi</a></li>
+                    <li><a href="../index.html#case-studies">Realizacje</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../index.html#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="../blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Technical SEO</span>
+                        <span>25 Lutego 2026</span>
+                        <span>⏱️ 8 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Techniczne <span class="gradient-text">SEO w Looker Studio</span>: Search
+                        Console + Crawlery</h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Specjaliści SEO spędzają długie godziny na analizie danych z różnych narzędzi: Search
+                            Console, Ahrefs, Screaming Frog, PageSpeed Insights. Looker Studio pozwala na agregację tych
+                            danych w jednym oknie, co daje niespotykanie szeroki kontekst. Zobacz, jak zbudować kokpit
+                            dowodzenia dla swojej strategii SEO.</p>
+
+                        <h2>Monitorowanie kanibalizacji słów kluczowych</h2>
+                        <p>Największym wyzwaniem w SEO jest sytuacja, gdy dwie podstrony rankują na tę samą frazę. W
+                            Looker Studio możesz stworzyć prostą tabelę, która zestawia URL-e z zapytaniami z Search
+                            Console. Jeśli jedna fraza przypisana jest do wielu adresów – wiesz, że musisz poprawić
+                            linkowanie wewnętrzne lub treść.</p>
+
+                        <h2>Data Blending: SEO + Konwersje</h2>
+                        <p>Dzięki <strong>łączeniu danych (Data Blending)</strong>, możesz zestawić informację o
+                            kliknięciach z GSC z danymi o konwersji z GA4 po adresie URL. To pozwala odkryć, które wpisy
+                            na blogu przynoszą realnych klientów, a które generują tylko "pusty" ruch. To podstawa <a
+                                href="./roi-wdrozenia-analityki-looker-studio-biznes.html">wyliczania ROI z działań
+                                contentowych</a>.</p>
+
+                        <h3>Co powinien zawierać dashboard SEO?</h3>
+                        <ul>
+                            <li><strong>Średnia pozycja TOP 10 / TOP 100:</strong> Trend Twojej widoczności.</li>
+                            <li><strong>Błędy 404 i statusy serwera:</strong> Dane z importu pliku Scriming Frog do
+                                Google Sheets.</li>
+                            <li><strong>Dynamika przyrostu linków (Backlinks):</strong> Zestawienie danych z
+                                Ahrefs/Semrush przez konektory API.</li>
+                            <li><strong>Indeksacja artykułów:</strong> Automatyczna lista wpisów, które nie generują
+                                ruchu od 30 dni.</li>
+                        </ul>
+
+                        <blockquote>
+                            "Współczesne SEO to gra o dane. Nie wygrywa ten, kto napisze więcej tekstów, ale ten, kto
+                            szybciej wyłapie anomalie i skapitalizuje trendy dzięki analityce."
+                        </blockquote>
+
+                        <p>Jako ekspert BI z doświadczeniem w SEO, pomogę Ci skonfigurować dashboard, który oszczędzi
+                            Twojemu zespołowi 10 godzin tygodniowo na "przeklejaniu" danych. Sprawdź, jak możemy
+                            usprawnić Twój marketing.</p>
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">SEO Data
+                                Strategist</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Twoja agencja SEO raportuje w Excelu?</h3>
+                            <p>Przenieś swój marketing o dekadę do przodu. Wdrożę automatyczne dashboardy raportujące
+                                postępy w czasie rzeczywistym. Zapytaj o darmową wycenę.</p>
+                            <a href="../index.html#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Zamawiam dashboard SEO</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Data Analytics<span>.</span></div>
+            <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

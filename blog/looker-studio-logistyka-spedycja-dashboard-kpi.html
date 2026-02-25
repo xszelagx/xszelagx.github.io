@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looker Studio dla Logistyki: Monitoring KPI w transporcie | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Dashboardy BI dla logistyki i spedycji. Dowiedz się, jak monitorować KPI w transporcie: koszt za kilometr, wydajność floty i optymalizacja tras w Looker Studio.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="canonical"
+        href="https://xszelagx.github.io/portfolio-cv/blog/looker-studio-logistyka-spedycja-dashboard-kpi.html" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Looker Studio dla Logistyki: Jak monitorować KPI w transporcie i spedycji?",
+      "description": "Dashboardy BI dla logistyki i spedycji. Dowiedz się, jak monitorować KPI w transporcie: koszt za kilometr, wydajność floty i optymalizacja tras w Looker Studio.",
+      "author": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg",
+        "url": "https://xszelagx.github.io/portfolio-cv/"
+      },
+      "datePublished": "2026-02-25",
+      "publisher": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg"
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Portfolio<span>.</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Strona Główna</a></li>
+                    <li><a href="../index.html#about">Dlaczego Warto?</a></li>
+                    <li><a href="../index.html#services">Usługi</a></li>
+                    <li><a href="../index.html#case-studies">Realizacje</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../index.html#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="../blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Logistics BI</span>
+                        <span>25 Lutego 2026</span>
+                        <span>⏱️ 7 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Looker Studio dla <span class="gradient-text">Logistyki</span>: Monitoring
+                        KPI w transporcie</h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Branża transportowa i spedycyjna operuje na niskich marżach, gdzie każda złotówka
+                            zaoszczędzona na kilometrze ma ogromne znaczenie. Bez bieżącego monitoringu KPI w czasie
+                            rzeczywistym, zarządzanie flotą staje się zgadywaniem. Looker Studio to idealne narzędzie,
+                            by spiąć dane z systemów GPS, TMS i kart paliwowych w jeden czytelny obraz.</p>
+
+                        <h2>Kluczowe wskaźniki (KPI) dla Twojego dashboardu:</h2>
+                        <ul>
+                            <li><strong>Koszt za kilometr (CPK):</strong> Fundament rentowności. Looker Studio może
+                                automatycznie łączyć dane o fakturach za paliwo z przebiegami z GPS.</li>
+                            <li><strong>Wydajność Floty (Utilization Rate):</strong> Ile procent pojazdów jest w trasie,
+                                a ile czeka na załadunek?</li>
+                            <li><strong>Średnie spalanie na kierowcę:</strong> Idealne narzędzie do wprowadzania
+                                grywalizacji i systemów bonusowych dla oszczędnych kierowców.</li>
+                            <li><strong>On-Time Delivery (OTD):</strong> Procent dostaw zrealizowanych w terminie –
+                                kluczowe dla poziomu obsługi klienta.</li>
+                        </ul>
+
+                        <h2>Wizualizacja Map w Looker Studio</h2>
+                        <p>Google Maps jest natywnie zintegrowane z Looker Studio. Możesz wyświetlać trasy, zagęszczenie
+                            załadunków w poszczególnych regionach świata (Bubble maps) oraz mapy ciepła dla opóźnień. To
+                            pozwala menedżerom logistyki sekundy po spojrzeniu na ekran wiedzieć, gdzie jest problem.
+                        </p>
+
+                        <blockquote>
+                            "W transporcie dane płyną szybciej niż ciężarówki. Jeśli Twój raport spóźnia się o tydzień,
+                            jest już bezużyteczny. Looker Studio daje Ci wgląd tu i teraz."
+                        </blockquote>
+
+                        <h3>Studium Przypadku: Firma Spedycyjna</h3>
+                        <p>Dowiedz się więcej o tym, jak realnie pomagam ulepszać procesy, czytając moje <a
+                                href="../case-spedycja.html">case study automatyzacji w spedycji</a>. Dzięki wdrożeniu
+                            centralnego raportowania, moi klienci redukują puste przebiegi o kilkanaście procent
+                            rocznie.</p>
+
+                        <p>Zaprojektuję dla Twojej firmy dashboard logistyczny, który pomoże Ci realnie ciąć koszty i
+                            wygrywać na konkurencyjnym rynku transportowym. Zapytaj o darmową konsultację.</p>
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Logistics Data
+                                Expert</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Twoja flota generuje zbyt duże koszty?</h3>
+                            <p>Uporządkuję Twoją analitykę transportową i pomogę wykryć nieefektywności w łańcuchu
+                                dostaw. Zobacz moje rozwiązania dla logistyki.</p>
+                            <a href="../index.html#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Optymalizuj moją logistykę</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Data Analytics<span>.</span></div>
+            <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

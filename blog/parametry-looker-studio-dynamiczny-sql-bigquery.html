@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parametry w Looker Studio: Dynamiczne zapytania SQL w BigQuery | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Tutorial: Jak używać parametrów w Looker Studio do sterowania kodem SQL w BigQuery. Dowiedz się, jak dać użytkownikom pełną kontrolę nad danymi.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="canonical"
+        href="https://xszelagx.github.io/portfolio-cv/blog/parametry-looker-studio-dynamiczny-sql-bigquery.html" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Parametry w Looker Studio: Jak tworzyć dynamiczne zapytania SQL w BigQuery?",
+      "description": "Tutorial: Jak używać parametrów w Looker Studio do sterowania kodem SQL w BigQuery. Dowiedz się, jak dać użytkownikom pełną kontrolę nad danymi.",
+      "author": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg",
+        "url": "https://xszelagx.github.io/portfolio-cv/"
+      },
+      "datePublished": "2026-02-25",
+      "publisher": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg"
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Portfolio<span>.</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Strona Główna</a></li>
+                    <li><a href="../index.html#about">Dlaczego Warto?</a></li>
+                    <li><a href="../index.html#services">Usługi</a></li>
+                    <li><a href="../index.html#case-studies">Realizacje</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../index.html#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="../blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">SQL & BigQuery</span>
+                        <span>25 Lutego 2026</span>
+                        <span>⏱️ 10 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Parametry w Looker Studio: <span class="gradient-text">Dynamiczne zapytania
+                            SQL</span> w BigQuery</h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Filtry w Looker Studio to świetna sprawa, ale czasem potrzebujesz czegoś więcej niż po prostu
+                            ukrywania wierszy. Potrzebujesz zmienić samą strukturę zapytania SQL wysyłanego do BigQuery.
+                            Tu z pomocą przychodzą <strong>parametry</strong>. To funkcja, która pozwala użytkownikowi
+                            raportu "wstrzykiwać" wartości prosto do Twojego kodu SQL.</p>
+
+                        <h2>Dlaczego warto używać parametrów?</h2>
+                        <p>Zamiast tworzyć 10 oddzielnych raportów dla 10 różnych działów, możesz stworzyć jeden
+                            dynamiczny. Parametry pozwalają na:</p>
+                        <ul>
+                            <li><strong>Dynamiczną zmianę waluty:</strong> Użytkownik wybiera walutę w filtrze, a SQL
+                                przelicza ceny w locie.</li>
+                            <li><strong>Przełączanie wymiarów:</strong> Jeden wykres może pokazywać sprzedaż po
+                                produkcie, kategorii lub regionie, zależnie od wyboru parametru.</li>
+                            <li><strong>Optymalizację kosztów:</strong> SQL pobiera tylko te dane, które są absolutnie
+                                niezbędne dla danej wartości parametru.</li>
+                        </ul>
+
+                        <h3>Krok 1: Definicja parametru w źródle danych</h3>
+                        <p>Wejdź w edycję źródła BigQuery (Custom Query) i dodaj nowy parametr (przycisk w prawym dolnym
+                            rogu). Nazwij go np. `region_param` i przypisz mu typ tekstowy.</p>
+
+                        <h3>Krok 2: Użycie w SQL</h3>
+                        <p>W swoim zapytaniu SQL użyj składni z małpą: `SELECT * FROM sales WHERE region =
+                            @region_param`. BigQuery automatycznie podstawi tam wartość wybraną przez użytkownika w
+                            dashboardzie.</p>
+
+                        <blockquote>
+                            "Parametry to most między potrzebami biznesowymi a Twoim kodem SQL. Dzięki nim dashboard
+                            staje się żywym narzędziem komunikacji z hurtownią danych."
+                        </blockquote>
+
+                        <h3>Zastosowanie Enterprise</h3>
+                        <p>Ta technika jest kluczowa, gdy pracujesz na ogromnych zbiorach danych. Dowiedz się więcej o
+                            tym, jak <a href="./looker-studio-bigquery-integracja-performance.html">Looker Studio
+                                współpracuje z BigQuery</a> przy ekstremalnej skali. Parametry pomagają uniknąć
+                            skanowania całych tabel, co oszczędza pieniądze na rachunku za Google Cloud.</p>
+
+                        <p>Zbuduję dla Twojej firmy zaawansowany system dynamicznego raportowania, który zastąpi
+                            dziesiątki statycznych raportów jednym, inteligentnym narzędziem. Zapraszam do współpracy.
+                        </p>
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Senior SQL
+                                Architect</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Twoje zapytania SQL są zbyt wolne?</h3>
+                            <p>Zoptymalizuję Twoją architekturę danych i wdrożę parametryzację raportów, by działały
+                                błyskawicznie i oszczędnie. Sprawdź moją ofertę BigQuery.</p>
+                            <a href="../index.html#services" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Audyt BigQuery & SQL</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Data Analytics<span>.</span></div>
+            <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
