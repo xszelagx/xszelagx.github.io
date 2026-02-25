@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looker Studio + BigQuery: Dashboard dla dużych zbiorów danych | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Połącz moc BigQuery z wizualizacją Looker Studio. Dowiedz się, jak stworzyć wydajny system analityczny dla milionów wierszy danych w Google Cloud.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="canonical"
+        href="https://xszelagx.github.io/portfolio-cv/blog/looker-studio-bigquery-integracja-performance.html" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Looker Studio + BigQuery: Jak stworzyć ultra-wydajny dashboard dla dużych zbiorów danych",
+      "description": "Połącz moc BigQuery z wizualizacją Looker Studio. Dowiedz się, jak stworzyć wydajny system analityczny dla milionów wierszy danych w Google Cloud.",
+      "author": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg",
+        "url": "https://xszelagx.github.io/portfolio-cv/"
+      },
+      "datePublished": "2026-02-25",
+      "publisher": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Mikołaj Szeląg",
+        "item": "https://xszelagx.github.io/portfolio-cv/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://xszelagx.github.io/portfolio-cv/blog.html"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "BigQuery & Looker Studio Integration",
+        "item": "https://xszelagx.github.io/portfolio-cv/blog/looker-studio-bigquery-integracja-performance.html"
+      }]
+    }
+    </script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Portfolio<span>.</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Strona Główna</a></li>
+                    <li><a href="../index.html#about">Dlaczego Warto?</a></li>
+                    <li><a href="../index.html#services">Usługi</a></li>
+                    <li><a href="../index.html#case-studies">Realizacje</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../index.html#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="../blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">High Performance BI</span>
+                        <span>25 Lutego 2026</span>
+                        <span>⏱️ 8 min czytania</span>
+                    </div>
+                    <h1 class="post-title"><span class="gradient-text">Looker Studio + BigQuery</span>: Jak stworzyć
+                        ultra-wydajny dashboard dla dużych zbiorów danych</h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Znasz to uczucie, gdy kręci się kółko ładowania raportu, a Ty tracisz cierpliwość? Gdy dane
+                            Twojej firmy przekraczają setki tysięcy wierszy, proste Arkusze Google przestają wystarczać.
+                            Czas na potężną broń z arsenału Google Cloud – <strong>BigQuery</strong>.</p>
+
+                        <h2>Dlaczego ta para to "Match Made in Heaven"?</h2>
+                        <p>Looker Studio to świetny interfejs, ale nie ma własnej mocy obliczeniowej. BigQuery to z
+                            kolei potężny silnik bazodanowy, który potrafi przeszukać terabajty danych w sekundy. Łącząc
+                            je, otrzymujesz raport, który działa błyskawicznie, nawet jeśli Twoja baza ma miliardy
+                            wpisów.</p>
+
+                        <ul>
+                            <li><strong>Prędkość:</strong> Przesunięcie filtrów w raporcie natychmiastowo przelicza dane
+                                po stronie serwera Google.</li>
+                            <li><strong>Koszty:</strong> BigQuery oferuje darmowy limit (1 TB procesowania miesięcznie),
+                                co dla wielu firm oznacza zero dodatkowych opłat przy profesjonalnej architekturze.</li>
+                            <li><strong>Pre-processing:</strong> Możesz przygotować dane w SQL (np. wyliczyć marżę
+                                netto) i do Lookera podać już gotową, lekką tabelę.</li>
+                        </ul>
+
+                        <h2>Jak uzyskać maksymalną wydajność?</h2>
+                        <p>Kluczem jest nie tylko "podpięcie tabeli". Jako inżynier danych stosuję techniki, które
+                            sprawiają, że raport "pływa":</p>
+                        <p><strong>Partycjonowanie i Klastrowanie:</strong> Dzięki temu Looker Studio przeszukuje tylko
+                            ten fragment bazy, o który pyta użytkownik (np. tylko dane z ostatniego miesiąca). To
+                            drastycznie obniża rachunek za GCP.</p>
+
+                        <blockquote>
+                            "Podpięcie BigQuery do Looker Studio to przejście z jazdy rowerem na pilotowanie odrzutowca.
+                            Musisz jednak wiedzieć, jak sterować, by nie spalić budżetu na niepotrzebne zapytania SQL."
+                        </blockquote>
+
+                        <h2>Przykład zapytania optymalizacyjnego</h2>
+                        <p>Zamiast podawać surową bazę, tworzymy tzw. <em>Materialized Views</em> lub pre-agregowane
+                            tabele:</p>
+                        <pre><code>CREATE TABLE analytics_production.kpi_daily_summary AS
+SELECT
+  date,
+  category,
+  SUM(revenue) as total_rev,
+  COUNT(DISTINCT user_id) as users
+FROM `raw_data.transactions`
+GROUP BY 1, 2</code></pre>
+
+                        <h3>Wnioski dla biznesu</h3>
+                        <p>Jeśli Twoje raporty ładowały się dotąd powoli, migracja na BigQuery to najlepsza inwestycja w
+                            kulturę analityczną firmy. Decyzje podejmowane w 2 sekundy są warte więcej niż te, na które
+                            musisz czekać 2 minuty.</p>
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Google Cloud
+                                Architect</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Twoje raporty działają za wolno?</h3>
+                            <p>Pomogę Ci przenieść analitykę na BigQuery i zoptymalizować koszty GCP o 60-80%. Zapytaj o
+                                audyt.</p>
+                            <a href="../index.html#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Napraw moją analitykę</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Data Analytics<span>.</span></div>
+            <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

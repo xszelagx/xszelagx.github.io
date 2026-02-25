@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pierwszy Dashboard w Looker Studio: 5 kroków od danych do raportu | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Tutorial Looker Studio: Poznaj 5 prostych kroków, jak zbudować swój pierwszy dashboard analityczny. Od połączenia danych po publikację raportu BI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="canonical"
+        href="https://xszelagx.github.io/portfolio-cv/blog/pierwszy-dashboard-looker-studio-tutorial.html" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Pierwszy dashboard w Looker Studio: 5 kroków od surowych danych do wizualizacji",
+      "description": "Tutorial Looker Studio: Poznaj 5 prostych kroków, jak zbudować swój pierwszy dashboard analityczny. Od połączenia danych po publikację raportu BI.",
+      "author": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg",
+        "url": "https://xszelagx.github.io/portfolio-cv/"
+      },
+      "datePublished": "2026-02-25",
+      "publisher": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Mikołaj Szeląg",
+        "item": "https://xszelagx.github.io/portfolio-cv/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://xszelagx.github.io/portfolio-cv/blog.html"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Pierwszy dashboard tutorial",
+        "item": "https://xszelagx.github.io/portfolio-cv/blog/pierwszy-dashboard-looker-studio-tutorial.html"
+      }]
+    }
+    </script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Portfolio<span>.</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Strona Główna</a></li>
+                    <li><a href="../index.html#about">Dlaczego Warto?</a></li>
+                    <li><a href="../index.html#services">Usługi</a></li>
+                    <li><a href="../index.html#case-studies">Realizacje</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../index.html#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="../blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Tutorial</span>
+                        <span>25 Lutego 2026</span>
+                        <span>⏱️ 7 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Pierwszy dashboard w <span class="gradient-text">Looker Studio</span>: 5
+                        kroków od surowych danych do wizualizacji</h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Chcesz zacząć przygodę z Business Intelligence, ale nie wiesz od czego zacząć? Looker Studio
+                            jest idealnym punktem wejścia. W tym artykule przeprowadzisz się przez proces tworzenia
+                            pierwszego raportu – od zera do pełnej interaktywności.</p>
+
+                        <h2>Krok 1: Wybierz źródło danych</h2>
+                        <p>Zaloguj się do Looker Studio za pomocą swojego konta Google. Kliknij "Utwórz" -> "Źródło
+                            danych". Na początek polecam wybrać <strong>Arkusze Google</strong>. Wybierz plik, w którym
+                            masz uporządkowane dane (pierwszy wiersz musi zawierać nagłówki).</p>
+
+                        <h2>Krok 2: Konfiguracja pól</h2>
+                        <p>Zanim zaczniesz malować wykresy, sprawdź czy Looker poprawnie rozpoznał typy danych. Czy data
+                            to na pewno "Data"? Czy przychód to "Liczba"? Poprawna definicja typów na tym etapie
+                            oszczędzi Ci błędów później.</p>
+
+                        <h2>Krok 3: Układ i design</h2>
+                        <p>Przejdź do edytora raportu. Wybierz motyw (polecam ciemny dla efektu "premium"). Dodaj
+                            nagłówek i logo swojej firmy. Pamiętaj o zasadzie "Less is More" – nie upychaj wszystkiego
+                            na jednej stronie.</p>
+
+                        <ul>
+                            <li><strong>Scorecards:</strong> Kluczowe liczby (np. Przychód całkowity).</li>
+                            <li><strong>Wykresy liniowe:</strong> Trendy w czasie.</li>
+                            <li><strong>Tabele:</strong> Szczegółowe zestawienia z mapami ciepła.</li>
+                        </ul>
+
+                        <blockquote>
+                            "Dobry projektant dashboardów myśli o użytkowniku. Raport powinien odpowiadać na pytanie
+                            'Jak nam idzie?' w mniej niż 5 sekund."
+                        </blockquote>
+
+                        <h2>Krok 4: Dodaj Filtry</h2>
+                        <p>To tutaj dzieje się magia BI. Dodaj "Kontrolę zakresu dat" oraz "Filtr wyboru" (np. dla
+                            kategorii produktów lub regionu). Dzięki temu Twoi pracownicy będą mogli samodzielnie
+                            wyciągać interesujące ich segmenty danych.</p>
+
+                        <h2>Krok 5: Udostępnij i Automatyzuj</h2>
+                        <p>Kliknij "Udostępnij". Możesz wysłać link bezpośredni lub ustawić automatyczną wysyłkę raportu
+                            w formie PDF na maila (np. w każdy poniedziałek o 8:00). Gratulacje! Właśnie wdrożyłeś
+                            pierwszy element kultury Data-Driven w Twojej firmie.</p>
+
+                        <p>Masz problem z połączeniem dużych baz? To normalne przy starcie. Zapraszam do kontaktu,
+                            pomogę Ci to spiąć technicznie.</p>
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Dashboarding
+                                Expert</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Chcesz dashboardu klasy Premium?</h3>
+                            <p>Buduję zaawansowane systemy raportowe, które integrują setki źródeł danych. Sprawdź moje
+                                realizacje.</p>
+                            <a href="../index.html#case-studies" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Zobacz Realizacje</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Data Analytics<span>.</span></div>
+            <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

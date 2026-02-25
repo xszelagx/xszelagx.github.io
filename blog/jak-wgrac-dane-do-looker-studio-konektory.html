@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jak wgrać dane do Looker Studio? Przegląd konektorów | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Dowiedz się, jak połączyć dane z Looker Studio. Przegląd darmowych i płatnych konektorów: od Arkuszy Google po BigQuery i API.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="canonical"
+        href="https://xszelagx.github.io/portfolio-cv/blog/jak-wgrac-dane-do-looker-studio-konektory.html" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Jak wgrać dane do Looker Studio? Przegląd konektorów: od Google Sheets po BigQuery",
+      "description": "Dowiedz się, jak połączyć dane z Looker Studio. Przegląd darmowych i płatnych konektorów: od Arkuszy Google po BigQuery i API.",
+      "author": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg",
+        "url": "https://xszelagx.github.io/portfolio-cv/"
+      },
+      "datePublished": "2026-02-25",
+      "publisher": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Mikołaj Szeląg",
+        "item": "https://xszelagx.github.io/portfolio-cv/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://xszelagx.github.io/portfolio-cv/blog.html"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Konektory Looker Studio",
+        "item": "https://xszelagx.github.io/portfolio-cv/blog/jak-wgrac-dane-do-looker-studio-konektory.html"
+      }]
+    }
+    </script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Portfolio<span>.</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Strona Główna</a></li>
+                    <li><a href="../index.html#about">Dlaczego Warto?</a></li>
+                    <li><a href="../index.html#services">Usługi</a></li>
+                    <li><a href="../index.html#case-studies">Realizacje</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../index.html#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="../blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Integracje Danych</span>
+                        <span>25 Lutego 2026</span>
+                        <span>⏱️ 6 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Jak <span class="gradient-text">wgrać dane do Looker Studio</span>? Przegląd
+                        konektorów: od Google Sheets po BigQuery</h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Zanim zaczniesz budować wykresy w Looker Studio, musisz do niego "wlać" dane. Narzędzie to
+                            nie przechowuje Twoich informacji – jest jedynie szybą, przez którą na nie patrzysz. Dlatego
+                            kluczowe jest zrozumienie, jak działają <strong>konektory danych</strong>.</p>
+
+                        <h2>Konektory Natywne (Google) - Płynność i Brak Kosztów</h2>
+                        <p>Google oferuje zestaw darmowych konektorów do swoich usług. To najczęstszy wybór na start.
+                            Działają one stabilnie i (zazwyczaj) nie generują dodatkowych opłat. Pamiętaj jednak o
+                            ograniczeniach wydajności przy gigantycznych zbiorach.</p>
+
+                        <ul>
+                            <li><strong>Google Sheets:</strong> Najprostszy sposób. Zmieniasz liczbę w tabelce – zmienia
+                                się wykres w raporcie.</li>
+                            <li><strong>Google Analytics / Search Console:</strong> Klikasz i masz pełne dane o ruchu na
+                                stronie.</li>
+                            <li><strong>Google Ads:</strong> Musisz to mieć, jeśli chcesz monitorować ROAS w czasie
+                                rzeczywistym.</li>
+                            <li><strong>BigQuery:</strong> Król wydajności. Jeśli masz miliony wierszy, BigQuery to
+                                jedyny słuszny wybór.</li>
+                        </ul>
+
+                        <h2>Konektory Partnerów (Płatne)</h2>
+                        <p>Chcesz dashboardu z Facebook Ads, LinkedIna albo Instagrama? Google nie ma tam natywnych
+                            wtyczek. Musisz skorzystać z dostawców zewnętrznych (jak Supermetrics czy Funnel) lub...
+                            wyślizgać system, przesyłając dane najpierw do Arkuszy przez darmowe skrypty (Apps Script).
+                        </p>
+
+                        <blockquote>
+                            "Dobór odpowiedniej drogi dla danych to 80% sukcesu analityki. Zła architektura sprawi, że
+                            Twój dashboard będzie ładował się 2 minuty, a zarząd przestanie z niego korzystać."
+                        </blockquote>
+
+                        <h2>Bezpośrednie API i Webhooki</h2>
+                        <p>Dla zaawansowanych użytkowników istnieje opcja budowania własnych "Community Connectors".
+                            Możesz napisać skrypt w Google Apps Script, który pobierze dane z dowolnego API (np. Twojego
+                            CRM-u) i poda je prosto do Looker Studio. To moja specjalność – oszczędzamy wtedy
+                            miesięcznie setki złotych na abonamentach zewnętrznych wtyczek.</p>
+
+                        <h3>Wnioski: Co wybrać?</h3>
+                        <p>Jeśli Twoje dane mieszczą się w Excelu/Sheetsach – zacznij od konektora <strong>Google
+                                Sheets</strong>. Jeśli Twoja firma rośnie i danych przybywa – myśl o
+                            <strong>BigQuery</strong>. A jeśli potrzebujesz mediów społecznościowych – napiszemy skrypt,
+                            który pobierze te dane bez płacenia za drogie konektory.</p>
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Cloud Data
+                                Architect</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Masz nietypowe źródło danych?</h3>
+                            <p>Pomogę Ci je spiąć z Looker Studio przez API lub BigQuery. Sprawdź moje realizacje.</p>
+                            <a href="../index.html#services" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Zobacz ofertę integracji</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Data Analytics<span>.</span></div>
+            <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
