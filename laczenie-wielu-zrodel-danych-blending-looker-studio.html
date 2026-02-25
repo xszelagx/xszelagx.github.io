@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <title>Łączenie wielu źródeł danych na jednym wykresie (Blending) w Looker Studio | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Połącz koszta reklam na wyciągnięcie zysku z CRM do jednej tabeli. Odkryj sekrety łączenia źródeł Blending Options na żywo w GDS (Looker Studio) B2B.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">Portfolio<span class="gradient-text">.</span></a>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Transformacje Graficzne BI</span>
+                        <span>20 Maja 2026</span>
+                        <span>⏱️ 5 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Jak połączyć Koszt i Zysk na jednej linii: <span
+                            class="gradient-text">Techniki Data Blending (Looker Studio)</span></h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Znasz ten ból, drogi inżynierze? Z jednej zakładki Arkusza Google spływają Ci metryki
+                            konwersji sprzedaży z ubiegłego czwartku, zaś z zupełnie innego złącza na zewnątrz pobiera
+                            się raport Twoich kampanii w Google Ads? Prawdziwy ból rodzi się, gdy Prezes rzuca
+                            wyzwaniem: "Chcę widzieć zestawienie Kosztu i Zysku w jednym zgrabnym wykresie". W starym
+                            świecie wymagało to bazy SQL i klauzuli JOIN. W Looker Studio wykonamy to wewnątrz pulpitu
+                            dzięki wirtuozerii <strong>Data Blending.</strong></p>
+
+                        <h2>Autostrada dwóch Złączy (JOIN CONDITIONS) w Grafice</h2>
+                        <p>Data Blending (Łączenie Danych) to funkcja, w której dosłownie myszką chwytasz pod
+                            interfejsem "dodaj do Blendu" nową pozycję bazy, przypisując obu bazom "wspólny klucz".
+                            Najczęstszym, klasycznym absolutem obrotu dla firm e-commerce jest pole "Date" (Data
+                            kalendarza).</p>
+
+                        <h3>Jak poprawnie skleić kampanię z CRMem?</h3>
+                        <ul>
+                            <li>Krok Pierwszy – Ustawiamy Arkusz Sprzedaży po lewym skrzydle menedżera opcji Blend dla
+                                osi łączącej `Data Transakcji`.</li>
+                            <li>Krok Drugi – Po dodaniu tabeli z Kampanii Ads ─ celujemy również jako łącznik w
+                                identyczny nagłówek "Data". Looker automatycznie zorientuje się z relacyjnym (Left
+                                Outer) ujęciem, dopasowując "Koszt" ze środy o 12:00 pod "Zysk" z tej samej środy przy
+                                wyciągu ujęciowym na tabelach!</li>
+                            <li>Krok Finalny ─ Wynik rzucasz na Time-Series (Oś Liniową wykresu czasu). Widzisz na
+                                jednym tle słupki uciekającego dziennego pieniądza naprzemiennie ze słupkiem wpływającym
+                                w te same doby. Masz zysk łączonego atrybutu bez płacenia programistom w kodowaniu
+                                twardym.</li>
+                        </ul>
+
+                        <blockquote>
+                            "Pamiętaj jednak o krytycznym ograniczeniu w chmurze BI. Wyuczenie platformy Lookera
+                            sklejaniu pięciu ciężkich i wielkich baz (na dodatek nie pochodzących z DWH BigQuery ale
+                            ciężko ładujących się JSON z Facebooka) do formatu tzw Blend w interfejsie przeglądarkowym
+                            kończy się zwykle dramatycznym błędem wczytywania przekroczonego czasu (Timeout). Łączenie w
+                            panelu GDS służy do finalnych, pomniejszych estetyk a nie budowy fundamentu Twojego systemu
+                            od podstaw!"
+                        </blockquote>
+
+                        <h2>Lepsza alternatywa dla gigantów korporacji B2B</h2>
+                        <p>Dla małych zestawień "Data Blending" od wewnątrz aplikacji ratuje budżety. Jeśli jednak
+                            próbujesz w oknie skroić miliard transakcji z giełd światowych wraz z ruchem walut dla
+                            maklerów – interfejs tego po prostu nie skalkuluje w ułamku sekund. Architektura
+                            inżynieryjna Google zmusza nas wówczas na cofnięcie logiki procesowania do korzeni. Takie
+                            bazy scala się natywnie w tabelę z wyniką dla złączeń JOIN w twardym procesorze w BigQuery.
+                            I dopiero gotowy ugotowany posiłek obydwu kolumn kładzie się w ramy w Looker Studio jako
+                            pojedyncze i odprężone Źródło (Data Source).</p>
+
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Inżynier Połączeń
+                                DWH & Looker API</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Omijam frustracje
+                                powiązane z Timeout'em przy próbie złączenia nieskończonych wielkich Arkuszy B2B z
+                                bazami CRM. Znajdę optymalny złoty środek dla szybkiego Blendowania by odzwierciedlić
+                                rentowność w jednej planszy.</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Looker Studio wyszukuje wykresu od dziesięciu minut próbując złączyć arkusze klientów?
+                            </h3>
+                            <p>Zaplanuj szybką restrukturyzację ramy łączącej (Blending). Przerzucę najcięższe warstwy
+                                operacyjne na zapleczowe rozwiązania analityczne pod GCP aby o pięciokrotnie zdjąć
+                                limity zadowolenia waszych Handlowców.</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Napraw Wydajność Pulpitu
+                                Menedżerskiego</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

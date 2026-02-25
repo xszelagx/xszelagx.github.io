@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <title>Od bazy po Looker Studio: Ile trwa budowa Data Pipeline? | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Czas wdrożenia analityki w e-commerce. Analiza cyklu życia DWH (Data Pipeline) – od integracji surowej bazy przez BigQuery aż po dashboard B2B w Looker Studio.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">Portfolio<span class="gradient-text">.</span></a>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Wdrażanie Architektury w Biznesie</span>
+                        <span>20 Kwietnia 2026</span>
+                        <span>⏱️ 4 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Cykl życia Data Pipeline: <span class="gradient-text">Ile miesięcy wymaga
+                            budowa solidnego systemu BI?</span></h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Wdrożenie nowoczesnego ekosystemu wokół surowych baz danych w dynamicznym B2B nigdy nie
+                            będzie jedno-klikalnym gotowcem do zainstalowania. Menadżerowie i członkowie pokoju zarządu
+                            pragną idealnego wykresu w 7 dni. Praktyka techniczna Inżyniera Danych boleśnie ścina te
+                            plany wskazując na setki korelacji i śmieci (tzw. Raw Data Garbage) zasiedziały latami na
+                            serwerach z oprogramowaniem księgowym po ewidencje magazynowe (ERP/CRM). Rozdzielmy te prace
+                            na uczciwe i rzetelne estymaty.</p>
+
+                        <h2>Faza Pierwsza: Połączenie Instalacji Źródłowych (Ingestion) [≈ 2-4 tygodnie]</h2>
+                        <p>Zanim wyrzucisz barwny, piękny pomarńczowy wykres konwersji musisz ściągnąć dane do wiadra
+                            (Hurtowni BigQuery – Data LAKE/Data WAREHOUSE). Jeżeli Twój biznes posługuje się autorskimi
+                            skryptami e-commerce odziedziczonym do własnego interfejsu API – proces "Pisania skryptu po
+                            Python API" lub odpalanie mostów w "Cloud Functions GCP" to żmudne, powtarzalne iteracyjne
+                            budowanie poświadczeń sieci w łańcuchu serwerowym B2B.</p>
+
+                        <h2>Faza Druga: Transformacja brudnych danych i dBT / ETL [≈ 3-6 tygodni]</h2>
+                        <p>Nie jesteś w stanie użyczyć silnikowi analitycznemu wykazu "Ilość zarobionych euro" jeśli w
+                            czternastu miejscach kolumny pracownicy pomanipulowali znaki dolara, pln i ukryte puste
+                            cudzysłowia czy "null"'e formatu daty Excela. Nazywamy to "ETL/ELT" (Extract, Transform,
+                            Load).</p>
+                        <p>Gdy procesy Data Engineeringu osadzą całe wielkie terabajtowe informacje pod postacią
+                            wirtualnie modelowanych połączonych baz w jedno nadrzędne okno informacyjne widoku (View
+                            Table), firma osiąga przełom znany pod definicją Bliźniaka Informacji tzw. **Single Source
+                            of Truth**.</p>
+
+                        <h2>Faza Trzecia: Modelowanie po interfejs (Looker Studio) [≈ 1-2 tygodnie]</h2>
+                        <p>Najszybszy interwał po którym dyrektorzy pieją z wylewnym zachwytem. To co najdroższe zostało
+                            ukryte pod maską we wcześniejszym kroku chmury obliczeniowej. Z pięknie skonfigurowanych
+                            widoków tabelarycznych BigQuery (CZYSTYCH, skróconych pod partycje kosztowe), oprogramowanie
+                            graficzne takie jako Looker czy graficzne warianty Tableau ─ samo zasugeruje potężne
+                            wirtualizacje w trybie przeciągnij-upuść (Drag-Drop UI).</p>
+
+                        <blockquote>
+                            "Szybkie budowy Data Pipelines na sterydach często wpychają brudne dane bezpośrednio na
+                            pulpit "odczytów Looker". Właściciele cieszą się dwa dni, przed czym system wysadza
+                            koszmarnym kosztem raportowym rzędu kilku złotych zapytań o jedną tabelę. Zawsze kładź
+                            najistotniejszy ciężar procesowy zaraz ze strefy wyciągania i tranzakcji pomiędzy bazową a
+                            hurtową!"
+                        </blockquote>
+
+                        <h3>Podsumowanie estymat w pigułce</h3>
+                        <p>Stabilna rzetelna implementacja na pełen zakres od pobierania ze strefy brudnej API
+                            oprogramowania do idealnie wymodelowanego, testowanego wykresu w PowerBI dla dyrektora, to
+                            często standard inżynieryjny <strong>od dwóch po uśrednione cztery miesiące</strong> stałych
+                            solidnych procesów audytu w małym jak i średnim ekosystemie deweloperskim.</p>
+
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Architekt
+                                Ekstrakcji oraz Integracji w GCP</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Sprowadzam
+                                menadżerów na ziemię przez przejrzyste estymacyjne wdrożenia harmonogramów. Jeśli
+                                potrzebujesz pełnego, rzetelnie opartego raportowania - wykonuję projekt DWH w całości
+                                od podłączenia przewodu "API" po dobór odcienia piktogramów menadżerskich UX/UI.</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Błądzisz w stercie starych plików CSV generowanych z Twojego darmowego SaaS?</h3>
+                            <p>Zaplanujmy darmową estymację czasową procesu łączenia (Ingestion pipeline) od ZERA by
+                                ustalić skalę usunięć oporu ręcznego klikania dla Twojej analityki. Zdejmuję ciężar
+                                powtarzalności kodując stabilny zapleczowy model BigQuery.</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Skonsultuj Czas Wdrożenia
+                                DWH</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

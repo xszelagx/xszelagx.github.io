@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <title>Zespolenie BigQuery Cloud z Google Sheets (Connected Sheets) | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Poznaj rewolucyjną opcję Connected Sheets. Steruj milionami wierszy hurtowni BigQuery z przytomności zwykłego i czystego interfejsu darmowych Google Sheets (B2B).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">Portfolio<span class="gradient-text">.</span></a>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Hybrydyzacja Cloud i Arkuszy (BigQuery)</span>
+                        <span>30 Kwietnia 2026</span>
+                        <span>⏱️ 5 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Miliardy logów na dłoni laika: <span class="gradient-text">Connected Sheets
+                            do platformy BigQuery</span></h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Decyzja o migracji korporacji pod twardą potężną infrastrukturę GCP (Google BigQuery) pociąga
+                            często za głowę nie-techniczną kadrę wyższą – handlowców (B2B Sales) czy działy kadr (HR).
+                            Jak ktoś nie mający pojęcia o języku logicznym SELECT i JOIN MySQL zacznie czytać 3
+                            gigabajty bazy w swoim własnym zaciszu na domowym laptopie Apple w piątkowy wieczór przed
+                            spotkaniem handlowym? Ratunkiem okazuje się bezcenny wytrych ─ autorski protokół
+                            <strong>Connected Sheets API.</strong></p>
+
+                        <h2>Ukryta fuzja dwóch zwaśnionych frontów UI</h2>
+                        <p>Oprogramowanie Google Connected Sheets to bez mała najbardziej "sprytne" rozwiązanie na styku
+                            ostrej architektury (BI/Data-Engine) a przeciętnym konsumentem. Użytkownik "nie techniczny"
+                            za pomocą opcji <strong>Narzędzia -> Polącz z BigQuery Cloud</strong> w zaledwie ułamki
+                            sekund mapuje pusty plik Google Sheets do olbrzymiego silnika twardego spoczywającego w
+                            potężnej infrastrukturze po stronie odciętego inżyniera danych. Nagle staje się "magikiem".
+                            Skaluje wyniki tabelkami do czytania z okna i kliknięć w przeglądarce.</p>
+
+                        <h3>Tłumacz na pociągnięcia pędzla SQL w tle – zalety</h3>
+                        <ul>
+                            <li><strong>Limit miliona wierszy zrzucony w kąt:</strong> Nawet jeżeli baza klienta liczy
+                                obrotem aż monstrualne 100 000 000 wywołań tabel ze statusami wysyłek, w Twojej zakładce
+                                od Sheets obciąża ona dosłownie okrągłe <strong>"ZERO B"</strong>. Ekosystem po prostu
+                                na żywo za Ciebie generuje pod maską kod do BigQuery w sekundy, zwracając już docelowe,
+                                cieniutkie obrobione wyliczenie "PIVOT-Table". Nic ci się nie zawiesi.</li>
+                            <li><strong>Delegowanie Uprawnień za ułamek ceny rynkowej (Delegated User Access):</strong>
+                                Chcesz by 15 innych członków "Głównych Przedstawicieli Handlowych" na firmach używało
+                                danych z analiz? Jeśli zaprosiłbyś ich od zewnątrz do chmury ─ podziurawiłbyś
+                                poświadczenia i licencje kont Google Cloud (IAM). Korzystając z funkcji "Od Arkusza
+                                Google W Zewnętrznym Oknie (Connected)" – zarządzasz ich mailami @gmail.com powszechnym
+                                tanim darmowym okienkiem <strong>"Zaproś do podglądu przez SHARE Sheets" </strong>
+                                pożegnając obawy o budżety w IT firmowym na pakiety certyfikatów administracji!</li>
+                        </ul>
+
+                        <blockquote>
+                            "Wielu menedżerów wyobraża sobie, że próg obcowania z logiką twardą "BigQuery" polega na
+                            posiadaniu licencjonowanych systemów czarnych konsol developerskich i pisania nocami przez
+                            konsolę poleceń terminalu do raportu. Wcale nie. Użytkownik i odbiorca często oglądając
+                            ładny "Darmowy Arkusz HTML" Google, nawet bez minimalnej dozy pojęcia chmur... używa tego
+                            właśnie oddelegowanego u Inżyniera gigantycznego potwora analitycznego obok!"
+                        </blockquote>
+
+                        <h2>Harmonogramy cykliczne i wykluczanie luk asynchronicznych (Refreshed Times)</h2>
+                        <p>Jako inżynier ustalam i wgrywam dla całego personelu docelowego przycisk "Narzędzia
+                            Odświeżania Chmurowego BigQuery". Możemy ustanowić interwal - by Arkusz na panelu i biurku
+                            prezesa pobrał aktualne ceny wyciągane logami z zaplecza serwerów codziennie o równej "8:15
+                            Rano" całkowicie auto-magicznie ignorując jego udział. Handlowiec otwiera kawkę do okna
+                            arkusza i widzi tabelkę do e-commerce pobobraną podsumowującą nocne zakupy e-klientów za
+                            pomoca podstępnych "Connected Sheets" wprost z czarnych okien systemowych SQL. Mistrzostwo
+                            optymalizacji pracy inżynierskiej.</p>
+
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Google Cloud &
+                                Workspace Bridge Engineer</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Otwieram dla firm
+                                zamknięte ramy i omijanie barier wejścia - bezkosztowo wprowadzając pod klucze
+                                niekodującego personelu operacyjnego zarządu do najcięższej światowej struktury chmury
+                                DWH zachowując przejrzysty front.</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Personel zraził się i nienawidzi używania brzydkiej bazy danych (GCP)?</h3>
+                            <p>Zapakuję ciężki log i algorytm wyciągania Twojej firmy po najprostszy potężny moduł z
+                                oprogramowania tabelkowego "Arkuszy", z którym całe organizacje B2B poradzą sobie na co
+                                dzień przy kawie. Odmienię waszą optymalizację kosztów wyciągnięcia operatywności.</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Porozmawiajmy o
+                                Integracjach!</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

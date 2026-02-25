@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <title>VLOOKUP umiera. Dlaczego analitycy wybierają języki SQL (JOIN)? | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Poznaj miażdżące różnice w optymalizacji i wdrożeniach na B2B pomiędzy arkuszami bazującymi na Wyszukaj.Pionowo (VLOOKUP) a solidnymi zapytaniami z rodziny JOIN (SQL).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">Portfolio<span class="gradient-text">.</span></a>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Różnice: Excel a Bazy Danych</span>
+                        <span>25 Kwietnia 2026</span>
+                        <span>⏱️ 5 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Dlaczego Wyszukaj.Pionowo (VLOOKUP) odchodzi w niepamięć: <span
+                            class="gradient-text">Potęga frazy SQL JOIN</span></h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Znakomita większość średniozaawansowanych pracowników biurowych uznała w pewnym momencie za
+                            magię okiełzanie polecenia "WYSZUKAJ.PIONOWO" ─ mitycznego ringu na styku dwóch różnych
+                            zakładek Excel'a, pozwalającego sparować do siebie na podstawie tego samego "numerka" z boku
+                            dodatkowe informacje np o Adresie IP. Problem polega na olbrzymiej nieintuicyjności,
+                            ociężałości i "wieszaniu się" procesorów firmowych, jeśli wdroży się do tego algorytmu
+                            wierszy idących np. w głuche pięćdziesiąt tysięcy powtórzeń (Ciągnąc w nieskończoność w dół
+                            komórkę arkuszową...).</p>
+
+                        <h2>Dlaczego funkcja "Join" (Złączenia Danych) stała się chlebem branży?</h2>
+                        <p>Rozwiązanie od Google/Microsoftu znanych jako Hurtownie chmurowe takie (np MySQL / BigQuery)
+                            kompletnie wyrzucają do kosza operowanie "dookoła" konkretnej fizycznej komórki C2 na danym
+                            lokalnym sprzętowym komputerze Maca puszczając łączenia rzędami poprzez klucze główne
+                            <strong>(Primary/Foreign KEYS).</strong> Używając tzw. `RIGHT JOIN / LEFT OUTER JOIN / INNER
+                            JOIN` rzucasz serwerowi absolutnie niezniczszalnie zdefiniowany i krótki (w 2 linijki wpisu
+                            tekstu) wektor komendy obłożeniowej spajania milionów dokumentacji.</p>
+
+                        <h3>Porównanie skali destrukcji błędu ludzkiego</h3>
+                        <ul>
+                            <li><strong>Środowisko .XLSX (VLOOKUP):</strong> Wyobraź Sobie firmę "Marketing House".
+                                Chcesz wkleić zarobek handlowca na dany miesiąc rzeką danych z C2 wklepywaną w dół z
+                                pomocą myszy przez powielenie pliku VLOOKUP. Jakiś roztargniony junior kasuje trzecią od
+                                boku kolumnę obok, zawierającą powierzone imię. Przesuwa całą logikę wyliczeń o róg
+                                `+1`. <strong>Wyszukaj Pionowo</strong> opiera się od dawna ślepo wręcz na odliczeniu
+                                tzw "Twardej Kolejnej liczby z tabeli np '3'" a cała struktura firmy nagle uciekła lejąc
+                                w budżecie dziury.</li>
+                            <li><strong>Środowisko Relacyjne SQL (JOIN):</strong> Gdy tworzysz `JOIN ON
+                                (Zarobki.ID_Klient = Baza.Handlowiec_ID)` silnik kompletnie ignoruje fakt, w jakiej
+                                chmurze graficznej wizualnie pracownik od analityki narysował pliki na wykresie. Silniki
+                                odszukują rygorystycznie wycelowaną zmienną za jej etykietę (Nagłówek Zmiennej a nie
+                                kolejność rzędu kolumny obok do lewej w oknie). Bez ryzyka utraty stabilności.</li>
+                        </ul>
+
+                        <blockquote>
+                            "Wyszukaj.Pionowo było jak sklejanie gigantycznego makiety mostu z pudełek do zapałek
+                            używając taśmy i modlenia się ze nikt nie wniknie do biura otwierając szerzej okna.
+                            Modelowanie "Złączeń JOIN" poprzez silniki SQL to po prostu fundament betonowy, obojętny na
+                            trzęsienie ziaren piasku leżących dookoła w powiązaniach mniejszych."
+                        </blockquote>
+
+                        <h2>Nauczenie Się bazy zajmuje pracownikom raptem godziny</h2>
+                        <p>Mitem pokutującym rzędy księgowości i prezesury B2B o chmurowym powiązaniu przez bazy SQL dla
+                            ich korporacji - to olbrzymi, obarczony rzekomo informatycznym studium stromy próg obeznania
+                            się pracowników "ze śmiesznymi kompilatorami czarno-zielonymi od hakowania danych". SQL z
+                            jego "JOIN", "SELECT" i gramatyką opartą o płynny brytyjski angielski to po dwóch, trzech
+                            godzinach warsztatu najbardziej wdzięczny do intuicyjnego używania obieg raportowy dla
+                            młodszego księgowego czy dewelopera od e-commerce. </p>
+
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Popularyzator
+                                Silników Relacyjnych (JOIN) oraz inżynier procesowy w GCP</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Przestań drżeć
+                                przy odświeżaniu arkusza firmowego! Przetłumaczę Cię jako Twojego mentora od wolnej
+                                przestrzeni Excelowskiej opartej na zawodzącym potwornie indeksowaniu po kolumnie na
+                                stabilną autostradę korporacji chmurowych pod "Data Warehouse".</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Sprawiedliwy błąd kosztował organizację przestój?</h3>
+                            <p>Zaprogramuję obieg łączony na podstawie profesjonalnych systemów rynków. Przestaniesz
+                                rzeźbić dane z podrzędnych zakładek z użyciem setek kliknięć. Połączę za pomocą JOIN
+                                każdą skomplikowaną platformę zysku po jednym Twoim małym "Klik" i "Enter".</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Napraw Swoje Odpytywania
+                                Arkuszy</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <title>Koszty w Google BigQuery: Analizujemy za darmo (Poradnik B2B) | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Poznaj ukryty system kosztów w Google Cloud. Darmowe BigQuery to 1 TB bezpłatnych logów SQL miesięcznie. Jak bezpiecznie optymalizować rachunek GCP (Pricing).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">Portfolio<span class="gradient-text">.</span></a>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Koszta Operacyjne (GCP)</span>
+                        <span>05 Kwietnia 2026</span>
+                        <span>⏱️ 6 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Mity o horrendalnie drogim Google BigQuery: <span class="gradient-text">Jak
+                            analizować dane rzędu TB praktycznie za darmo?</span></h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Jednym z najczęstszych pytań i obaw klientów przechodzących do mnie przed wdrożeniem hurtowym
+                            ze świata plików Excel, są paraliżujące mity o obrotowych kosztach usług "w chmurze" od
+                            korporacji gigantów. Wielu dyrektorów B2B sądzi, że podpięcie firmowej karty kredytowej pod
+                            panel Google Cloud Platform (GCP) sprawi, że jedno niepohamowane zapytanie analityka juniora
+                            wystrzeli bilans korporacji na skraj miesięcznej wytrzymałości finansowej.</p>
+
+                        <h2>Dwie kolumny darmowego limitu od wujka Google ("Free Tier")</h2>
+                        <p>Zanim dołączysz do narzekających, spójrz na to co oferuje pakiet powitalny dla MŚP. Model
+                            naliczania opłat <em>On-Demand (Na Żądanie)</em> bazuje na ilości przetworzonych twardych
+                            danych za każdy kod <code>SELECT</code> przepuszczony przez konsolę deweloperską z
+                            interfejsem UI.</p>
+
+                        <ul>
+                            <li><strong>Limit Przetwarzania: Pierższy okrągły Terabajt (1 TB) zeskanowanych bajtów per
+                                    miesiąc kalendarzowy zapytań w warunkach Google BigQuery u każdej firmy jest w 100%
+                                    zwalniany z kosztu.</strong> (Kolejne pakiety Terabajtowe kosztują w roku 2026 około
+                                6 do 8 Dolarów za sztukę).</li>
+                            <li><strong>Magazyn Danych z Zyskiem Czasowym: Przechowywanie (Storage) Twoich zebranych
+                                    firmowych tabel to kolejne śmiesznie małe ułamki centów liczone co GB. Równie
+                                    zwalniane w postaci pierwszych 10 darmowych Gigabajtów na miesiąc! Co potężne -
+                                    jeśli nie modyfikujesz danej tabeli w logu przez 90 Dni ─ Google ucina koszta jej
+                                    utrzymania bazodanowego w modelu (Long-term Data) o dalsze 50%!</strong></li>
+                        </ul>
+
+                        <h2>Trzy Zabójcze Błędy wypalające kieszeń inżynierom bez Doświadczenia:</h2>
+
+                        <h3>1. Śmiertelne nadużywanie komendy "SELECT *"</h3>
+                        <p>W tradycyjnej bazie np. MySQL by spojrzeć na dziesięć pierwszych wierszy zwykle robisz po
+                            prostu <code>SELECT * FROM tabela_X LIMIT 10</code>. BigQuery nie jest relacyjne – jest to
+                            rozwiązanie kolumnowe. Nawet jeśli na koniec "Odetniesz" ten widok dziesięcioma liniami
+                            dopisanymi limitem, <strong>Silnik Google BigQuery Zeskanował (Kolumnowo i Pełnie
+                                Objętościowo) w tle absolutnie CAŁĄ weryfikowaną tabelę pobierając fundusz od jej pełnej
+                                wagi, np. 150 Gigabajtów na raz, tylko by wypuścić i podać do Ciebie 10 ledwych wierszy
+                                podglądu!</strong> Wybieraj zawsze <code>SELECT imie_klienta, wiek</code> i nie klikaj
+                            gwiazdek wyciągając wszystko naraz "pod wgląd". Często używaj trybu <em>Preview</em> od
+                            natywnego interfejsu (to skanuje bazę darmowo).</p>
+
+                        <h3>2. Brak optymalnych Limitów Maksymalnego Rozliczenia (Quota Limits)</h3>
+                        <p>Konsola Google Cloud (GCP) w sekcji administracyjnej (Zarządzania Kontyngentami Zapytania API
+                            – Quotas). Jedynym ruchem potrzebnym przed dodaniem karty by zyskać pewność, jest wymuszenie
+                            progu. Jako administrator, np. sztywnego "Limitu API skanowania np. na 10 Terabajtów per
+                            Projekt na miesiąc" albo wytyczeniu budżetowemu "Hard Blocka", odcinającego wywiad silnika
+                            na dany dzień, jeżeli zużyto za nim koszta np. 50 złotych dla Juniora analityki.</p>
+
+                        <h3>3. Brak podziału pod archiwizację (Partycje)</h3>
+                        <p>Dlaczego szukać odpowiedzi w tabeli gromadzącej faktury z przed 10 lat, gdy chcesz zliczyć
+                            koszty z miesiąca Listopad ubiegłego roku? Podział i agregacja w "Partycjonowane tabele" tną
+                            koszta po filtrze czasu diametralnie rzędu nawet 98%, wycinając z wirtualizacji pożerających
+                            tło starych wpisów co nie wymagają uwagi Twojego raportowania i zapętlenia Looker Studio.
+                        </p>
+
+                        <blockquote>
+                            "Analiza wielkich danych jeszcze 10 lat temu kosztowała budżet od kilkudziesięciu setek na
+                            budowę serwera z instalacjami i obsługą dysków HDD po chłodzenie serwerowni. Dziś MŚP (Małe
+                            Polskie Agencje marketingowe) płacą miesięczne fakturowania używania BigQuery o rzędzie
+                            zawrotnych pięciu czy piętnastu złotych, by posuwać w nieskończonych wyliczeniach tysiącem
+                            kampanii klientów z Google Ads API."
+                        </blockquote>
+
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Google Cloud
+                                Architect</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Modernizuję
+                                projekty, które zostały omyłkowo wpędzone w wysokie koszta "Serverless Architecture" z
+                                powodu braku poprawnych implementacji struktur chmurowych.</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Rachunek Google Cloud poszybował nagle do pułapu setek złotych z niewiadomych przyczyn?
+                            </h3>
+                            <p>Przeprowadzę błyskawiczną audytorską kontrolę w oparciu o Google Cloud Logs. Zbudujemy
+                                optymalizację Partycji i Klastrowania, drastycznie kładąc szlaban kosztowym anomaliom
+                                budżetowym.</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Porozmawiaj o Kwalifikacji
+                                Projektu</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

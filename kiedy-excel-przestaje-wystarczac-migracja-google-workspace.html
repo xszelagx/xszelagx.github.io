@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <title>Kiedy Excel przestaje wystarczać? Migracja procesów do Google Workspace | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Poznaj 3 wyraźne sygnały pokazujące, kiedy lokalnie stacjonarny Excel zaczyna hamować rozwój firmy B2B. Zobacz zalety migracji do Arkuszy Google (Google Workspace).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">Portfolio<span class="gradient-text">.</span></a>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Google Sheets & Automatyzacja</span>
+                        <span>04 Marca 2026</span>
+                        <span>⏱️ 4 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Kiedy Excel przestał wystarczyć w Twojej firmie? <span
+                            class="gradient-text">Czas na Google Workspace.</span></h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p><strong>Microsoft Excel</strong> to legendarna maszyna licznikowa. W latach 90 zbudowała
+                            globalne finanse. W 2026 roku jednak – jeśli w Twojej logistyce czy dziale E-Commerce praca
+                            opiera się o ciągłe wysyłanie jako załącznik pliku `Raport_Q1_FINAL_V2_Poprawka_Janusz.xlsx`
+                            to tracisz olbrzymie pieniądze. Skalowanie organizacji B2B stawia przed nami fundamentalne
+                            wymogi dotyczące centralizacji danych.</p>
+
+                        <h2>3 Oznaki, że jesteś spóźniony z migracją do arkuszy w chmurze</h2>
+                        <p>Oto powtarzalne bolączki, do których u firm moich klientów doprowadziło uporczywie trzymanie
+                            się offline'owych form arkuszy, przed wdrożeniem pełnoprawnego powiernika jakim jest
+                            <strong>Google Sheets</strong>:</p>
+                        <ul>
+                            <li><strong>Konflikty wersji (Brak Jednego Źródła Prawdy):</strong> Dyrektor operacyjny
+                                raportuje z pliku w wersji z wtorku na swoim dysku, a dział finansów uaktualnia koszty
+                                pracownika w tym samym raporcie we wczorajszym mailu. Pół dnia schodzi na korygowanie
+                                nieścisłości na głównym spotkaniu z zarządem. Google po prostu to likwiduje,
+                                udostępniając jeden, na żywo aktualizujący się adres URL.</li>
+                            <li><strong>Makro w VBA – powolny morderca:</strong> Jeśli posiadasz skomplikowane i leciwe
+                                skrypty Visual Basic (VBA) z dawnych lat, niemal na pewno napotkałeś problem
+                                kompatybilności macOS z podsystemem Windows, czy nawet z wersjami Excela. Skrypty `VBA`
+                                nie wywołają się, gdy laptop jest nagle uśpiony. Skrypty Google Apps Script w Google
+                                Sheets uruchamiają się niezależnie od Ciebie ─ na serwerach z Mountain View o zadanej
+                                porze w chmurze 24/7.</li>
+                            <li><strong>Izolacja od API świata zewnątrz:</strong> Klasyczny plik `.xlsx` jest głuchy na
+                                to co dzieje się na zewnątrz firmy. Z Google Sheets masz potężne funkcje jak
+                                `IMPORTXML`, czy proste serwerowe web-hooki. Twój zespół może mieć realne ceny kursów
+                                walut NPB, status zlecenia kuriera, albo wynik kampanii podłączony prosto do komórki F2
+                                w minutę po integracji.</li>
+                        </ul>
+
+                        <blockquote>
+                            "Według testów korporacyjnych wdrożenie pracy zbiorowej w czasie rzeczywistym jest w stanie
+                            skrócić przeciętnie czas zamykania bilansu raportowego pod koniec miesiąca z 4 dni do ledwie
+                            8 godzin audytu."
+                        </blockquote>
+
+                        <h2>Czy Excel znika bezpowrotnie?</h2>
+                        <p>Ależ nie. Lokalne środowisko offline to fantastyczna sprawa, dająca ogrom wielowątkowej mocy
+                            obliczeniowej pod potężniejsze modele matematyczne. Google Sheets polega na API przeglądarki
+                            i JavaScript, przez co w ekstremalnych modelach o wadze kilkudziesięciu milionów wyliczeń
+                            matematycznych złapie w końcu zadyszkę na `Cell limit` (obecnie 10,000,000 komórek).</p>
+                        <p>Jednak u klienta budującego logistykę czy małą agencję HR, odcięcia się od przestarzałych
+                            obiegów plików offline to rewolucja na sterydach. Jeśli firma wkracza w fazę zapotrzebowania
+                            na potężne przetwarzanie danych Big Data — pora zagrać wtedy do "wyższej ligi" – czyli do
+                            pełnoprawnej hurtowni danych takiej jak Google BigQuery (GCP), o czym dowiesz się sporo na
+                            tym blogu w późniejszym wpisie!</p>
+
+                        <h3>Wniosek i następny krok</h3>
+                        <p>Pozostając uparcie w architekturze silosów mailowych `.xlsx`, dusi się realny potencjał
+                            automatyzacji firmy. Wybierz centralizację w chmurowym ekosystemie <strong>Google
+                                Workspace</strong> by bez obaw udostępniać i blokować poszczególne fragmenty i łączyć te
+                            komórki z inteligentnymi pulpitami w Looker Studio. Oszczędzisz na licencjach, serwerach
+                            Windowsowych i niepotrzebnym stresie.</p>
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Inżynier Migracji
+                                Danych i BI</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Przeprowadzam
+                                organizacje na łagodną stronę infrastruktury Google. Skracam żmudne godziny kopiowania
+                                danych z narzędzi do 10 sekund automatyzacji w chmurze.</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Sprawia Ci to kłopoty?</h3>
+                            <p>Zaplanowanie migracji dużej firmy do rozwiązań chmurowych wymaga precyzyjnego audytu
+                                procesów i architektury, by nie uszkodzić ciągłości działania firmy. Z przyjemnością w
+                                tym potowarzyszę.</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Zamów Darmową Konsultację</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

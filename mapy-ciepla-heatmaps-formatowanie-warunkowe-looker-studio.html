@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <title>Potęga Map Ciepła i Tabel Przestawnych w przestrzeni Looker Studio | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Projektowanie bezlitosnych map ciepła i tabel formatowanych warunkowo w architekturze korpo Looker. Jak wzrokiem znajdować ukryte spadki marży do BigQuery (B2B/BI).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">Portfolio<span class="gradient-text">.</span></a>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Formatowanie i UI na Pulpitach</span>
+                        <span>25 Maja 2026</span>
+                        <span>⏱️ 5 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Tabele Przestawne to za mało: <span class="gradient-text">Dodaj potęgę Mapy
+                            Ciepła u siebie w Looker Studio</span></h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Zestawienie setek wierszy w nudnej tabelarycznej macierzy "Białe Tło / Czarne Literki"
+                            (częste chociażby przy wyciągach w bankowości PDF) powoduje w głowie natychmiastową
+                            stagnację decyzyjną. Kiedy musisz porównać skuteczność obrotową w poniedziałki rano w
+                            dwudziestu wariantach e-commerce... samo scrollowanie zabije 15 minut dla pracownika. Dopnij
+                            do tego inteligentne rozwiązania <strong>Heatmaps.</strong></p>
+
+                        <h2>Psychologia barw w analityce "Conditional Formatting"</h2>
+                        <p>Funkcje Formatowania Warunkowego (Conditional Formatting) umieszczone w "Panelu Właściwości"
+                            (Properties) każdego okna tabeli w systemach Looker zezwalają analitykom zaprogramowanie
+                            "Ściany Kolorów", po jakiej gałka oczna bacznie pożegluje odruchowo tuż po załadownaniu
+                            widoku.</p>
+
+                        <h3>Przykłady ekstremalnie użytecznych zastosowań Heat-map w BI:</h3>
+                        <ul>
+                            <li><strong>Analizy ruchu logowań po dacie w SaaS:</strong> Oś górna kolumn (Poniedziałek –
+                                Niedziela). Rzędy boczne (Godziny 00:00 - 24:00). Silnik maluje najciemniejszą czerwień
+                                na kwadracikach "18:00 - Sobota". Już bez znajomości wskaźników zysku ─ prezes
+                                e-commerce jednym rzutem z 2 metrów od ekranu ustala, że sobota od wczesnego wieczora
+                                połyka mu najwięcej ruchu serwerowego by wymusić nową autoryzację dla AWS!</li>
+                            <li><strong>Alerty Rentowności dla 100 Kampanii Reklamowych:</strong> Potężne agencje B2B
+                                zmuszają media_buyerów do scrollowania stu wierszy poszukując ujemnej sumy budżetowania
+                                ROI. Dzięki Formatowaniu Warunkowemu wytyczasz:
+                                <code>"Jeżeli Marża jest < -5%, Zabarw Wiersz Ostrą Błękitną Fuksją"</code>. Rano
+                                analityk nie pożera danych 100 spółek, a jego wzrok wyciąga idealnie twarde dwa płonące
+                                kolorem podświetlone alarmy firm ze stu podanych by móc w milisekundy kliknąć pauzę
+                                kampani na Menedżerze Mety!</li>
+                        </ul>
+
+                        <blockquote>
+                            "Sama estetyka malowania urojeniem bywa błędem, ale Heatmapa nakładana i rzutowana z
+                            szacunkiem do stonowanej kolorystyki ─ o 10 krotność podbudowuje wydajność decyzyjną
+                            menedżera. Baza z gęstego, niewyraźnego obłoku "cyferek szarych i czarnych księgowych" staje
+                            się interaktywnym dzwonkiem ostrzegawczym operacji operatywnych korporacji."
+                        </blockquote>
+
+                        <h2>Tabele Przestawne na szczycie (Pivot Tables)</h2>
+                        <p>W połączeniu z funkcjonalnością "Pivot" osadzaną na ramy w Looker - nie jesteś również
+                            zmuszany programować twardo pod zapleczem DWH relacji podsumowujących krzyże. Pivot Table
+                            rozbija automatycznie sumaryczne kategorie kolumn na osobne wektory ─ podświetlając całą
+                            siatkę gotową wizualizacją w uciętym graficznie po środku interfejsie nie przeciążając okna
+                            użytkownika do zwieszania okna.</p>
+
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Kreator Przewag BI
+                                z Google Datastudio / Looker</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Malujemy dane na
+                                żywych organizmach podpiętych e-commerce aby odciąć firmowe patologie przegapiania strat
+                                pod koniec gęstego dnia biznesu B2B na złączeniu cykli budżetowych.</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Spadki konwersji giną Wam bezwiednie w olbrzymich płachtach szarego tekstu i tabelek w
+                                piątki?</h3>
+                            <p>To błąd oprogramowania i wizji UX. Usiądźmy nad Waszą analityką BigQuery, i pozwól
+                                zaprojektować dzwonki, automatyzacje barw i potężnie bijący w serce Dashboard, by nic
+                                więcej w historii nie zaszło niekomunikatywnego w organizacji budżetowania.</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Wyznacz Nowy Model Obchodu z
+                                BI</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

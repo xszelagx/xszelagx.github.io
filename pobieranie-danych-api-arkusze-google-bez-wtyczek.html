@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <title>Pobieranie danych z API do Arkuszy Google (bez płatnych wtyczek) | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Skrypt do pobierania JSON z zewnętrznego API bezpośrednio do Twoich Google Sheets (UrlFetchApp). Omijaj limity i twórz własne webhooki B2B za darmo.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">Portfolio<span class="gradient-text">.</span></a>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Integracje API i Webhooki</span>
+                        <span>12 Marca 2026</span>
+                        <span>⏱️ 5 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Dane z Rest API prosto do Arkuszy Google <span class="gradient-text">(Bez
+                            płacenia za Zapiera).</span></h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Zewnętrzne narzędzia typu Zapier czy Make.com niesamowicie ułatwiają modelowanie danych –
+                            niestety tak długo, aż firma nie przekroczy miesięcznego limitu wywołań (często liczonego
+                            np. w paru tysiącach tasków / webhooków). Zablokowani abonamentami rocznymi po 100$ /
+                            miesiąc, menedżerowie B2B często szukają "lekkostrawnego" kodu, by zastąpić proste
+                            zaciągnięcia CRM wewnątrz zwykłej komórki z własnego darmowego serwera arkusza.</p>
+
+                        <h2>Klasa UrlFetchApp to potężna ukryta broń analityka</h2>
+                        <p>GCP (Google Cloud Platform) oferuje darmowy mechanizm "UrlFetchApp" wewnątrz edytora Apps
+                            Script każdej zakładki Arkusza Google. Dzięki niej Twój arkusz może zadziałać jak
+                            przeglądarka internetowa – połączy się z dowolnym zabezpieczonym systemem CRM lub platformą
+                            dostawy przesyłek, pobierze surową tablicę JSON i zaleje nią komórki byś mógł je potem
+                            wyrzucić do Looker Studio.</p>
+
+                        <h3>Przykład: Codzienne pobieranie Kursów Walut z NBP (REST API)</h3>
+                        <p>W poniższym krótkim kodzie udowadniam, jak zasilić swoje wyceny B2B oficjalnym kursem Euro
+                            NPB, wyciągając tablicę kursów pod kluczem `.rates` przy ominięciu płatnych wtyczek:</p>
+                        <pre><code>function pobierzKursNBP() {
+  const url = "https://api.nbp.pl/api/exchangerates/rates/A/EUR/?format=json";
+  
+  // Wysyłamy zapytanie GET w ułamku sekundy
+  const odpowiedz = UrlFetchApp.fetch(url, { "muteHttpExceptions": true });
+  
+  // Przekuwamy surowy tekst na słownik (Obiekt JSON)
+  const json = JSON.parse(odpowiedz.getContentText());
+  
+  // Nawigujemy wewnątrz struktury JSON po Kurs i Date
+  const aktualnyKurs = json.rates[0].mid;
+  const dataPublikacji = json.rates[0].effectiveDate;
+  
+  // Wbijamy informacje na sztywno do komórek
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Pulpit Wycen");
+  sheet.getRange("A2").setValue(dataPublikacji);
+  sheet.getRange("B2").setValue(aktualnyKurs);
+  
+  Logger.log("Pomyślnie odświeżono cennik z dnia: " + dataPublikacji);
+}
+</code></pre>
+
+                        <h2>Zarządzanie uwierzytelnieniem (Headers / Bearer Tokens)</h2>
+                        <p>A co jeśli API jest płatne i chronione? Żaden problem. Używając funkcji fetch możesz
+                            przekazać drugi opcjonalny argument zwany <em>options</em>, wewnątrz którego bez trudu
+                            zagnieździsz klucze prywatne <strong>Authorization: Bearer <TÓJ_KLUCZ></strong>, które
+                            wygenerował dla Ciebie dostawca SaaS. Wymaga to pewnej znajomości bibliotek zapytań HTTP
+                            (Postman/cURL), jednak po zmapowaniu obiektów z JSON.parse() zyskujemy bezkresne pole do
+                            zasilania komórek tabel. Brak pośredników to szybsza akcja arkusza i brak powszechnie
+                            krzepnących przestojów (np. 15-minutowy timer w platformie darmowych węzłów typu Make).</p>
+
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Architekt Danych
+                                B2B</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Integruję
+                                niekompatybilne platformy oparte o warianty WebHooks/API (REST) zamieniając dziesiątki
+                                silosów oprogramowania w jedną harmonijną korporacyjną bazę np. GCP / BigQuery.</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Abonamenty za aplikacje przerosły limit?</h3>
+                            <p>Zaprogramuję dedykowane, odporne na opóźnienia moduły skryptowe dla Twoich Arkuszy,
+                                drastycznie zmniejszając koszta operacyjne subskrypcji.</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Porozmawiam z Ekspertem</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

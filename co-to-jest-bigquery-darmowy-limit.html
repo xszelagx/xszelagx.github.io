@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <title>Co to jest BigQuery i dlaczego Twoja firma musi tam przenieść dane? | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Poznaj Google BigQuery (GCP). Idealna usługa B2B na ominięcie limitu wierszy w Google Sheets z zerowymi kosztami dla mniejszych firm na start.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">Portfolio<span class="gradient-text">.</span></a>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Google BigQuery (GCP)</span>
+                        <span>01 Kwietnia 2026</span>
+                        <span>⏱️ 5 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Ograniczenie do 10,000,000 wierszy Google Sheets: <span
+                            class="gradient-text">Co z tym BigQuery?</span></h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Zaczynasz od arkusza kalkulacyjnego zapisującego kilka leadów B2B na krzyż. Mijają lata.
+                            Biznes e-commerce skaluje się obłędnie. Pewnego czwartku twój Arkusz Google zamarza przy
+                            obrocie tysięcy komórek na krzyż, uniemożliwiając wręcz odświeżenie formuły. Dotknąłeś
+                            hard-limitu Google wynoszącego obecnie równe <strong>10 milionów węzłów.</strong> Co dalej?
+                            Migracja i wdrożenie <strong>Google BigQuery.</strong></p>
+
+                        <h2>Dlaczego BigQuery (Data Warehouse)?</h2>
+                        <p>BigQuery to w pełni funkcjonalna hurtownia danych klasy "Enterprise" zlokalizowana w Google
+                            Cloud Platform (GCP). W odróżnieniu od klasycznego podejścia do hostowania, nie wymaga od
+                            właścicielki firmy B2B ani utrzymywania stacjonarnego serwera z klimatyzacją przez
+                            informatyka, ani rezerwowania miesięcznych kosztów opłat instancji w chmurze AWS.</p>
+
+                        <p>Posiada bowiem model rozliczeniowy (Pay-as-you-go - Płać za użycie). Nie wysyłasz potężnych
+                            procesów SQL? Nie zapłacisz Google ani złotówki w ciągu danego tygodnia, a same spoczywające
+                            w chmurze informacje rzędu do 10 Gigabajtów są obłożone darmowym miesięcznym "Free-Tier'em",
+                            dając małym i średnim fundacjom de facto bezkosztowy potężny ekosystem Big Data.</p>
+
+                        <h2>Trzy kluczowe Filary BigQuery jako nowej ramy operacyjnej B2B</h2>
+
+                        <ul>
+                            <li><strong>Prędkość przetwarzania Terabajtów (Dremel Engine):</strong> W przeciwieństwie do
+                                weryfikacji 3 mln zapytań tablicy Pivot w Excelu trwającej często 20 minut ─ autorski
+                                silnik dystrybucji zapytań od Google jest w stanie przebrnąć przez tabelę liczącą 5
+                                Miliardów zachowań Użytkowników GA4 w dosłownie kilkanaście sekund. Spada czas czekania
+                                by przygotować raport dla Zarządu.</li>
+                            <li><strong>Połączenia Native Integrations:</strong> Z poziomu konta reklamowego Google Ads
+                                czy analityki Google Analytics 4 (GA4) wykonanie potężnego transferu hurtowego "na
+                                zaplecze BQ" następuje natywnym interfejsem odtworzonym na kilka kliknięć. Nie
+                                potrzebujesz setek kabli, licencji programistów do ściągnięcia danych. One tam spłyną
+                                autoamtycznie o północy.</li>
+                            <li><strong>Światowy model (Serverless / Auto-Scaling):</strong> Gdy wyślesz jedno kolosalne
+                                zapytanie by sporządzić sprawozdanie finansowe roczne - BigQuery potrafi powołać do
+                                obsługi nawet setki potężnych maszyn procesowych równolegle, w ułamki sekund pożerając
+                                zapytanie by następnie uciąć to by nie generować dla ciebie niepotrzebnego utrzymania
+                                infrastruktury.</li>
+                        </ul>
+
+                        <blockquote>
+                            "Świat inżynierii dzieli się na architekturę "Excela z kolumnami spiętymi śliną" oraz
+                            "Tytułowe BigQuery". Koszty obu środowisk dla powiedzmy obrotu 100 milionów wierszy bywają
+                            identyczne - za to stopień zawału dla architekta firmy bezcennie spada po migracji na rzecz
+                            chmury. "
+                        </blockquote>
+
+                        <h2>Bezpieczeństwo na poziomie CIA - IAM (Identity and Access)</h2>
+                        <p>Z BigQuery, administrator zyskuje kontrolę wręcz aptekarską. Koniec z hasłami "podawaj plik z
+                            załącznikiem bez sztywnych uprawnień" . Odgórnie ograniczysz nowym członkom zespołu odcięcie
+                            na <em>Row-Level Security</em> ─ czyli Junior Handlowiec wywoła identyczne polecenie tabeli
+                            co Prezes, ale silnik bazodanowy Google wyrenderuje JUNIOROWI np. wyłącznie sprzedaże
+                            przypisane pod Polskę Południową, zachowując tajemnice dochodu całkowitego oddziałów
+                            europejskich spółki.</p>
+
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Architekt Danych w
+                                Google Cloud</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Modernizuję
+                                biznesy, które udusiły się własnymi raportami obarczonymi powolnymi kalkulacjami na
+                                prywatnych dyskach prących na oparach pojemności RAM'u.</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Excel lub Arkusz nie wyrabia z obliczeniami?</h3>
+                            <p>Stworzymy dla Ciebie niesamowity wektor analityczny w GCP, oszczędzający olbrzymi kapitał
+                                unikając konieczności zatrudnień zewnętrznych audytów bezpieczeństwa.</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Zamów Audyt Migracji (BQ)</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

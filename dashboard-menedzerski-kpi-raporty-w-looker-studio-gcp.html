@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <title>Dashboard menedżerski w Looker Studio: Czego oczekuje nowoczesny Zarząd? | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Projektowanie przejrzystych dashboardów B2B w Looker Studio (Google Data Studio). Jak oddzielić szum analityczny od strategicznych raportów (KPI) dla CEO/CFO.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">Portfolio<span class="gradient-text">.</span></a>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Wizualizacja Danych BI</span>
+                        <span>05 Maja 2026</span>
+                        <span>⏱️ 5 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Projekt idealnego raportu dla Zarządu CEO: <span
+                            class="gradient-text">Psychologia menedżerska Looker Studio</span></h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Z punktu inżyniera "Wykres to wykres". Z kolei z poziomu zarządu potężnej firmy logistycznej
+                            B2B lub Software House'u, wykres to mapa mająca doprowadzić firmę do zysku. Błądząc w
+                            architekturze przeładowanych raportów często zapominamy, co definiuje "użyteczny" Dashboard
+                            Manadżerski w chmurowym środowisku <strong>Looker Studio</strong> u klienta.</p>
+
+                        <h2>Zarząd posiada 30 sekund na decyzję</h2>
+                        <p>Dyrektor Finansowy (CFO) rzadko ma ochotę wertować tabele posiadające 30 kolumn
+                            rozdzielających marże, sprzedaż asortymentową na numery magazynów, i koszt per kuriera z
+                            wczoraj. Raport w <em>Looker Studio</em>, który mu wyrzucasz, musi dostarczać odpowiedzi w
+                            modelu **"Tak/Nie"** albo wskazywać palcem: **"Tu pali się problem"**.</p>
+
+                        <h3>Zasada od ogółu do szczegółu (Top-Down Approach UX)</h3>
+                        <ul>
+                            <li><strong>Nagłówek Głównej Prawdy (KPI Scorecards):</strong> Na samej "górze" ekranu
+                                pulpitu wyrzucam wyłącznie kafelki KPI (Kluczowe wskaźniki), które oceniają
+                                <em>dzisiejsze wykonanie budżetu np (Marża = +3%, Rozchód = -5%).</em> Zastosowanie
+                                formatowania strzałek kierunkowych (Kolor Zielony lub Czerwony w zalezności od trendu
+                                poprzedniego miesiąca). Brak wykresów kołowych w pierwszym wejrzeniu pod linią oczu!
+                            </li>
+                            <li><strong>Środek – Dlaczego tak się stało?:</strong> Gdy zieleń czy czerwień zainspirowała
+                                dyrektora do głębszego zajrzenie ─ to tutaj lokuje się przejrzyste diagramy kaskadowe,
+                                czy Time Serie (Liniowe osie czasu). Jeśli wczoraj był spadek Marży, oś X z pikiem
+                                kosztu od platformy e-commerce ukazuje dobitnie, *który konkretnie dzień w kalendarzu
+                                doprowadził do strat w gorszym wyniku ROI*.</li>
+                            <li><strong>Dół i Filtry – Przestrzeń pod rozliczenie:</strong> Na dół zrzucasz rozbudowane,
+                                ogromne tabelaryczne podsumowania i listewki suwaków z filtrami menedżerskimi na
+                                "Filtrowanie Po Mieście/Magazynie/Dacie Handlowców". Gdy sprawa trafiła i pali się na
+                                wykresie - menadżer scrolluje w dół, zawęża widok tylko na oddział "Wrocław" i w sekundę
+                                posiada gotowy wykaz ludzi, odpowiedzialnych za pożar wydatków reklamowych.</li>
+                        </ul>
+
+                        <blockquote>
+                            "Dobry wykres musi krzyczeć o uchybieniach, a milczeć, kiedy rutyna procesu operacyjnego
+                            toczy się idealnie. Uciszam setki niepotrzebnych kolorów do surowych czerni i gładkich
+                            szarości obok krzykliwej czerwieni alarmowej by nie męczyć pojęciem sztuki abstrakcyjnej w
+                            budżetowaniu."
+                        </blockquote>
+
+                        <h2>Czy da się skiksować w Looker Studio (GDS?)</h2>
+                        <p>Tak, masowo wciskając <em>Wykresy Kołowe</em> do rozbicia 25 regionów logistycznych.
+                            Udowodnione naukowo jest, co ludzki mózg odczytuje lepiej ─ mianowicie skalowanie słupka
+                            zamiast oceniania objętości nierównych okręgów kołowych (Pie-Chartów). Zamień każdy wykres
+                            typu "tort z 15 porcjami" na banalny opadający na prawo wykres Słupkowy (Bar Chart) i zbierz
+                            komplementy w zarządzie jeszcze tego samego poranka!</p>
+
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Kreator Przewag BI
+                                B2B</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Odklejam
+                                inwestorów firm od wielogodzinnych, nieudolnie sklejonych stron dokumentacji i wręczam
+                                im do ręki minimalistyczny interfejs w Lookerze. Decyduj w 30 sekund i leć na pole
+                                golfowe z poczuciem ulgi biznesowej.</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Prezes mówi, że "nic nie wiecie z tych liczb"?</h3>
+                            <p>To znak fatalnego User Experience po stronie graficznej Waszych hurtowni danych.
+                                Zaprojektuję od zera w 48h profesjonalny system interaktywny w Looker Studio odnawiając
+                                model komunikacji pomiędzy kadrą analityczną a kierownikami.</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Zamów Demo Pulpitu Looker</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

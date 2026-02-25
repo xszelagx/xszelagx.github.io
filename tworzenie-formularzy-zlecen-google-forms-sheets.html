@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <title>Zastępowanie Formularzy PDF za pomocą Google Forms + Sheets | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Projekt na interaktywny oraz wysoce zoptymalizowany pod automatyzację obieg zapytań we wdrożeniach i firmach stacjonarnych z wykorzystaniem chmury od Google Forms.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">Portfolio<span class="gradient-text">.</span></a>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Systemy Formularzy i Ankiet</span>
+                        <span>25 Marca 2026</span>
+                        <span>⏱️ 5 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Obieg dokumentów od podstawówki po B2B: <span class="gradient-text">Google
+                            Forms + Google Sheets</span></h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Jednym z klasycznych absurdów funkcjonowania działów HR czy produkcji B2B jest wysyłanie
+                            formularzy typu **.doc** z prośbą o wypełnienie zgłoszenia wakacyjnego lub zamówienia na
+                            halę. Taki przepływ nie da się w łatwy sposób zagregować w raporty zarządcze. Czas przejść z
+                            ręcznego wpisywania w PDF na centralny magazyn zleceń sprzężony z błyskawicznym ekosystemem
+                            logiki w interfejsie <strong>Google Workspace.</strong></p>
+
+                        <h2>Podstawa działania systemu (Trigger Form_Submit)</h2>
+                        <p>Google udostępnia genialne w swej prostocie narzędzie z darmowym dostępem – **Google Forms**.
+                            Po utworzeniu formularza zapotrzebowania, program wysyła pracownikom ładnie wykonany
+                            estetycznie responsywny plik HTML (ankieta działa z urządzeń rąk czy telefonów dla
+                            serwisantów w terenie).</p>
+
+                        <p>Magia wydarza się dzięki asynchronicznemu wpięciu w docelowy system Google Sheets. Po każdym
+                            nowo zaewidencjonowanym, zapisanym wywiadzie pracownika – arkusz otrzymuje powiadomienie z
+                            opóźnieniem do tysięcznych sekundy wraz z dokładną **sygnaturą czasową**. Zamiast 30 plików
+                            ".doc" odbieranych przez mail – otrzymujesz jedną przepiękną bazę tabelaryczną podzieloną na
+                            precyzyjnemu ramy czasowe z odpowiedziami w strukturze kolumn `[TIMESTAMP | WYDZIAŁ | ILOŚĆ
+                            SPRZĘTU | NAZWISKO]`.</p>
+
+                        <h2>Workflow wyższego poziomu i potęga Apps Script</h2>
+                        <p>Posiadanie wierszy w tabeli z zamówieniem materiałowym to wciąż połowa sukcesu. Prawdziwa
+                            korzyść inżynierska pojawia się, gdy pod system Google Sheets dopniemy <strong>Trigger
+                                Powiadomienia Sieciowego na zdarzenie (OnFormSubmit):</strong></p>
+
+                        <ul>
+                            <li><strong>Integracja ze Slackiem/Discordem:</strong> Skrypt automatycznie wykrywa nowe
+                                zgłoszenie, formatuje dane i "wyrzuca" do konkretnego kanału w komunikatorze firmowym
+                                elegancką fiszkę o zleceniu serwisu do potwierdzenia pod kciukiem na przycisku
+                                zatwierdź. </li>
+                            <li><strong>Podczepianie Faktur i Załączników:</strong> Jeżeli Twój pracownik / klient robi
+                                zdjęcie uszkodzonego mechanizmu przed wysyłką formularzem B2B do bazy, skrypt potrafi
+                                wyekstrahować powiązany link do Google Driv'a oraz pociągnąć to pod jeden numer faktury
+                                (Tiket System).</li>
+                            <li><strong>Dynamiczne maile walidacyjne:</strong> Po odesłaniu ankiety w milisekundy
+                                zweryfikujesz kwotę sprzętu klienta wysyłając auto-potwierdzenie typu:
+                                *"Zarejestrowaliśmy zamówienie ID: 45A na koszt X, zajmiemy się tym zaraz!"*. </li>
+                        </ul>
+
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Starszy Analityk
+                                Systemów Organizacyjnych</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Modernizuję leciwe
+                                procesy papierowe osadzając firmy w błyskawicznie reagującym środowisku Google.</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Papierowe PDFy i gubiące się dokumenty przyprawiają Was o wrzody?</h3>
+                            <p>Stworzymy niezawodny wektor połączony z hurtowniami BigQuery pod skrypt Google Apps
+                                pozwalający uniknąć absurdów administracji.</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Znajdź luki Systemowe ze Mną</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

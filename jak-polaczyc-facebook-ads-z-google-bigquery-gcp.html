@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <title>Eksport danych z Facebook Ads i Google Ads do BigQuery | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Połącz dane marketingowe z różnych systemów reklamowych (FB Ads, Google Ads) do jednej nadrzędnej bazy dla skutecznego mierzenia wskaźników ROI w B2B.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">Portfolio<span class="gradient-text">.</span></a>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Zarządzanie Kampaniami (Marketing)</span>
+                        <span>12 Kwietnia 2026</span>
+                        <span>⏱️ 5 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Integracja ROI: Eksport danych z Facebook Ads & Google Ads <span
+                            class="gradient-text">prosto do BigQuery</span></h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Zarządzanie budżetem rzędu kilkuset tysięcy złotych na kilku niezależnych platformach
+                            sprawia, że szacowanie zwrotu z inwestycji staje się w pewnym momencie wyliczaniem
+                            wróżbitów. Posiadanie oddzielnych silosów — systemu od raportowania w Facebook Business
+                            Managerze obok całkowicie odciętego menedżera Google Ads — pęta Twoje ręce w modelowaniu
+                            precyzyjnego Lejka Atrybucji. <strong>Wymuszenie centralizacji poprzez transferowanie całego
+                                tego zgiełku metryk za kulisy BigQuery to wejście do elity e-commerce.</strong></p>
+
+                        <h2>Data Transfer wchodzący "Natywnie" krok po kroku</h2>
+                        <p>Połączenie infrastruktury Google z infrastrukturą Google (czyli wpięcie Google Ads pod bazę
+                            BigQuery DWH) nie wymaga skomplikowanego kodowania. Gigant z Mountain View osadza w BigQuery
+                            moduł <em>BigQuery Data Transfer Service</em>. Po kilkunastu intuicyjnych autoryzacjach i
+                            kliknięciach na platformie "Konfiguruj Nowy Transfer" – BigQuery codziennie pobiera gotowe
+                            gigabajty zdarzeń z Ads, obudowując je w gotowe, potężne relacje bazo-danowe (widoki).</p>
+
+                        <h2>Co od strony innej korporacji? Połączenie z Facebook Ads.</h2>
+                        <p>Z metapołączeniem (Mety i Facebooka) sprawa wygląda marginalnie inaczej ze względu na brak
+                            "gotowych na wczoraj" połączeń pomiędzy konkurentami. Rozwiązania dla Agencji oraz
+                            niezależnych B2B redukują się powszechnie do dwóch dominujących scenariuszy, redukując opory
+                            na każdym kroku transferowania danych rzędu JSON/API:</p>
+
+                        <ul>
+                            <li><strong>"No Code" Middleware Platformy (np. Supermetrics / Fivetran):</strong>
+                                Rewelacyjne serwisy pośredniczące dla potężnych agencji marketingowych, które na kilka
+                                kliknięć wykonują za Ciebie całą mechaniczną logistykę podłączeń i utrzymania
+                                (Maintenance) certyfikatów bezpieczeństwa pomiędzy FB Api, a Twoim serwerem GCP. Problem
+                                polega na olbrzymich licencjach - koszty tych firm sięgają nieraz do kilkunastu Dolarów
+                                miesięcznie, redukując marżowość małych i średnich sklepów.</li>
+                            <li><strong>Serwery Cloud Functions na języku Python / Node.JS (Spersonalizowana
+                                    Rzeźba):</strong> Własna, darmowa chmurkowa "wtyczka" wykonana przez doświadczonych
+                                Inżynierów. Inżynier Danych (Data Engineer) pisze na żądanie skrypt Python, który budzi
+                                się (Cron Job), ściąga pętlą raport JSON bezpośrednio ze zlecenia Marketing API
+                                Facebooka i wrzuca go centralnie i bezpiecznie w ramy kolumnowe BigQuery. Model darmowy
+                                pod względem miesięcznym wdrożonym systemie na resztę zlecenia.</li>
+                        </ul>
+
+                        <blockquote>
+                            "Nawet idealna klastrowa optymalizacja reklam na poziomie algorytmów samej Mety zblednie w
+                            precyzji przed potęgą ludzkiego raportu BI (Looker Studio) sprzężonego z jednoczesnym
+                            rozliczeniem konwersji pomiędzy kosztami z obu dróg (Google VS Facebook) zespolonymi ze sobą
+                            w BigQuery w obłokowym łączeniu Join."
+                        </blockquote>
+
+                        <h3>Konkluzja</h3>
+                        <p>Zbieranie danych z rozsypanych kont generuje błędy i spisy ręczne dla analityka prowadzącego
+                            twój sklep poprzez Arkusz Excel. Odseparuj się od tego absurdu integracją i wywal twarde
+                            dane przez API do bazodanej hurtowni, gdzie stają się ułożone pod zaawansowane skrypty
+                            Looker Studio.</p>
+
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Architekt
+                                Centralizacji Raportowej</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Przelewam
+                                rozrzucony od dekad budżet reklamowy w pojedynczy, zrozumiały model statystyczny
+                                zaoszczędzając działy Marketingu od niepotrzebnego manualnego generowania dziennych
+                                wyników w poczwórnych arkuszach.</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Sprawiedliwie podziel swój zysk ROI z Menedżerem B2B</h3>
+                            <p>Zaprogramuję pełny pomost (Pipelines) dla najpotężniejszych zjawisk rynkowych
+                                (Facebook/Google Ads) wtłaczające odłamki w zorganizowany graf wewnątrz taniego Google
+                                Cloud Platform. Pozwoli to realnie skalkulować Twoje ROI biznesowe.</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Znajdźmy Rozwiązanie
+                                Pipeline</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

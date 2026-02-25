@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <title>Automatyczne wysyłanie maili z Google Sheets na podstawie daty (Apps Script) | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Skrypt Apps Script do automatycznego wysyłania emaili i przypomnień o płatnościach z Google Sheets z wykorzystaniem daty (Time-driven triggers). Wdróż to w B2B.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">Portfolio<span class="gradient-text">.</span></a>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Apps Script i Kodowanie</span>
+                        <span>08 Marca 2026</span>
+                        <span>⏱️ 5 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Automatyczne wysyłanie maili z daty w Google Sheets: <span
+                            class="gradient-text">Koniec z zaległymi płatnościami</span></h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Spędzanie poniedziałkowego poranka na przeglądaniu tabel z fakturami i ręczne pisanie do
+                            klientów z prośbą o zaległe przelewy nie należy do prac wymagających wielkiej wiedzy
+                            menedżerskiej. Jest to wtórne i całkowicie powtarzalne. Rozwiązanie tej bolączki B2B z
+                            użyciem narzędzia <strong>Apps Script</strong> uruchamianego pod spodem w Google Sheets
+                            kosztuje zero złotych subskrypcji i raptem kilka linijek kodu.</p>
+
+                        <h2>Triggery Czasowe (Time-Driven) na ratunek księgowej</h2>
+                        <p>Baza danych oparta o Arkusze Google umożliwia nam skonfigurowanie tła asynchronicznego
+                            skryptu wybudzanego np. każdego ranka o 08:00 czasu w Warszawie (tzw. Time Drivers / Cron
+                            Job). O zadanej godzinie włączą się niewidoczny program w Google Cloud, przeszuka pętlą
+                            każdy wiersz Twojej faktury i poszuka dat wskazujących na miniony termin. </p>
+
+                        <p>Oto algorytm, bez którego solidna księgowość nie miałaby tchu:</p>
+                        <ol>
+                            <li>Zczytanie pełnej macierzy do pamięci serwera cache `.getValues()`.</li>
+                            <li>Weryfikacja dzisiejszej daty z komórką "Termin płatności" zaawansowaną formułą
+                                programistyczną.</li>
+                            <li>Przygotowanie spersonalizowanego powiadomienia do zlecenia.</li>
+                            <li>Po cichym wysłaniu (korzystając z oficjalnego certyfikatu Gmaila by wpadło to pewnie do
+                                odebranych unikając folderu SPAM), oznaczenie w tabeli flagą: <strong>[PRZYPOMNIENIE
+                                    WYSŁANE]</strong>.</li>
+                        </ol>
+
+                        <h2>Gotowy kod ułatwiający automatyzację</h2>
+                        <p>Poniżej przedstawiam sprawdzony fragment API od wysyłania e-maili na podstawie warunku daty.
+                            Przeklej do swojego menu Apps Script (Rozszerzenia -> Apps Script):</p>
+
+                        <pre><code>function sendPaymentReminders() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Faktury");
+  const data = sheet.getDataRange().getValues();
+  const dzisiaj = new Date().getTime(); // dzisiejszy czas w milisekundach
+
+  for (let i = 1; i < data.length; i++) { // pomin naglowek
+    let dane = data[i];
+    let termin = new Date(dane[3]).getTime(); // 4-ta kolumna = Data
+    let klientEmail = dane[2];
+    let status = dane[5]; // Szampan lub problem?
+
+    // Jesli termin minal (mniejszy), a klient dalej nie opłacił faktury
+    if (termin < dzisiaj && status === "BRAK WPŁATY") {
+        let temat = "Uprzejme przypomnienie o zaległej fakturze " + dane[0];
+        let cialo = "Dzień dobry. Zauważyliśmy brak zaksięgowanego przelewu dla faktury " + dane[0];
+        
+        MailApp.sendEmail(klientEmail, temat, cialo);
+        // Oznacz zeby nie wyslac jutro uzytkownikowi 2 raz
+        sheet.getRange(i + 1, 6).setValue("Brak Wpłaty (Przypomniano)");
+    }
+  }
+}
+</code></pre>
+
+                        <h3>Bezpieczeństwo skrzynki i blokady antyspamowe</h3>
+                        <p>Choć brzmi to rewelacyjnie, w budowie profesjonalnych systemów trzeba przestrzegać
+                            rygorystycznych limitów od gigantów technologicznych. Darmowe skrzynki (np. z domeny
+                            @gmail.com) pozwalają wysłać <strong>zaledwie ~100</strong> automatycznych maili z użyciem
+                            Apps Scriptu na dobę. Płatne instalacje firmowe w systemie <strong>Google Workspace
+                                B2B</strong> rozbudowują ten limit z automatu do potężnych <strong>1500
+                                wiadomości!</strong></p>
+
+                        <p>Przemyślane zarządzanie flagami i statusem, np. zapis o tym "kiedy wysłano mail", to
+                            krytyczny element chroniący Cię przed niefortunnym zablokowaniem całego serwera pocztowego
+                            Twojej firmy z powodu przypadkowej pętli spamującej ten sam adres co sekundę.</p>
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Automatyzator
+                                Procesów i Systemów B2B</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Przetwarzam kod w
+                                realny zysk firm. Pomagam zespołom przestać tracić dziesiątki godzin tygodniowo na
+                                wklepywanie niekończących się kolumn Excela by zająć się prawdziwą aktywizacją
+                                sprzedaży.</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Spersonalizujmy to pod Twoją firmę!</h3>
+                            <p>Automatyczne wysyłanie faktury to tylko wierzchołek góry lodowej. Potrafię zespolić
+                                Arkusz również z bramką zapłat zew. np. systemem Stripe czy Przelewy24, dając
+                                niesamowity ekosystem księgowy z raportami Looker.</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Porozmawiajmy o
+                                Automatyzacji</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

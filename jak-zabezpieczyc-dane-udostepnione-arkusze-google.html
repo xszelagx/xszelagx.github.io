@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <title>Jak zabezpieczyć wrażliwe dane (GDPR) w Arkuszach Google? | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Chroń dane B2B i pracowników przed przypadkowym udostępnieniem na zewnątrz Arkusza Google. Blokady edycji, Row-Level Security, ukrywanie funkcji przed zarządem.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">Portfolio<span class="gradient-text">.</span></a>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Zarządzanie bezpieczeństwem IT</span>
+                        <span>15 Marca 2026</span>
+                        <span>⏱️ 4 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Jak poprawnie zabezpieczyć wrażliwe dane w udostępnianych <span
+                            class="gradient-text">Arkuszach Google?</span></h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Pojedyncze kliknięcie "Udostępnij osobom mającym link" i wysłanie go klientowi na Slacku
+                            potrafi doprowadzić do koszmarnego w skutkach naruszenia procedur RODO w Twojej firmie.
+                            Arkusze w środowiskach Google Workspace stanowią jeden z najbardziej elastycznych, lecz
+                            równocześnie ryzykownych interfejsów dzielenia się logiką kosztów czy skomplikowanych
+                            budżetów zarządu. Nauczmy się jak oddzielić grubą ścianą pracownika docelowego od silnika.
+                        </p>
+
+                        <h2>3 Niezawodne Zapory Ochronne dla Administratora Google Sheets</h2>
+
+                        <h3>1. Magia IMPORTRANGE() łącząca dwa różne światy</h3>
+                        <p>Nigdy nie dawaj klientowi wglądu w główny plik (np. "MASTER_DB_ZARZAD.xlsx"). Dobrą regułą
+                            B2B jest tworzenie czystej "teczki" ─ osobnego pliku, do którego za pomocą wbudowanej w
+                            silnik funkcji komórkowej `=IMPORTRANGE("dlugi_ciag_z_adresu_twojego_arkusza_master",
+                            "WidokKlienta!A1:F500")` przerzucamy tylko w ułamkach sekund finalne statystyki zagregowane
+                            do bezpieczniejszej grupy.</p>
+                        <p>Zaletami tego zabiegu jest to, że nawet jeśli klient spróbuje podglądnąć "Formułę" w wierszu
+                            widzi wyłącznie import range. Funkcje pobierające zysk z innych kart zostają odseparowane na
+                            bezpiecznym dysku administratora. Co zyskujesz? Baza Danych bezpieczna po Twojej stronie –
+                            Klient na swojej stronie dostaje zgrabnie odizolowany graficzny kokpit. Jeśli w relacji
+                            pęknie zaufanie, wciśnij "Odłącz Dostęp w IMPORTRANGE", odcinając natychmiastowo klanie
+                            przepływ po sieci.</p>
+
+                        <h3>2. Targetowe Reguły Ochrony (Named Ranges Protection)</h3>
+                        <p>Z panelu <em>Dane -> Arkusze Chronione i Zakresy</em> wykluczysz pojedyncze kolumny z
+                            możliwości edycji tak długo jak Twoi edytorzy (użytkownicy arkusza) mają loginy ze skrajnie
+                            różnymi kompetencjami. Nie ograniczaj całych dokumentów. Blokuj przed Działem Sprzedaży
+                            Kolumny L-Z, które nadpisuje sobie automatycznie Dział Operacyjny. Nawet nieumyślny podwójny
+                            klik kółkiem i "delete" w klawiaturze nic nie zdziałają.</p>
+
+                        <h3>3. Przycisk ostrzegawczy - Show Warning on Edit</h3>
+                        <p>Jeśli jakiś zakres połączony jest funkcjami pobierania po skrypcie JS lub interfejsem Query
+                            (na przykład kolumna "A", w której podrzucane są identyfikatory wklejane do oprogramowania
+                            produkcyjnego po prawej stronie), nadaj jej nałożone przez Google "Pokaż Ostrzeżenie Przy
+                            Naciśnięciu". Pozwala to pracownictwu na korygowanie swoich własnych literówek i drobnych
+                            poprawek, ale przy każdej operacji pojawia się modalne, potężne okno dialogowe – to ratuje
+                            przed fatalnymi usunięciami danych 5 wierszy masowym markowaniem szarego tła z
+                            <code>CTRL-V</code>.</p>
+
+                        <blockquote>
+                            "Ponad 83% wszystkich naruszeń integralności i integralności plików .xlsx/CSV w małych
+                            firmach następuje w kluczowych okresach bilansowych (np. przy końcu miesiąca na zmęczeniu).
+                            Dobry system zakotwiczony to system bezpieczny."
+                        </blockquote>
+
+                        <h2>Połącz to w całość i śpij swobodnie</h2>
+                        <p>Dobrze ustawiony i otestowany Google Workspace potrafi udźwignąć korporacje ważące setki
+                            milionów złotych obrotu rocznego, tak samo skutecznie jak wykwalifikowana instancja AWS dla
+                            małego biura wirtualnego. Warunkiem powodzenia i redukowania ryzyk prawnych jest stosowania
+                            zasad, o których zwykły Jan Kowalski często nawet nigdy nie czytał.</p>
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Administrator
+                                Bezpieczeństwa w Strukturach BI</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Wypleniam
+                                ryzykowne procesy z Twojej firmy zabezpieczając serwisy logowania oparte o warianty
+                                WebHooks/API przez odpowiednio dobraną granulację ochrony uprawnień pracowniczych (IAM).
+                            </p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Arkusz Google z logiką urosła do patologicznego molocha?</h3>
+                            <p>To chleb powszedni po latach działalności w Spreadsheets. Napiszę na nowo, zweryfikuję na
+                                czysto w BigQuery – by nikt już nigdy za pomocą błędu nie stracił Twojej wybudowanej
+                                bazy subskrybentów.</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Wyślij Zapytanie Ofertowe</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

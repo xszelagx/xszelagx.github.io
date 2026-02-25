@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <title>5 Krytycznych Błędów niszczących analizy w Looker Studio | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Masz pełny raport biznesowy ale wygląda jak abstrakcyjna rzeźba? Omijaj te błędy wizualne w darmowym ekosystemie Business Intelligence chmury Google (GDS).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">Portfolio<span class="gradient-text">.</span></a>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">User Experience w Analityce</span>
+                        <span>24 Maja 2026</span>
+                        <span>⏱️ 4 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Sztuka niszczenia przejrzystości raportu menedżerskiego: <span
+                            class="gradient-text">Top 5 grzechów głównych w BI.</span></h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Słaba platforma Data Pipeline kosztuje budżet opłatą do Google Cloud w nocy. Słաբo
+                            "namalowany" pulpit menedżerski kosztuje organizację pomyłkę strategiczną podczas
+                            prezentacji walnego zgromadzenia przy wielomilionowym budżecie. Błędny projekt <em>UX (User
+                                Experience)</em> w Business Intelligence może skłonić firmę do śmiertelnego obcięcia
+                            inwestycji w złym dziale.</p>
+
+                        <h2>Top 5 Najczęstszych Pomyłek Architektów BI (Graficznych)</h2>
+
+                        <h3>1. Ślepota na wykresach tortowych (Pie Charts z 30 wymiarami)</h3>
+                        <p>Zawsze gdy musisz przedstawić skalę rynku państw w Unii Europejskiej z udziałem sprzedaży,
+                            deweloper odruchowo pociągnie z paska Wykres Kołowy. A następnie podzieli go na dwadzieścia
+                            osiem zlewających się ze sobą niebieskich rogalów. Ludzkie oczy nie potrafią w ułamku
+                            sekundy odczytać kątów nachylenia okręgu! Gdy masz więcej niż zaledwie pięć ułamków do
+                            wykazania ─ używaj zawsze opadających w dół Wykresów Słupkowych (Bar Charts), posortowanych
+                            od najwyższego na górze.</p>
+
+                        <h3>2. Brak kontrastu w sygnałach metryk (Scorecards z szarością)</h3>
+                        <p>Pół okienka KPI w lewym górnym rogu z wydatkiem kampanii i przychodem. Wszystko zapisane
+                            obojętną korporacyjną szarą strefą (Hexcode #333). Szef musi wczytywać się po malutkim
+                            wzroście i odnosić na kartce minusy by domyśleć się spadku. Włącz natywną funkcję
+                            <strong>"Zestawienia Porównywalne do poprz.miesiąca"</strong> i zezwól na zieloną czy
+                            czerwoną strzałkę opadającą pod główną wartością obrotową.</p>
+
+                        <h3>3. Kaskadowy obłęd Filtrowania (Filtry odświeżające filtry obok)</h3>
+                        <p>Wrzuciłeś 10 paneli filtrowania (Pola DropDown list): Data, Dział, Kraj, Kierownik. W
+                            środowisku bez chmury (zwykłe z złącza), każde kliknięcie filtra każe odpytywać bazę
+                            połączoną, często blokując podgląd do końca skryptu. Organizuj menu precyzyjnemu
+                            ograniczaniu i wyłącz w nich opcje "aktualizacji krzyżowej poszczególnych komórek" by nie
+                            mordować cierpliwości prezesury przed zmianą zwykłej daty suwaczkiem.</p>
+
+                        <h3>4. Podwójna oś Y - koszmar korelacji niepowiązanych</h3>
+                        <p>Chęć dorzucenia Ilości sztuk Paczek pobok Wydatków na Kampanie (Jedno do 1500, a drugie w
+                            dziesiątkach milionów) na jednym grafie załamuje całkowicie czytelnika B2B oznaczając dwie
+                            różnie wyśrodkowane krawedzie Y na raz obok słupków. Przerzuć to na dwa bardzo mocno
+                            pomniejszone a nakładane pod sobą małe wykresy liniowe ─ uzyskując rewelacyjny styl (Small
+                            Multiples).</p>
+
+                        <blockquote>
+                            "Projektuj jak dla laika używającego paska kalkulatora w telefonie. Zastąp rzędowy raport
+                            objaśniającym zbiorem od góry opadającym po drobnych dopytywaczach, w sposób na zasadzie
+                            zsuwanego tunelu czytania."
+                        </blockquote>
+
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Lead Data UX
+                                Designer</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Odnajduję
+                                niesamowitą pasję w dekonstrukcji ociężałych, brudnych wielkich raportów korporacyjnych
+                                pod wdrożenia przejrzystych intuicyjnych paneli z barwami firmowymi ograniczając
+                                kognitywne cierpienia menedżerów.</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Spędzacie 2 godziny we wtorek rano próbując odczytać spadek sprzedaży z okrutnej
+                                macierzy na Excelu?</h3>
+                            <p>To patologia rynków firm B2B. Zgłoś mi obecne "dzieło" a wyprowadzę interaktywną makiety
+                                ułatwiającej sterowanie do poziomu minimalizmu ─ by kadry skupiły się twardo na
+                                wnioskach zamiast uczenia się instrukcji odszyfrowania okien grafu.</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Zamów Redesign Interfejsu BI</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <title>Zastąp Excel potęgą (QUERY), zaawansowane funkcje analizy | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Poznaj składnię genialnych i bezbłędnych funkcji Google Sheets dla inżynierów. Zobacz praktyczne zastosowanie QUERY, IMPORTRANGE, FILTER oraz ARRAYFORMULA w B2B.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">Portfolio<span class="gradient-text">.</span></a>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">ZAAWANSOWANE FUNKCJE</span>
+                        <span>18 Marca 2026</span>
+                        <span>⏱️ 6 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Potęga Google Sheets w analizie (B2B): <span class="gradient-text">Poznaj
+                            sekrety QUERY()</span></h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Klasyczny Excel spopularyzował korzystanie z "Tabel przestawnych" (Pivot Tables). Choć są one
+                            rewelacyjnym narzędziem ad-hoc do wyklikania podsumowania, są jednocześnie martwe (trudno je
+                            odświeżać) i uciążliwe przy agregacji potężnego ruchu asynchronicznego. Jeśli budujesz
+                            aplikację u dewelopera na wbudowanej chmurze <strong>Google Workspace</strong>, musisz pojąć
+                            magię funkcji, których potęga przewyższa lokalną tabelkę.</p>
+
+                        <h2>Święty Graal analityka - Funkcja =QUERY()</h2>
+                        <p>Zamiast dziesiątek małych filtrów i kolumn pomocniczych, wystarczy wywołać język łudząco
+                            przypominający SQL (Structured Query Language). Funkcja `QUERY` potrafi w locie grupować
+                            tabele, przeliczać zyski czy segregować daty w sposób parametryczny (przy każdym dołożonym
+                            do arkusza rzędzie, wynik po prostu elegancko przepłynie niżej po ułamku sekundy
+                            automatycznie). </p>
+                        <p>Typowy inżynieryjny zapis QUERY segreguje nam dane klientów VIP wyrzucając prezesowi tylko
+                            wynik i odrzucając zbędne marze "Zwykłe" poprzez polecenie:</p>
+
+                        <pre><code>=QUERY(Zrodlo_Baza!A:F; "SELECT A, B, SUM(F) WHERE C = 'Zrealizowany' AND F > 1000 GROUP BY A, B ORDER BY SUM(F) DESC LABEL SUM(F) 'Łączny Wpływ'")
+</code></pre>
+
+                        <h2>Trójca pomocnicza wspierająca Google Sheets z QUERY</h2>
+                        <ul>
+                            <li><strong>ARRAYFORMULA():</strong> Koniec z patologicznym ciągnięciem myszką by wypełnić
+                                setki wierszy formułą w dół za prawy róg kwadratu. Jeden wzór umieszczony wyłącznie u
+                                góry nagłówka tabeli, np. `=ARRAYFORMULA(A2:A * B2:B)`, automatycznie i niemal
+                                natychmiastowo przeliczy wszystko na samym dole – nie ryzykując, że nowy pracownik
+                                usunie komórkę i rozsadzi kalkulacje. </li>
+                            <li><strong>FILTER():</strong> Niezwykle uproszczone wyodrębnianie, z wplecionymi potężnymi
+                                zagnieżdżeniami operatorów "AND/OR". Połączenie z potęgą `RegexMatch()` pozwala na
+                                odfiltrowanie bazy e-mail pod kątem szukania wzorca "końcówki z .edu / .gov". </li>
+                            <li><strong>IMPORTRANGE():</strong> Pomaga skalować architekturę "Odseparowanych Master i
+                                Client Sheets", zabezpieczając hasła menadżerskie przed udostępnianymi strukturami
+                                mniejszych firm współpracujących. Wszystko podparte zaawansowanym "Szyderczym API" za
+                                kulisami środowiska. </li>
+                        </ul>
+
+                        <blockquote>
+                            "Środowisko chmurowe udowodniło tym zestawem komend, że bariera wejścia dla inżynierów
+                            tworzących pełnowartościowe zintegrowane hurtownie raportowe u klienta – drastycznie
+                            zrównała się z cenami, oferując potężne oszczędności finansowe małym firmom."
+                        </blockquote>
+
+                        <p>Przejście na paradygmat tablicowo-macierzowy (zamiast operowania na pojedynczej komórce B2 i
+                            uciążliwym kopiowaniu) tworzy niezłomną twierdzę upewniając właścicieli B2B, że system nie
+                            załamie się od ręcznie przeklejonej literówki w nazwie kategorii.</p>
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Architekt
+                                Ekosystemów Obliczeniowych Arkuszy</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Analizuję setki
+                                procesów. Optymalizuję arkusze redukując dziesiątki kolumn powiązanych nieczytelnym
+                                VLOOKUP'em do potężnego i wydajnie czytelnego jednego wektora SQL używając skryptów.</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Arkusz Google odświeża się 3 minuty i sypie się podczas obciążenia ruchu?</h3>
+                            <p>To chleb powszedni patologicznych form "krzyżowych" – powierz projekt doświadczonemu
+                                inżynierowi do profesjonalnej defragmentacji i odcięcia o 400% zbędnego balastu pamięci
+                                tablicy V8 z plików Sheets.</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Skonsultuj Projekt z
+                                Ekspertem</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

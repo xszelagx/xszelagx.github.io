@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <title>Skuteczna redukcja kosztów (SQL GCP) - Partycjonowanie i Klastrowanie | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Partycjonowanie kontra Klastrowanie w BigQuery. Narzędzia z obszaru Data Engineer potrafiące urwać nawet do 95 procent kosztów faktur API Google Cloud (GCP).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">Portfolio<span class="gradient-text">.</span></a>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Optymalizacja SQL & GCP</span>
+                        <span>08 Kwietnia 2026</span>
+                        <span>⏱️ 5 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Ograniczenie Rachunku w Chmurze o 95%. <span class="gradient-text">Partycje
+                            vs. Klastrowanie w Google BigQuery.</span></h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Środowisko hurtowni danych na szynie kolumnowej (BigQuery) przy gigantycznie dużej bazy
+                            potrafi przeskanować Petabajty danych dosłownie w okamgnieniu pod dashboard używając pełnego
+                            odczytu `(FTS - Full Table Scan)`. Ta technika sprawia iż rachunek chmurowy drastycznie
+                            pikuje pod sufit podczas podłączenia panelu BI jak np Looker czy graficzne warianty
+                            analityczne Tableau, do wielkiej tabeli logowanej dziennie wektorem czasowym. Poznaj dwa
+                            tytularne potężne bronie analityczne B2B by uniknąć katastrofy optymalizacyjnej
+                            <strong>(Data Engineering optimization).</strong></p>
+
+                        <h2>Partycjonowanie tabelowe – Twój wirtualny kalendarz</h2>
+                        <p>Zdefiniowanie (np po czasie Dnia "TIMESTAMP") partycjonowania przy tworzeniu pustej hurtowni
+                            to sztywne zamknięcie danych w chronologicznym odpowiedniku fizycznych skoroszytów
+                            poukładanych z opisem na Twojej własnej korporacyjnej szafce.</p>
+
+                        <p>Jeżeli Twój analityk albo Zarząd odpala w filtrów zapytanie na platformie, zadane warunkiem
+                            `WHERE DATA > '2026-04-01'` — BigQuery już jako wbudowany sterownik sieci po prostu
+                            zignoruje odpytywanie w dacie za styczeń czy luty. System nawet nie musi pobierać do silnika
+                            twardego dawnych ułamków pamięci od razu serwując za to spadek ceny zapytania do ułamkowego
+                            minimum. Pamiętaj - <strong>z partycjonowania (Partitioning) Google zaleca się używać jeśli
+                                dzieli to zapytania po Kolumnach z datą czasową (TIMESTAMP/DATE) albo jako Integer,
+                                przycinając tym silnik wysyłania plików skanowania.</strong></p>
+
+                        <h2>Klastrowanie tabelowe (Clustering) – Precyzyjna autostrada danych</h2>
+                        <p>Co gdy musisz wyszukać w firmie Logistycznej klienta tylko po zadanym unikalnym numerze
+                            `ID_Magazynu == 70` na gigantycznym wykazie w Europie w którym spoczywają wiersze ważące 180
+                            GB? Jeśli go nie ma, zapytanie przewertuje w chmurze bezszytowo 180GB płacąc w wirtualnej
+                            walucie za absolutnie całość bazy. </p>
+                        <p>Rozwiązanie od Inżyniera Danych (Data Engineers) w GCP ? Przy deklarowaniu tabeli,
+                            <strong>Stosujesz Klaster dla rzędu `ID_Magazynu`. </strong>Silnik ułoży odgórnie pliki w
+                            magazynie fizycznym BigQuery po blokach połączonych logicznie do konkretnych rzędów wartości
+                            wewnątrz tabeli, po wgraniu każdej aktualizacji przez mechanizm ETL/ELT.</p>
+
+                        <blockquote>
+                            Wielokrotnie podczas zapytań o wielowyrazowe odfiltrowanie `(WHERE Kraj = PL AND Kategoria =
+                            E-commerce)`, poprawna segmentacja warstw pod clustering rzędów drastycznie poprawiła
+                            logarytm skanowany potęgując niemal bezkosztowe wyłuskiwanie unikatowych wyników firm
+                            analitycznych B2B. Zauważ - to Klastrowanie nadaje się dla kolumn tekstowych o olbrzymiej
+                            ilości odrębnych, unikalnych wartości (wypisane tagi, numery przesyłki).
+                        </blockquote>
+
+                        <h3>Zestawienie pod Twój Data Pipeline</h3>
+                        <p>Zabójczym dla bilansu i najskuteczniejszym wektorem analitycznym w korporacjach (np Software
+                            House) dążących po rzetelny UX Dashboardów podłączonych na wirtualnym połączeniu typu
+                            "Direct Connect" jest naturalna <strong>fuzja</strong> z obu opcji – zdefiniowanie tabel z
+                            przedziałem pod datę dla partycji oraz klastracją mniejszych zmiennych we wnętrzu
+                            konkretnego dnia. Odrzuca to gigabajty niepowiązanych zmiennych przed ułamkiem sekundy
+                            pierwszego wyszukiwania.</p>
+
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Ekspert Hurtowni
+                                oraz Automatyzacji Danych z Chmury</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Modernizuję
+                                hurtownie i sprowadzam opłaty środowiska Azure/GCP od dziesiątych do bezpiecznego
+                                procentu przez wdrażanie dedykowanych inżynieryjnych polityk blokad operacji wewnątrz
+                                systemowych.</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Baza urosła tak że nie nadążasz pobierać logów z opóźnioną hurtownią Azure/BigQuery?
+                            </h3>
+                            <p>Zaplanujmy dogłębną modernizację architekturalnej części hurtowej (DWH - Data Warehouse)
+                                i przenieśmy odpytywania na bezpieczną stronę operacji logicznych redukujących koszt
+                                firmowych chmur.</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Rozpocznij Audyt Kodu SQL</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <title>Bezpieczne uprawnienia (Row-Level Security) w Looker Studio | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Udostepnianie obcym klientom swoich dashboardów Google Data Studio to rzeźba pod bezpieczeństwo w firmach B2B. Zastosowanie RLS dla Twoich raportów i filtracji adresów email.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">Portfolio<span class="gradient-text">.</span></a>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Bezpieczeństwo Danych DWH</span>
+                        <span>15 Maja 2026</span>
+                        <span>⏱️ 5 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Ograniczenie wglądu i bezpieczne udostępnianie w Looker Studio: <span
+                            class="gradient-text">Zasady filtru Emailu na żywo (RLS).</span></h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Zbudowałeś jeden powalająco rozbudowany kokpit o marżach dla całej struktury pracowników – od
+                            szefa, przez menadżerów po stażystów oddziałowych. Publikacja jednego linka URL dla nich
+                            wszystkich powoduje zagrożenie absolutne. Przecież nie powinieneś udostępniać i drukować
+                            stażyście z Polski Wschodniej przyrostów wynagrodzeń pracowników operacyjnych z Warszawy w
+                            filii! A mimo tego budowa czterdziestu innych graficznych oddzielnych okienek dla
+                            poszczególnej grupy skończy się absurdem w administracji. Oto Row-Level Security z
+                            wykorzystaniem środowiska Google!</p>
+
+                        <h2>Ukryta funkcja Google - Hasłowanie oprogramowania adresem Maila.</h2>
+                        <p>Dzięki bliskiej fuzji usług poświadczanych kont (Logowanie ze Znaczkiem Bezpieczeństwa Google
+                            dla korporacji z rozszerzeniami @TWOJAFIRMA), <strong>Looker Studio potrafi bezbłędnie
+                                zdezynfekować po zalogowaniu wejście do chmury sprawdzając co wpisał gość uruchamiający
+                                tabele do okienka przeglądarki Chrome!</strong> W panelu edycji u administratora,
+                            definiując parametr filtrowania danych wektorowych ("Filtrowanie po E-mailu
+                            Uwierzytelniającym") wskazujemy konkretną twardą "kolumnę z mailami menadżerskim" z bazy.
+                        </p>
+
+                        <h3>Tłumacząc w scenariuszu realnym B2B dla Agencji Logistycznej:</h3>
+                        <ul>
+                            <li>Do tabel z zyskami z filii obok danych dorzucam ręcznie dodatkowe komórki
+                                "Właściciel_Email: krzysztof.manager@nasza-firma.com".</li>
+                            <li>W Looker w opcjach Danych (Data Source) "Zezwalaj tylko powiązanym kontom z wartościami
+                                z bazy po kolumnie 'Właściciel_Email'".</li>
+                            <li>Krzysztof ładując raport logistyczny z widokiem odczytowym dostrzeże <strong>JEDYNIE
+                                    SWOJĄ ZMIENNĄ dla swojego własnego filtru województwa z rzędów i kolumn</strong>, i
+                                puste "białe tło z uciętymi na 0" blokadami od zaplecza tam, gdzie wpisany jest adres
+                                e-mail, np. oddziału konkurencyjnego pracownika Macieja!</li>
+                            <li>Zarząd operacyjny loguje się wpisując uniwersalną "Grupa Dystrybucyjna Zarządu"
+                                obejmującą szczeble w dostępie i po otwarciu pulpitu wita ich piękny i odsłonięty 100
+                                procentowo raport.</li>
+                        </ul>
+
+                        <blockquote>
+                            "Bez zastosowań polityk na poziomie komórek logiki operacyjnej RLS pod BigQuery i nałożenia
+                            warstw pod Looker Studios ─ upublicznianie poufnych materiałów księgowych i obrotów w
+                            uśmiechniętym trybie 'Kto ma ten link widzi wszystko', jest największą zmorą
+                            nieodpowiedzialnej analityki junior teamów wyrzucanych z rynków giełdowych przy potężnych
+                            aferach i przeciekach."
+                        </blockquote>
+
+                        <h2>Bezpieczeństwo Poziomu Silnika i wyciek bazy (Source DB Auth)</h2>
+                        <p>Wspaniale. Masz obronę i warunki odczytu graficznego. Ale czy stażysta nie jest cwaniakiem
+                            programującym? Jakikolwiek inteligentny podwładny potrafi przekopiować ten wykres, zdjąć
+                            filtr ręcznie skryptem w ustawieniach pobierając go "Dla Innego Źrodła Skopiowania"
+                            uzyskując swobodne okienko wycieku do całej chmury bazy poświadczeń. </p>
+                        <p>Złoty klucz B2B – Zawsze w wirtualnych tabelach "wewnątrz" twardych chmur BigQuery, twórz i
+                            blokuj po logach rygorystyczne widoki (Table Views ograniczonych dla Grupy Logowań Emaili)
+                            jako warstwa bezpieczeństwa przed wsadzeniem warstwy do odczytu od zewnątrz portalu grafice
+                            Looker Studio!!! Gdy stażysta przekona zabezpieczenia panelu przedniego przy Lookerze, sam
+                            twardy model pod maską BigQuery "na backendzie" odetnie mu logowanie autoryzowanym po
+                            warstwie e-Mail od rzutu serwera wywalając go twardym "BLĘDEM ODKODOWANIA 403 API Google".
+                            Tak oto tworzy się ekosystem chroniący zasobność MŚP.</p>
+
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Etyczny Kontroler
+                                oraz Ekspert Data Security</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Chroń dane tak,
+                                jak bronisz fizycznych szaf pancernych serwerowni - bezlitosne uprawnienia Cloud
+                                Architecture nakładam podczas wpuszczania zarządu na logowania.</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Boją się w firmie udostępnić platformy raportowe stażystom czy pracownikom "low-level"?
+                            </h3>
+                            <p>Zaprogramuję pełen niezniszczalny taran administracyjny pod architekturą IAM na wtyczkach
+                                filtru emialowego ─ by jedna makieta w Twojej firmie służyła idealnie, precyzyjnie
+                                dedykowanymi kwantami wiedzy, ukrywając co niepowołane przed oczami juniorów bez
+                                uciszania produktywności w ułamkach sekundy B2B.</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Zleć Szyfrowanie RLS / Raporty
+                                DB</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
