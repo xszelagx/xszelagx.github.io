@@ -229,12 +229,12 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
 
             // Prosta obfuskacja rozdzielająca kluczowe dane, by boty nie mogły ich odczytać w locie ze źródła
-            const emailName = 'twoj.email';
-            const emailDomain = 'domena.pl';
+            const emailName = 'szelagmikolaj';
+            const emailDomain = 'gmail.com';
             const phonePrefix = '+48';
-            const phoneP1 = ' 123';
-            const phoneP2 = ' 456';
-            const phoneP3 = ' 789';
+            const phoneP1 = ' 505';
+            const phoneP2 = ' 406';
+            const phoneP3 = ' 100';
 
             const emailFull = emailName + '@' + emailDomain;
             const phoneFull = phonePrefix + phoneP1 + phoneP2 + phoneP3;
