@@ -9,41 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <!-- Względna ścieżka do stylów, niezależnie od zagłębienia url (dla GitHub Pages poleca się /nazwarepo/css/styles.css lub opartość o bezwzględną -->
     <link rel="stylesheet" href="/css/styles.css">
-    <style>
-        .error-section {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-            flex-direction: column;
-            padding: 20px;
-        }
-
-        .error-code {
-            font-size: 8rem;
-            font-weight: 800;
-            line-height: 1;
-            margin-bottom: 20px;
-            background: var(--gradient-text);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .error-message {
-            font-size: 1.5rem;
-            color: var(--text-main);
-            margin-bottom: 30px;
-        }
-
-        .error-desc {
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            max-width: 500px;
-        }
-    </style>
 </head>
 
 <body>
@@ -52,15 +18,60 @@
     <div class="bg-orb orb-2"></div>
     <div class="bg-orb orb-3"></div>
 
-    <main class="error-section">
-        <div class="container glass-card reveal" style="padding: 60px 40px;">
-            <div class="error-code">404</div>
-            <h1 class="error-message">Oops! Zabłądziłeś w kodzie Danych 🕵️‍♂️</h1>
-            <p class="error-desc">Strona, której szukasz, nie istnieje lub została przeniesiona. Prawdopodobnie jakiś
-                skrypt ją usunął, ale wszystko jest pod kontrolą.</p>
-            <a href="/" class="btn btn-primary">Wróć do Strony Głównej</a>
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="/" class="logo">Portfolio<span>.</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Skontaktuj się</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="hero section"
+        style="min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center;">
+        <div class="container hero-container" style="justify-content: center;">
+            <div class="hero-content" style="align-items: center; max-width: 800px;">
+                <h1 class="hero-title" style="font-size: 6rem; margin-bottom: 0;"><span class="gradient-text">404</span>
+                </h1>
+                <h2 class="hero-title" style="font-size: 2.2rem; margin-bottom: 20px;">Wygląda na to, że to <span
+                        class="highlight">zerwane zapytanie SQL</span> (albo literówka)</h2>
+
+                <p class="hero-subtitle">
+                    Taka podstrona po prostu nie istnieje (albo została skasowana).
+                    Ale jeśli akurat na tym internetowym pustkowiu szukasz kogoś, kto potrafi
+                    okiełznać chaos w <strong>danych</strong>, zbudować potężne <strong>automatyzacje (Excel,
+                        GCP)</strong> i uwolnić
+                    masę czasu Twojego zespołu... to w sumie trafiłeś pod idealny adres! 😎
+                </p>
+
+                <div class="hero-buttons" style="justify-content: center; margin-top: 30px;">
+                    <a href="/" class="btn btn-primary">Wykryj Poprawne Dane (Strona Główna)</a>
+                    <a href="/#contact" class="btn btn-secondary">Przejdź do formularza</a>
+                </div>
+            </div>
         </div>
     </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Data Analytics<span>.</span></div>
+            <p>&copy; <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
 
     <script src="/js/script.js"></script>
 </body>
