@@ -264,30 +264,35 @@ document.addEventListener('DOMContentLoaded', () => {
     // Blog "Load More" Pagination Logic
     const blogGrid = document.querySelector('.blog-grid');
     const loadMoreBtn = document.getElementById('load-more-btn');
-    const INITIAL_VISIBLE_POSTS = 6;
+    const STEP = 3;
+    let visibleCount = 3;
 
     if (blogGrid && loadMoreBtn) {
-        const posts = blogGrid.querySelectorAll('.blog-card');
+        const posts = Array.from(blogGrid.querySelectorAll('.blog-card'));
 
-        // Hide all posts beyond initial count
-        posts.forEach((post, index) => {
-            if (index >= INITIAL_VISIBLE_POSTS) {
-                post.style.display = 'none';
+        const updateVisibility = () => {
+            posts.forEach((post, index) => {
+                if (index < visibleCount) {
+                    post.style.display = 'flex';
+                    // Trigger reveal animation for newly shown posts
+                    setTimeout(() => post.classList.add('active'), 10 * index);
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+
+            // If all posts are visible, hide the button
+            if (visibleCount >= posts.length) {
+                loadMoreBtn.style.display = 'none';
             }
-        });
+        };
 
-        // If total posts <= initial count, hide the button
-        if (posts.length <= INITIAL_VISIBLE_POSTS) {
-            loadMoreBtn.style.display = 'none';
-        }
+        // Initial update
+        updateVisibility();
 
         loadMoreBtn.addEventListener('click', () => {
-            posts.forEach(post => {
-                post.style.display = 'flex';
-                // Trigger reveal animation for newly shown posts
-                post.classList.add('active');
-            });
-            loadMoreBtn.style.display = 'none';
+            visibleCount += STEP;
+            updateVisibility();
         });
     }
 });
