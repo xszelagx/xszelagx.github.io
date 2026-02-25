@@ -239,12 +239,12 @@
                 <div class="services-grid">
                     <!-- Service 1 -->
                     <div class="service-card glass-card reveal">
-                        <div class="service-icon">�</div>
+                        <div class="service-icon"></div>
                         <h3>Inżynieria i Analiza Danych (GCP)</h3>
                         <p>Projektowanie skalowalnych rozwiązań do zbierania i przetwarzania danych z użyciem ekosystemu
                             Google Cloud.</p>
                         <ul class="service-features">
-                            <li>Budowa zapytań SQL w BigQuery</li>
+                            <li>Budowa zapytań SQL in BigQuery</li>
                             <li>Projektowanie hurtowni danych</li>
                             <li>Integracja źródeł API</li>
                         </ul>
@@ -252,7 +252,7 @@
 
                     <!-- Service 2 -->
                     <div class="service-card glass-card reveal" style="transition-delay: 0.1s;">
-                        <div class="service-icon">�</div>
+                        <div class="service-icon"></div>
                         <h3>Wizualizacja (Looker & Studio)</h3>
                         <p>Przekształcam surowe dane w interaktywne i przejrzyste dashboardy wspierające kadrę
                             menadżerską.</p>
@@ -362,6 +362,39 @@
                         </div>
                     </div>
                 </div>
+                <!-- FAQ Schema -->
+                <script type="application/ld+json">
+                {
+                  "@context": "https://schema.org",
+                  "@type": "FAQPage",
+                  "mainEntity": [
+                    {
+                      "@type": "Question",
+                      "name": "W jakich technologiach pracujesz najczęściej?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Pracuję głównie w ekosystemie Google Cloud Platform (BigQuery, SQL, Python), buduję wizualizacje w Looker Studio oraz automatyzacje w oparciu o Google Apps Script."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "Jak wygląda model i cennik rozliczeniowy (B2B)?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Wyceniam projekty jako Fixed Price (ryczałt) przy znanym zakresie lub Time & Material przy elastycznej współpracy."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "Ile przeciętnie zajmuje wdrożenie?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Proste skrypty to 3-7 dni roboczych. Rozbudowana analityka BigQuery i dashboardy Looker to zazwyczaj 3 do 6 tygodni."
+                      }
+                    }
+                  ]
+                }
+                </script>
             </div>
         </section>
 
