@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pola obliczeniowe i Regex w Looker Studio: Wyciśnij więcej z danych | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Zaawansowane techniki Looker Studio. Dowiedz się, jak używać pól obliczeniowych i wyrażeń regularnych (Regex) do czyszczenia i kategoryzacji Twoich danych.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="canonical"
+        href="https://xszelagx.github.io/portfolio-cv/blog/pola-obliczeniowe-regex-looker-studio-zaawansowane.html" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Pola obliczeniowe i regex w Looker Studio: Jak wycisnąć więcej z Twoich danych?",
+      "description": "Zaawansowane techniki Looker Studio. Dowiedz się, jak używać pól obliczeniowych i wyrażeń regularnych (Regex) do czyszczenia i kategoryzacji Twoich danych.",
+      "author": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg",
+        "url": "https://xszelagx.github.io/portfolio-cv/"
+      },
+      "datePublished": "2026-02-25",
+      "publisher": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Mikołaj Szeląg",
+        "item": "https://xszelagx.github.io/portfolio-cv/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://xszelagx.github.io/portfolio-cv/blog.html"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Regex i Pola Obliczeniowe",
+        "item": "https://xszelagx.github.io/portfolio-cv/blog/pola-obliczeniowe-regex-looker-studio-zaawansowane.html"
+      }]
+    }
+    </script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Portfolio<span>.</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Strona Główna</a></li>
+                    <li><a href="../index.html#about">Dlaczego Warto?</a></li>
+                    <li><a href="../index.html#services">Usługi</a></li>
+                    <li><a href="../index.html#case-studies">Realizacje</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../index.html#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="../blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Technical Mastery</span>
+                        <span>25 Lutego 2026</span>
+                        <span>⏱️ 9 min czytania</span>
+                    </div>
+                    <h1 class="post-title"><span class="gradient-text">Pola obliczeniowe i Regex</span> w Looker Studio:
+                        Jak wycisnąć więcej z Twoich danych?</h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Czasami dane, które trafiają do Looker Studio, są brudne, niekompletne lub po prostu
+                            niedostosowane do tego, jak myśli zarząd. Zamiast wracać do źródła i prosić IT o zmianę w
+                            bazie danych, możesz użyć supermocy Looker Studio: <strong>Pól obliczeniowych (Calculated
+                                Fields) i wyrażeń regularnych (Regex).</strong></p>
+
+                        <h2>Czym są pola obliczeniowe?</h2>
+                        <p>To dodatkowe kolumny, które tworzysz bezpośrednio w raporcie. Chcesz policzyć marżę, wiedząc
+                            tylko jaki jest koszt i cena? Robisz to w sekundę za pomocą pola obliczeniowego. Chcesz
+                            zmienić wszystkie nazwy miast na wielkie litery? Używasz funkcji `UPPER()`.</p>
+
+                        <h2>Regex: Prawdziwa magia czyszczenia danych</h2>
+                        <p>Wyrażenia regularne (Regex) pozwalają wyszukiwać złożone wzorce w tekście. W Looker Studio
+                            najczęściej używamy ich do kategoryzacji adresów URL lub słów kluczowych. Za pomocą jednej
+                            funkcji `REGEXP_MATCH` możesz pogrupować tysiące produktów w logiczne kategorie na
+                            dashboardzie.</p>
+
+                        <pre><code>CASE
+  WHEN REGEXP_MATCH(Source, ".*(facebook|instagram|ig|fb).*") THEN "Social Media"
+  WHEN REGEXP_MATCH(Source, ".*(google|bing|yahoo).*") THEN "Search"
+  ELSE "Inne"
+END</code></pre>
+
+                        <ul>
+                            <li><strong>REGEXP_REPLACE:</strong> Usuwa zbędne parametry z adresów URL (np. UTM-y), by
+                                raport był czytelniejszy.</li>
+                            <li><strong>CONCAT:</strong> Łączy wiele pól w jedno (np. Imię i Nazwisko).</li>
+                            <li><strong>HYPERLINK:</strong> Tworzy klikalne linki prosto do Twojego CRM-u lub sklepu.
+                            </li>
+                        </ul>
+
+                        <blockquote>
+                            "Pole obliczeniowe to ostatnia linia obrony analityka. Jeśli dane są słabe, możesz je
+                            naprawić właśnie tutaj, oszczędzając czas na przebudowie całej infrastruktury."
+                        </blockquote>
+
+                        <h2>Dlaczego warto to znać?</h2>
+                        <p>Dzięki polom obliczeniowym Twój raport staje się inteligentniejszy. Możesz tworzyć alerty
+                            wizualne (np. zmiana koloru tła, gdy realizacja celu spadnie poniżej 80%) i dostarczać
+                            zarządowi tylko istotne wnioski, a nie surowe tabelki.</p>
+
+                        <p>Jeśli Twoje dane wymagają czyszczenia lub specyficznego grupowania – chętnie skonfiguruję dla
+                            Ciebie odpowiednie pola obliczeniowe, które zamienią chaos w informację.</p>
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Advanced Analytics
+                                Engineer</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Twoje dane wymagają uporządkowania?</h3>
+                            <p>Wdrożę dla Ciebie zaawansowane pola obliczeniowe i Regex, by Twoje raporty dbały o
+                                czytelność i logikę biznesową.</p>
+                            <a href="../index.html#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Zapytaj o zaawansowaną
+                                analitykę</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Data Analytics<span>.</span></div>
+            <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

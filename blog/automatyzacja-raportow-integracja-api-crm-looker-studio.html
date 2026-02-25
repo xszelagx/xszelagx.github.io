@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatyzacja Raportów SME: Integracja CRM/ERP z Looker Studio przez API | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Omiń drogie konektory. Dowiedz się, jak automatycznie pobierać dane z API Twojego CRM lub ERP do Looker Studio za pomocą Google Apps Script.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="canonical"
+        href="https://xszelagx.github.io/portfolio-cv/blog/automatyzacja-raportow-integracja-api-crm-looker-studio.html" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Automatyzacja raportów SME: Integracja danych z systemów CRM i ERP z Looker Studio przez API",
+      "description": "Omiń drogie konektory. Dowiedz się, jak automatycznie pobierać dane z API Twojego CRM lub ERP do Looker Studio za pomocą Google Apps Script.",
+      "author": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg",
+        "url": "https://xszelagx.github.io/portfolio-cv/"
+      },
+      "datePublished": "2026-02-25",
+      "publisher": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Mikołaj Szeląg",
+        "item": "https://xszelagx.github.io/portfolio-cv/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://xszelagx.github.io/portfolio-cv/blog.html"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Automatyzacja raportów przez API",
+        "item": "https://xszelagx.github.io/portfolio-cv/blog/automatyzacja-raportow-integracja-api-crm-looker-studio.html"
+      }]
+    }
+    </script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Portfolio<span>.</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Strona Główna</a></li>
+                    <li><a href="../index.html#about">Dlaczego Warto?</a></li>
+                    <li><a href="../index.html#services">Usługi</a></li>
+                    <li><a href="../index.html#case-studies">Realizacje</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../index.html#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="../blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Automatyzacja procesów</span>
+                        <span>25 Lutego 2026</span>
+                        <span>⏱️ 8 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Automatyzacja raportów SME: Integracja danych z systemów <span
+                            class="gradient-text">CRM i ERP</span> z Looker Studio przez API</h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Wielu właścicieli firm z sektora MŚP popełnia ten sam błąd: płacą setki dolarów miesięcznie
+                            za gotowe konektory (typu Supermetrics), aby połączyć swój CRM (Pipedrive, HubSpot,
+                            BaseLinker) z Looker Studio. Istnieje inna droga – tańsza, bardziej elastyczna i w pełni
+                            zautomatyzowana. To wykorzystanie <strong>Google Apps Script i natywnego API.</strong></p>
+
+                        <h2>Problem: Dane uwięzione w izolowanych systemach</h2>
+                        <p>Twój CRM wie o leadach, Twój ERP wie o stanach magazynowych, a marketingowiec widzi tylko
+                            wydatki w Adsach. Bez integracji, menedżer musi ręcznie "sklejać" te dane w Excelu raz w
+                            tygodniu. To strata czasu i ryzyko błędu.</p>
+
+                        <h2>Rozwiązanie: Hurtownia danych na dżentelmeńskich warunkach</h2>
+                        <p>Zamiast kupować gotową wtyczkę, piszemy lekki skrypt w Google Apps Script. Skrypt ten co
+                            godzinę (lub co dobę) "puka" do API Twojego CRM-u, pobiera nowe rekordy i wpisuje je do
+                            Arkusza Google lub BigQuery. Looker Studio po prostu odczytuje te dane.</p>
+
+                        <ul>
+                            <li><strong>Koszt:</strong> Płacisz raz za wdrożenie skryptu, zero miesięcznych opłat za
+                                konektory.</li>
+                            <li><strong>Kontrola:</strong> Pobierasz tylko to, czego naprawdę potrzebujesz. Żadnych
+                                śmieciowych danych.</li>
+                            <li><strong>Skalowalność:</strong> Jeśli system padnie, skrypt wyśle Ci powiadomienie na
+                                Slacka lub maila.</li>
+                        </ul>
+
+                        <blockquote>
+                            "Automatyzacja API to nie tylko technologia, to higiena pracy. Jeśli proces raportowania
+                            trwa u Ciebie dłużej niż 15 sekund, oznacza to, że tracisz pieniądze na biurokrację."
+                        </blockquote>
+
+                        <h2>Case: Automatyzacja lejka sprzedażowego B2B</h2>
+                        <p>Dla jednego z moich klientów wdrożyłem skrypt, który łączy dane z systemu telefonicznego
+                            (PBX) z CRM-em. Teraz zarząd widzi w Looker Studio korelację między liczbą wykonanych
+                            połączeń a wartością wystawionych ofert – wszystko bez dotykania klawiatury przez
+                            handlowców.</p>
+
+                        <p>Chcesz dowiedzieć się, czy Twój system posiada API i czy możemy go zintegrować? Zapraszam na
+                            bezpłatną konsultację techniczną.</p>
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Automation
+                                Specialist</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Twój CRM nie ma konektora w Looker Studio?</h3>
+                            <p>To nie problem. Napiszę dla Ciebie skrypt, który pobierze dane bezpośrednio przez API.
+                                Omiń miesięczne opłaty.</p>
+                            <a href="../index.html#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Zapytaj o integrację API</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Data Analytics<span>.</span></div>
+            <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

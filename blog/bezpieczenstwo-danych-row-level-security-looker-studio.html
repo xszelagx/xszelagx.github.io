@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bezpieczeństwo w Looker Studio: Row-Level Security (RLS) i Filtrowanie Emailem | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Chroń swoje dane. Dowiedz się, jak stosować Row-Level Security w Looker Studio, aby użytkownicy widzieli tylko te dane, do których mają prawo.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="canonical"
+        href="https://xszelagx.github.io/portfolio-cv/blog/bezpieczenstwo-danych-row-level-security-looker-studio.html" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Bezpieczeństwo danych w Looker Studio: Zarządzanie dostępem i filtrowanie per użytkownik",
+      "description": "Chroń swoje dane. Dowiedz się, jak stosować Row-Level Security w Looker Studio, aby użytkownicy widzieli tylko te dane, do których mają prawo.",
+      "author": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg",
+        "url": "https://xszelagx.github.io/portfolio-cv/"
+      },
+      "datePublished": "2026-02-25",
+      "publisher": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Mikołaj Szeląg",
+        "item": "https://xszelagx.github.io/portfolio-cv/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://xszelagx.github.io/portfolio-cv/blog.html"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Bezpieczeństwo i RLS",
+        "item": "https://xszelagx.github.io/portfolio-cv/blog/bezpieczenstwo-danych-row-level-security-looker-studio.html"
+      }]
+    }
+    </script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Portfolio<span>.</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Strona Główna</a></li>
+                    <li><a href="../index.html#about">Dlaczego Warto?</a></li>
+                    <li><a href="../index.html#services">Usługi</a></li>
+                    <li><a href="../index.html#case-studies">Realizacje</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../index.html#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="../blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Security & Privacy</span>
+                        <span>25 Lutego 2026</span>
+                        <span>⏱️ 7 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Bezpieczeństwo w <span class="gradient-text">Looker Studio</span>: Row-Level
+                        Security (RLS) i Filtrowanie Emailem</h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p>Masz setki klientów lub dziesiątki handlowców i chcesz każdemu udostępnić raport o ich
+                            wynikach, ale boisz się, że zobaczą dane konkurencji lub kolegów? Nie musisz tworzyć 100
+                            osobnych raportów. Wystarczy jeden, ale inteligentny, zbudowany w oparciu o
+                            <strong>Row-Level Security (RLS).</strong></p>
+
+                        <h2>Czym jest Row-Level Security?</h2>
+                        <p>To mechanizm, który filtruje wiersze w bazie danych na podstawie tożsamości osoby oglądającej
+                            raport. Looker Studio sprawdza adres email zalogowanego użytkownika Google i porównuje go z
+                            kolumną "Email" w Twoim źródle danych. Jeśli mikołaj@firma.pl widzi tylko wiersze, gdzie
+                            jest wpisany jego email – system zadba o to, by nie zobaczył nic więcej.</p>
+
+                        <h2>Dlaczego to jest kluczowe dla firm B2B?</h2>
+                        <p>Wdrożenie RLS pozwala skalować analitykę bez chaosu. Przykładowo: sieć franczyzowa ma 50
+                            punktów. Właściciel widzi wszystko (Dashboard Zarządczy), a każdy menedżer lokalu po
+                            zalogowaniu widzi tylko swój utarg i swoje koszty. Wszystko opiera się na tym samym
+                            projekcie graficznym.</p>
+
+                        <ul>
+                            <li><strong>Jeden raport do wszystkiego:</strong> Łatwiejsza aktualizacja i spójność
+                                wizualna.</li>
+                            <li><strong>Bezpieczeństwo:</strong> Użytkownik nie może "odfiltrować sobie" danych innych
+                                osób.</li>
+                            <li><strong>Integracja z BigQuery:</strong> Przy dużych zbiorach filtracja odbywa się po
+                                stronie serwera – dane nigdy nie przesyłają się do przeglądarki osoby, która nie ma do
+                                nich uprawnień.</li>
+                        </ul>
+
+                        <blockquote>
+                            "Bezpieczeństwo danych to nie tylko blokada dostępu, to higiena biznesu. RLS pozwala dawać
+                            ludziom wolność w analizie, bez obawy o wyciek wrażliwych informacji poza ich kompetencje."
+                        </blockquote>
+
+                        <h2>Jak wdrożyć filtrację emailem w 3 krokach?</h2>
+                        <ol>
+                            <li>Dodaj kolumnę `Viewer_Email` do swojej bazy danych.</li>
+                            <li>W Looker Studio wybierz opcję "Filtruj wg adresu e-mail" w ustawieniach źródła danych.
+                            </li>
+                            <li>Wybierz kolumnę, która zawiera adresy e-mail użytkowników. Gotowe!</li>
+                        </ol>
+
+                        <h3>Wnioski: Higiena udostępniania</h3>
+                        <p>Jako ekspert dbam o to, by każda wdrożona analityka była bezpieczna. Jeśli planujesz
+                            udostępnienie raportów na zewnątrz lub wewnątrz dużego zespołu – zapytaj mnie o wdrożenie
+                            architektury Row-Level Security.</p>
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Data Privacy
+                                Architect</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Chcesz bezpiecznie udostępniać raporty?</h3>
+                            <p>Wdrożę dla Ciebie mechanizm RLS, który zagwarantuje każdemu dostęp tylko do jego danych.
+                                Sprawdź moją ofertę bezpieczeństwa.</p>
+                            <a href="../index.html#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Zamawiam audyt bezpieczeństwa
+                                danych</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Data Analytics<span>.</span></div>
+            <p>&copy; 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
