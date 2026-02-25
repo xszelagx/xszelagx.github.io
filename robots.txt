@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /404.html
+Disallow: /blog-post-template.html
 
 Sitemap: https://xszelagx.github.io/sitemap.xml
