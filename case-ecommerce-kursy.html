@@ -40,7 +40,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
-    <title>Case Study: Automatyzacja Raportów z API | Mikołaj Szeląg</title>
+    <title>Case Study: Analityka Sklepu z Kursami | Mikołaj Szeląg</title>
     <!-- Google Fonts: Outfit for modern look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -142,49 +142,52 @@
         <section class="case-header">
             <div class="case-tag"
                 style="display:inline-block; background: rgba(88, 101, 242, 0.15); color: var(--primary); padding: 5px 15px; border-radius: 20px; font-weight: 600; margin-bottom: 20px;">
-                SaaS / Finanse</div>
-            <h1 class="case-title">Automatyzacja Raportów z <span class="gradient-text">API (Apps Script)</span></h1>
-            <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Zastąpienie
-                żmudnego kopiowania danych z narzędzi SaaS zautomatyzowanym procesem zintegrowanym w modelu Google
-                Workspace.</p>
+                E-Commerce</div>
+            <h1 class="case-title">Analityka Źródeł Konwersji (ROAS) w <span class="gradient-text">E-Commerce</span>
+            </h1>
+            <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Opracowanie
+                kompleksowego systemu analitycznego mierzącego efektywność kanałów akwizycji oraz analizującego ścieżkę
+                użytkownika na platformie e-learningowej.</p>
         </section>
 
         <section class="case-content glass-card reveal" style="padding: 40px;">
             <h2>Wyzwanie Biznesowe</h2>
-            <p>Zespół operacyjny w firmie z sektora FinTech poświęcał około kilkunastu godzin tygodniowo na całkowicie
-                powtarzalną pracę "kopiuj wklej". Pracownicy musieli logować się do 4 osobnych bramek API (CRM,
-                płatności, system mailingu), ręcznie eksportować pliki CSV i lepić je wspólnie w gigantyczne arkusze
-                Excel, generując potężne ryzyko błędu ludzkiego oraz paraliżując przepływ informacji decyzyjnej do
-                zarządu o czas weryfikacji danych.</p>
+            <p>Szybko skalująca się platforma edukacyjna napotkała barierę analityczną uniemożliwiającą precyzyjną ocenę
+                zwrotu z inwestycji (ROAS) z poszczególnych kanałów płatnych (Meta, TikTok, Google Ads). Rozproszone
+                raporty uniemożliwiały wiarygodną atrybucję sprzedaży, co utrudniało identyfikację "wąskich gardeł" w
+                procesie decyzyjnym (lejek e-commerce) i optymalizację kosztów pozyskania klienta (CAC).</p>
 
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-value">15h</div>
-                    <div>Zaoszczędzonych godzin tyg.</div>
+                    <div class="stat-value">Identyfikacja</div>
+                    <div>Dochodowych Kanałów</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">100%</div>
-                    <div>Eliminacja błędów ludzkich</div>
+                    <div class="stat-value">Wykrycie</div>
+                    <div>Wąskich Gardeł UX</div>
                 </div>
             </div>
 
             <h2>Podjęte Działania</h2>
             <ul class="styled-list">
-                <li><strong>Implementacja Google Apps Script:</strong> Zastąpienie Excela elastycznym środowiskiem
-                    Google Sheets napędzanym kodem JavaScript i chron boxami.</li>
-                <li><strong>Integracja Zewnętrznych Webhooków API:</strong> Skrypty samodzielnie wykonują polecenia
-                    GET/POST do kluczowych systemów i w locie obrabiają tablice JSON.</li>
-                <li><strong>Generowanie Raportów:</strong> Raporty czyszczą się, tworzą w bezpieczny pod względem
-                    architektonicznym sposób i generują podsumowania dla c-level codziennie o 7:00 rano.</li>
+                <li><strong>Połączenie Źródeł Reklamowych (Data Blending):</strong> Scalenie kosztów kampanii z wielu
+                    portali za pomocą narzędzi ETL do jednego miejsca, zestawionych z przychodami per UTM.</li>
+                <li><strong>Wizualizacja Zdarzeń (GA4 & Looker Studio):</strong> Oskryptowanie na stronie (GTM) ścieżek
+                    zakupowych, by widzieć dokładnie w Looker Studio procetowe odrzucenia na kolejnych krokach koszyka.
+                </li>
+                <li><strong>Dashboard Analityczny E-Commerce:</strong> Powołanie do życia intuicyjnego głównego panelu
+                    dla właścicieli podpowiadającego "Gdzie dolać budżetu" i jak zachowują się kursanci na platformie
+                    VOD.</li>
             </ul>
 
             <h2>Osiągnięty Rezultat</h2>
-            <p>Rozwiązanie odblokowało pełen potencjał 1 etatu w zespole administracyjnym. Brak luk w wiedzy "kto ma
-                wersję pliku final", ponieważ wszystkie ustrukturyzowane informacje żyją zawsze live zsynchronizowane w
-                ekosystemie Google'a. Projekt zwrócił się firmie po niespełna 3 tygodniach we wdrożeniu.</p>
+            <p>Dzięki nowej analityce właściciele platformy zrezygnowali z "przepalających" budżet kampanii, przenosząc
+                środki na te kanały, które faktycznie generowały zakup zaawansowanych kursów. Zrozumienie zachowań
+                użytkowników pozwoliło również przeprojektować podstronę płatności, co w krótkim czasie podniosło
+                współczynnik konwersji o kilka punktów procentowych.</p>
 
             <div style="text-align: center; margin-top: 50px;">
-                <a href="/#contact" class="btn btn-primary">Porozmawiajmy o podobnym projekcie</a>
+                <a href="/#contact" class="btn btn-primary">Porozmawiajmy o optymalizacji u Ciebie</a>
                 <br><br>
                 <a href="index.html" class="btn btn-secondary btn-small">Wróć do strony głównej</a>
             </div>

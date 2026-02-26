@@ -40,7 +40,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
-    <title>Case Study: Nowoczesne Zestawienia Looker Studio | Mikołaj Szeląg</title>
+    <title>Case Study: Budowa Hurtowni Danych i Dashboardu | Mikołaj Szeląg</title>
     <!-- Google Fonts: Outfit for modern look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -142,49 +142,52 @@
         <section class="case-header">
             <div class="case-tag"
                 style="display:inline-block; background: rgba(88, 101, 242, 0.15); color: var(--primary); padding: 5px 15px; border-radius: 20px; font-weight: 600; margin-bottom: 20px;">
-                Spedycja</div>
-            <h1 class="case-title">Zestawienia KPI w <span class="gradient-text">Looker Studio</span></h1>
-            <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Wdrożenie jednego
-                źródła prawdy deklasującego rozsiane po emailach analizy na korzyść chmurowego dashboardu.</p>
+                SaaS / Finanse</div>
+            <h1 class="case-title">Budowa Hurtowni Danych i <span class="gradient-text">Pulpitu Zarządczego</span></h1>
+            <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Wdrożenie
+                scentralizowanej architektury danych eliminującej nieefektywne, manualne procesy raportowania
+                operacyjnego.</p>
         </section>
 
         <section class="case-content glass-card reveal" style="padding: 40px;">
             <h2>Wyzwanie Biznesowe</h2>
-            <p>Firma spedycyjna operująca w zachodniej Europie zderzała się z poważnym procesem analitycznym:
-                poszczególni managerowie korzystali z różnych miar w ocenach poszczególnych oddziałów (wykorzystując
-                statyczne i przestarzałe dane z różnych plików PDF oraz baz ERP eksportowanych w nieweryfikowalnych
-                okresach).</p>
+            <p>Firma technologiczna oferująca oprogramowanie w modelu subskrypcyjnym (SaaS) zmagała się z silną
+                fragmentacją danych, rozsianych pomiędzy kilkoma niezależnymi bramkami płatniczymi i systemami CRM.
+                Dział operacyjny inwestował równowartość pełnego etatu (FTE) w cykliczne eksportowanie i konsolidowanie
+                raportów w arkuszach kalkulacyjnych. Taki standard pracy nie tylko kreował ryzyko błędów ludzkich, ale
+                również prowadził do opóźnień w detekcji wskaźników rezygnacji (churn) oraz nieodpowiednich decyzji
+                alokacyjnych.</p>
 
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-value">24/7</div>
-                    <div>Dostęp do danych Live</div>
+                    <div class="stat-value">1 Etat</div>
+                    <div>Zaoszczędzonego Czasu</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">1 Źródło</div>
-                    <div>Prawdy dla zarządu SSO</div>
+                    <div class="stat-value">Live</div>
+                    <div>Dostępność Twardych Danych</div>
                 </div>
             </div>
 
             <h2>Podjęte Działania</h2>
             <ul class="styled-list">
-                <li><strong>Modelowanie Danych w Hurtowni (DW):</strong> Unifikacja w BigQuery i stworzenie pojedynczego
-                    modelu semantycznego tak, aby wymiar "zysk przewozu" był liczony w firmie zawsze według tej samej,
-                    zatwierdzonej matematycznej reguły.</li>
-                <li><strong>Wdrożenie Raportów:</strong> Stworzono zestaw kilkudziesięciu połączonych ze sobą stron w
-                    Google Looker Studio z w pełni interaktywnymi filtrami (daty, oddziały operujące, floty aut).</li>
-                <li><strong>Zarządzanie bezpieczeństwem (RBAC):</strong> Oddelegowanie kontroli dostępu za pomocą Google
-                    Workspace do dyrekcji, tak by manager strefy X nie widział danych detalicznych ze strefy Y.</li>
+                <li><strong>Architektura Hurtowni Danych:</strong> Zaprojektowano i wdrożono scentralizowaną hurtownię
+                    danych na Google Cloud (BigQuery), aby trwale i czysto przechowywać historię transakcyjną
+                    subskrybentów.</li>
+                <li><strong>Skrypty ETL / ELT:</strong> Połączono dane z różnorodnych API bramek płatności,
+                    automatycznie uzupełniając brakujące indeksy klientów w nocnych przepięciach w chmurze bez
+                    ingerencji ludzkiej.</li>
+                <li><strong>Główny Dashboard Zarządczy:</strong> Stworzono pojedynczy, wszechstronny pulpit nawigacyjny
+                    (Dashboard C-Level) w narzędziu BI, łączący dane finansowe z wskaźnikami użycia produktu.</li>
             </ul>
 
             <h2>Osiągnięty Rezultat</h2>
-            <p>Zarząd porzucił wysyłanie kilkudziesięcio-stronicowych raportów i opiera swoje spotkania operacyjne
-                stricte o odświeżające się "pod klawiszem F5" dashboardy w Looker Studio. Cała organizacja pozbyła się
-                długu technologicznego na rzecz jednego, przejrzystego systemu kontroli, który skaluje się z każdym
-                dodanym na mapie oddziałem bez dodatkowych kosztów per użytkownik.</p>
+            <p>Implementacja rozwiązania zautomatyzowała najtrudniejszą linię oporu w firmie, w 100% uwalniając niemal
+                jeden cały etat analityczny, który mógł zostać realokowany na strategiczne działania. Ponadto, wszystkie
+                potrzebne informacje dostępne są od ręki z poziomu przeglądarki z dowolnego miejsca na Ziemi.</p>
 
             <div style="text-align: center; margin-top: 50px;">
-                <a href="/#contact" class="btn btn-primary">Zobacz potęgę BI w Twojej firmie</a>
+                <a href="/#contact" class="btn btn-primary">Porozmawiajmy o podobnym projekcie</a>
                 <br><br>
                 <a href="index.html" class="btn btn-secondary btn-small">Wróć do strony głównej</a>
             </div>

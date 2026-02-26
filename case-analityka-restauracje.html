@@ -40,7 +40,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
-    <title>Case Study: Redukcja Kosztów BigQuery | Mikołaj Szeląg</title>
+    <title>Case Study: Zestawienia Sprzedaży POS i Rozliczenia | Mikołaj Szeląg</title>
     <!-- Google Fonts: Outfit for modern look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -142,48 +142,53 @@
         <section class="case-header">
             <div class="case-tag"
                 style="display:inline-block; background: rgba(88, 101, 242, 0.15); color: var(--primary); padding: 5px 15px; border-radius: 20px; font-weight: 600; margin-bottom: 20px;">
-                E-Commerce</div>
-            <h1 class="case-title">Redukcja Kosztów BigQuery o <span class="gradient-text">40%</span></h1>
-            <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Jak optymalizacja
-                architektury danych zredukowała uciekający budżet chmurowy w skalującym się sklepie internetowym.</p>
+                Restauracje</div>
+            <h1 class="case-title">Integracja Danych POS i <span class="gradient-text">Automatyzacja Rozliczeń</span>
+            </h1>
+            <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Zaprojektowanie
+                ujednoliconego środowiska analitycznego integrującego dane z systemów kasowych oraz automatyzującego
+                proces dobowych rozliczeń.</p>
         </section>
 
         <section class="case-content glass-card reveal" style="padding: 40px;">
             <h2>Wyzwanie Biznesowe</h2>
-            <p>Platforma e-commerce generowała terabajty logów z kliknięć użytkowników, transakcji i stanów magazynowych
-                każdego dnia. Wraz ze wzrostem ruchu, koszty skanowania pełnych tabel w Google BigQuery zaczęły
-                drastycznie wymykać się spod kontroli, osiągając pułapy setek dolarów dziennie za same rutynowe
-                odświeżania dashboardów analitycznych oraz zapytania w Looker Studio.</p>
+            <p>Rosnąca sieć lokali gastronomicznych napotkała istotne wyzwania związane z brakiem centralizacji danych w
+                wielooddziałowej sieci sprzedażowej. Infrastruktura oparta na niezależnych punktach sprzedaży (POS)
+                wymuszała manualną konsolidację utargów, obciążając management logistyką raportową. Brak automatycznej
+                weryfikacji i rozliczania zmian w systemie przyczyniał się do nieścisłości księgowych (manka) i
+                uniemożliwiał zarządowi monitoring rentowności w czasie rzeczywistym.</p>
 
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-value">40%</div>
-                    <div>Redukcja opłat GCP względem status quo</div>
+                    <div class="stat-value">Live</div>
+                    <div>Wyniki Finansowe 24/7</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">3x</div>
-                    <div>Szybsze zwracanie zapytań (Query Time)</div>
+                    <div class="stat-value">Pełna</div>
+                    <div>Automatyzacja Rozliczeń</div>
                 </div>
             </div>
 
             <h2>Podjęte Działania</h2>
             <ul class="styled-list">
-                <li><strong>Wdrożenie Partycjonowania (Partitioning):</strong> Zaprojektowano podział gigantycznych
-                    tabel logów na partycje dzienne. Bieżące raporty KPI przestały skanować bezmyślnie archiwum z
-                    ostatnich 3 lat.</li>
-                <li><strong>Klastrowanie Danych (Clustering):</strong> Zoptymalizowano struktury bazujące na unikalnych
-                    identyfikatorach (ID Kampanii, ID Produktu), drastycznie ucinając czas filtrowania.</li>
-                <li><strong>Materializowane Agregacje:</strong> Stworzono skrypty cykliczne i widoki agregujące dane w
-                    locie, oszczędzając zasoby na surowych przeliczeniach w Locer Studio.</li>
+                <li><strong>Integracja Systemów POS:</strong> Połączono dane z różnorodnych kas fiskalnych i systemów
+                    POS w oparciu o ich API do jednej, wspólnej bazy na Google Cloud.</li>
+                <li><strong>Zautomatyzowane Arkusze Rozliczeniowe:</strong> Wdrożono skrypty w Google Apps Script, które
+                    codziennie o określonej porze zaciągają utarg, oczekiwany stan kasy i porównują z kwotą deklarowaną
+                    przez managera, automatycznie oflagowując manka.</li>
+                <li><strong>Centralny Dashboard dla Zarządu:</strong> Zbudowano główny dashboard w Looker Studio
+                    pokazujący statystyki ze wszystkich restauracji na żywo — od sprzedaży konkretnych pozycji po
+                    rentowność całej zmiany.</li>
             </ul>
 
             <h2>Osiągnięty Rezultat</h2>
-            <p>Zastosowane w architekturze zmiany nie tylko odwróciły trend rosnących rachunków, odzyskując gigantyczne
-                kwoty miesięcznie do budżetu marketingu, ale również unormowały czas pracy z dashboardami,
-                przyspieszając ich ładowanie dla zarządu. Analiza przestała być "droga i ociężała".</p>
+            <p>Dzięki nowej architekturze, właściciele natychmiast widzą co i gdzie się sprzedaje bez czekania na
+                weekendowe raporty. Dodatkowo zautomatyzowane arkusze rozliczeniowe skróciły czas zamknięcia zmiany o
+                ponad godzinę na lokal, radykalnie podwyższając dyscyplinę finansową i likwidując denerwujące spory o
+                pomylone kwoty.</p>
 
             <div style="text-align: center; margin-top: 50px;">
-                <a href="/#contact" class="btn btn-primary">Porozmawiajmy o optymalizacji u Ciebie</a>
+                <a href="/#contact" class="btn btn-primary">Zobacz potęgę BI w Twojej firmie</a>
                 <br><br>
                 <a href="index.html" class="btn btn-secondary btn-small">Wróć do strony głównej</a>
             </div>
