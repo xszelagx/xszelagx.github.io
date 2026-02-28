@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <title>Raportowanie efektywności content marketingu w Looker Studio: GA4 + Search Console | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Jak zmierzyć, które artykuły blogowe generują konwersje, a które pusty ruch. Dashboard Looker Studio łączący GA4 i Search Console do audytu treści i ROI content marketingu.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"></noscript>
+    <link rel="preload" as="style" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
+    <link rel="canonical"
+        href="https://xszelagx.github.io/blog/raportowanie-efektywnosci-content-marketingu-looker-studio-ga4.html" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Raportowanie efektywności content marketingu w Looker Studio: GA4 + Search Console",
+      "description": "Jak zmierzyć, które artykuły blogowe generują konwersje, a które pusty ruch. Dashboard Looker Studio łączący GA4 i Search Console do audytu treści i ROI content marketingu.",
+      "author": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg",
+        "url": "https://xszelagx.github.io/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg"
+      },
+      "datePublished": "2026-02-28",
+      "url": "https://xszelagx.github.io/blog/raportowanie-efektywnosci-content-marketingu-looker-studio-ga4.html"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Mikołaj Szeląg",
+        "item": "https://xszelagx.github.io/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://xszelagx.github.io/blog.html"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Raportowanie efektywności content marketingu w Looker Studio",
+        "item": "https://xszelagx.github.io/blog/raportowanie-efektywnosci-content-marketingu-looker-studio-ga4.html"
+      }]
+    }
+    </script>
+    <link rel="icon" type="image/png" href="../favicon.png?v=2">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico?v=2">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png?v=2">
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Szeląg<span>.</span>Data</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../">Strona Główna</a></li>
+                    <li><a href="../#about">Dlaczego Warto?</a></li>
+                    <li><a href="../#services">Usługi</a></li>
+                    <li><a href="../#case-studies">Realizacje</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="../blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">SEO & Analityka</span>
+                        <span>28 Lutego 2026</span>
+                        <span>⏱️ 8 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Raportowanie efektywności <span class="gradient-text">content
+                            marketingu</span> w Looker Studio: GA4 + Search Console</h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p><strong>Publikujesz 4 artykuły miesięcznie na blogu firmowym. Każdy kosztuje Cię 2000 zł
+                                (copywriter + grafik + Twój czas na review). To 96 000 zł rocznie.</strong> Ale czy
+                            wiesz, które z tych artykułów faktycznie przynoszą klientów? Większość firm odpowiada
+                            na to pytanie wzruszeniem ramion. Dashboard w Looker Studio kończy z tym zgadywaniem.</p>
+
+                        <h2>Problem: „pusty" ruch vs. ruch konwertujący</h2>
+                        <p>Typowy raport content marketingowy w Excelu zawiera: tytuł artykułu, ilość odsłon,
+                            czas na stronie. To za mało. Artykuł z 10 000 odsłon, ale zerową konwersją to
+                            <strong>koszt, nie aktywa</strong>. Z drugiej strony — artykuł z 200 odsłonami, ale
+                            20% współczynnikiem przejścia do formularza kontaktowego to złoto.
+                        </p>
+                        <p>Żeby odróżnić jedno od drugiego, musisz połączyć dwa źródła danych:</p>
+                        <ul>
+                            <li><strong>Google Search Console</strong> — skąd przychodzą (zapytania, pozycje, CTR).
+                            </li>
+                            <li><strong>Google Analytics 4 (GA4)</strong> — co robią po wejściu (engagement, konwersje,
+                                ścieżki).</li>
+                        </ul>
+
+                        <h2>Architektura dashboardu: 4 panele decyzyjne</h2>
+
+                        <h3>Panel 1: Content Scorecard</h3>
+                        <p>Scorecardy z kluczowymi meta-KPI dla całego bloga:</p>
+                        <ul>
+                            <li><strong>Przychód z organic</strong> (z ecommerce lub leadów) — vs. poprzedni miesiąc.
+                            </li>
+                            <li><strong>Konwersje z bloga</strong> — ile razy ktoś z artykułu trafił do formularza.
+                            </li>
+                            <li><strong>ROI contentu</strong> — przychód / koszt produkcji treści. Jeśli nie wiesz jak
+                                to liczyć, sprawdź mój artykuł o <a
+                                    href="./roi-wdrozenia-analityki-looker-studio-biznes.html">wyliczaniu ROI
+                                    z analityki</a>.</li>
+                            <li><strong>Organic sessions</strong> — ile ruchu generuje blog sam w sobie.</li>
+                        </ul>
+
+                        <h3>Panel 2: Performance Matrix (tabela artykułów)</h3>
+                        <p>Najważniejszy element dashboardu — tabela, w której każdy wiersz to jeden artykuł, a
+                            kolumny łączą dane z GSC i GA4:</p>
+
+                        <pre><code>| Artykuł         | Kliknięcia GSC | Śr. pozycja | Sessions GA4 | Konwersje | Conv. Rate |
+|-----------------|----------------|-------------|--------------|-----------|------------|
+| Jak zrobić X    |          2,340 |         4.2 |        1,980 |        12 |      0.6%  |
+| Poradnik Y      |            890 |         8.7 |          720 |        28 |      3.9%  |
+| Dlaczego Z      |          5,100 |         2.1 |        4,200 |         3 |      0.07% |</code></pre>
+
+                        <p>Artykuł „Poradnik Y" ma 4x mniej ruchu, ale <strong>6x wyższy conversion rate</strong>.
+                            To jest artykuł, w który warto zainwestować (update, więcej linków, ads). „Dlaczego Z"
+                            generuje masę ruchu, ale nie konwertuje — wymaga przerobienia pod lejek sprzedażowy.</p>
+
+                        <p>Ten typ analizy to fundament <a
+                                href="./analityka-ecommerce-lejki-sprzedazy-looker-studio.html">lejków sprzedażowych
+                                w Looker Studio</a>.</p>
+
+                        <h3>Panel 3: Content Lifecycle (wykres bąbelkowy)</h3>
+                        <p>Każdy artykuł jako bąbelek na wykresie, gdzie:</p>
+                        <ul>
+                            <li>Oś X = wiek artykułu (dni od publikacji)</li>
+                            <li>Oś Y = sesje organiczne / miesiąc</li>
+                            <li>Rozmiar bąbelka = konwersje</li>
+                        </ul>
+                        <p>To wizualizacja pozwala szybko zobaczyć: które artykuły „wymierają" z wiekiem, a które
+                            zyskują na sile (evergreen). Artykuły, które po 6 miesiącach nadal rosną, to kandydaci
+                            na content pillar. Idealnie nawiązuje to do <a
+                                href="./analiza-kohortowa-looker-studio-ga4-retention.html">analizy kohortowej
+                                w GA4</a>.</p>
+
+                        <h3>Panel 4: Content Audit Actions</h3>
+                        <p>Pole obliczeniowe w Looker Studio, które automatycznie kategoryzuje artykuły:</p>
+
+                        <pre><code>CASE
+  WHEN Konwersje > 5 AND Sesje > 500 THEN "⭐ Top Performer — promuj"
+  WHEN Konwersje > 5 AND Sesje < 500 THEN "🔍 Hidden Gem — buduj linki"
+  WHEN Konwersje = 0 AND Sesje > 1000 THEN "⚠️ Fix lejek — brak CTA?"
+  WHEN Sesje < 100 AND Wiek_dni > 180 THEN "🗑️ Rozważ usunięcie/redirect"
+  ELSE "📝 Monitoruj"
+END</code></pre>
+
+                        <p>Dzięki temu dashboard <strong>podaje gotowe rekomendacje</strong>, a nie tylko liczby.
+                            Menedżer nie musi interpretować — widzi konkretne akcje do podjęcia.</p>
+
+                        <h2>Jak podłączyć i połączyć dane?</h2>
+                        <ol>
+                            <li><strong>Search Console</strong> — natywny konektor Looker Studio, tabela „Impression
+                                by URL".</li>
+                            <li><strong>GA4</strong> — natywny konektor, wymiary: Page path, zdarzenie konwersji.</li>
+                            <li><strong>Data Blending</strong> — klucz łączenia = URL (Landing page path w GA4 =
+                                URL w GSC). Szczegóły łączenia opisałem w poście o <a
+                                    href="./laczenie-danych-data-blending-looker-studio.html">Data Blending
+                                    w Looker Studio</a>.</li>
+                        </ol>
+
+                        <blockquote>
+                            „Content marketing bez dashboardu raportującego ROI to jak rzucanie monetą w fontannę
+                            i liczenie, że firma z tego wyrośnie. Mierz, albo przestań wydawać."
+                        </blockquote>
+
+                        <h3>Podsumowanie: co zyskujesz?</h3>
+                        <ul>
+                            <li><strong>Oszczędność</strong> — przestajesz produkować treści, które nie konwertują.</li>
+                            <li><strong>Fokus</strong> — inwestujesz w artykuły, które faktycznie przynoszą klientów.
+                            </li>
+                            <li><strong>Argumenty</strong> — masz twarde dane do rozmowy z zarządem o budżecie
+                                contentowym.</li>
+                            <li><strong>Automatyzację</strong> — dashboard aktualizuje się sam, raport leci co
+                                poniedziałek na maila.</li>
+                        </ul>
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Content
+                                Analytics & BI Specialist</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Pomagam firmom
+                                mierzyć realny zwrot z inwestycji w content marketing. Dashboardy, które łączą SEO
+                                z konwersjami i dają konkretne rekomendacje.</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Nie wiesz, czy Twój blog zarabia?</h3>
+                            <p>Zbuduję dashboard, który pokaże Ci ROI każdego artykułu. Koniec z „wydajemy, bo
+                                wszyscy wydają". Zacznij podejmować decyzje oparte na danych.</p>
+                            <a href="../#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Zamawiam content
+                                dashboard</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Szeląg<span>.</span>Data</div>
+            <p>&copy; <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    <!-- Google Tag Manager (deferred) -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+    <!-- Google Analytics (deferred) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

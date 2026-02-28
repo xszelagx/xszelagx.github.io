@@ -261,31 +261,56 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Blog "Load More" Pagination Logic
+    // Blog Category Filter + Load More Logic
     const blogGrid = document.querySelector('.blog-grid');
     const loadMoreBtn = document.getElementById('load-more-btn');
-    const STEP = 3;
-    let visibleCount = 3;
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    const STEP = 6;
+    let visibleCount = 6;
+    let activeCategory = 'all';
 
     if (blogGrid && loadMoreBtn) {
-        const posts = Array.from(blogGrid.querySelectorAll('.blog-card'));
+        const allPosts = Array.from(blogGrid.querySelectorAll('.blog-card'));
+
+        const getFilteredPosts = () => {
+            if (activeCategory === 'all') return allPosts;
+            return allPosts.filter(p => p.dataset.category === activeCategory);
+        };
 
         const updateVisibility = () => {
-            posts.forEach((post, index) => {
+            const filtered = getFilteredPosts();
+
+            allPosts.forEach(post => {
+                post.classList.remove('fade-in');
+                post.classList.add('fade-out');
+                post.style.display = 'none';
+            });
+
+            filtered.forEach((post, index) => {
                 if (index < visibleCount) {
                     post.style.display = 'flex';
-                    // Trigger reveal animation for newly shown posts
-                    setTimeout(() => post.classList.add('active'), 10 * index);
-                } else {
-                    post.style.display = 'none';
+                    post.classList.remove('fade-out');
+                    setTimeout(() => post.classList.add('fade-in'), 20 * index);
                 }
             });
 
-            // If all posts are visible, hide the button
-            if (visibleCount >= posts.length) {
+            if (visibleCount >= filtered.length) {
                 loadMoreBtn.style.display = 'none';
+            } else {
+                loadMoreBtn.style.display = 'inline-flex';
             }
         };
+
+        // Category buttons
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeCategory = btn.dataset.filter;
+                visibleCount = STEP;
+                updateVisibility();
+            });
+        });
 
         // Initial update
         updateVisibility();

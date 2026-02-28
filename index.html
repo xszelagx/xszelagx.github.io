@@ -2,40 +2,6 @@
 <html lang="pl">
 
 <head>
-    <!-- Google Consent Mode v2 -->
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-
-        // Domyślnie odrzucamy ciasteczka przed załadowaniem GTM
-        gtag('consent', 'default', {
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'analytics_storage': 'denied'
-        });
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
-    <!-- End Google Tag Manager -->
-    <!-- Google Analytics (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-9N5S4NW0L8');
-    </script>
-    <!-- End Google Analytics -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
@@ -48,11 +14,276 @@
     <meta property="og:description"
         content="Profesjonalne raporty BI w Looker Studio, optymalizacja BigQuery i automatyzacje Google Apps Script. Zobacz jak mogę pomóc Twojej firmie.">
     <meta property="og:type" content="website">
-    <!-- Google Fonts: Outfit for modern look -->
+
+    <!-- Preconnect to critical third-party origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    <!-- Google Fonts: preload + async load (non-render-blocking) -->
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap">
+    </noscript>
+
+    <!-- Critical CSS: inline above-the-fold styles for fast FCP -->
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --surface-color: rgba(30, 32, 40, .4);
+            --surface-border: rgba(255, 255, 255, .08);
+            --primary: #7F7FFF;
+            --secondary: #45F3FF;
+            --text-main: #FFF;
+            --text-muted: #A0A4B8;
+            --gradient-primary: linear-gradient(135deg, var(--primary), var(--secondary));
+            --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .01));
+            --font-main: 'Outfit', sans-serif;
+            --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, .37);
+            --blur-glass: blur(12px);
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --radius-sm: 8px;
+            --container-max: 1200px;
+            --transition-smooth: all .4s cubic-bezier(.25, .8, .25, 1)
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative
+        }
+
+        .bg-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: -1;
+            opacity: .5;
+            pointer-events: none;
+            will-change: transform
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--primary);
+            top: -100px;
+            left: -100px
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--secondary);
+            bottom: -50px;
+            right: -50px
+        }
+
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 30px
+        }
+
+        .glass-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 12, 16, .7);
+            backdrop-filter: var(--blur-glass);
+            -webkit-backdrop-filter: var(--blur-glass);
+            border-bottom: 1px solid var(--surface-border);
+            padding: 15px 0
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-decoration: none;
+            color: var(--text-main);
+            letter-spacing: -1px
+        }
+
+        .logo span {
+            color: var(--primary)
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 30px
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 1rem;
+            opacity: .8
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background: var(--text-main);
+            border-radius: 2px
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center
+        }
+
+        .gradient-text {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 500px
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            font-size: 1rem;
+            cursor: pointer;
+            border: none
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: #fff
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--surface-border);
+            color: var(--text-main)
+        }
+
+        .btn-primary-small {
+            background: var(--gradient-primary);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: .9rem
+        }
+
+        @media(max-width:768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(11, 12, 16, .95);
+                backdrop-filter: var(--blur-glass);
+                padding: 20px;
+                border-bottom: 1px solid var(--surface-border)
+            }
+
+            .nav-links.active {
+                display: flex
+            }
+
+            .hamburger {
+                display: block
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 50px
+            }
+
+            .hero-title {
+                font-size: 2.2rem
+            }
+
+            .bg-orb {
+                filter: blur(50px)
+            }
+
+            .orb-1 {
+                width: 200px;
+                height: 200px
+            }
+
+            .orb-2 {
+                width: 150px;
+                height: 150px
+            }
+        }
+    </style>
+
+    <!-- Full CSS: async load (non-render-blocking) -->
+    <link rel="preload" as="style" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="css/styles.css">
+    </noscript>
     <!-- Schema.org for AI & Google -->
     <script type="application/ld+json">
     {
@@ -558,6 +789,35 @@
             <button id="btn-reject" class="btn btn-secondary btn-small">Odrzucam</button>
         </div>
     </div>
+
+    <!-- Google Consent Mode v2 (must load before GTM) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    <!-- Google Tag Manager (deferred) -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+    <!-- Google Analytics (deferred) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
 
     <script src="js/script.js"></script>
 </body>

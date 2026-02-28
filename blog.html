@@ -2,52 +2,21 @@
 <html lang="pl">
 
 <head>
-    <!-- Google Consent Mode v2 -->
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-
-        // Domyślnie odrzucamy ciasteczka przed załadowaniem GTM
-        gtag('consent', 'default', {
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'analytics_storage': 'denied'
-        });
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Google Analytics (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-9N5S4NW0L8');
-    </script>
-    <!-- End Google Analytics -->
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
     <title>Blog o Automatyzacji i Analizie Danych | Mikołaj Szeląg</title>
     <!-- Google Fonts: Outfit for modern look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"></noscript>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preload" as="style" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="css/styles.css"></noscript>
 
 
     <script type="application/ld+json">
@@ -117,8 +86,92 @@
         <!-- Blog Posts Grid -->
         <section class="section pt-0">
             <div class="container">
+                <div class="category-filters">
+                    <button class="category-btn active" data-filter="all">Wszystkie</button>
+                    <button class="category-btn" data-filter="looker-studio">Looker Studio</button>
+                    <button class="category-btn" data-filter="sheets-apps-script">Google Sheets & Apps Script</button>
+                    <button class="category-btn" data-filter="bigquery-gcp">BigQuery & GCP</button>
+                    <button class="category-btn" data-filter="seo-analityka">SEO & Analityka</button>
+                    <button class="category-btn" data-filter="automatyzacja-drive">Automatyzacja Google Drive</button>
+                    <button class="category-btn" data-filter="bezpieczenstwo">Bezpieczeństwo Danych</button>
+                </div>
                 <div class="blog-grid">
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="automatyzacja-drive"
+                        onclick="window.location.href='./blog/automatyczne-porzadkowanie-plikow-dysk-google-apps-script.html'">
+                        <div class="blog-card-image">🗂️</div>
+                        <div class="blog-card-content">
+                            <div class="blog-meta">
+                                <span class="blog-tag">Automatyzacja Google Drive</span>
+                                <span>28 Lutego 2026</span>
+                            </div>
+                            <h3>Automatyczne porządkowanie plików na Dysku Google za pomocą Apps Script</h3>
+                            <p>Skrypt sortujący, przenoszący i archiwizujący pliki automatycznie. Trigery czasowe,
+                                raportowanie — ustaw i zapomnij.</p>
+                            <a href="./blog/automatyczne-porzadkowanie-plikow-dysk-google-apps-script.html"
+                                class="read-more">Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="blog-card" data-category="automatyzacja-drive"
+                        onclick="window.location.href='./blog/automatyczne-generowanie-raportow-pdf-google-docs-apps-script.html'">
+                        <div class="blog-card-image">📄</div>
+                        <div class="blog-card-content">
+                            <div class="blog-meta">
+                                <span class="blog-tag">Automatyzacja Google Drive</span>
+                                <span>28 Lutego 2026</span>
+                            </div>
+                            <h3>Automatyczne generowanie raportów PDF z Google Docs i Sheets — Apps Script</h3>
+                            <p>Masowe tworzenie faktur, umów i raportów z szablonów. Mail merge na sterydach — bez
+                                płatnych pluginów.</p>
+                            <a href="./blog/automatyczne-generowanie-raportow-pdf-google-docs-apps-script.html"
+                                class="read-more">Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="blog-card" data-category="seo-analityka"
+                        onclick="window.location.href='./blog/dashboard-seo-looker-studio-pozycje-ctr-indeksacja.html'">
+                        <div class="blog-card-image">📊</div>
+                        <div class="blog-card-content">
+                            <div class="blog-meta">
+                                <span class="blog-tag">SEO & Analityka</span>
+                                <span>28 Lutego 2026</span>
+                            </div>
+                            <h3>Dashboard SEO w Looker Studio: Monitoruj pozycje, CTR i indeksację</h3>
+                            <p>Krok po kroku jak podłączyć Search Console do Looker Studio i zbudować system wczesnego
+                                ostrzegania dla SEO.</p>
+                            <a href="./blog/dashboard-seo-looker-studio-pozycje-ctr-indeksacja.html"
+                                class="read-more">Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="blog-card" data-category="automatyzacja-drive"
+                        onclick="window.location.href='./blog/automatyzacja-uprawnien-google-drive-udostepnianie-apps-script.html'">
+                        <div class="blog-card-image">🔐</div>
+                        <div class="blog-card-content">
+                            <div class="blog-meta">
+                                <span class="blog-tag">Automatyzacja Google Drive</span>
+                                <span>28 Lutego 2026</span>
+                            </div>
+                            <h3>Automatyzacja uprawnień na Google Drive: Masowe udostępnianie i cofanie dostępów</h3>
+                            <p>Onboarding w 60 sekund, offboarding natychmiast. Skrypty do zarządzania uprawnieniami
+                                setek plików jednocześnie.</p>
+                            <a href="./blog/automatyzacja-uprawnien-google-drive-udostepnianie-apps-script.html"
+                                class="read-more">Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="blog-card" data-category="seo-analityka"
+                        onclick="window.location.href='./blog/raportowanie-efektywnosci-content-marketingu-looker-studio-ga4.html'">
+                        <div class="blog-card-image">📈</div>
+                        <div class="blog-card-content">
+                            <div class="blog-meta">
+                                <span class="blog-tag">SEO & Analityka</span>
+                                <span>28 Lutego 2026</span>
+                            </div>
+                            <h3>Raportowanie efektywności content marketingu w Looker Studio: GA4 + Search Console</h3>
+                            <p>Które artykuły generują konwersje, a które „pusty" ruch? Dashboard ROI dla content
+                                marketingu.</p>
+                            <a href="./blog/raportowanie-efektywnosci-content-marketingu-looker-studio-ga4.html"
+                                class="read-more">Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="blog-card" data-category="looker-studio"
                         onclick="window.location.href='./blog/obsluga-bledow-system-error-null-looker-studio.html'">
                         <div class="blog-card-image">⚠️</div>
                         <div class="blog-card-content">
@@ -133,7 +186,7 @@
                                 class="read-more">Czytaj dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="looker-studio"
                         onclick="window.location.href='./blog/zdjecia-produktow-w-looker-studio-images-from-url.html'">
                         <div class="blog-card-image">🖼️</div>
                         <div class="blog-card-content">
@@ -148,7 +201,7 @@
                                 class="read-more">Czytaj dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="bezpieczenstwo"
                         onclick="window.location.href='./blog/monitoring-dostepow-looker-studio-bezpieczenstwo-danych.html'">
                         <div class="blog-card-image">🛡️</div>
                         <div class="blog-card-content">
@@ -163,7 +216,7 @@
                                 class="read-more">Czytaj dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="seo-analityka"
                         onclick="window.location.href='./blog/techniczne-seo-looker-studio-dashboard-search-console.html'">
                         <div class="blog-card-image">🔍</div>
                         <div class="blog-card-content">
@@ -178,7 +231,7 @@
                                 class="read-more">Czytaj dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="looker-studio"
                         onclick="window.location.href='./blog/looker-studio-logistyka-spedycja-dashboard-kpi.html'">
                         <div class="blog-card-image">🚛</div>
                         <div class="blog-card-content">
@@ -193,7 +246,7 @@
                                 class="read-more">Czytaj dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="bigquery-gcp"
                         onclick="window.location.href='./blog/parametry-looker-studio-dynamiczny-sql-bigquery.html'">
                         <div class="blog-card-image">⚙️</div>
                         <div class="blog-card-content">
@@ -208,7 +261,7 @@
                                 class="read-more">Czytaj dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="looker-studio"
                         onclick="window.location.href='./blog/looker-studio-pro-vs-free-roznice-cena.html'">
                         <div class="blog-card-image">🏢</div>
                         <div class="blog-card-content">
@@ -223,7 +276,7 @@
                                 &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="looker-studio"
                         onclick="window.location.href='./blog/analiza-kohortowa-looker-studio-ga4-retention.html'">
                         <div class="blog-card-image">🔄</div>
                         <div class="blog-card-content">
@@ -238,7 +291,7 @@
                                 dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="looker-studio"
                         onclick="window.location.href='./blog/automatyczne-raporty-pdf-looker-studio-email.html'">
                         <div class="blog-card-image">📧</div>
                         <div class="blog-card-content">
@@ -253,7 +306,7 @@
                                 dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="bigquery-gcp"
                         onclick="window.location.href='./blog/looker-studio-bigquery-quota-exceeded-blad-fix.html'">
                         <div class="blog-card-image">🔧</div>
                         <div class="blog-card-content">
@@ -268,7 +321,7 @@
                                 class="read-more">Czytaj dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="bigquery-gcp"
                         onclick="window.location.href='./blog/looker-studio-bigquery-integracja-performance.html'">
                         <div class="blog-card-image">⚡</div>
                         <div class="blog-card-content">
@@ -284,7 +337,7 @@
                                 dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="looker-studio"
                         onclick="window.location.href='./blog/jak-wgrac-dane-do-looker-studio-konektory.html'">
                         <div class="blog-card-image">🔌</div>
                         <div class="blog-card-content">
@@ -299,7 +352,7 @@
                                 dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="looker-studio"
                         onclick="window.location.href='./blog/pierwszy-dashboard-looker-studio-tutorial.html'">
                         <div class="blog-card-image">📊</div>
                         <div class="blog-card-content">
@@ -314,7 +367,7 @@
                                 dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="looker-studio"
                         onclick="window.location.href='./blog/looker-studio-czy-excel-porownanie-raportowanie.html'">
                         <div class="blog-card-image">⚔️</div>
                         <div class="blog-card-content">
@@ -329,7 +382,7 @@
                                 class="read-more">Czytaj dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="looker-studio"
                         onclick="window.location.href='./blog/co-to-jest-looker-studio-przewodnik-bi-google.html'">
                         <div class="blog-card-image">📖</div>
                         <div class="blog-card-content">
@@ -344,7 +397,7 @@
                                 dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="looker-studio"
                         onclick="window.location.href='./blog/mapy-ciepla-heatmaps-formatowanie-warunkowe-looker-studio.html'">
                         <div class="blog-card-image">🔥</div>
                         <div class="blog-card-content">
@@ -359,7 +412,7 @@
                                 class="read-more">Czytaj dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="looker-studio"
                         onclick="window.location.href='./blog/najczestsze-bledy-kpi-w-raportach-looker-studio-bi.html'">
                         <div class="blog-card-image">❌</div>
                         <div class="blog-card-content">
@@ -376,7 +429,7 @@
                                 dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="looker-studio"
                         onclick="window.location.href='./blog/laczenie-wielu-zrodel-danych-blending-looker-studio.html'">
                         <div class="blog-card-image">🔗</div>
                         <div class="blog-card-content">
@@ -392,7 +445,7 @@
                                 dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="bezpieczenstwo"
                         onclick="window.location.href='./blog/bezpieczenstwo-danych-row-level-security-w-looker-studio-gcp.html'">
                         <div class="blog-card-image">🔒</div>
                         <div class="blog-card-content">
@@ -409,7 +462,7 @@
                                 class="read-more">Czytaj dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="looker-studio"
                         onclick="window.location.href='./blog/looker-studio-czy-power-bi-wybor-narzedzia-bi.html'">
                         <div class="blog-card-image">⚔️</div>
                         <div class="blog-card-content">
@@ -427,7 +480,7 @@
                                 &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="looker-studio"
                         onclick="window.location.href='./blog/dashboard-menedzerski-kpi-raporty-w-looker-studio-gcp.html'">
                         <div class="blog-card-image">📈</div>
                         <div class="blog-card-content">
@@ -442,7 +495,7 @@
                                 class="read-more">Czytaj dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="bigquery-gcp"
                         onclick="window.location.href='./blog/connected-sheets-polaczenie-arkusza-z-baza-bigquery.html'">
                         <div class="blog-card-image">🔌</div>
                         <div class="blog-card-content">
@@ -458,7 +511,7 @@
                                 dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="bigquery-gcp"
                         onclick="window.location.href='./blog/vlookup-vs-join-sql-roznice-hurtownia.html'">
                         <div class="blog-card-image">⚡</div>
                         <div class="blog-card-content">
@@ -474,7 +527,7 @@
                                 &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="bigquery-gcp"
                         onclick="window.location.href='./blog/ile-trwa-wdrozenie-analityki-data-pipeline-gcp.html'">
                         <div class="blog-card-image">⏳</div>
                         <div class="blog-card-content">
@@ -490,7 +543,7 @@
                                 dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="bigquery-gcp"
                         onclick="window.location.href='./blog/jak-polaczyc-facebook-ads-z-google-bigquery-gcp.html'">
                         <div class="blog-card-image">🎯</div>
                         <div class="blog-card-content">
@@ -506,7 +559,7 @@
                                 dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="bigquery-gcp"
                         onclick="window.location.href='./blog/partycjonowanie-vs-klastrowanie-sql-gcp-koszty.html'">
                         <div class="blog-card-image">🗂️</div>
                         <div class="blog-card-content">
@@ -522,7 +575,7 @@
                                 dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="bigquery-gcp"
                         onclick="window.location.href='./blog/koszty-w-bigquery-jak-analizowac-za-darmo-poradnik.html'">
                         <div class="blog-card-image">💸</div>
                         <div class="blog-card-content">
@@ -539,7 +592,7 @@
                                 dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="bigquery-gcp"
                         onclick="window.location.href='./blog/co-to-jest-bigquery-darmowy-limit.html'">
                         <div class="blog-card-image">☁️</div>
                         <div class="blog-card-content">
@@ -554,7 +607,7 @@
                                 &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="sheets-apps-script"
                         onclick="window.location.href='./blog/tworzenie-formularzy-zlecen-google-forms-sheets.html'">
                         <div class="blog-card-image">📝</div>
                         <div class="blog-card-content">
@@ -570,7 +623,7 @@
                                 dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="sheets-apps-script"
                         onclick="window.location.href='./blog/5-funkcji-google-sheets-query-importrange-filter.html'">
                         <div class="blog-card-image">🧠</div>
                         <div class="blog-card-content">
@@ -586,7 +639,7 @@
                                 dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="bezpieczenstwo"
                         onclick="window.location.href='./blog/jak-zabezpieczyc-dane-udostepnione-arkusze-google.html'">
                         <div class="blog-card-image">🛡️</div>
                         <div class="blog-card-content">
@@ -602,7 +655,7 @@
                                 dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="sheets-apps-script"
                         onclick="window.location.href='./blog/pobieranie-danych-api-arkusze-google-bez-wtyczek.html'">
                         <div class="blog-card-image">🌐</div>
                         <div class="blog-card-content">
@@ -618,7 +671,7 @@
                                 dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="sheets-apps-script"
                         onclick="window.location.href='./blog/automatyczne-wysylanie-maili-google-sheets-apps-script.html'">
                         <div class="blog-card-image">📧</div>
                         <div class="blog-card-content">
@@ -633,7 +686,7 @@
                                 class="read-more">Czytaj dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="sheets-apps-script"
                         onclick="window.location.href='./blog/kiedy-excel-przestaje-wystarczac-migracja-google-workspace.html'">
                         <div class="blog-card-image">📊</div>
                         <div class="blog-card-content">
@@ -648,7 +701,7 @@
                                 class="read-more">Czytaj dalej &rarr;</a>
                         </div>
                     </article>
-                    <article class="blog-card"
+                    <article class="blog-card" data-category="sheets-apps-script"
                         onclick="window.location.href='./blog/google-sheets-jako-darmowy-crm-jak-to-zrobic-apps-script.html'">
                         <div class="blog-card-image">💼</div>
                         <div class="blog-card-content">
@@ -694,6 +747,35 @@
             </div>
         </div>
     </footer>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    <!-- Google Tag Manager (deferred) -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+    <!-- Google Analytics (deferred) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+
 
     <script src="js/script.js"></script>
 </body>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <title>Automatyzacja uprawnień na Google Drive: Masowe udostępnianie i cofanie dostępów | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Jak zarządzać uprawnieniami setek plików na Google Drive za pomocą Apps Script. Masowe udostępnianie folderów, cofanie dostępów i audyt kto ma wgląd do firmowych danych.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"></noscript>
+    <link rel="preload" as="style" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
+    <link rel="canonical"
+        href="https://xszelagx.github.io/blog/automatyzacja-uprawnien-google-drive-udostepnianie-apps-script.html" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Automatyzacja uprawnień na Google Drive: Masowe udostępnianie i cofanie dostępów (Apps Script)",
+      "description": "Jak zarządzać uprawnieniami setek plików na Google Drive za pomocą Apps Script. Masowe udostępnianie folderów, cofanie dostępów i audyt kto ma wgląd do firmowych danych.",
+      "author": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg",
+        "url": "https://xszelagx.github.io/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg"
+      },
+      "datePublished": "2026-02-28",
+      "url": "https://xszelagx.github.io/blog/automatyzacja-uprawnien-google-drive-udostepnianie-apps-script.html"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Mikołaj Szeląg",
+        "item": "https://xszelagx.github.io/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://xszelagx.github.io/blog.html"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Automatyzacja uprawnień na Google Drive",
+        "item": "https://xszelagx.github.io/blog/automatyzacja-uprawnien-google-drive-udostepnianie-apps-script.html"
+      }]
+    }
+    </script>
+    <link rel="icon" type="image/png" href="../favicon.png?v=2">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico?v=2">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png?v=2">
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Szeląg<span>.</span>Data</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../">Strona Główna</a></li>
+                    <li><a href="../#about">Dlaczego Warto?</a></li>
+                    <li><a href="../#services">Usługi</a></li>
+                    <li><a href="../#case-studies">Realizacje</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="../blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Automatyzacja Google Drive</span>
+                        <span>28 Lutego 2026</span>
+                        <span>⏱️ 7 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Automatyzacja uprawnień na <span class="gradient-text">Google Drive</span>:
+                        Masowe udostępnianie i cofanie dostępów</h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p><strong>Nowy pracownik dołączył do zespołu i potrzebuje dostępu do 47 folderów na Dysku
+                                firmowym.</strong> Ktoś odszedł z firmy i trzeba cofnąć mu uprawnienia w 120 plikach.
+                            Audytor pyta: „kto ma dostęp do tego folderu z danymi osobowymi?" A Ty klikasz w
+                            „Udostępnij" po kolei, plik po pliku. Brzmi znajomo?</p>
+
+                        <h2>Problem: ręczne zarządzanie uprawnieniami nie skaluje się</h2>
+                        <p>W firmie z 20+ osobami i setkami dokumentów na Dysku Google, model „klik-klik-klik
+                            w udostępnianie" generuje trzy poważne ryzyka:</p>
+                        <ul>
+                            <li><strong>Bezpieczeństwo</strong> — były pracownik nadal ma dostęp do wrażliwych danych,
+                                bo ktoś zapomniał cofnąć uprawnienia. Więcej o tym w moim poście o <a
+                                    href="./jak-zabezpieczyc-dane-udostepnione-arkusze-google.html">zabezpieczaniu
+                                    danych w Arkuszach Google</a>.</li>
+                            <li><strong>Compliance</strong> — brak audytu kto co widzi. Na pytanie RODO nie jesteś
+                                w stanie odpowiedzieć w 24h.</li>
+                            <li><strong>Czas</strong> — onboarding IT nowego pracownika trwa godzinę zamiast minuty.
+                            </li>
+                        </ul>
+
+                        <h2>Skrypt: masowe udostępnianie folderu nowemu pracownikowi</h2>
+                        <p>Poniższy skrypt przyjmuje listę folderów z Google Sheets i udostępnia je wskazanemu
+                            użytkownikowi z określonymi uprawnieniami:</p>
+
+                        <pre><code>function bulkShareFolders() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet()
+                  .getSheetByName('Onboarding');
+  const rows = sheet.getDataRange().getValues();
+
+  // Kolumny: A=Email, B=Folder ID, C=Rola (VIEWER/EDITOR)
+  for (let i = 1; i < rows.length; i++) {
+    const email = rows[i][0];
+    const folderId = rows[i][1];
+    const role = rows[i][2] || 'VIEWER';
+
+    try {
+      const folder = DriveApp.getFolderById(folderId);
+      folder.addEditor(email);  // lub addViewer()
+
+      if (role === 'VIEWER') {
+        // Najpierw dodajemy, potem zmieniamy na viewer
+        folder.removeEditor(email);
+        folder.addViewer(email);
+      }
+
+      sheet.getRange(i + 1, 4).setValue('✅ Udostępniono');
+    } catch (e) {
+      sheet.getRange(i + 1, 4).setValue('❌ Błąd: ' + e.message);
+    }
+  }
+}</code></pre>
+
+                        <h2>Skrypt: cofanie dostępu po odejściu pracownika</h2>
+                        <p>Równie ważne jak udostępnianie jest natychmiastowe <strong>cofnięcie dostępu</strong>.
+                            Poniższy skrypt przeszukuje WSZYSTKIE pliki i foldery, do których dany użytkownik ma
+                            dostęp, i go usuwa:</p>
+
+                        <pre><code>function revokeAllAccess(emailToRevoke) {
+  // Przeszukaj całość Drive
+  const files = DriveApp.searchFiles(
+    `'${emailToRevoke}' in writers or '${emailToRevoke}' in readers`
+  );
+
+  let count = 0;
+  while (files.hasNext()) {
+    const file = files.next();
+    try {
+      file.removeEditor(emailToRevoke);
+    } catch(e) {}
+    try {
+      file.removeViewer(emailToRevoke);
+    } catch(e) {}
+    count++;
+  }
+
+  Logger.log(`Cofnięto dostęp do ${count} plików dla ${emailToRevoke}`);
+  return count;
+}</code></pre>
+
+                        <h2>Audyt uprawnień: kto widzi co?</h2>
+                        <p>Zanim zaczniesz automatyzować udostępnianie, warto najpierw wiedzieć, jaki jest obecny
+                            stan. Skrypt audytowy generuje raport w Google Sheets ze wszystkimi plikami w folderze
+                            i listą osób mających do nich dostęp:</p>
+
+                        <pre><code>function auditFolderPermissions() {
+  const FOLDER_ID = 'ID_FOLDERU_DO_AUDYTU';
+  const folder = DriveApp.getFolderById(FOLDER_ID);
+  const sheet = SpreadsheetApp.getActiveSpreadsheet()
+                  .getSheetByName('Audyt');
+
+  sheet.clear();
+  sheet.appendRow(['Nazwa pliku', 'Typ', 'Właściciel', 'Edytorzy', 'Czytelnicy']);
+
+  const files = folder.getFiles();
+  while (files.hasNext()) {
+    const file = files.next();
+    const editors = file.getEditors().map(e => e.getEmail()).join(', ');
+    const viewers = file.getViewers().map(v => v.getEmail()).join(', ');
+
+    sheet.appendRow([
+      file.getName(),
+      file.getMimeType(),
+      file.getOwner().getEmail(),
+      editors,
+      viewers
+    ]);
+  }
+}</code></pre>
+
+                        <p>Wygenerowany raport to fantastyczna baza do dalszej analizy — np. w <a
+                                href="./monitoring-dostepow-looker-studio-bezpieczenstwo-danych.html">dashboardzie
+                                monitoringu dostępów w Looker Studio</a>. Możesz też nałożyć <a
+                                href="./bezpieczenstwo-danych-row-level-security-looker-studio.html">Row-Level
+                                Security</a>, żeby menedżerowie widzieli tylko uprawnienia swoich zespołów.</p>
+
+                        <blockquote>
+                            „W firmie z 50 pracownikami to tysiące kombinacji plik × użytkownik. Nikt tego nie ogarnie
+                            ręcznie. Albo automatyzujesz zarządzanie dostępami, albo akceptujesz, że były stażysta
+                            nadal czyta strategię cenową."
+                        </blockquote>
+
+                        <h3>Best practices przy automatyzacji uprawnień</h3>
+                        <ul>
+                            <li><strong>Principle of Least Privilege</strong> — domyślnie dawaj VIEWER, EDITOR tylko
+                                kiedy faktycznie potrzebny.</li>
+                            <li><strong>Loguj każdą zmianę</strong> — zapisuj w Sheets kto, kiemu, kiedy dal/cofnął
+                                dostęp.</li>
+                            <li><strong>Regularny audyt</strong> — uruchamiaj skrypt audytowy co tydzień triggerem
+                                czasowym.</li>
+                            <li><strong>Grupy Google</strong> — zamiast udostępniać indywidualnie, twórz grupy
+                                (dział@firma.pl) i zarządzaj na poziomie grupy.</li>
+                        </ul>
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Specjalista
+                                Bezpieczeństwa Danych & Automatyzacji</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Automatyzuję
+                                procesy IT, które kradną czas zespołom. Od zarządzania uprawnieniami po pełne
+                                pipeline'y danych w Google Cloud.</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Onboarding trwa za długo?</h3>
+                            <p>Wdrożę automatyzację uprawnień, która nowego pracownika ogarnie w 60 sekund, a
+                                odchodzącego rozłączy natychmiast. Bezpieczna i audytowalna.</p>
+                            <a href="../#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Zamawiam automatyzację
+                                uprawnień</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Szeląg<span>.</span>Data</div>
+            <p>&copy; <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    <!-- Google Tag Manager (deferred) -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+    <!-- Google Analytics (deferred) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

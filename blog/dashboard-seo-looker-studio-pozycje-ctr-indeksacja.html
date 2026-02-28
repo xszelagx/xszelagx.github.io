@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <title>Dashboard SEO w Looker Studio: Monitoruj pozycje, CTR i indeksację | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Krok po kroku jak zbudować dashboard SEO w Looker Studio. Podłącz Search Console, monitoruj pozycje, CTR, impressions i indeksację nowych stron w czasie rzeczywistym.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"></noscript>
+    <link rel="preload" as="style" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
+    <link rel="canonical"
+        href="https://xszelagx.github.io/blog/dashboard-seo-looker-studio-pozycje-ctr-indeksacja.html" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Dashboard SEO w Looker Studio: Monitoruj pozycje, CTR i indeksację w czasie rzeczywistym",
+      "description": "Krok po kroku jak zbudować dashboard SEO w Looker Studio. Podłącz Search Console, monitoruj pozycje, CTR, impressions i indeksację nowych stron w czasie rzeczywistym.",
+      "author": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg",
+        "url": "https://xszelagx.github.io/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg"
+      },
+      "datePublished": "2026-02-28",
+      "url": "https://xszelagx.github.io/blog/dashboard-seo-looker-studio-pozycje-ctr-indeksacja.html"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Mikołaj Szeląg",
+        "item": "https://xszelagx.github.io/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://xszelagx.github.io/blog.html"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Dashboard SEO w Looker Studio: Monitoruj pozycje, CTR i indeksację",
+        "item": "https://xszelagx.github.io/blog/dashboard-seo-looker-studio-pozycje-ctr-indeksacja.html"
+      }]
+    }
+    </script>
+    <link rel="icon" type="image/png" href="../favicon.png?v=2">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico?v=2">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png?v=2">
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Szeląg<span>.</span>Data</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../">Strona Główna</a></li>
+                    <li><a href="../#about">Dlaczego Warto?</a></li>
+                    <li><a href="../#services">Usługi</a></li>
+                    <li><a href="../#case-studies">Realizacje</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="../blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">SEO & Analityka</span>
+                        <span>28 Lutego 2026</span>
+                        <span>⏱️ 9 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Dashboard SEO w <span class="gradient-text">Looker Studio</span>:
+                        Monitoruj pozycje, CTR i indeksację</h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p><strong>Sprawdzanie pozycji słów kluczowych raz na tydzień w Excelu to jak prowadzenie
+                                samochodu patrząc wyłącznie w lusterko wsteczne.</strong> Profesjonalny monitoring SEO
+                            wymaga dashboardu, który aktualizuje się automatycznie i pokazuje trendy w czasie
+                            rzeczywistym. Looker Studio podłączony bezpośrednio do Google Search Console daje Ci
+                            dokładnie to — za darmo.</p>
+
+                        <h2>Krok 1: Podłączenie Search Console do Looker Studio</h2>
+                        <p>Looker Studio oferuje natywny <a
+                                href="./jak-wgrac-dane-do-looker-studio-konektory.html">konektor do Search
+                                Console</a>, który nie wymaga żadnej konfiguracji API. Wystarczy:</p>
+                        <ol>
+                            <li>Otwórz <strong>lookerstudio.google.com</strong> → Utwórz → Raport.</li>
+                            <li>Kliknij <strong>Dodaj dane</strong> → wyszukaj „Search Console".</li>
+                            <li>Wybierz swoją usługę (property) i tabelę: <strong>Wrażenia na URL</strong> (Site
+                                Impression by URL).</li>
+                            <li>Otrzymujesz dostęp do: zapytań, URL-i, kliknięć, wyświetleń, CTR i średniej pozycji.
+                            </li>
+                        </ol>
+                        <p>Dane z GSC w Looker Studio mają <strong>opóźnienie ~48h</strong> (tak samo jak w samym
+                            Search Console). To jest normalne i nie da się tego obejść — Google tak przetwarza dane.</p>
+
+                        <h2>Krok 2: Kluczowe metryki dashboardu SEO</h2>
+                        <p>Nie chodzi o to, żeby wrzucić wszystko na jeden ekran. Dobry dashboard SEO odpowiada na
+                            <strong>konkretne pytania biznesowe</strong>:
+                        </p>
+
+                        <h3>Panel 1: Overview (Scorecardy)</h3>
+                        <ul>
+                            <li><strong>Kliknięcia ogółem</strong> (vs. poprzedni okres) — czy ruch rośnie?</li>
+                            <li><strong>Średnia pozycja</strong> — trend globalnej widoczności.</li>
+                            <li><strong>Średni CTR</strong> — czy tytuły i opisy przyciągają kliknięcia?</li>
+                            <li><strong>Liczba zapytań w TOP 3 / TOP 10</strong> — ile fraz jest „na górze"?</li>
+                        </ul>
+
+                        <h3>Panel 2: Trend pozycji (Wykres liniowy)</h3>
+                        <p>Wykres liniowy pokazujący średnią pozycję w czasie — najlepiej z podziałem na grupy fraz
+                            (brandowe vs. niebrandowe). To pozwala szybko wyłapać, czy spadek pozycji dotyczy
+                            konkretnej grupy treści, czy jest globalny.</p>
+
+                        <h3>Panel 3: TOP zapytania (Tabela)</h3>
+                        <p>Tabela z kolumnami: Zapytanie, Kliknięcia, Wyświetlenia, CTR, Średnia pozycja. Posortowana
+                            po kliknięciach. Dodaj <strong>formatowanie warunkowe</strong> na CTR (zielony >5%,
+                            czerwony <1%) — technikę opisałem w artykule o <a
+                                href="./mapy-ciepla-heatmaps-formatowanie-warunkowe-looker-studio.html">mapach ciepła
+                                w Looker Studio</a>.</p>
+
+                        <h3>Panel 4: Kanibalizacja słów kluczowych</h3>
+                        <p>To jeden z najcenniejszych elementów dashboardu. Stwórz tabelę, która zestawia zapytania
+                            z URL-ami. Jeśli jedno zapytanie pojawia się przy wielu URL-ach — masz kanibalizację
+                            i musisz zdecydować, który URL powinien rankować. Więcej o tym podejściu pisałem w poście
+                            o <a href="./techniczne-seo-looker-studio-dashboard-search-console.html">technicznym
+                                SEO w Looker Studio</a>.</p>
+
+                        <h2>Krok 3: Data Blending — połącz SEO z konwersjami</h2>
+                        <p>Sam ruch organiczny to tylko połowa obrazu. Żeby wiedzieć, które frazy przynoszą
+                            <strong>pieniądze</strong>, musisz połączyć dane GSC z GA4. Looker Studio oferuje do tego
+                            <a href="./laczenie-danych-data-blending-looker-studio.html">funkcję Data Blending</a>:
+                        </p>
+                        <ol>
+                            <li>Dodaj <strong>drugie źródło danych</strong> — GA4.</li>
+                            <li>Ustaw <strong>klucz łączenia</strong> na URL (Landing Page w GA4 =
+                                URL w GSC).</li>
+                            <li>Teraz możesz zestawić: kliknięcia organiczne + konwersje + przychód na jednym
+                                wykresie.</li>
+                        </ol>
+
+                        <h3>Alerting na spadki pozycji</h3>
+                        <p>Looker Studio nie ma wbudowanego systemu alertów, ale istnieje sprytne obejście:</p>
+                        <ul>
+                            <li>Stwórz <strong>pole obliczeniowe</strong> porównujące średnią pozycję z bieżącego
+                                tygodnia vs. poprzedni.</li>
+                            <li>Ustaw <strong>harmonogram wysyłki PDF</strong> — <a
+                                    href="./automatyczne-raporty-pdf-looker-studio-email.html">raport z anomaliami
+                                    ląduje co poniedziałek na Twojej skrzynce</a>.</li>
+                            <li>Alternatywnie: eksportuj dane do Google Sheets i użyj Apps Script do wysłania maila,
+                                gdy pozycja dla kluczowej frazy spadnie poniżej progu.</li>
+                        </ul>
+
+                        <blockquote>
+                            „Dashboard SEO to nie raport — to system wczesnego ostrzegania. Jeśli nie monitorujesz
+                            pozycji w czasie rzeczywistym, dowiadujesz się o problemach dopiero wtedy, gdy klient
+                            pyta, dlaczego telefon przestał dzwonić."
+                        </blockquote>
+
+                        <h2>Krok 4: Monitorowanie indeksacji nowych stron</h2>
+                        <p>Po opublikowaniu nowego artykułu lub produktu chcesz wiedzieć, kiedy Google go zaindeksował
+                            i jak szybko zaczął rankować. Dodaj do dashboardu filtr na URL zawierający datę publikacji
+                            (lub ręcznie zarządzaną listę w Google Sheets) i obserwuj, kiedy nowe strony pojawiają
+                            się w wynikach.</p>
+
+                        <p>Jeśli dopiero budujesz <a href="./pierwszy-dashboard-looker-studio-tutorial.html">swój
+                                pierwszy dashboard
+                                w Looker Studio</a> — zacznij od prostego widoku z 2–3 panelami i stopniowo
+                            rozbudowuj. Lepiej mieć działający MVP niż idealny projekt na wiecznym etapie
+                            planowania.</p>
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">SEO Data
+                                Strategist & BI Expert</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Łączę świat SEO
+                                z analityką danych. Buduję dashboardy, które zamieniają surowe dane z Search Console
+                                w decyzje biznesowe.</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Twój SEO raporting to Excel?</h3>
+                            <p>Przesiądź się na interaktywny dashboard w Looker Studio. Automatyczne aktualizacje,
+                                alerty na spadki, integracja z GA4 — zero ręcznej pracy.</p>
+                            <a href="../#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Zamawiam dashboard SEO</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Szeląg<span>.</span>Data</div>
+            <p>&copy; <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    <!-- Google Tag Manager (deferred) -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+    <!-- Google Analytics (deferred) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

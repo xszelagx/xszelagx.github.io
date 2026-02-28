@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <title>Automatyczne porządkowanie plików na Dysku Google za pomocą Apps Script | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Skrypt Apps Script do automatycznego sortowania, przenoszenia i archiwizacji plików na Google Drive. Ustaw triggery czasowe i zapomnij o ręcznym porządkowaniu folderów.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"></noscript>
+    <link rel="preload" as="style" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
+    <link rel="canonical"
+        href="https://xszelagx.github.io/blog/automatyczne-porzadkowanie-plikow-dysk-google-apps-script.html" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Automatyczne porządkowanie plików na Dysku Google za pomocą Apps Script",
+      "description": "Skrypt Apps Script do automatycznego sortowania, przenoszenia i archiwizacji plików na Google Drive. Ustaw triggery czasowe i zapomnij o ręcznym porządkowaniu folderów.",
+      "author": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg",
+        "url": "https://xszelagx.github.io/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Mikołaj Szeląg"
+      },
+      "datePublished": "2026-02-28",
+      "url": "https://xszelagx.github.io/blog/automatyczne-porzadkowanie-plikow-dysk-google-apps-script.html"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Mikołaj Szeląg",
+        "item": "https://xszelagx.github.io/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://xszelagx.github.io/blog.html"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Automatyczne porządkowanie plików na Dysku Google za pomocą Apps Script",
+        "item": "https://xszelagx.github.io/blog/automatyczne-porzadkowanie-plikow-dysk-google-apps-script.html"
+      }]
+    }
+    </script>
+    <link rel="icon" type="image/png" href="../favicon.png?v=2">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico?v=2">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png?v=2">
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Szeląg<span>.</span>Data</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../">Strona Główna</a></li>
+                    <li><a href="../#about">Dlaczego Warto?</a></li>
+                    <li><a href="../#services">Usługi</a></li>
+                    <li><a href="../#case-studies">Realizacje</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="../blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Automatyzacja Google Drive</span>
+                        <span>28 Lutego 2026</span>
+                        <span>⏱️ 7 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Automatyczne porządkowanie plików na <span class="gradient-text">Dysku
+                            Google</span> za pomocą Apps Script</h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <div class="post-content">
+                        <p><strong>Firmowy Dysk Google po kilku miesiącach pracy potrafi wyglądać jak piwnica po
+                                przeprowadzce</strong> — setki plików w losowych folderach, pięć wersji tej samej
+                            oferty, a najnowsza faktura gdzieś pomiędzy zrzutami ekranu z piątkowego Slacka. Zamiast
+                            poświęcać co kwartał cały piątek na ręczne przekładanie dokumentów, możesz oddelegować to
+                            zadanie skryptowi, który zrobi to za Ciebie każdego dnia o 6:00 rano.</p>
+
+                        <h2>Dlaczego ręczne porządkowanie nie skaluje się w firmie?</h2>
+                        <p>W małych zespołach łatwo utrzymać porządek na wspólnym dysku. Problem zaczyna się, gdy:</p>
+                        <ul>
+                            <li><strong>Zespół przekracza 10 osób</strong> — każdy ma swój sposób nazywania plików
+                                („oferta_fin_v3_FINAL(2).docx" brzmi znajomo?).</li>
+                            <li><strong>Pliki przychodzą z wielu źródeł</strong> — formularze Google, załączniki
+                                mailowe, eksporty z CRM, skany z telefonu.</li>
+                            <li><strong>Brak spójnej konwencji</strong> — nawet najlepsze procedury ISO nie przetrwają
+                                kontaktu z rzeczywistością dłużej niż kwartał.</li>
+                        </ul>
+                        <p>Rozwiązaniem jest <strong>automatyzacja — a konkretnie Google Apps Script</strong>, czyli
+                            darmowy silnik JavaScript wbudowany w każde konto Google. Ten sam mechanizm, który
+                            wykorzystujesz do <a
+                                href="./automatyczne-wysylanie-maili-google-sheets-apps-script.html">automatycznego
+                                wysyłania maili z Arkuszy Google</a>, doskonale sprawdza się przy zarządzaniu
+                            strukturą Dysku.</p>
+
+                        <h2>Architektura skryptu: co właściwie automatyzujemy?</h2>
+                        <p>Dobry skrypt porządkujący Dysk Google realizuje trzy główne zadania:</p>
+                        <ol>
+                            <li><strong>Sortowanie</strong> — przenoszenie plików do właściwych folderów na podstawie
+                                nazwy, typu MIME lub daty utworzenia.</li>
+                            <li><strong>Archiwizacja</strong> — przenoszenie plików starszych niż X dni do folderu
+                                archiwum (zamiast usuwania).</li>
+                            <li><strong>Raportowanie</strong> — generowanie podsumowania co zostało przeniesione, żeby
+                                zespół wiedział co się stało z ich plikami.</li>
+                        </ol>
+
+                        <h2>Gotowy skrypt do wdrożenia</h2>
+                        <p>Poniższy kod przeszukuje wskazany folder „Inbox" na Dysku i automatycznie sortuje pliki do
+                            podfolderów na podstawie rozszerzenia. Dodatkowo archiwizuje wszystko starsze niż 90 dni:
+                        </p>
+
+                        <pre><code>function organizeGoogleDrive() {
+  const INBOX_ID = 'TWOJ_FOLDER_INBOX_ID';  // folder do przeszukania
+  const ARCHIVE_ID = 'TWOJ_FOLDER_ARCHIWUM_ID';
+  const DAYS_TO_ARCHIVE = 90;
+
+  const inbox = DriveApp.getFolderById(INBOX_ID);
+  const archive = DriveApp.getFolderById(ARCHIVE_ID);
+  const cutoffDate = new Date();
+  cutoffDate.setDate(cutoffDate.getDate() - DAYS_TO_ARCHIVE);
+
+  const files = inbox.getFiles();
+  let moved = 0, archived = 0;
+
+  while (files.hasNext()) {
+    const file = files.next();
+    const name = file.getName();
+    const created = file.getDateCreated();
+    const mime = file.getMimeType();
+
+    // Archiwizacja starych plików
+    if (created < cutoffDate) {
+      file.moveTo(archive);
+      archived++;
+      continue;
+    }
+
+    // Sortowanie po typie pliku
+    let targetFolder = null;
+    if (mime.includes('spreadsheet') || name.endsWith('.xlsx')) {
+      targetFolder = getOrCreateFolder(inbox, '📊 Arkusze');
+    } else if (mime.includes('document') || name.endsWith('.docx')) {
+      targetFolder = getOrCreateFolder(inbox, '📝 Dokumenty');
+    } else if (mime.includes('pdf')) {
+      targetFolder = getOrCreateFolder(inbox, '📄 PDF');
+    } else if (mime.includes('image')) {
+      targetFolder = getOrCreateFolder(inbox, '🖼️ Grafiki');
+    }
+
+    if (targetFolder) {
+      file.moveTo(targetFolder);
+      moved++;
+    }
+  }
+
+  // Raport e-mail
+  if (moved > 0 || archived > 0) {
+    MailApp.sendEmail(
+      Session.getActiveUser().getEmail(),
+      '🗂️ Raport porządkowania Dysku Google',
+      `Przeniesiono ${moved} plików do podfolderów.\n` +
+      `Zarchiwizowano ${archived} plików starszych niż ${DAYS_TO_ARCHIVE} dni.`
+    );
+  }
+}
+
+function getOrCreateFolder(parent, name) {
+  const folders = parent.getFoldersByName(name);
+  return folders.hasNext()
+    ? folders.next()
+    : parent.createFolder(name);
+}</code></pre>
+
+                        <h2>Trigger czasowy — ustaw i zapomnij</h2>
+                        <p>Najsilniejszą stroną tego podejścia jest możliwość ustawienia <strong>triggera
+                                czasowego</strong> (Time-Driven Trigger), który uruchomi skrypt automatycznie —
+                            np. każdego dnia o 6:00 rano, zanim ktokolwiek z zespołu zacznie pracę. To ten sam
+                            mechanizm, na którym opiera się <a
+                                href="./google-sheets-jako-darmowy-crm-jak-to-zrobic-apps-script.html">budowa
+                                darmowego CRM w Google Sheets</a>.</p>
+
+                        <p>Aby go ustawić:</p>
+                        <ol>
+                            <li>Otwórz edytor Apps Script (script.google.com).</li>
+                            <li>Kliknij ikonę zegara (Wyzwalacze) w menu bocznym.</li>
+                            <li>Dodaj nowy wyzwalacz: funkcja <code>organizeGoogleDrive</code>, źródło „Sterowane
+                                czasem", częstotliwość „Dziennie", godzina „06:00–07:00".</li>
+                        </ol>
+
+                        <h3>Rozszerzenia: co jeszcze można zautomatyzować?</h3>
+                        <p>Porządkowanie po typie pliku to dopiero początek. W bardziej zaawansowanych wdrożeniach
+                            konfiguruje dla klientów:</p>
+                        <ul>
+                            <li><strong>Sortowanie po nadawcy</strong> — pliki z Gmail automatycznie lądują w folderach
+                                klientów.</li>
+                            <li><strong>Automatyczne nazewnictwo</strong> — np. „Faktura_[NazwaKlienta]_[Data].pdf"
+                                generowane z danych w <a
+                                    href="./pobieranie-danych-api-arkusze-google-bez-wtyczek.html">Arkuszach
+                                    podłączonych do API</a>.</li>
+                            <li><strong>Wykrywanie duplikatów</strong> — porównanie hash plików i przeniesienie
+                                zdublowanych wersji do kosza.</li>
+                            <li><strong>Integracja z Looker Studio</strong> — dashboard pokazujący statystyki Dysku:
+                                ile plików, ile GB, trend wzrostu.</li>
+                        </ul>
+
+                        <blockquote>
+                            „Porządek na Dysku to nie kwestia dyscypliny — to kwestia automatyzacji. Dyscyplina kończy
+                            się w piątek po południu, a skrypt pracuje nawet w Wigilię."
+                        </blockquote>
+
+                        <h3>Podsumowanie</h3>
+                        <p>Automatyczne porządkowanie Dysku Google to jedno z najprostszych wdrożeń, które daje
+                            natychmiastowy, namacalny efekt. Zamiast wydawać pieniądze na zewnętrzne narzędzia do
+                            zarządzania plikami, wykorzystujesz <strong>infrastrukturę, za którą już płacisz</strong> —
+                            Google Workspace. Jeśli chcesz, żebym skonfigurował to pod specyfikę Twojej firmy —
+                            wystarczy napisać.</p>
+                    </div>
+
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Automatyzator
+                                Procesów Google Cloud</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Buduję systemy,
+                                które zamieniają chaotyczne Dyski Google w uporządkowane ekosystemy. Od automatyzacji
+                                plików po pełne pipeline'y danych w BigQuery.</p>
+                        </div>
+                        <div class="cta-card">
+                            <h3>Twój Dysk Google to bałagan?</h3>
+                            <p>Skonfiguruję automatyczny system porządkowania dopasowany do struktury Twojej firmy.
+                                Sortowanie, archiwizacja i raportowanie — bez żadnej ręcznej pracy.</p>
+                            <a href="../#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Zamawiam automatyzację
+                                Drive</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Szeląg<span>.</span>Data</div>
+            <p>&copy; <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    <!-- Google Tag Manager (deferred) -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+    <!-- Google Analytics (deferred) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
