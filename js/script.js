@@ -130,7 +130,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (typeof gtag === 'function') {
                             gtag('event', 'generate_lead', {
                                 'event_category': 'Contact',
-                                'event_label': 'Web3Forms Success'
+                                'event_label': 'Web3Forms Success',
+                                'page_path': window.location.pathname,
+                                'referrer': document.referrer
                             });
                         }
                     } else {
@@ -258,7 +260,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
             revealBtn.style.display = 'none';
             contactRevealed.style.display = 'block';
+
+            // GA4 Event tracking for unlocking contact info
+            if (typeof gtag === 'function') {
+                gtag('event', 'unlock_contact', {
+                    'event_category': 'Engagement',
+                    'event_label': 'Contact Info Revealed',
+                    'page_path': window.location.pathname
+                });
+            }
         });
+    }
+
+    // Custom Scroll Depth Tracking for GA4
+    const articleContent = document.querySelector('.post-content') || document.body;
+    if (articleContent && document.querySelector('.post-content')) {
+        let scrollMarks = { 25: false, 50: false, 75: false, 100: false };
+        window.addEventListener('scroll', () => {
+            const rect = articleContent.getBoundingClientRect();
+            const scrolled = (window.innerHeight - rect.top);
+            const total = rect.height;
+            const percentage = (scrolled / total) * 100;
+
+            [25, 50, 75, 100].forEach(mark => {
+                if (percentage >= mark && !scrollMarks[mark]) {
+                    scrollMarks[mark] = true;
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'article_scroll', {
+                            'event_category': 'Engagement',
+                            'event_label': 'Scroll Depth',
+                            'percent_scrolled': mark,
+                            'article_title': document.title
+                        });
+                    }
+                }
+            });
+        }, { passive: true });
     }
 
     // Blog Category Filter + Load More Logic
