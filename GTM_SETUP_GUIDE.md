@@ -83,6 +83,9 @@ To narzędzie pozwoli Ci oglądać, jak użytkownicy poruszają się po stronie 
 5.  W sekcji **Reguły (Triggers)** wybierz **All Pages** (lub Initialization - All Pages).
 6.  Zapisz i **Opublikuj** zmiany w GTM.
 
+> [!TIP]
+> **Optymalizacja PageSpeed:** Jeśli zauważysz spadek wyników wydajności (LCP/TBT), zmień regułę (Trigger) dla tagu Clarity z "All Pages" na **"Window Loaded"** (Ostatnie zdarzenie ładowania strony). Dzięki temu Clarity zacznie działać dopiero, gdy cała strona będzie już gotowa, co poprawi Twoje wyniki w Google PageSpeed Insights.
+
 Dzięki temu kod Clarity nie będzie bezpośrednio w HTML-u, a GTM załaduje go w sposób optymalny, nie spowalniając renderowania strony.
 
 ---
@@ -96,6 +99,11 @@ Wprowadziliśmy do kodu `js/script.js` funkcję, która automatycznie wyłapuje 
 - **W mailu z Web3Forms zobaczysz dodatkowe linijki**, np. `utm_source: linkedin`.
 
 Dzięki temu wiesz dokładnie, który post lub reklama przyniosły Ci klienta!
+
+**Czy parametry muszą być w URL cały czas?**
+Nie! Skrypt działa inteligentnie:
+1.  Gdy użytkownik wchodzi na stronę z UTM (np. na Home), skrypt natychmiast zapisuje je w **Pamięci sesji** (`sessionStorage`) jego przeglądarki.
+2.  Nawet jeśli użytkownik przejdzie potem na bloga (gdzie w adresie nie ma już UTM), skrypt nadal "pamięta" źródło z początku wizyty i dołączy je do formularza przy wysyłce.
 
 ---
 
