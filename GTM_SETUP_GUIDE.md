@@ -21,15 +21,16 @@ W pliku `js/script.js` umieściliśmy potężne zdarzenia: `generate_lead`, `unl
 
 Ponieważ masz zintegrowany GTM z gtagiem, GTM "nasłuchuje" na warstwie danych (DataLayer), ale musimy mu powiedzieć, by je przełapał i wysłał do raportów GA4.
 
-### Krok 2A: Utworzenie Reguł (Triggers)
-Musisz stworzyć 3 reguły nasłuchujące w GTM:
-1. Przejdź do **Reguły** (Triggers) -> **Nowa**.
-2. Typ reguły: **Niestandardowe zdarzenie** (Custom Event).
-3. Podaj Nazwę zdarzenia dokładnie taką, jak w kodzie:
+### Krok 2A: Utworzenie Wyzwalaczy (Triggers)
+Musisz stworzyć 3 wyzwalacze nasłuchujące w GTM:
+1. W lewym menu w **Obszarze roboczym** przejdź do zakładki **Wyzwalacze**.
+2. Kliknij przycisk **Nowy** i u góry nadaj mu nazwę (np. "Wyzwalacz - Generate Lead").
+3. Kliknij w duży szary kwadrat "Konfiguracja wyzwalacza", zjedziesz na liście na prawym panelu na dół do opcji **Niestandardowe zdarzenie** (Custom Event).
+4. Podaj Nazwę zdarzenia dokładnie taką, jak w kodzie:
    - Zdarzenie 1: wpisz `generate_lead`
    - Zdarzenie 2: wpisz `unlock_contact`
    - Zdarzenie 3: wpisz `article_scroll`
-4. Zapisz każdą z nich (np. jako "Trigger - Generate Lead").
+5. Zapisz. Zrób tak dla każdego wyzwalacza z osobna.
 
 ### Krok 2B: Utworzenie Zmiennych (Variables) dla Atrybutów
 Nasze zdarzenia wysyłają do GA4 fantastyczne parametry z niestandardowymi danymi. Musisz je "wyłapać" za pomocą Zmiennych.
@@ -49,16 +50,16 @@ Nasze zdarzenia wysyłają do GA4 fantastyczne parametry z niestandardowymi dany
 
 ### Krok 2C: Utworzenie Tagów Zdarzeń GA4
 Teraz połączmy to co wymyśliliśmy i wyślijmy do GA4:
-1. Przejdź do **Tagi** (Tags) -> **Nowy**.
-2. Typ tagu: **Google Analytics: zdarzenie GA4** (GA4 Event).
+1. W lewym menu przejdź do **Tagi** -> **Nowy** i nadaj mu nazwę na samej górze.
+2. W Konfiguracji tagu wybierz typ: **Google Analytics: zdarzenie GA4**.
 3. Podaj Twój identyfikator pomiaru (np. `G-9N5S4NW0L8`).
 4. **Nazwa zdarzenia:** Wybierz konkretną np. wpisz ręcznie `generate_lead`.
 5. W zakładce **Parametry zdarzenia** dodaj parametry odwołując się do zmiennych z Kroku 2B (np. nazwa parametru: `percent_scrolled`, wartość: `{{percent_scrolled}}`; nazwa parametru: `referrer`, wartość: `{{referrer}}` itd.).
-6. W sekcji **Reguły** na samym dole, przypnij odpowiedni Trigger, który utworzyliśmy w Kroku 2A.
-7. Powtórz to dla trzech zdarzeń: `generate_lead`, `unlock_contact`, `article_scroll`.
+6. Niżej na ekranie, w dole bloku kliknij w sekcję **Wyzwalanie**. Z wylistowanych opcji przypnij przygotowany odpowiedni **Wyzwalacz**, który utworzyliśmy przed chwilą w Kroku 2A.
+7. Powtórz to dla trzech zdarzeń: `generate_lead`, `unlock_contact`, `article_scroll` podczepiając im utworzone 3 wyzwalacze.
 
 ### 3. Opublikowanie Kontenera
-Po spięciu Tagów GA4 z Regułami z Custom Eventów kliknij granatowy przycisk powiadomień **Prześlij** (Submit) w prawym górnym rogu GTM. Od teraz wszystkie akcje wysyłane z kodów JavaScript zaczną pojawiać w Google Analytics (sekcja: Czas rzeczywisty).
+Po spięciu Tagów z Wyzwalaczami, na stronie głównej obszaru roboczego kliknij granatowy przycisk **Prześlij** (widoczny na Twoim pierwszym zrzucie ekranu w prawym górnym rogu). Od teraz wszystkie akcje wysyłane z kodów JavaScript zaczną pojawiać w Google Analytics!
 
 ---
 
