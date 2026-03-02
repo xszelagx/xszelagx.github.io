@@ -8,10 +8,11 @@ Aby strona w pełni przetwarzała niestandardowe zdarzenia (Custom Events) zakod
 W kodzie strony zaimplementowaliśmy tak zwany *Advanced Consent Mode*. Domyślnie wszystkie zgody (Cookies analityczne i reklamowe) są ustawione na `denied` (zablokowane). Zmieniają się na `granted` (zaakceptowane) dopiero, gdy użytkownik kliknie "Akceptuj" na banerze (kod aktualizuje to na żywo używając `gtag('consent', 'update', ...)`).
 
 **Aby włączyć Consent Mode w GTM:**
-1. Zaloguj się do GTM i przejdź do sekcji **Administracja** (Zębatka u góry) -> **Ustawienia kontenera**.
-2. Zaznacz pole: **Włącz ustawienia zgody** (Enable consent overview). Zapisz.
-3. Wróć do **Obszaru roboczego** (Workspace). W sekcji Tagi pojawi się nowa ikona tarczy (Consent Overview).
-4. Kliknij w tarczę. Zobaczysz listę wszystkich swoich tagów. Zaznacz tag główny GA4 (Google tag) i ustaw **Wymagane zgody** (Require additional consent) na wbudowane zgody, lub pozwól tagowi asynchronicznie polegać na wbudowanych zgodach (GA4 obsługuje Consent Mode automatycznie).
+1. Zaloguj się do GTM i przejdź do górnej zakładki **Administracja**.
+2. W prawej kolumnie (w sekcji "Kontener"), kliknij pierwszą opcję: **Ustawienia kontenerów**.
+3. Na samym dole rozwiniętej strony znajdziesz mały checkbox: **Włącz ustawienia zgody (Enable consent overview)**. Zaznacz go i kliknij przycisk Zapisz w prawym górnym rogu.
+4. Wróć z powrotem do górnej zakładki **Obszar roboczy** (Workspace). Wejdź w lewym menu w "Tagi". Nad listą tagów pojawi się nowa pozioma ikona tarczy.
+5. Kliknij w tarczę. Zaznacz tag główny GA4 i ustaw mu w zakładce "Zgody" tzw. wbudowane zgody. GA4 natywnie wspiera Consent Mode, więc od tego momentu jest to obsłużone poprawnie prawne.
 
 ---
 
@@ -31,16 +32,20 @@ Musisz stworzyć 3 reguły nasłuchujące w GTM:
 4. Zapisz każdą z nich (np. jako "Trigger - Generate Lead").
 
 ### Krok 2B: Utworzenie Zmiennych (Variables) dla Atrybutów
-Nasze zdarzenia wysyłają do GA4 fantastyczne parametry z niestandardowymi danymi.
-1. Przejdź do **Zmienne** (Variables) -> **Nowa**.
-2. Typ zmiennej: **Zmienna warstwy danych** (Data Layer Variable).
-3. Utwórz 6 osobnych zmiennych wpisując dokładnie te klucze (w polu "Nazwa zmiennej warstwy danych"):
+Nasze zdarzenia wysyłają do GA4 fantastyczne parametry z niestandardowymi danymi. Musisz je "wyłapać" za pomocą Zmiennych.
+1. W lewym menu w **Obszarze roboczym** przejdź do zakładki **Zmienne**.
+2. Zjedź na dół do sekcji "Zmienne definiowane przez użytkownika" i kliknij **Nowa**.
+3. Kliknij w duże szare kółko "Konfiguracja zmiennej", by otworzyło się boczne menu "Wybór typu zmiennej".
+4. Przewiń listę w dół, aż znajdziesz sekcję "Zmienne strony" i wybierz **Zmienna warstwy danych** (niebieska ikonka zgiętej kartki papieru).
+5. Utwórz w ten sposób 6 osobnych zmiennych, wpisując każdorazowo w pole *Nazwa zmiennej warstwy danych* dokładnie podane niżej klucze:
    - `page_path` (ścieżka z której wysłano formularz/odsłonięto kontakt)
    - `referrer` (strona poprzedzająca)
    - `percent_scrolled` (procent przewinięcia - 25, 50, 75, 100)
    - `article_title` (tytuł czytanego tekstu)
    - `event_category` (kategoria, np. Contact lub Engagement)
    - `event_label` (etykieta, np. Web3Forms Success)
+   
+6. Każdej zmiennej nadaj jasną nazwę w lewym górnym rogu (np. "DLV - page_path") i Zapisz.
 
 ### Krok 2C: Utworzenie Tagów Zdarzeń GA4
 Teraz połączmy to co wymyśliliśmy i wyślijmy do GA4:
