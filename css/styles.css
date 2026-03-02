@@ -1342,6 +1342,9 @@ textarea.form-control {
     margin-bottom: 30px;
     font-family: monospace;
     color: #a5d6ff;
+    font-size: 0.85rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 .post-content blockquote {
@@ -1469,54 +1472,4 @@ textarea.form-control {
     .category-filters::-webkit-scrollbar {
         display: none;
     }
-}
-
-/* Code Block Copy Button */
-.code-container {
-    position: relative;
-    margin-bottom: 30px;
-    background: #1e1e24;
-    /* Darker bg for the whole container */
-    border-radius: var(--radius-sm);
-    overflow: hidden;
-    /* Prevent button from spilling out */
-    border: 1px solid var(--surface-border);
-}
-
-.code-container pre {
-    margin-bottom: 0;
-    padding-top: 50px !important;
-    /* Space for the button */
-    border: none !important;
-    border-radius: 0 !important;
-    background: transparent !important;
-}
-
-.copy-code-btn {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: var(--text-muted);
-    padding: 6px 14px;
-    border-radius: var(--radius-sm);
-    font-size: 0.8rem;
-    font-family: var(--font-main);
-    cursor: pointer;
-    transition: var(--transition-smooth);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    z-index: 10;
-}
-
-.copy-code-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.4);
-}
-
-.copy-code-btn.copied {
-    background: #10B981;
-    border-color: #10B981;
 }
