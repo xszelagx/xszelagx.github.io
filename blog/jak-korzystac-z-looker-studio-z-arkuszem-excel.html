@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    
+    <!-- End Google Analytics -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <title>Jak korzystać z Looker Studio z arkuszem Excel? | Mikołaj Szeląg</title>
+    <meta name="description" content="Jak podłączyć lokalny plik z Microsoft Excel bezpośrednio do chmurowego Looker Studio (Data Studio). Różnice między File Upload a migracją na Arkusze Google.">
+
+    <!-- Google Consent Mode v2 (must load before GTM) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = window.dataLayer || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8', { 'debug_mode': true });
+    </script>
+
+    <!-- Google Fonts: Outfit for modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="icon" type="image/png" href="favicon.png?v=2">
+    <link rel="icon" type="image/x-icon" href="favicon.ico?v=2">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Jak korzystać z Looker Studio z arkuszem Excel? | Mikołaj Szeląg">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="https://xszelagx.github.io">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://xszelagx.github.io/favicon.png">
+    <meta property="og:site_name" content="Mikołaj Szeląg - Automatyzacja BI & Google Cloud">
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Background Animations -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <!-- Navigation -->
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="/" class="logo">Szeląg<span>.</span>Data</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Post Header -->
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">←
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Integracje Danych</span>
+                        <span>02 Marca 2026</span>
+                        <span>⏱️ 5 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Jak korzystać z Looker Studio <span class="gradient-text">z arkuszem Excel?</span></h1>
+                </div>
+            </header>
+
+            <!-- Post Content and Sidebar -->
+            <div class="container">
+                <div class="post-layout">
+
+                    <!-- Main Content Column -->
+                    <div class="post-content">
+                        <p>Mimo ogromnej dominacji chmurowych rozwiązań, takich jak Google Workspace czy Microsoft 365, klasyczne pliki <strong>.XLSX</strong> z tradycyjnego Excela nadal krążą w wielu firmach B2B. Jeśli chcesz zbudować interaktywny dashboard, pierwsze pytanie, jakie zazwyczaj pada, to: <em>Jak korzystać z Looker Studio z arkuszem Excel?</em></p>
+
+                        <p>W tym poradniku omówimy, jak technicznie zintegrować stacjonarne pliki Excel z nowoczesnym narzędziem klasy Business Intelligence, jakim jest <a href="co-to-jest-looker-studio-przewodnik-bi-google.html">Looker Studio</a>, unikając popularnych błędów początkujących analityków.</p>
+
+                        <h2>Sposób 1: Bezpośredni Upload Pliku (File Upload Connector)</h2>
+                        <p>Looker Studio posiada darmowy, natywny konektor o nazwie <strong>Przesyłanie plików (File Upload)</strong>. Pozwala on wgrać pliki z rozszerzeniem <code>.csv</code> z Twojego komputera wprost na serwery Google Cloud, gdzie Looker Studio może połączyć się z setkami megabajtów wyeksportowanych danych.</p>
+                        
+                        <h3>Kroki wdrożenia:</h3>
+                        <ul>
+                            <li><strong>Krok 1: W Excelu Zapisz jako CSV</strong>. Otwórz swój plik `raport.xlsx`, wejdź w <em>Plik -> Zapisz jako</em> i wybierz format <strong>CSV (rozdzielany przecinkami)</strong>. Zwróć uwagę na formatowanie dat – powinny mieć postać `YYYY-MM-DD`.</li>
+                            <li><strong>Krok 2: Połącz w Looker Studio</strong>. Utwórz nowe Źródło Danych, wyszukaj konektor "Przesyłanie plików" i wgraj swój zrzucony plik CSV.</li>
+                            <li><strong>Krok 3: Analiza</strong>. Zbuduj wykresy bazując na wgranych kolumnach. Plik staje się od razu dostępnym <a href="jak-wgrac-dane-do-looker-studio-konektory.html">źródłem danych</a> (Data Source).</li>
+                        </ul>
+
+                        <blockquote>
+                            "File Upload to świetna opcja do jednorazowych analiz i tzw. analizy Ad-Hoc. Niestety w modelu B2B odświeżanie danych wymaga każdorazowego, ręcznego eksportu i dogrywania partii informacji – to potężny hamulec dla wydajności operacyjnej MŚP."
+                        </blockquote>
+
+                        <h2>Sposób 2: Prawidłowa Architektura (Migracja na Google Sheets)</h2>
+                        <p>Zamiast wylewać pot za każdym razem przy odświeżaniu dashboardu, zdecydowanie szybszą i trwalszą praktyką rynkową jest zaimportowanie pliku Excel do środowiska <strong>Arkuszy Google (Google Sheets)</strong>. Arkusze mają bowiem 100% natywną i odświeżaną automatycznie integrację z Looker Studio.</p>
+                        
+                        <h3>Jak to zrobić optymalnie?</h3>
+                        <ol>
+                            <li>Prześlij plik `.xlsx` na swój wirtualny Dysk Google (Google Drive).</li>
+                            <li>Kliknij plik dwukrotnie. Otworzy się on w trybie zgodności z Excelem. Następnie kliknij u góry <strong>Plik -> Zapisz jako Arkusze Google</strong>.</li>
+                            <li>Otrzymujesz natywny Google Sheet, który następnie podłączasz konektorem Google Sheets do pulpitu.</li>
+                        </ol>
+
+                        <p>Zalety tego rozwiązania są druzgocące w świecie <a href="looker-studio-czy-excel-porownanie-raportowanie.html">Excel a BI</a>. Mamy żywe linkowanie – każda modyfikacja w udostępnionym zespole arkuszu po załadowaniu odświeży dashboard na ekranie zarządu 15 minut po fakcie. Więcej informacji o czyszczeniu i poprawności struktury takiej bazy znajdziesz w artykule o <a href="jak-polaczyc-arkusze-google-sheets-looker-studio.html">łączeniu Google Sheets z raportami</a>.</p>
+
+                        <h2>Podsumowanie problematyki BI</h2>
+                        <p>Pytanie <em>"Jak korzystać z Looker Studio z arkuszem Excel?"</em> w profesjonalnych projektach w 2026 roku powinno raczej ewoluować w <em>"Jak wyeliminować Excela na rzecz Arkuszy Google lub hurtowni BigQuery?"</em>. Lokalne pliki stwarzają kolosalne problemy ze skalowaniem logiki B2B i brakiem wspólnego źródła prawdy (Single Source of Truth).</p>
+
+                        <h3>Wnioski końcowe</h3>
+                        <p>Jeśli nadal operujesz na gigantycznych zrzutach sprzedażowych Excel – warto zastanowić się nad budową automatycznego transferu przez API / Google Apps Script. <em>Wdrożyliśmy zautomatyzowane rurociągi u klientów logistycznych deklasując u nich zjawisko marnowania nawet 30h roboczych miesięcznie na operacje Copy&Paste w okienku Upload.</em></p>
+                    </div>
+
+                    <!-- Sidebar Column -->
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Ekspert Automatyki
+                                Oprogramowania i BI</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Na co dzień
+                                zajmuję się budowaniem zautomatyzowanych, niezawodnych ekosystemów analitycznych wokół
+                                BigQuery, Looker Studio i Arkuszy Google.</p>
+                        </div>
+
+                        <div class="cta-card">
+                            <h3>Masz podobny problem na tapecie?</h3>
+                            <p>Te posty to zaledwie ułamek tego co wdrażam na co dzień jako konsultant. Nie musisz
+                                samodzielnie rzeźbić kodu. Zleć to komuś, kto oddziela biznes od amatorszczyzny.</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Napisz w sprawie projektu</a>
+                        </div>
+                    </aside>
+
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Szeląg<span>.</span>Data</div>
+            <p>© <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            <div class="social-links">
+                <a href="/polityka-prywatnosci.html">Polityka Prywatności</a>
+                <a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

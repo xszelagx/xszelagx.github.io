@@ -54,7 +54,7 @@ Poniżej znajduje się pełna lista unikalnych tagów (Kategorii) faktycznie prz
 - `Zarządzanie bezpieczeństwem IT`
 - `eCommerce Growth`
 
-## 2. Zestawienie Opublikowanych Artykułów (61 total)
+## 2. Zestawienie Opublikowanych Artykułów (62 total)
 
 ### 1. `5-funkcji-google-sheets-query-importrange-filter.html`
 - **Tag:** ZAAWANSOWANE FUNKCJE
@@ -561,6 +561,16 @@ Poniżej znajduje się pełna lista unikalnych tagów (Kategorii) faktycznie prz
   - `obsluga-bledow-system-error-null-looker-studio.html`
   - `tworzenie-szablonow-kopiowanie-raportow-looker-studio.html`
   - `jak-wdrozyc-looker-studio-w-firmie-b2b-checklista.html`
+
+### 62. `jak-korzystac-z-looker-studio-z-arkuszem-excel.html`
+- **Tag:** Integracje Danych
+- **Temat/H1:** Jak korzystać z Looker Studio z wgranym arkuszem Excel (.XLSX)
+- **Meta Opis:** Poradnik jak podłączyć lokalne pliki z Microsoft Excel do darmowego Looker Studio (Data Studio). Konwersja na Google Sheets a bezpośredni File Upload.
+- **Linkuje Wewnętrznie Do:**
+  - `looker-studio-czy-excel-porownanie-raportowanie.html`
+  - `jak-polaczyc-arkusze-google-sheets-looker-studio.html`
+  - `jak-wgrac-dane-do-looker-studio-konektory.html`
+  - `co-to-jest-looker-studio-przewodnik-bi-google.html`
 
 ## 3. Kategoryzacja w Sitemap.xml
 Wszelkie adresy artykułów wstrzykiwane są jako link absolutny pod koniec węzła `<urlset>` w pliku sitemap.xml.
