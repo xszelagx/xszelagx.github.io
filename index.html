@@ -21,6 +21,38 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://www.googletagmanager.com">
 
+    <!-- Google Consent Mode v2 (must load before GTM) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = window.dataLayer || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+
+
+    
+
     <!-- Google Fonts: preload + async load (non-render-blocking) -->
     <link rel="preload" as="style"
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap">
@@ -624,7 +656,8 @@
                                 wdrożenie konkretnego dashboardu Looker Studio lub określonego skryptu automatyzacji).
                                 <strong>Time & Material</strong> – sprawdzający się przy długofalowej obsłudze
                                 analitycznej i budowie wieloetapowych hurtowni danych, gdzie priorytetyzujemy elastyczny
-                                rozwój (Agile) w oparciu o stawkę za roboczogodzinę.</p>
+                                rozwój (Agile) w oparciu o stawkę za roboczogodzinę.
+                            </p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -670,7 +703,8 @@
                                 Ekosystem ten opiera się jednak na określonych limitach bezpieczeństwa (Quotas)
                                 narzuconych na czas pracy, uderzenia w interfejs poczty e-mail czy operacje plikowe w
                                 Google Drive. Architektura pisanych przeze mnie rozwiązań zawsze zakłada ramy
-                                bezpiecznego balansowania ponitej tych górnych pułapów.</p>
+                                bezpiecznego balansowania ponitej tych górnych pułapów.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -806,35 +840,6 @@
             <button id="btn-reject" class="btn btn-secondary btn-small">Odrzucam</button>
         </div>
     </div>
-
-    <!-- Google Consent Mode v2 (must load before GTM) -->
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('consent', 'default', {
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'analytics_storage': 'denied'
-        });
-    </script>
-    <!-- Google Tag Manager (deferred) -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
-    <!-- Google Analytics (deferred) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-9N5S4NW0L8');
-    </script>
 
     <script src="js/script.js"></script>
 </body>

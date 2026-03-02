@@ -126,15 +126,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         result.textContent = "Wiadomość została wysłana pomyślnie!";
                         result.classList.add("text-green-500");
 
-                        // GA4 Event tracking
-                        if (typeof gtag === 'function') {
-                            gtag('event', 'generate_lead', {
-                                'event_category': 'Contact',
-                                'event_label': 'Web3Forms Success',
-                                'page_path': window.location.pathname,
-                                'referrer': document.referrer
-                            });
-                        }
+                        // GTM & GA4 Event tracking via dataLayer.push
+                        window.dataLayer = window.dataLayer || [];
+                        window.dataLayer.push({
+                            'event': 'generate_lead',
+                            'event_category': 'Contact',
+                            'event_label': 'Web3Forms Success',
+                            'page_path': window.location.pathname,
+                            'referrer': document.referrer
+                        });
                     } else {
                         console.log(response);
                         result.textContent = jsonResponse.message || "Wystąpił błąd podczas wysyłania.";
@@ -310,14 +310,14 @@ document.addEventListener('DOMContentLoaded', () => {
             revealBtn.style.display = 'none';
             contactRevealed.style.display = 'block';
 
-            // GA4 Event tracking for unlocking contact info
-            if (typeof gtag === 'function') {
-                gtag('event', 'unlock_contact', {
-                    'event_category': 'Engagement',
-                    'event_label': 'Contact Info Revealed',
-                    'page_path': window.location.pathname
-                });
-            }
+            // GTM & GA4 Event tracking for unlocking contact info
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'unlock_contact',
+                'event_category': 'Engagement',
+                'event_label': 'Contact Info Revealed',
+                'page_path': window.location.pathname
+            });
         });
     }
 
@@ -334,14 +334,14 @@ document.addEventListener('DOMContentLoaded', () => {
             [25, 50, 75, 100].forEach(mark => {
                 if (percentage >= mark && !scrollMarks[mark]) {
                     scrollMarks[mark] = true;
-                    if (typeof gtag === 'function') {
-                        gtag('event', 'article_scroll', {
-                            'event_category': 'Engagement',
-                            'event_label': 'Scroll Depth',
-                            'percent_scrolled': mark,
-                            'article_title': document.title
-                        });
-                    }
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                        'event': 'article_scroll',
+                        'event_category': 'Engagement',
+                        'event_label': 'Scroll Depth',
+                        'percent_scrolled': mark,
+                        'article_title': document.title
+                    });
                 }
             });
         }, { passive: true });
