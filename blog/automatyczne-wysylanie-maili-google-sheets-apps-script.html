@@ -2,7 +2,7 @@
 <html lang="pl">
 
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
     <title>Automatyczne wysyłanie maili z Google Sheets na podstawie daty (Apps Script) | Mikołaj Szeląg</title>
@@ -10,14 +10,23 @@
         content="Skrypt Apps Script do automatycznego wysyłania emaili i przypomnień o płatnościach z Google Sheets z wykorzystaniem daty (Time-driven triggers). Wdróż to w B2B.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"></noscript>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" media="print"
+        onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
+    </noscript>
     <link rel="preload" as="style" href="../css/styles.css">
     <link rel="stylesheet" href="../css/styles.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
+    <noscript>
+        <link rel="stylesheet" href="../css/styles.css">
+    </noscript>
 
-    <link rel="canonical" href="https://xszelagx.github.io/blog/automatyczne-wysylanie-maili-google-sheets-apps-script.html" />
+    <link rel="canonical"
+        href="https://xszelagx.github.io/blog/automatyczne-wysylanie-maili-google-sheets-apps-script.html" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -113,32 +122,38 @@
             <div class="container">
                 <div class="post-layout">
                     <div class="post-content">
-                        <p>Spędzanie poniedziałkowego poranka na przeglądaniu tabel z fakturami i ręczne pisanie do
-                            klientów z prośbą o zaległe przelewy nie należy do prac wymagających wielkiej wiedzy
-                            menedżerskiej. Jest to wtórne i całkowicie powtarzalne. Rozwiązanie tej bolączki B2B z
-                            użyciem narzędzia <strong>Apps Script</strong> uruchamianego pod spodem w Google Sheets
-                            kosztuje zero złotych subskrypcji i raptem kilka linijek kodu.</p>
+                        <p>Ręczne monitorowanie tabel z fakturami oraz manualna wysyłka przypomnień o zaległych
+                            płatnościach to <strong>jeden z najdroższych ukrytych kosztów operacyjnych</strong> w małych
+                            i średnich przedsiębiorstwach (MŚP). Praca ta, z punktu widzenia strategii B2B, jest
+                            całkowicie odtwórcza. Rozwiązaniem tej asymetrii jest wdrożenie narzędzia <strong>Google
+                                Apps Script</strong> — lekkiego środowiska deweloperskiego ukrytego w architekturze
+                            Google Workspace. Pozwala ono zamienić standardowe Arkusze Google w autonomiczny system
+                            windykacyjny, działający w stu procentach bez opłat instalacyjnych i licencyjnych (SaaS).
+                        </p>
 
-                        <h2>Triggery Czasowe (Time-Driven) na ratunek księgowej</h2>
-                        <p>Baza danych oparta o Arkusze Google umożliwia nam skonfigurowanie tła asynchronicznego
-                            skryptu wybudzanego np. każdego ranka o 08:00 czasu w Warszawie (tzw. Time Drivers / Cron
-                            Job). O zadanej godzinie włączą się niewidoczny program w Google Cloud, przeszuka pętlą
-                            każdy wiersz Twojej faktury i poszuka dat wskazujących na miniony termin. </p>
+                        <h2>Time-Driven Triggers: Automatyzacja Procesów Księgowych</h2>
+                        <p>Hurtownia wpisów oparta o środowisko chmurowe Google Sheets umożliwia uruchomienie
+                            <strong>skryptu asynchronicznego</strong> wybudzanego harmonogramem (np. o 08:00 rano).
+                            Mechanizm ten, znany w inżynierii pod nazwą Cron Job lub <em>Time-Driven Trigger</em>,
+                            powoduje, że serwery Google Cloud wywołują kod w tle. Program samodzielnie przechodzi przez
+                            każdą encję (wiersz) faktury i identyfikuje podmioty zalegające po terminie płatności.</p>
 
-                        <p>Oto algorytm, bez którego solidna księgowość nie miałaby tchu:</p>
+                        <p>Oto uproszczony schemat logiki decyzyjnej robota finansowego:</p>
                         <ol>
-                            <li>Zczytanie pełnej macierzy do pamięci serwera cache `.getValues()`.</li>
-                            <li>Weryfikacja dzisiejszej daty z komórką "Termin płatności" zaawansowaną formułą
-                                programistyczną.</li>
-                            <li>Przygotowanie spersonalizowanego powiadomienia do zlecenia.</li>
-                            <li>Po cichym wysłaniu (korzystając z oficjalnego certyfikatu Gmaila by wpadło to pewnie do
-                                odebranych unikając folderu SPAM), oznaczenie w tabeli flagą: <strong>[PRZYPOMNIENIE
-                                    WYSŁANE]</strong>.</li>
+                            <li>Pobranie pełnej macierzy zadłużenia do pamięci procesora za pomocą funkcji
+                                <code>.getValues()</code>.</li>
+                            <li>Weryfikacja różnicy między dzisiejszą datą a komórką "Termin Płatności" dla zachowania
+                                standardów finansowych.</li>
+                            <li>Wygenerowanie wysoce spersonalizowanego komunikatu tekstowego na bazie zmiennych (np.
+                                nazwy firmy, numeru proformy).</li>
+                            <li>Wysłanie powiadomienia e-mail poprzez chronione certyfikatami i SPF API Gmail'a
+                                (unikając wpadania w algorytmy SPAM-u) oraz zabezpieczenie wiersza flagą:
+                                <strong>[PRZYPOMNIENIE WYSŁANE]</strong> zapobiegającą pętli powiadomień.</li>
                         </ol>
 
-                        <h2>Gotowy kod ułatwiający automatyzację</h2>
-                        <p>Poniżej przedstawiam sprawdzony fragment API od wysyłania e-maili na podstawie warunku daty.
-                            Przeklej do swojego menu Apps Script (Rozszerzenia -> Apps Script):</p>
+                        <h2>Skrypt API windykacyjny (Do wklejenia)</h2>
+                        <p>Poniżej przedstawiamy kod w standardzie JavaScript do zagnieżdżenia w konsoli deweloperskiej
+                            Twojego arkusza (Rozszerzenia -> Apps Script):</p>
 
                         <pre><code>function sendPaymentReminders() {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Faktury");
