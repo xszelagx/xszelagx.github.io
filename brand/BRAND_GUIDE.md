@@ -1,52 +1,57 @@
-# Brand Identity Guide: Szeląg.Data 🎨
+# Szeląg.Data - Konfiguracja Motywu Looker Studio 📊
 
-To zestawienie pomoże Ci zbudować dashboardy Looker Studio, które będą wyglądały jak integralna część Twojej strony internetowej.
+To kompletny „przepis” na każde z pól w Twoim panelu edycji motywu.
 
 ---
 
-## 1. Paleta Kolorystyczna (Looker Studio Theme)
+## 1. Style Podstawowe i Komponent (Screen 1)
 
-Użyj tych kodów HEX w ustawieniach motywu (Theme) w Lookerze:
+Wprowadź te wartości, aby uzyskać efekt „Dark Premium”:
 
-| Element | Kod HEX | Opis |
+| Pole w Looker Studio | Wartość / Kod HEX | Uwagi |
 | :--- | :--- | :--- |
-| **Tło (Background)** | `#0B0C10` | Głęboka czerń (Deep Dark) |
-| **Główny (Primary)** | `#7F7FFF` | Indygo / Fiolet (Akcenty, Przyciski) |
-| **Wtórny (Secondary)** | `#45F3FF` | Cyan (Wykresy, Linie trendu) |
-| **Akcent (Accent)** | `#FF45A4` | Róż (Ostrzeżenia, specyficzne serie danych) |
-| **Tekst Główny** | `#FFFFFF` | Czysta biel |
-| **Tekst Wyciszony** | `#A0A4B8` | Szary (Etykiety osi, pomocnicze opisy) |
-| **Obramowanie** | `#1E2028` | Kolor kart / obramowania (Surface) |
+| **Kolor tła raportu** | `#0B0C10` | Główna czerń strony |
+| **Rodzina czcionki podst.** | `Roboto` | Najbliższa Twojej czcionce *Outfit* |
+| **Główny kolor czcionki** | `#FFFFFF` | Czysta biel |
+| **Tło (Komponentu)** | `#1E2028` | Kolor kart (lekko jaśniejszy od tła) |
+| **Przezroczystość** | `80-100%` | Możesz lekko obniżyć dla efektu szkła |
+| **Kolor obramowania** | `#2D2F39` | Delikatna separacja kart |
+| **Promień obramowania** | **24** | Kluczowy element – zaokrąglone rogi |
+| **Grubość obramowania** | `1` | Subtelna linia |
+| **Cień obramowania** | `Zawsze` | Bardzo delikatny, nadaje głębi (Elevation) |
 
 ---
 
-## 2. Typografia (Fonts)
+## 2. Style Danych i Wykresów (Screen 2)
 
-Dla zachowania spójności używaj w Lookerze czcionki z rodziny **Sans Serif**:
+Dla wykresów używamy Twojej palety indygo-cyan:
 
-*   **Nagłówki:** `Outfit` (jeśli dostępna w Twoim systemie) lub `Roboto / Open Sans` w wersji Bold.
-*   **Dane / Liczby:** `Outfit` (Regular/Medium) lub `Roboto`.
-*   **Rozmiary:**
-    *   Tytuły raportu: **24px - 32px**
-    *   Scorecards (liczby): **36px - 48px**
-    *   Etykiety: **12px - 14px**
-
----
-
-## 3. Stylistyka (UI Style)
-
-Aby dashboard wyglądał "Premium":
-
-1.  **Zaokrąglenia (Border Radius):** Dla kart i wykresów ustaw wartość **16px** lub **24px**.
-2.  **Efekt Glassmorphism:** Jeśli to możliwe, używaj półprzezroczystych tła dla kart (np. czarny z 80% przezroczystością) na ciemnym tle raportu.
-3.  **Wykresy:** Unikaj jaskrawych, domyślnych kolorów. Trzymaj się palety: **Purple (#7F7FFF)** oraz **Cyan (#45F3FF)**.
+| Pole w Looker Studio | Wartość / Opis |
+| :--- | :--- |
+| **Paleta wykresu** | **Indygo (#7F7FFF)**, **Cyan (#45F3FF)**, **Róż (#FF45A4)** |
+| **Kontrast tekstu** | `Wysoki` |
+| **Kolor siatki** | `#1E2028` (bardzo ciemna, niemal niewidoczna) |
+| **Kolor zmiany dodatniej** | `#45F3FF` (Cyan zamiast zielonego - bardziej futurystyczny) |
+| **Kolor zmiany ujemnej** | `#FF45A4` (Mocny róż zamiast czerwonego) |
+| **Tytuł wykresu** | Pokaż po najechaniu / Kolor: `#FFFFFF` |
 
 ---
 
-## 4. Zasoby (Assets)
+## 3. Style Kształtów i Nawigacji (Screen 3)
 
-W tym folderze znajdziesz:
-*   `szelag_data_logo_png.png` - Logo do umieszczenia w lewym górnym rogu raportu.
+| Pole w Looker Studio | Wartość / Kod HEX |
+| :--- | :--- |
+| **Kolor wypełnienia kształtu** | `#7F7FFF` (Indygo dla ikon/przycisków) |
+| **Kolor aktywnego elementu** | `#FFFFFF` (Biały dla zaznaczonej strony) |
+| **Kolor czcionki (Nawigacja)** | `#A0A4B8` (Ustalony kolor muted) |
+| **Kolor tła (Nawigacja)** | `#1E2028` |
 
 ---
-*Opracowano dla: Mikołaj Szeląg - Looker Studio Ekspert* 🚀
+
+## 💡 Dodatkowe Wskazówki Pro:
+1.  **Gradienty:** Stosuj je tylko w dużych kształtach w tle (używając „Niestandardowy gradient” z indygo do czerni).
+2.  **Liczby (Scorecards):** Zawsze pogrubione (Bold).
+3.  **Filtry:** Ustaw je tak, aby nie miały tła (Transparent) lub miały kolor `#1E2028`.
+
+---
+*Zasoby logo:* [szelag_data_logo.png](file:///Users/mikolajszelag/Desktop/xszelagx/portfolio-cv/brand/szelag_data_logo.png)
