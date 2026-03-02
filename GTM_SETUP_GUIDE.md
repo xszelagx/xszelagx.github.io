@@ -49,14 +49,21 @@ Nasze zdarzenia wysyłają do GA4 fantastyczne parametry z niestandardowymi dany
 6. Każdej zmiennej nadaj jasną nazwę w lewym górnym rogu (np. "DLV - page_path") i Zapisz.
 
 ### Krok 2C: Utworzenie Tagów Zdarzeń GA4
-Teraz połączmy to co wymyśliliśmy i wyślijmy do GA4:
-1. W lewym menu przejdź do **Tagi** -> **Nowy** i nadaj mu nazwę na samej górze.
-2. W Konfiguracji tagu wybierz typ: **Google Analytics: zdarzenie GA4**.
-3. Podaj Twój identyfikator pomiaru (np. `G-9N5S4NW0L8`).
-4. **Nazwa zdarzenia:** Wybierz konkretną np. wpisz ręcznie `generate_lead`.
-5. W zakładce **Parametry zdarzenia** dodaj parametry odwołując się do zmiennych z Kroku 2B (np. nazwa parametru: `percent_scrolled`, wartość: `{{percent_scrolled}}`; nazwa parametru: `referrer`, wartość: `{{referrer}}` itd.).
-6. Niżej na ekranie, w dole bloku kliknij w sekcję **Wyzwalanie**. Z wylistowanych opcji przypnij przygotowany odpowiedni **Wyzwalacz**, który utworzyliśmy przed chwilą w Kroku 2A.
-7. Powtórz to dla trzech zdarzeń: `generate_lead`, `unlock_contact`, `article_scroll` podczepiając im utworzone 3 wyzwalacze.
+To finałowy etap, gdzie łączymy "co śledzimy" (Tag) z tym "kiedy to robimy" (Reguła).
+
+1. W lewym menu przejdź do **Tagi** -> **Nowy** i nadaj mu nazwę na samej górze (np. `GA4 Event - generate_lead`).
+2. Kliknij w górny blok: **Konfiguracja tagu**. Wybierz typ: **Google Analytics: zdarzenie GA4**.
+3. **Identyfikator pomiaru:** Wklej swój kod: `G-9N5S4NW0L8`.
+4. **Nazwa zdarzenia:** Wpisz ręcznie małymi literami: `generate_lead` (lub odpowiednio `unlock_contact` / `article_scroll`).
+5. **Parametry zdarzenia (Kluczowy etap!):**
+   - Rozwiń ten pasek i kliknij "Dodaj wiersz".
+   - W polu **Nazwa parametru** wpisz ręcznie np. `article_title`.
+   - W polu **Wartość** kliknij ikonę klocka LEGO z plusem i wybierz z listy swoją zmienną `article_title`. GTM sam wstawi ją w formacie `{{article_title}}`.
+   - Możesz dodać kolejne wiersze dla `referrer` czy `percent_scrolled` w ten sam sposób.
+6. **Reguły (Dolny blok):** Kliknij w puste szare kółko w sekcji "Reguły". Z listy wybierz przygotowany w Kroku 2A wyzwalacz (np. `Wyzwalacz - Generate Lead`).
+7. Kliknij niebieski przycisk **Zapisz** w prawym górnym rogu.
+
+Powtórz te kroki dla wszystkich trzech zdarzeń, zmieniając tylko Nazwę zdarzenia i podpiętą Regułę.
 
 ### 3. Opublikowanie Kontenera
 Po spięciu Tagów z Wyzwalaczami, na stronie głównej obszaru roboczego kliknij granatowy przycisk **Prześlij** (widoczny na Twoim pierwszym zrzucie ekranu w prawym górnym rogu). Od teraz wszystkie akcje wysyłane z kodów JavaScript zaczną pojawiać w Google Analytics!
