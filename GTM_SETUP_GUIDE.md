@@ -70,6 +70,30 @@ Po spięciu Tagów z Wyzwalaczami, na stronie głównej obszaru roboczego klikni
 
 ---
 
+## 4. Microsoft Clarity (Nagrania sesji i Heatmapy)
+To narzędzie pozwoli Ci oglądać, jak użytkownicy poruszają się po stronie. 
+
+1. Załóż darmowe konto na [Microsoft Clarity](https://clarity.microsoft.com/).
+2. Dodaj nową witrynę i przejdź do zakładki **Settings** -> **Setup**.
+3. Wybierz metodę instalacji: **Install on a third-party platform** i wybierz **Google Tag Manager**.
+4. Zaloguj się przez Google – Clarity **samo** stworzy odpowiedni Tag w Twoim GTM.
+5. Jeśli wolisz ręcznie: Skopiuj swój "Project ID" z ustawień Clarity, wróć do GTM, dodaj Nowy Tag, wybierz typ **Microsoft Clarity** (jeśli nie ma, pobierz go z Galerii Szablonów Społeczności) i wklej swoje ID. 
+6. Reguła dla tego tagu: **All Pages** (Wszystkie strony).
+
+---
+
+## 5. Atrybucja Źródeł (UTM) w formularzu
+Wprowadziliśmy do kodu `js/script.js` funkcję, która automatycznie wyłapuje parametry takie jak `utm_source` (np. facebook, google) z paska adresu.
+
+**Jak to działa?**
+- Gdy ktoś wejdzie na Twój link z dopiskiem `?utm_source=linkedin`, skrypt zapisze to w pamięci przeglądarki.
+- Gdy ta osoba wypełni formularz kontaktowy, skrypt podstawi ukryte pola do wysyłki.
+- **W mailu z Web3Forms zobaczysz dodatkowe linijki**, np. `utm_source: linkedin`.
+
+Dzięki temu wiesz dokładnie, który post lub reklama przyniosły Ci klienta!
+
+---
+
 ## Ważna uwaga techniczna dotycząca GA4
 Zauważ, że w kodzie źródłowym Twojej strony tag `gtag.js` dla Google Analytics 4 (z ID `G-9N5S4NW0L8`) jest już na twardo wklejony w plikach HTML razem z Consent Mode. Oznacza to, że funkcje `gtag('event'...)` z pliku JavaScript **automatycznie** lecą u Ciebie bezpośrednio do Google Analytics 4, bez konieczności re-konfigurowania ich jeszcze raz w GTM w celu przekazania do GA4!
 

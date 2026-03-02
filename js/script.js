@@ -148,12 +148,61 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                 .then(function () {
                     form.reset();
+                    // Clear attribution once sent to avoid duplicate attribution on next partial fill
+                    sessionStorage.removeItem('form_attribution');
                     setTimeout(() => {
                         result.textContent = "";
                         result.className = "form-result";
                     }, 5000);
                 });
         });
+    }
+
+    // --- Advanced Attribution Tracking (UTM) ---
+
+    const captureAttributionData = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const attributionFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid'];
+        let data = JSON.parse(sessionStorage.getItem('form_attribution') || '{}');
+
+        let foundNew = false;
+        attributionFields.forEach(field => {
+            if (urlParams.has(field)) {
+                data[field] = urlParams.get(field);
+                foundNew = true;
+            }
+        });
+
+        if (foundNew) {
+            sessionStorage.setItem('form_attribution', JSON.stringify(data));
+        }
+        return data;
+    };
+
+    const injectAttributionFields = (formElement) => {
+        const data = JSON.parse(sessionStorage.getItem('form_attribution') || '{}');
+        // Also capture current page and referrer at the moment of injection
+        data['captured_at_url'] = window.location.href;
+        data['captured_referrer'] = document.referrer;
+
+        Object.keys(data).forEach(key => {
+            let input = formElement.querySelector(`input[name="${key}"]`);
+            if (!input) {
+                input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = key;
+                formElement.appendChild(input);
+            }
+            input.value = data[key];
+        });
+    };
+
+    // Run attribution capture on every page load
+    captureAttributionData();
+
+    // If form exists, inject the hidden fields immediately
+    if (form) {
+        injectAttributionFields(form);
     }
 
     // Google Consent Mode v2 logic
