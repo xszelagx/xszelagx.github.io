@@ -49,6 +49,919 @@
     <link rel="icon" type="image/png" href="favicon.png?v=2">
     <link rel="icon" type="image/x-icon" href="favicon.ico?v=2">
     <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Blog o Automatyzacji i Analizie Danych | Mikołaj Szeląg">
+    <meta property="og:description" content="Praktyczny blog firmowy: analityka danych biznesowych (Looker Studio), inżynieria w Google Cloud i automatyzacja operacji B2B w oparciu o Google Apps Script.&quot;>
+    <!-- Google Fonts: Outfit for modern look -->
+    <link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;>
+    <link rel=&quot;preconnect&quot; href=&quot;https://www.googletagmanager.com&quot;>
+    <link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin>
+    <link rel=&quot;preload&quot; as=&quot;style&quot;
+        href=&quot;https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap&quot;>
+    <link rel=&quot;stylesheet&quot;
+        href=&quot;https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap&quot; media=&quot;print&quot;
+        onload=&quot;this.media='all'&quot;>
+    <noscript>
+        <link rel=&quot;stylesheet&quot;
+            href=&quot;https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap&quot;>
+    </noscript>
+    <!-- Custom CSS -->
+    <link rel=&quot;preload&quot; as=&quot;style&quot; href=&quot;css/styles.css&quot;>
+    <link rel=&quot;stylesheet&quot; href=&quot;css/styles.css&quot; media=&quot;print&quot; onload=&quot;this.media='all'&quot;>
+    <noscript>
+        <link rel=&quot;stylesheet&quot; href=&quot;css/styles.css&quot;>
+    </noscript>
+
+
+    <script type=&quot;application/ld+json&quot;>
+    {
+      &quot;@context&quot;: &quot;https://schema.org&quot;,
+      &quot;@type&quot;: &quot;BreadcrumbList&quot;,
+      &quot;itemListElement&quot;: [{
+        &quot;@type&quot;: &quot;ListItem&quot;,
+        &quot;position&quot;: 1,
+        &quot;name&quot;: &quot;Mikołaj Szeląg&quot;,
+        &quot;item&quot;: &quot;https://xszelagx.github.io/&quot;
+      },{
+        &quot;@type&quot;: &quot;ListItem&quot;,
+        &quot;position&quot;: 2,
+        &quot;name&quot;: &quot;Blog&quot;,
+        &quot;item&quot;: &quot;https://xszelagx.github.io/blog.html&quot;
+      }]
+    }
+    </script>
+    <link rel=&quot;icon&quot; type=&quot;image/png&quot; href=&quot;favicon.png?v=2&quot;>
+    <link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico?v=2&quot;>
+    <link rel=&quot;apple-touch-icon&quot; href=&quot;apple-touch-icon.png?v=2&quot;>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src=&quot;https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4&quot; height=&quot;0&quot; width=&quot;0&quot;
+            style=&quot;display:none;visibility:hidden&quot;></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Background Animations -->
+    <div class=&quot;bg-orb orb-1&quot;></div>
+    <div class=&quot;bg-orb orb-2&quot;></div>
+    <div class=&quot;bg-orb orb-3&quot;></div>
+
+    <!-- Navigation -->
+    <header class=&quot;glass-nav&quot;>
+        <div class=&quot;container nav-container&quot;>
+            <a href=&quot;index.html&quot; class=&quot;logo&quot;>Szeląg<span>.</span>Data</a>
+            <nav>
+                <ul class=&quot;nav-links&quot;>
+                    <li><a href=&quot;./&quot;>Strona Główna</a></li>
+                    <li><a href=&quot;./#about&quot;>Dlaczego Warto?</a></li>
+                    <li><a href=&quot;./#services&quot;>Usługi</a></li>
+                    <li><a href=&quot;./#case-studies&quot;>Realizacje</a></li>
+                    <li><a href=&quot;./blog.html&quot;>Blog</a></li>
+                    <li><a href=&quot;./#contact&quot; class=&quot;btn-primary-small&quot;>Kontakt</a></li>
+                </ul>
+                <div class=&quot;hamburger&quot;>
+                    <span class=&quot;bar&quot;></span>
+                    <span class=&quot;bar&quot;></span>
+                    <span class=&quot;bar&quot;></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Blog Header -->
+        <section class=&quot;blog-header&quot;>
+            <div class=&quot;container&quot;>
+                <h1 class=&quot;section-title&quot;>Techniczny <span class=&quot;gradient-text&quot;>Blog</span> B2B</h1>
+                <p class=&quot;section-subtitle&quot;>Praktyczna wiedza o automatyzacji procesów (Google Sheets), analityce i
+                    inżynierii danych w oparciu o Google Cloud Platform (GCP) i Looker Studio.</p>
+            </div>
+        </section>
+
+        <!-- Blog Posts Grid -->
+        <section class=&quot;section pt-0&quot;>
+            <div class=&quot;container&quot;>
+                <div class=&quot;category-filters&quot;>
+                    <button class=&quot;category-btn active&quot; data-filter=&quot;all&quot;>Wszystkie</button>
+                    <button class=&quot;category-btn&quot; data-filter=&quot;looker-studio&quot;>Looker Studio</button>
+                    <button class=&quot;category-btn&quot; data-filter=&quot;sheets-apps-script&quot;>Google Sheets & Apps Script</button>
+                    <button class=&quot;category-btn&quot; data-filter=&quot;bigquery-gcp&quot;>BigQuery & GCP</button>
+                    <button class=&quot;category-btn&quot; data-filter=&quot;seo-analityka&quot;>SEO & Analityka</button>
+                    <button class=&quot;category-btn&quot; data-filter=&quot;automatyzacja-drive&quot;>Automatyzacja Google Drive</button>
+                    <button class=&quot;category-btn&quot; data-filter=&quot;bezpieczenstwo&quot;>Bezpieczeństwo Danych</button>
+                </div>
+                <div class=&quot;blog-grid&quot;>
+                    <!-- NEW GENERATED ARTICLES (Mar 2, 2026) -->
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/czy-looker-studio-jest-platne-ukryte-koszty.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>💰</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;><span class=&quot;blog-tag&quot;>Koszta Operacyjne (API)</span><span>02 Marca
+                                    2026</span></div>
+                            <h3>Czy Looker Studio jest płatne? Ukryte koszty i limity API Data Studio</h3>
+                            <p>Jak uniknąć faktur z Google Cloud za odświeżanie dashboardów? Dowiedz się o limitach
+                                darmowych złącz (Quotas) oraz ukrytych kosztach utrzymania BI.</p>
+                            <a href=&quot;./blog/czy-looker-studio-jest-platne-ukryte-koszty.html&quot; class=&quot;read-more&quot;>Czytaj
+                                dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/looker-studio-vs-ga4-wady-ograniczenia.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>📉</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;><span class=&quot;blog-tag&quot;>Migracje Analityczne B2B</span><span>02 Marca
+                                    2026</span></div>
+                            <h3>Looker Studio vs Google Analytics 4: Wady domyślnego Analytics</h3>
+                            <p>Dlaczego w 2026 roku e-commerce ucieka z interfejsu GA4 do zewnętrznych kokpitów? Różnice
+                                w logice raportowania, próbkowaniu (Sampling) i retencji danych.</p>
+                            <a href=&quot;./blog/looker-studio-vs-ga4-wady-ograniczenia.html&quot; class=&quot;read-more&quot;>Czytaj dalej
+                                &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/looker-studio-vs-tableau-porownanie-narzedzi-bi.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>⚖️</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;><span class=&quot;blog-tag&quot;>Porównania Ekosystemów (BI)</span><span>02
+                                    Marca 2026</span></div>
+                            <h3>Google Looker Studio vs Tableau – Porównanie kosztów BI (2026)</h3>
+                            <p>Licencje per Seat czy darmowy ekosystem Google Workspace? Co wybrać dla swojej firmy MŚP:
+                                Potężne Tableau czy darmowego, chmurowego Lookera.</p>
+                            <a href=&quot;./blog/looker-studio-vs-tableau-porownanie-narzedzi-bi.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/looker-studio-vs-looker-core-roznice.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🏢</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;><span class=&quot;blog-tag&quot;>Wybór Narzędzi Korporacyjnych</span><span>02
+                                    Marca 2026</span></div>
+                            <h3>Looker vs Looker Studio: Czym różnią się te dwa narzędzia Data & Cloud?</h3>
+                            <p>Przewodnik po nazewnictwie u Google. Dlaczego darmowe Data Studio różni się skrajnie od
+                                wartego $30,000 korporacyjnego Lookera ze składnią LookML.</p>
+                            <a href=&quot;./blog/looker-studio-vs-looker-core-roznice.html&quot; class=&quot;read-more&quot;>Czytaj dalej
+                                &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;sheets-apps-script&quot;
+                        onclick=&quot;window.location.href='./blog/jak-polaczyc-arkusze-google-sheets-looker-studio.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🔗</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;><span class=&quot;blog-tag&quot;>Bazy Niestrukturyzowane</span><span>02 Marca
+                                    2026</span></div>
+                            <h3>Jak połączyć Arkusze Google (Google Sheets) z Looker Studio bez błędów?</h3>
+                            <p>Uniknij awarii System Error przesiadając się z komórek Excela na tabele BI. Zasady
+                                poprawnego formatu kolumn i formatowania daty w komórkach.</p>
+                            <a href=&quot;./blog/jak-polaczyc-arkusze-google-sheets-looker-studio.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/dashboard-reklamowy-facebook-ads-google-ads-looker-studio.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🎯</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;><span class=&quot;blog-tag&quot;>Marketing Performance B2B</span><span>02 Marca
+                                    2026</span></div>
+                            <h3>Reklamy Facebook Ads i Google Ads na jednym Dashboardzie w Looker</h3>
+                            <p>Koniec z przelogowywaniem. Jak scalić lejek ROAS za pomocą Data Blendingu i konektorów
+                                API do jednego, twardego ekranu Menedżera Sprzedaży.</p>
+                            <a href=&quot;./blog/dashboard-reklamowy-facebook-ads-google-ads-looker-studio.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/najlepsze-darmowe-szablony-templates-looker-studio-ecommerce.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🖼️</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;><span class=&quot;blog-tag&quot;>Darmowe Narzędzia BI</span><span>02 Marca
+                                    2026</span></div>
+                            <h3>Najlepsze darmowe szablony (templates) Looker Studio dla SEO i E-commerce</h3>
+                            <p>Zestawienie profesjonalnych, darmowych szablonów pozwalających zbudować raport
+                                e-commerce, Google Search Console w 5 minut bez kodowania.</p>
+                            <a href=&quot;./blog/najlepsze-darmowe-szablony-templates-looker-studio-ecommerce.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/dlaczego-looker-studio-dziala-wolno-optymalizacja.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🏎️</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;><span class=&quot;blog-tag&quot;>High Performance BI</span><span>02 Marca
+                                    2026</span></div>
+                            <h3>Dlaczego Looker Studio działa wolno? 5 sposobów na optymalizację</h3>
+                            <p>Raport wyświetla się &quot;godzinami&quot;? Odłącz Data Blending i poznaj inżynieryjne sposoby
+                                przyśpieszania renderu poprzez Ekstrakcję Danych i Hurtownie bazy.</p>
+                            <a href=&quot;./blog/dlaczego-looker-studio-dziala-wolno-optymalizacja.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/jak-liczyc-srednia-wazona-looker-studio-bledy-agregacji.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🧮</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;><span class=&quot;blog-tag&quot;>Wizualizacja Danych BI</span><span>02 Marca
+                                    2026</span></div>
+                            <h3>Jak policzyć średnią ważoną w Looker Studio? Rozwiązanie błędu agregacji</h3>
+                            <p>Zrozum, dlaczego AVG w raportach przekłamuje. Wyeliminuj rzucanie błędem &quot;Cannot mix
+                                metrics&quot; używając potęgi równań formuły SUM() / SUM().</p>
+                            <a href=&quot;./blog/jak-liczyc-srednia-wazona-looker-studio-bledy-agregacji.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/jak-wdrozyc-looker-studio-w-firmie-b2b-checklista.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>📋</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;><span class=&quot;blog-tag&quot;>Strategia Analityczna (C-Level)</span><span>02
+                                    Marca 2026</span></div>
+                            <h3>Jak wdrożyć Looker Studio do firmy B2B? Metodologia i Checklista C-Level</h3>
+                            <p>Bezpiecznie wprowadź kulturę &quot;Single Source of Truth&quot;. Automatyzacja maili, Data Pipeline
+                                do bazy (SSOT) i ustawienie Row-Level Security.</p>
+                            <a href=&quot;./blog/jak-wdrozyc-looker-studio-w-firmie-b2b-checklista.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/tworzenie-szablonow-kopiowanie-raportow-looker-studio.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>👯</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;><span class=&quot;blog-tag&quot;>Zarządzanie Zespołem Data</span><span>02 Marca
+                                    2026</span></div>
+                            <h3>Jak stworzyć własny szablon raportu w Looker Studio? Klonowanie instancji</h3>
+                            <p>Obejdź brak przycisku &quot;Zapisz jako Template&quot;. Jak szybko kopiować panele analityczne i
+                                bezpiecznie przepinać na nie różnych klientów firmy.</p>
+                            <a href=&quot;./blog/tworzenie-szablonow-kopiowanie-raportow-looker-studio.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/zmiana-zrodla-danych-looker-studio-bez-psucia-wykresow.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🔄</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;><span class=&quot;blog-tag&quot;>Błędy API i Serwisu (Fix)</span><span>02 Marca
+                                    2026</span></div>
+                            <h3>Zmiana źródła danych w Looker Studio: Jak nie popsuć wykresów</h3>
+                            <p>Co zrobić, gdy po aktualizacji tabeli wyskakuje &quot;Configuration Error&quot;? Instruktaż
+                                używania ukrytego Menu Mapowania Kolumn (Data Mapping).</p>
+                            <a href=&quot;./blog/zmiana-zrodla-danych-looker-studio-bez-psucia-wykresow.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/jak-podlaczyc-ga4-do-looker-studio-konektor-vs-bigquery.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🔌</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;><span class=&quot;blog-tag&quot;>Integracje Ekosystemów B2B</span><span>02
+                                    Marca 2026</span></div>
+                            <h3>Jak połączyć GA4 z Looker Studio? Konektor natywny API a BigQuery</h3>
+                            <p>Problemy z wyciaganiem Custom Dimensions. Jak uniknąć limitów zapytania GA4 (Quota)
+                                lewarując darmowy zrzut w hurtowni SQL Google BigQuery.</p>
+                            <a href=&quot;./blog/jak-podlaczyc-ga4-do-looker-studio-konektor-vs-bigquery.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class=&quot;blog-card&quot; data-category=&quot;automatyzacja-drive&quot;
+                        onclick=&quot;window.location.href='./blog/automatyczne-porzadkowanie-plikow-dysk-google-apps-script.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🗂️</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Automatyzacja Google Drive</span>
+                                <span>28 Lutego 2026</span>
+                            </div>
+                            <h3>Automatyczne porządkowanie plików na Dysku Google za pomocą Apps Script</h3>
+                            <p>Skrypt sortujący, przenoszący i archiwizujący pliki automatycznie. Trigery czasowe,
+                                raportowanie — ustaw i zapomnij.</p>
+                            <a href=&quot;./blog/automatyczne-porzadkowanie-plikow-dysk-google-apps-script.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;automatyzacja-drive&quot;
+                        onclick=&quot;window.location.href='./blog/automatyczne-generowanie-raportow-pdf-google-docs-apps-script.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>📄</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Automatyzacja Google Drive</span>
+                                <span>28 Lutego 2026</span>
+                            </div>
+                            <h3>Automatyczne generowanie raportów PDF z Google Docs i Sheets — Apps Script</h3>
+                            <p>Masowe tworzenie faktur, umów i raportów z szablonów. Mail merge na sterydach — bez
+                                płatnych pluginów.</p>
+                            <a href=&quot;./blog/automatyczne-generowanie-raportow-pdf-google-docs-apps-script.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;seo-analityka&quot;
+                        onclick=&quot;window.location.href='./blog/dashboard-seo-looker-studio-pozycje-ctr-indeksacja.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>📊</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>SEO & Analityka</span>
+                                <span>28 Lutego 2026</span>
+                            </div>
+                            <h3>Dashboard SEO w Looker Studio: Monitoruj pozycje, CTR i indeksację</h3>
+                            <p>Krok po kroku jak podłączyć Search Console do Looker Studio i zbudować system wczesnego
+                                ostrzegania dla SEO.</p>
+                            <a href=&quot;./blog/dashboard-seo-looker-studio-pozycje-ctr-indeksacja.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;automatyzacja-drive&quot;
+                        onclick=&quot;window.location.href='./blog/automatyzacja-uprawnien-google-drive-udostepnianie-apps-script.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🔐</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Automatyzacja Google Drive</span>
+                                <span>28 Lutego 2026</span>
+                            </div>
+                            <h3>Automatyzacja uprawnień na Google Drive: Masowe udostępnianie i cofanie dostępów</h3>
+                            <p>Onboarding w 60 sekund, offboarding natychmiast. Skrypty do zarządzania uprawnieniami
+                                setek plików jednocześnie.</p>
+                            <a href=&quot;./blog/automatyzacja-uprawnien-google-drive-udostepnianie-apps-script.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;seo-analityka&quot;
+                        onclick=&quot;window.location.href='./blog/raportowanie-efektywnosci-content-marketingu-looker-studio-ga4.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>📈</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>SEO & Analityka</span>
+                                <span>28 Lutego 2026</span>
+                            </div>
+                            <h3>Raportowanie efektywności content marketingu w Looker Studio: GA4 + Search Console</h3>
+                            <p>Które artykuły generują konwersje, a które „pusty&quot; ruch? Dashboard ROI dla content
+                                marketingu.</p>
+                            <a href=&quot;./blog/raportowanie-efektywnosci-content-marketingu-looker-studio-ga4.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/obsluga-bledow-system-error-null-looker-studio.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>⚠️</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Data Quality</span>
+                                <span>25 Lutego 2026</span>
+                            </div>
+                            <h3>Obsługa błędów &quot;System Error&quot; i Null w Looker Studio</h3>
+                            <p>Twoje wykresy pokazują błąd? Dowiedz się, jak profesjonalnie obsługiwać dziury w danych i
+                                błędy systemowe używając funkcji IFNULL i CASE.</p>
+                            <a href=&quot;./blog/obsluga-bledow-system-error-null-looker-studio.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/zdjecia-produktow-w-looker-studio-images-from-url.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🖼️</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>eCommerce Growth</span>
+                                <span>25 Lutego 2026</span>
+                            </div>
+                            <h3>Jak wyświetlać zdjęcia produktów w Looker Studio? Tutorial Images from URL</h3>
+                            <p>Wzbogać swoje dashboardy o warstwę wizualną. Dowiedz się, jak ożywić tabelę obrazami
+                                produktów prosto z Twojego sklepu.</p>
+                            <a href=&quot;./blog/zdjecia-produktow-w-looker-studio-images-from-url.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;bezpieczenstwo&quot;
+                        onclick=&quot;window.location.href='./blog/monitoring-dostepow-looker-studio-bezpieczenstwo-danych.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🛡️</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Security & Governance</span>
+                                <span>25 Lutego 2026</span>
+                            </div>
+                            <h3>Monitoring dostępów w Looker Studio: Jak dbać o bezpieczeństwo danych?</h3>
+                            <p>Kto widzi Twoje raporty? Dowiedz się, jak audytować aktywność użytkowników i dbać o
+                                compliance danych w Twojej organizacji.</p>
+                            <a href=&quot;./blog/monitoring-dostepow-looker-studio-bezpieczenstwo-danych.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;seo-analityka&quot;
+                        onclick=&quot;window.location.href='./blog/techniczne-seo-looker-studio-dashboard-search-console.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🔍</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Technical SEO</span>
+                                <span>25 Lutego 2026</span>
+                            </div>
+                            <h3>Techniczne SEO w Looker Studio: Search Console + Crawlery</h3>
+                            <p>Zbuduj kokpit dowodzenia dla swojej strategii SEO. Agreguj dane z GSC, Ahrefs i crawlerów
+                                w jednym czytelnym oknie.</p>
+                            <a href=&quot;./blog/techniczne-seo-looker-studio-dashboard-search-console.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/looker-studio-logistyka-spedycja-dashboard-kpi.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🚛</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Logistics BI</span>
+                                <span>25 Lutego 2026</span>
+                            </div>
+                            <h3>Looker Studio dla Logistyki: Monitoring KPI w transporcie</h3>
+                            <p>Tnij koszty na każdym kilometrze. Dowiedz się, jak monitorować spalanie, CPK i wydajność
+                                floty na interaktywnych mapach.</p>
+                            <a href=&quot;./blog/looker-studio-logistyka-spedycja-dashboard-kpi.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;bigquery-gcp&quot;
+                        onclick=&quot;window.location.href='./blog/parametry-looker-studio-dynamiczny-sql-bigquery.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>⚙️</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>SQL & BigQuery</span>
+                                <span>25 Lutego 2026</span>
+                            </div>
+                            <h3>Parametry w Looker Studio: Dynamiczne zapytania SQL w BigQuery</h3>
+                            <p>Daj użytkownikom kontrolę nad kodem SQL. Dowiedz się, jak wstrzykiwać parametry prosto do
+                                zapytań i oszczędzać na kosztach GCP.</p>
+                            <a href=&quot;./blog/parametry-looker-studio-dynamiczny-sql-bigquery.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/looker-studio-pro-vs-free-roznice-cena.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🏢</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Enterprise BI</span>
+                                <span>25 Lutego 2026</span>
+                            </div>
+                            <h3>Looker Studio Pro vs Free: Kiedy Twoja firma powinna przejść na płatną wersję?</h3>
+                            <p>Zarządzanie zasobami, Team Workspaces i SLA. Dowiedz się, dlaczego duże organizacje
+                                wybierają wersję Pro dla bezpieczeństwa swoich danych.</p>
+                            <a href=&quot;./blog/looker-studio-pro-vs-free-roznice-cena.html&quot; class=&quot;read-more&quot;>Czytaj dalej
+                                &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/analiza-kohortowa-looker-studio-ga4-retention.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🔄</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Growth Marketing</span>
+                                <span>25 Lutego 2026</span>
+                            </div>
+                            <h3>Analiza Kohortowa w Looker Studio: Jak mierzyć lojalność klientów z GA4?</h3>
+                            <p>Mierz retencję i LTV na automatycznych dashboardach. Dowiedz się, ilu klientów faktycznie
+                                do Ciebie wraca po pierwszym zakupie.</p>
+                            <a href=&quot;./blog/analiza-kohortowa-looker-studio-ga4-retention.html&quot; class=&quot;read-more&quot;>Czytaj
+                                dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/automatyczne-raporty-pdf-looker-studio-email.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>📧</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Automatyzacja</span>
+                                <span>25 Lutego 2026</span>
+                            </div>
+                            <h3>Automatyczne raporty PDF z Looker Studio na maila: Jak skonfigurować harmonogram?</h3>
+                            <p>Odzyskaj czas spędzony na ręcznym wysyłaniu podsumowań. Skonfiguruj automatyczną dostawę
+                                danych prosto do skrzynki Twojego zespołu.</p>
+                            <a href=&quot;./blog/automatyczne-raporty-pdf-looker-studio-email.html&quot; class=&quot;read-more&quot;>Czytaj
+                                dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;bigquery-gcp&quot;
+                        onclick=&quot;window.location.href='./blog/looker-studio-bigquery-quota-exceeded-blad-fix.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🔧</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Technical Troubleshooting</span>
+                                <span>25 Lutego 2026</span>
+                            </div>
+                            <h3>Błąd Quota Exceeded w Looker Studio i BigQuery: Jak naprawić?</h3>
+                            <p>Twoje raporty przestały działać? Dowiedz się, jak zoptymalizować architekturę danych, by
+                                uniknąć limitów API i błędów systemowych.</p>
+                            <a href=&quot;./blog/looker-studio-bigquery-quota-exceeded-blad-fix.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;bigquery-gcp&quot;
+                        onclick=&quot;window.location.href='./blog/looker-studio-bigquery-integracja-performance.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>⚡</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>High Performance BI</span>
+                                <span>25 Lutego 2026</span>
+                            </div>
+                            <h3>Looker Studio + BigQuery: Jak stworzyć ultra-wydajny dashboard dla dużych zbiorów danych
+                            </h3>
+                            <p>Podpięcie BigQuery do Looker Studio to przejście z jazdy rowerem na pilotowanie
+                                odrzutowca. Dowiedz się, jak sterować mocą Google Cloud.</p>
+                            <a href=&quot;./blog/looker-studio-bigquery-integracja-performance.html&quot; class=&quot;read-more&quot;>Czytaj
+                                dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/jak-wgrac-dane-do-looker-studio-konektory.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🔌</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Integracje Danych</span>
+                                <span>25 Lutego 2026</span>
+                            </div>
+                            <h3>Jak wgrać dane do Looker Studio? Przegląd konektorów: od Google Sheets po BigQuery</h3>
+                            <p>Narzędzie BI jest jedynie szybą, przez którą patrzysz na dane. Kluczowe jest zrozumienie,
+                                jak działają konektory danych.</p>
+                            <a href=&quot;./blog/jak-wgrac-dane-do-looker-studio-konektory.html&quot; class=&quot;read-more&quot;>Czytaj
+                                dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/pierwszy-dashboard-looker-studio-tutorial.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>📊</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Tutorial</span>
+                                <span>25 Lutego 2026</span>
+                            </div>
+                            <h3>Pierwszy dashboard w Looker Studio: 5 kroków od surowych danych do wizualizacji</h3>
+                            <p>Tutorial krok po kroku: od zera do pełnej interaktywności. Zbuduj swój pierwszy raport
+                                Business Intelligence.</p>
+                            <a href=&quot;./blog/pierwszy-dashboard-looker-studio-tutorial.html&quot; class=&quot;read-more&quot;>Czytaj
+                                dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/looker-studio-czy-excel-porownanie-raportowanie.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>⚔️</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Business Value</span>
+                                <span>25 Lutego 2026</span>
+                            </div>
+                            <h3>Looker Studio czy Excel? Dlaczego Twoja firma potrzebuje interaktywnych raportów</h3>
+                            <p>Excel jest do liczenia, Looker Studio jest do monitorowania. Dowiedz się, dlaczego
+                                dashboardy BI wygrywają z arkuszami.</p>
+                            <a href=&quot;./blog/looker-studio-czy-excel-porownanie-raportowanie.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/co-to-jest-looker-studio-przewodnik-bi-google.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>📖</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Podstawy BI</span>
+                                <span>25 Lutego 2026</span>
+                            </div>
+                            <h3>Co to jest Looker Studio? Kompletny przewodnik po darmowym narzędziu BI od Google</h3>
+                            <p>Poznaj podstawy najpopularniejszego narzędzia analitycznego. Przekształć surowe dane w
+                                interaktywne dashboardy za darmo.</p>
+                            <a href=&quot;./blog/co-to-jest-looker-studio-przewodnik-bi-google.html&quot; class=&quot;read-more&quot;>Czytaj
+                                dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/mapy-ciepla-heatmaps-formatowanie-warunkowe-looker-studio.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🔥</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Formatowanie i UI na Pulpitach</span>
+                                <span>25 Maja 2026</span>
+                            </div>
+                            <h3>Tabele Przestawne to za mało: Dodaj potęgę Mapy Ciepła u siebie w Looker Studio</h3>
+                            <p>Projektowanie bezlitosnych map ciepła i tabel formatowanych warunkowo w architekturze
+                                korpo Looker. Jak wzrokiem znajdować ukryte spadki marży do BigQuery (B2B/BI).</p>
+                            <a href=&quot;./blog/mapy-ciepla-heatmaps-formatowanie-warunkowe-looker-studio.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/najczestsze-bledy-kpi-w-raportach-looker-studio-bi.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>❌</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>User Experience w Analityce</span>
+                                <span>24 Maja 2026</span>
+                            </div>
+                            <h3>Sztuka niszczenia przejrzystości raportu menedżerskiego: Top 5 grzechów głównych w BI.
+                            </h3>
+                            <p>Masz pełny raport biznesowy ale wygląda jak abstrakcyjna rzeźba? Omijaj te błędy wizualne
+                                w darmowym ekosystemie Business Intelligence chmury Google (GDS).</p>
+                            <a href=&quot;./blog/najczestsze-bledy-kpi-w-raportach-looker-studio-bi.html&quot;
+                                class=&quot;read-more&quot;>Czytaj
+                                dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/laczenie-wielu-zrodel-danych-blending-looker-studio.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🔗</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Transformacje Graficzne BI</span>
+                                <span>20 Maja 2026</span>
+                            </div>
+                            <h3>Jak połączyć Koszt i Zysk na jednej linii: Techniki Data Blending (Looker Studio)</h3>
+                            <p>Połącz koszta reklam na wyciągnięcie zysku z CRM do jednej tabeli. Odkryj sekrety
+                                łączenia źródeł Blending Options na żywo w GDS (Looker Studio) B2B.</p>
+                            <a href=&quot;./blog/laczenie-wielu-zrodel-danych-blending-looker-studio.html&quot;
+                                class=&quot;read-more&quot;>Czytaj
+                                dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;bezpieczenstwo&quot;
+                        onclick=&quot;window.location.href='./blog/bezpieczenstwo-danych-row-level-security-w-looker-studio-gcp.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🔒</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Bezpieczeństwo Danych DWH</span>
+                                <span>15 Maja 2026</span>
+                            </div>
+                            <h3>Ograniczenie wglądu i bezpieczne udostępnianie w Looker Studio: Zasady filtru Emailu na
+                                żywo (RLS).</h3>
+                            <p>Udostepnianie obcym klientom swoich dashboardów Google Data Studio to rzeźba pod
+                                bezpieczeństwo w firmach B2B. Zastosowanie RLS dla Twoich raportów i filtracji adresów
+                                email.</p>
+                            <a href=&quot;./blog/bezpieczenstwo-danych-row-level-security-w-looker-studio-gcp.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/looker-studio-czy-power-bi-wybor-narzedzia-bi.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>⚔️</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Porównania Ekosystemów (BI)</span>
+                                <span>10 Maja 2026</span>
+                            </div>
+                            <h3>Looker Studio czy sztywne licencje PowerBI? Które narzędzie BI do wdrożeń de facto
+                                popłaca.</h3>
+                            <p>Narzędzia rywalizujące w Business Intelligence w świecie korporacyjnym. Obiektywne wady i
+                                zalety środowiska chmurowego Looker Studio nad kosztownym rozwiązaniem od firm Microsoft
+                                i Tableau.</p>
+                            <a href=&quot;./blog/looker-studio-czy-power-bi-wybor-narzedzia-bi.html&quot; class=&quot;read-more&quot;>Czytaj
+                                dalej
+                                &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;looker-studio&quot;
+                        onclick=&quot;window.location.href='./blog/dashboard-menedzerski-kpi-raporty-w-looker-studio-gcp.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>📈</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Wizualizacja Danych BI</span>
+                                <span>05 Maja 2026</span>
+                            </div>
+                            <h3>Projekt idealnego raportu dla Zarządu CEO: Psychologia menedżerska Looker Studio</h3>
+                            <p>Projektowanie przejrzystych dashboardów B2B w Looker Studio (Google Data Studio). Jak
+                                oddzielić szum analityczny od strategicznych raportów (KPI) dla CEO/CFO.</p>
+                            <a href=&quot;./blog/dashboard-menedzerski-kpi-raporty-w-looker-studio-gcp.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;bigquery-gcp&quot;
+                        onclick=&quot;window.location.href='./blog/connected-sheets-polaczenie-arkusza-z-baza-bigquery.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🔌</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Hybrydyzacja Cloud i Arkuszy (BigQuery)</span>
+                                <span>30 Kwietnia 2026</span>
+                            </div>
+                            <h3>Miliardy logów na dłoni laika: Connected Sheets do platformy BigQuery</h3>
+                            <p>Poznaj rewolucyjną opcję Connected Sheets. Steruj milionami wierszy hurtowni BigQuery z
+                                przytomności zwykłego i czystego interfejsu darmowych Google Sheets (B2B).</p>
+                            <a href=&quot;./blog/connected-sheets-polaczenie-arkusza-z-baza-bigquery.html&quot;
+                                class=&quot;read-more&quot;>Czytaj
+                                dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;bigquery-gcp&quot;
+                        onclick=&quot;window.location.href='./blog/vlookup-vs-join-sql-roznice-hurtownia.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>⚡</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Różnice: Excel a Bazy Danych</span>
+                                <span>25 Kwietnia 2026</span>
+                            </div>
+                            <h3>Dlaczego Wyszukaj.Pionowo (VLOOKUP) odchodzi w niepamięć: Potęga frazy SQL JOIN</h3>
+                            <p>Poznaj miażdżące różnice w optymalizacji i wdrożeniach na B2B pomiędzy arkuszami
+                                bazującymi na Wyszukaj.Pionowo (VLOOKUP) a solidnymi zapytaniami z rodziny JOIN (SQL).
+                            </p>
+                            <a href=&quot;./blog/vlookup-vs-join-sql-roznice-hurtownia.html&quot; class=&quot;read-more&quot;>Czytaj dalej
+                                &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;bigquery-gcp&quot;
+                        onclick=&quot;window.location.href='./blog/ile-trwa-wdrozenie-analityki-data-pipeline-gcp.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>⏳</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Wdrażanie Architektury w Biznesie</span>
+                                <span>20 Kwietnia 2026</span>
+                            </div>
+                            <h3>Cykl życia Data Pipeline: Ile miesięcy wymaga budowa solidnego systemu BI?</h3>
+                            <p>Czas wdrożenia analityki w e-commerce. Analiza cyklu życia DWH (Data Pipeline) – od
+                                integracji surowej bazy przez BigQuery aż po dashboard B2B w Looker Studio.</p>
+                            <a href=&quot;./blog/ile-trwa-wdrozenie-analityki-data-pipeline-gcp.html&quot;
+                                class=&quot;read-more&quot;>Czytaj
+                                dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;bigquery-gcp&quot;
+                        onclick=&quot;window.location.href='./blog/jak-polaczyc-facebook-ads-z-google-bigquery-gcp.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🎯</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Zarządzanie Kampaniami (Marketing)</span>
+                                <span>12 Kwietnia 2026</span>
+                            </div>
+                            <h3>Integracja ROI: Eksport danych z Facebook Ads & Google Ads prosto do BigQuery</h3>
+                            <p>Połącz dane marketingowe z różnych systemów reklamowych (FB Ads, Google Ads) do jednej
+                                nadrzędnej bazy dla skutecznego mierzenia wskaźników ROI w B2B.</p>
+                            <a href=&quot;./blog/jak-polaczyc-facebook-ads-z-google-bigquery-gcp.html&quot;
+                                class=&quot;read-more&quot;>Czytaj
+                                dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;bigquery-gcp&quot;
+                        onclick=&quot;window.location.href='./blog/partycjonowanie-vs-klastrowanie-sql-gcp-koszty.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🗂️</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Optymalizacja SQL & GCP</span>
+                                <span>08 Kwietnia 2026</span>
+                            </div>
+                            <h3>Ograniczenie Rachunku w Chmurze o 95%. Partycje vs. Klastrowanie w Google BigQuery.</h3>
+                            <p>Partycjonowanie kontra Klastrowanie w BigQuery. Narzędzia z obszaru Data Engineer
+                                potrafiące urwać nawet do 95 procent kosztów faktur API Google Cloud (GCP).</p>
+                            <a href=&quot;./blog/partycjonowanie-vs-klastrowanie-sql-gcp-koszty.html&quot;
+                                class=&quot;read-more&quot;>Czytaj
+                                dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;bigquery-gcp&quot;
+                        onclick=&quot;window.location.href='./blog/koszty-w-bigquery-jak-analizowac-za-darmo-poradnik.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>💸</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Koszta Operacyjne (GCP)</span>
+                                <span>05 Kwietnia 2026</span>
+                            </div>
+                            <h3>Mity o horrendalnie drogim Google BigQuery: Jak analizować dane rzędu TB praktycznie za
+                                darmo?</h3>
+                            <p>Poznaj ukryty system kosztów w Google Cloud. Darmowe BigQuery to 1 TB bezpłatnych logów
+                                SQL miesięcznie. Jak bezpiecznie optymalizować rachunek GCP (Pricing).</p>
+                            <a href=&quot;./blog/koszty-w-bigquery-jak-analizowac-za-darmo-poradnik.html&quot;
+                                class=&quot;read-more&quot;>Czytaj
+                                dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;bigquery-gcp&quot;
+                        onclick=&quot;window.location.href='./blog/co-to-jest-bigquery-darmowy-limit.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>☁️</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Google BigQuery (GCP)</span>
+                                <span>01 Kwietnia 2026</span>
+                            </div>
+                            <h3>Ograniczenie do 10,000,000 wierszy Google Sheets: Co z tym BigQuery?</h3>
+                            <p>Poznaj Google BigQuery (GCP). Idealna usługa B2B na ominięcie limitu wierszy w Google
+                                Sheets z zerowymi kosztami dla mniejszych firm na start.</p>
+                            <a href=&quot;./blog/co-to-jest-bigquery-darmowy-limit.html&quot; class=&quot;read-more&quot;>Czytaj dalej
+                                &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;sheets-apps-script&quot;
+                        onclick=&quot;window.location.href='./blog/tworzenie-formularzy-zlecen-google-forms-sheets.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>📝</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Systemy Formularzy i Ankiet</span>
+                                <span>25 Marca 2026</span>
+                            </div>
+                            <h3>Obieg dokumentów od podstawówki po B2B: Google Forms + Google Sheets</h3>
+                            <p>Projekt na interaktywny oraz wysoce zoptymalizowany pod automatyzację obieg zapytań we
+                                wdrożeniach i firmach stacjonarnych z wykorzystaniem chmury od Google Forms.</p>
+                            <a href=&quot;./blog/tworzenie-formularzy-zlecen-google-forms-sheets.html&quot;
+                                class=&quot;read-more&quot;>Czytaj
+                                dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;sheets-apps-script&quot;
+                        onclick=&quot;window.location.href='./blog/5-funkcji-google-sheets-query-importrange-filter.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🧠</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>ZAAWANSOWANE FUNKCJE</span>
+                                <span>18 Marca 2026</span>
+                            </div>
+                            <h3>Potęga Google Sheets w analizie (B2B): Poznaj sekrety QUERY()</h3>
+                            <p>Poznaj składnię genialnych i bezbłędnych funkcji Google Sheets dla inżynierów. Zobacz
+                                praktyczne zastosowanie QUERY, IMPORTRANGE, FILTER oraz ARRAYFORMULA w B2B.</p>
+                            <a href=&quot;./blog/5-funkcji-google-sheets-query-importrange-filter.html&quot;
+                                class=&quot;read-more&quot;>Czytaj
+                                dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;bezpieczenstwo&quot;
+                        onclick=&quot;window.location.href='./blog/jak-zabezpieczyc-dane-udostepnione-arkusze-google.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🛡️</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Zarządzanie bezpieczeństwem IT</span>
+                                <span>15 Marca 2026</span>
+                            </div>
+                            <h3>Jak poprawnie zabezpieczyć wrażliwe dane w udostępnianych Arkuszach Google?</h3>
+                            <p>Chroń dane B2B i pracowników przed przypadkowym udostępnieniem na zewnątrz Arkusza
+                                Google. Blokady edycji, Row-Level Security, ukrywanie funkcji przed zarządem.</p>
+                            <a href=&quot;./blog/jak-zabezpieczyc-dane-udostepnione-arkusze-google.html&quot;
+                                class=&quot;read-more&quot;>Czytaj
+                                dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;sheets-apps-script&quot;
+                        onclick=&quot;window.location.href='./blog/pobieranie-danych-api-arkusze-google-bez-wtyczek.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>🌐</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Integracje API i Webhooki</span>
+                                <span>12 Marca 2026</span>
+                            </div>
+                            <h3>Dane z Rest API prosto do Arkuszy Google (Bez płacenia za Zapiera).</h3>
+                            <p>Skrypt do pobierania JSON z zewnętrznego API bezpośrednio do Twoich Google Sheets
+                                (UrlFetchApp). Omijaj limity i twórz własne webhooki B2B za darmo.</p>
+                            <a href=&quot;./blog/pobieranie-danych-api-arkusze-google-bez-wtyczek.html&quot;
+                                class=&quot;read-more&quot;>Czytaj
+                                dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;sheets-apps-script&quot;
+                        onclick=&quot;window.location.href='./blog/automatyczne-wysylanie-maili-google-sheets-apps-script.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>📧</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Automatyzacje Mailowe (Apps Script)</span>
+                                <span>28 Lut 2026</span>
+                            </div>
+                            <h3>Automatyczne wysyłanie maili z Google Sheets na podstawie daty (Apps Script)</h3>
+                            <p>Dowiedz się, jak łatwo zaprogramować skrypt Google Apps Script, który automatycznie wyśle
+                                przypomnienie e-mail o zaległej fakturze do klienta B2B (Mailing).</p>
+                            <a href=&quot;./blog/automatyczne-wysylanie-maili-google-sheets-apps-script.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;sheets-apps-script&quot;
+                        onclick=&quot;window.location.href='./blog/kiedy-excel-przestaje-wystarczac-migracja-google-workspace.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>📊</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Migracja Biznesowa</span>
+                                <span>15 Lut 2026</span>
+                            </div>
+                            <h3>Kiedy Excel przestaje wystarczać? Migracja procesów do Google Workspace.</h3>
+                            <p>Dowiedz się dlaczego korporacje B2B wygaszają licencje Office 365 na rzecz Google Sheets
+                                i środowiska chmurowego Workspace. Wady stacjonarnych plików Excela.</p>
+                            <a href=&quot;./blog/kiedy-excel-przestaje-wystarczac-migracja-google-workspace.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                    <article class=&quot;blog-card&quot; data-category=&quot;sheets-apps-script&quot;
+                        onclick=&quot;window.location.href='./blog/google-sheets-jako-darmowy-crm-jak-to-zrobic-apps-script.html'&quot;>
+                        <div class=&quot;blog-card-image&quot;>💼</div>
+                        <div class=&quot;blog-card-content&quot;>
+                            <div class=&quot;blog-meta&quot;>
+                                <span class=&quot;blog-tag&quot;>Zarządzanie Automatyzacyjne</span>
+                                <span>10 Lut 2026</span>
+                            </div>
+                            <h3>Google Sheets jako darmowy CRM: Jak to zrobić z użyciem Apps Script?</h3>
+                            <p>Odkryj potęgę darmowych narzędzi Google Workspace. Jak zmienić zwykły arkusz kalkulacyjny
+                                w odporny i elastyczny system CRM dla biznesu B2B z językiem Apps Script.</p>
+                            <a href=&quot;./blog/google-sheets-jako-darmowy-crm-jak-to-zrobic-apps-script.html&quot;
+                                class=&quot;read-more&quot;>Czytaj dalej &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+                <div class=&quot;text-center&quot; style=&quot;margin-top: 50px;&quot;>
+                    <button id=&quot;load-more-btn&quot; class=&quot;btn btn-secondary&quot;>Pokaż więcej artykułów</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section form Homepage -->
+        <section class=&quot;section&quot;
+            style=&quot;background: rgba(255, 255, 255, 0.02); border-top: 1px solid var(--surface-border);&quot;>
+            <div class=&quot;container text-center&quot;>
+                <h2 style=&quot;font-size: 2.2rem; margin-bottom: 20px;&quot;>Zainteresowały Cię te rozważania?</h2>
+                <p style=&quot;color: var(--text-muted); max-width: 600px; margin: 0 auto 30px;&quot;>Zbudujmy coś niesamowitego
+                    na Twoich danych firmowych. Przenieś się na stronę kontaktową, by zarezerwować pierwszą audytową
+                    rozmowę o Twoich potrzebach.</p>
+                <a href=">
+    <meta property="og:url" content="https://xszelagx.github.io">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://xszelagx.github.io/favicon.png">
+    <meta property="og:site_name" content="Mikołaj Szeląg - Automatyzacja BI & Google Cloud">
 </head>
 
 <body>

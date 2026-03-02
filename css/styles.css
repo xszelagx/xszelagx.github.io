@@ -1472,4 +1472,9 @@ textarea.form-control {
     .category-filters::-webkit-scrollbar {
         display: none;
     }
+
+    .post-content pre {
+        font-size: 0.75rem;
+        padding: 15px;
+    }
 }
