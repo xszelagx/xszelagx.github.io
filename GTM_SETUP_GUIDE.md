@@ -113,4 +113,20 @@ Zauważ, że w kodzie źródłowym Twojej strony tag `gtag.js` dla Google Analyt
 **Kiedy wykonywać Kroki 2A, 2B, 2C w Tag Managerze?**
 Tylko wtedy, gdy:
 * Będziesz chciał w przyszłości usunąć wklejony bezpośrednio kod GA4 z HTML i zarządzać nim **wyłącznie** poprzez Tag Manager (czystsze podejście, tzw. *100% GTM approach*).
-* Będziesz chciał przechwycić te 3 zdarzenia (np. wysłanie formularza jako `generate_lead`) po to, aby skonfigurować w GTM ich wysyłanie nie tylko do GA4, ale też uderzać nimi do Pixela Facebooka (Meta Ads), TikTok Ads czy Google Ads. Zmienne (Variables) pozwolą rzucić tytułem artykułu bezpośrednio do reklamy!
+---
+
+## 6. Google Search Console (GSC) - Weryfikacja i Połączenie
+Google Search Console nie ma własnego "tagu" w GTM, ale GTM jest kluczowy w procesie konfiguracji.
+
+### Krok 6A: Weryfikacja własności witryny
+Gdy dodasz swoją domenę w [Search Console](https://search.google.com/search-console/), Google zapyta Cię, jak chcesz udowodnić, że strona należy do Ciebie.
+*   Wybierz metodę: **Menedżer tagów Google**.
+*   Jeśli Twój GTM jest poprawnie wklejony w `<head>` (co zrobiliśmy!), Google natychmiast zweryfikuje Twoją stronę.
+
+### Krok 6B: Połączenie GSC z GA4 (Bardzo ważne!)
+Aby widzieć w statystykach Analytics, na jakie hasła ludzie znajdują Twoją stronę, musisz połączyć te dwa systemy:
+1.  W **Google Analytics 4** wejdź w lewy dolny róg w ikonę zębatki (**Administracja**).
+2.  Zjedź na sam dół kolumny "Usługa" i znajdź: **Łączenie z usługą Search Console**.
+3.  Kliknij niebieski przycisk **Połącz** i wybierz swoją stronę z listy.
+
+Dzięki temu w raportach GA4 pojawi się nowa sekcja z danymi o kliknięciach z wyszukiwarki Google.
