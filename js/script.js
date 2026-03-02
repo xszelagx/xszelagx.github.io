@@ -232,7 +232,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (btnAccept && btnReject && consentBanner) {
-        btnAccept.addEventListener('click', () => {
+        const grantConsent = () => {
+            if (localStorage.getItem('cookieConsent')) return; // Already decided
+
             localStorage.setItem('cookieConsent', 'granted');
             consentBanner.classList.remove('show');
 
@@ -243,13 +245,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 'ad_personalization': 'granted',
                 'analytics_storage': 'granted'
             });
+        };
+
+        btnAccept.addEventListener('click', (e) => {
+            e.stopPropagation();
+            grantConsent();
         });
 
-        btnReject.addEventListener('click', () => {
+        btnReject.addEventListener('click', (e) => {
+            e.stopPropagation();
             localStorage.setItem('cookieConsent', 'denied');
             consentBanner.classList.remove('show');
 
-            // Explicitly deny (although it's default in head)
+            // Explicitly deny
             gtag('consent', 'update', {
                 'ad_storage': 'denied',
                 'ad_user_data': 'denied',
@@ -257,6 +265,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 'analytics_storage': 'denied'
             });
         });
+
+        // Implied Consent: Click anywhere else on the document
+        document.addEventListener('click', () => {
+            if (consentBanner.classList.contains('show')) {
+                grantConsent();
+            }
+        }, { capture: true });
+
+        // Implied Consent: Scroll threshold (e.g., 200px)
+        window.addEventListener('scroll', () => {
+            if (consentBanner.classList.contains('show') && window.scrollY > 200) {
+                grantConsent();
+            }
+        }, { passive: true });
     }
 
     // FAQ Accordion Logic
