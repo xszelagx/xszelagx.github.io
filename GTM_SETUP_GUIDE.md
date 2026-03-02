@@ -31,13 +31,16 @@ Musisz stworzyć 3 reguły nasłuchujące w GTM:
 4. Zapisz każdą z nich (np. jako "Trigger - Generate Lead").
 
 ### Krok 2B: Utworzenie Zmiennych (Variables) dla Atrybutów
-Nasze zdarzenia wysyłają do GA4 fantastyczne parametry takie jak np. z jakiej podstrony pochodzi scroll (`page_path`, `percent_scrolled`).
+Nasze zdarzenia wysyłają do GA4 fantastyczne parametry z niestandardowymi danymi.
 1. Przejdź do **Zmienne** (Variables) -> **Nowa**.
 2. Typ zmiennej: **Zmienna warstwy danych** (Data Layer Variable).
-3. W nazwie zmiennej warstwy danych wpisz klucz, który przesyłamy w kodzie:
-   - Zmienna 1: `page_path`
-   - Zmienna 2: `percent_scrolled`
-   - Zmienna 3: `article_title`
+3. Utwórz 6 osobnych zmiennych wpisując dokładnie te klucze (w polu "Nazwa zmiennej warstwy danych"):
+   - `page_path` (ścieżka z której wysłano formularz/odsłonięto kontakt)
+   - `referrer` (strona poprzedzająca)
+   - `percent_scrolled` (procent przewinięcia - 25, 50, 75, 100)
+   - `article_title` (tytuł czytanego tekstu)
+   - `event_category` (kategoria, np. Contact lub Engagement)
+   - `event_label` (etykieta, np. Web3Forms Success)
 
 ### Krok 2C: Utworzenie Tagów Zdarzeń GA4
 Teraz połączmy to co wymyśliliśmy i wyślijmy do GA4:
@@ -45,9 +48,19 @@ Teraz połączmy to co wymyśliliśmy i wyślijmy do GA4:
 2. Typ tagu: **Google Analytics: zdarzenie GA4** (GA4 Event).
 3. Podaj Twój identyfikator pomiaru (np. `G-9N5S4NW0L8`).
 4. **Nazwa zdarzenia:** Wybierz konkretną np. wpisz ręcznie `generate_lead`.
-5. W zakładce **Parametry zdarzenia** dodaj rzędy z użyciem zmiennych stworzonych w Kroku 2B (np. nazwa parametru: `percent_scrolled`, wartość: `{{percent_scrolled}}`).
+5. W zakładce **Parametry zdarzenia** dodaj parametry odwołując się do zmiennych z Kroku 2B (np. nazwa parametru: `percent_scrolled`, wartość: `{{percent_scrolled}}`; nazwa parametru: `referrer`, wartość: `{{referrer}}` itd.).
 6. W sekcji **Reguły** na samym dole, przypnij odpowiedni Trigger, który utworzyliśmy w Kroku 2A.
 7. Powtórz to dla trzech zdarzeń: `generate_lead`, `unlock_contact`, `article_scroll`.
 
 ### 3. Opublikowanie Kontenera
 Po spięciu Tagów GA4 z Regułami z Custom Eventów kliknij granatowy przycisk powiadomień **Prześlij** (Submit) w prawym górnym rogu GTM. Od teraz wszystkie akcje wysyłane z kodów JavaScript zaczną pojawiać w Google Analytics (sekcja: Czas rzeczywisty).
+
+---
+
+## Ważna uwaga techniczna dotycząca GA4
+Zauważ, że w kodzie źródłowym Twojej strony tag `gtag.js` dla Google Analytics 4 (z ID `G-9N5S4NW0L8`) jest już na twardo wklejony w plikach HTML razem z Consent Mode. Oznacza to, że funkcje `gtag('event'...)` z pliku JavaScript **automatycznie** lecą u Ciebie bezpośrednio do Google Analytics 4, bez konieczności re-konfigurowania ich jeszcze raz w GTM w celu przekazania do GA4!
+
+**Kiedy wykonywać Kroki 2A, 2B, 2C w Tag Managerze?**
+Tylko wtedy, gdy:
+* Będziesz chciał w przyszłości usunąć wklejony bezpośrednio kod GA4 z HTML i zarządzać nim **wyłącznie** poprzez Tag Manager (czystsze podejście, tzw. *100% GTM approach*).
+* Będziesz chciał przechwycić te 3 zdarzenia (np. wysłanie formularza jako `generate_lead`) po to, aby skonfigurować w GTM ich wysyłanie nie tylko do GA4, ale też uderzać nimi do Pixela Facebooka (Meta Ads), TikTok Ads czy Google Ads. Zmienne (Variables) pozwolą rzucić tytułem artykułu bezpośrednio do reklamy!
