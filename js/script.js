@@ -358,8 +358,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Code Block Copy Feature
-    const preBlocks = document.querySelectorAll('pre');
+    // Code Block Copy Feature (Only for blog posts)
+    const preBlocks = document.querySelectorAll('.post-content pre');
     preBlocks.forEach(pre => {
         // Obwiń pre kontenerem aby nadać mu pozycjonowanie relative
         if (!pre.parentNode.classList.contains('code-container')) {
