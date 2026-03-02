@@ -2,7 +2,7 @@
 <html lang="pl">
 
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
     <title>Automatyczne porządkowanie plików na Dysku Google za pomocą Apps Script | Mikołaj Szeląg</title>
@@ -10,12 +10,20 @@
         content="Skrypt Apps Script do automatycznego sortowania, przenoszenia i archiwizacji plików na Google Drive. Ustaw triggery czasowe i zapomnij o ręcznym porządkowaniu folderów.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"></noscript>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" media="print"
+        onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
+    </noscript>
     <link rel="preload" as="style" href="../css/styles.css">
     <link rel="stylesheet" href="../css/styles.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
+    <noscript>
+        <link rel="stylesheet" href="../css/styles.css">
+    </noscript>
     <link rel="canonical"
         href="https://xszelagx.github.io/blog/automatyczne-porzadkowanie-plikow-dysk-google-apps-script.html" />
 
@@ -152,15 +160,24 @@
                         </p>
 
                         <pre><code>function organizeGoogleDrive() {
-  const INBOX_ID = 'TWOJ_FOLDER_INBOX_ID';  // folder do przeszukania
-  const ARCHIVE_ID = 'TWOJ_FOLDER_ARCHIWUM_ID';
+  // PONIŻEJ WPISZ ID SWOICH FOLDERÓW
+  // Skąd wziąć ID? Wejdź w podany folder na Google Drive - ciąg znaków w URL to jego ID.
+  // URL np: https://drive.google.com/drive/u/0/folders/1A2b3C... -> Twoje ID to 1A2b3C...
+  const INBOX_ID = 'TUTAJ_WKLEJ_ID_FOLDERU_INBOX';  // Folder, do którego wpadają luźne pliki
+  const ARCHIVE_ID = 'TUTAJ_WKLEJ_ID_FOLDERU_ARCHIWUM'; // Gdzie odkładać stare pliki
+  
+  // Zmienna określająca, po ilu dniach skrypt uzna plik za "stary" i go zarchiwizuje
   const DAYS_TO_ARCHIVE = 90;
 
+  // Główny obiekt API Google Drive, łączy się z systemem po wpisanych wyżej ID
   const inbox = DriveApp.getFolderById(INBOX_ID);
   const archive = DriveApp.getFolderById(ARCHIVE_ID);
+  
+  // Logika obliczania czasu (dzisiejsza data minus DAYS_TO_ARCHIVE)
   const cutoffDate = new Date();
   cutoffDate.setDate(cutoffDate.getDate() - DAYS_TO_ARCHIVE);
 
+  // Pobiera listę wszystkich plików ze wskazanego Inboxa
   const files = inbox.getFiles();
   let moved = 0, archived = 0;
 

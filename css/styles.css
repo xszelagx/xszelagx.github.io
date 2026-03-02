@@ -1469,3 +1469,42 @@ textarea.form-control {
         display: none;
     }
 }
+
+/* Code Block Copy Button */
+.code-container {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.code-container pre {
+    margin-bottom: 0;
+}
+
+.copy-code-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    font-family: var(--font-main);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 10;
+}
+
+.copy-code-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.copy-code-btn.copied {
+    background: #10B981;
+    border-color: #10B981;
+}

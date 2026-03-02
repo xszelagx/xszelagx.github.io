@@ -320,4 +320,38 @@ document.addEventListener('DOMContentLoaded', () => {
             updateVisibility();
         });
     }
+
+    // Code Block Copy Feature
+    const preBlocks = document.querySelectorAll('pre');
+    preBlocks.forEach(pre => {
+        // Obwiń pre kontenerem aby nadać mu pozycjonowanie relative
+        if (!pre.parentNode.classList.contains('code-container')) {
+            const container = document.createElement('div');
+            container.className = 'code-container';
+            pre.parentNode.insertBefore(container, pre);
+            container.appendChild(pre);
+        }
+
+        const container = pre.parentElement;
+        const copyBtn = document.createElement('button');
+        copyBtn.className = 'copy-code-btn';
+        copyBtn.innerHTML = '📋 Kopiuj';
+        container.appendChild(copyBtn);
+
+        copyBtn.addEventListener('click', () => {
+            const codeToCopy = pre.querySelector('code') ? pre.querySelector('code').innerText : pre.innerText;
+            navigator.clipboard.writeText(codeToCopy).then(() => {
+                const originalText = copyBtn.innerHTML;
+                copyBtn.innerHTML = '✅ Skopiowano!';
+                copyBtn.classList.add('copied');
+
+                setTimeout(() => {
+                    copyBtn.innerHTML = '📋 Kopiuj';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Błąd kopiowania do schowka: ', err);
+            });
+        });
+    });
 });
