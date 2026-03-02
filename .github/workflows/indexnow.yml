@@ -1,0 +1,84 @@
+name: IndexNow & Google Ping
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+      - 'sitemap.xml'
+
+jobs:
+  notify-search-engines:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Get changed HTML files
+        id: changed
+        run: |
+          # Get list of changed/added HTML files (exclude templates and 404)
+          CHANGED=$(git diff --name-only --diff-filter=ACMR HEAD~1 HEAD -- '*.html' \
+            | grep -v 'blog-post-template.html' \
+            | grep -v '404.html' \
+            | grep -v 'google75e5ecae7ada82d3.html' \
+            || true)
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHANGED" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+          echo "count=$(echo "$CHANGED" | grep -c '.' || echo 0)" >> $GITHUB_OUTPUT
+
+      - name: Submit to IndexNow (Bing & Yandex)
+        if: steps.changed.outputs.count != '0'
+        run: |
+          KEY="d01c07fa69b248c7913eaa44c545ae27"
+          HOST="xszelagx.github.io"
+          
+          # Build URL list from changed files
+          URLS=""
+          while IFS= read -r file; do
+            [ -z "$file" ] && continue
+            if [ "$file" = "index.html" ]; then
+              URL="https://${HOST}/"
+            else
+              URL="https://${HOST}/${file}"
+            fi
+            URLS="${URLS}\"${URL}\","
+          done <<< "${{ steps.changed.outputs.files }}"
+          
+          # Remove trailing comma
+          URLS="${URLS%,}"
+          
+          # Submit to IndexNow API (Bing endpoint, shared with Yandex/Seznam/Naver)
+          echo "🔔 Submitting to IndexNow..."
+          curl -s -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "{
+              \"host\": \"${HOST}\",
+              \"key\": \"${KEY}\",
+              \"keyLocation\": \"https://${HOST}/${KEY}.txt\",
+              \"urlList\": [${URLS}]
+            }" -w "\nHTTP Status: %{http_code}\n"
+          
+          echo ""
+          echo "✅ IndexNow submission complete"
+          echo "📋 Submitted URLs:"
+          echo "${{ steps.changed.outputs.files }}"
+
+      - name: Ping Google Sitemap
+        run: |
+          echo "🔔 Pinging Google about sitemap update..."
+          curl -s "https://www.google.com/ping?sitemap=https://xszelagx.github.io/sitemap.xml" \
+            -w "\nHTTP Status: %{http_code}\n"
+          echo ""
+          echo "✅ Google sitemap ping complete"
+
+      - name: Ping Bing Sitemap
+        run: |
+          echo "🔔 Pinging Bing about sitemap update..."
+          curl -s "https://www.bing.com/ping?sitemap=https://xszelagx.github.io/sitemap.xml" \
+            -w "\nHTTP Status: %{http_code}\n"
+          echo ""
+          echo "✅ Bing sitemap ping complete"
