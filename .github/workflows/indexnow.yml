@@ -33,7 +33,7 @@ jobs:
       - name: Submit to IndexNow (Bing & Yandex)
         if: steps.changed.outputs.count != '0'
         run: |
-          KEY="d01c07fa69b248c7913eaa44c545ae27"
+          KEY="a02a4652c9684fd891c48a1cbd3d02e7"
           HOST="xszelagx.github.io"
           
           # Build URL list from changed files
