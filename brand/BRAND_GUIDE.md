@@ -37,14 +37,30 @@ Dla wykresów używamy Twojej palety indygo-cyan:
 
 ---
 
-## 3. Style Kształtów i Nawigacji (Screen 3)
+## 3. Style Uzupełniające (Screen 3)
 
-| Pole w Looker Studio | Wartość / Kod HEX |
-| :--- | :--- |
-| **Kolor wypełnienia kształtu** | `#7F7FFF` (Indygo dla ikon/przycisków) |
-| **Kolor aktywnego elementu** | `#FFFFFF` (Biały dla zaznaczonej strony) |
-| **Kolor czcionki (Nawigacja)** | `#A0A4B8` (Ustalony kolor muted) |
-| **Kolor tła (Nawigacja)** | `#1E2028` |
+Te ustawienia wpływają na interaktywne elementy i akcenty:
+
+| Pole w Looker Studio | Wartość / Kod HEX | Uwagi |
+| :--- | :--- | :--- |
+| **Rodzina czcionki uzup.** | `Roboto` | Spójność z bazą |
+| **Kolor czcionki uzup.** | `#7F7FFF` | Twoje firmowe indygo |
+| **Kolor uzupełniający tła** | `#45F3FF` | Cyan (dla kontrastowych guzików) |
+
+---
+
+## 4. Style Pola Tekstowego (Dół Screena 3)
+
+Ustawienia dla okien wyszukiwania i filtrów:
+
+| Pole w Looker Studio | Wartość / Kod HEX | Uwagi |
+| :--- | :--- | :--- |
+| **Rodzina czcionek** | `Roboto` | Bez zmian |
+| **Kolor czcionki** | `#FFFFFF` | Biały tekst w polach |
+| **Kolor tła** | `#1E2028` | Ciemny surface |
+| **Kolor tekstu linku** | `#45F3FF` | Linki w kolorze Cyan |
+| **Kolor klikniętego linku** | `#7F7FFF` | Kliknięte w kolorze Indygo |
+| **Ukryj obramowania pól** | **WŁĄCZONE (ON)** | Nowocześniejszy, czystszy wygląd |
 
 ---
 
