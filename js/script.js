@@ -133,7 +133,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             'event_category': 'Contact',
                             'event_label': 'Web3Forms Success',
                             'page_path': window.location.pathname,
-                            'referrer': document.referrer
+                            'referrer': document.referrer,
+                            'debug_mode': true
                         });
                     } else {
                         console.log(response);
@@ -316,7 +317,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 'event': 'unlock_contact',
                 'event_category': 'Engagement',
                 'event_label': 'Contact Info Revealed',
-                'page_path': window.location.pathname
+                'page_path': window.location.pathname,
+                'debug_mode': true
             });
         });
     }
@@ -340,7 +342,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         'event_category': 'Engagement',
                         'event_label': 'Scroll Depth',
                         'percent_scrolled': mark,
-                        'article_title': document.title
+                        'article_title': document.title,
+                        'debug_mode': true
                     });
                 }
             });
