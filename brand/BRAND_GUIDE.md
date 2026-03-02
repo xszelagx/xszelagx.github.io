@@ -1,51 +1,50 @@
-# Szeląg.Data - Konfiguracja Motywu Looker Studio 📊
-
-To kompletny „przepis” na każde z pól w Twoim panelu edycji motywu.
-
 ---
 
-## 1. Style Podstawowe i Komponent (Screen 1)
+## 1. Style Podstawowe (Klucz do lekkości)
 
-Wprowadź te wartości, aby uzyskać efekt „Dark Premium”:
+Masz rację, zbyt dużo fioletowego tła sprawia, że raport staje się "ciężki". Aby uzyskać efekt "Neon Premium" jak na Twojej stronie, zmień te ustawienia:
 
-| Pole w Looker Studio | Wartość / Kod HEX | Uwagi |
+| Pole w Looker Studio | Wartość / Kod HEX | Dlaczego? |
 | :--- | :--- | :--- |
-| **Kolor tła raportu** | `#0B0C10` | Główna czerń strony |
-| **Rodzina czcionki podst.** | `Roboto` | Najbliższa Twojej czcionce *Outfit* |
-| **Główny kolor czcionki** | `#FFFFFF` | Czysta biel |
-| **Tło (Komponentu)** | `#1E2028` | Kolor kart (lekko jaśniejszy od tła) |
-| **Przezroczystość** | `80-100%` | Możesz lekko obniżyć dla efektu szkła |
-| **Kolor obramowania** | `#2D2F39` | Delikatna separacja kart |
-| **Promień obramowania** | **24** | Kluczowy element – zaokrąglone rogi |
-| **Grubość obramowania** | `1` | Subtelna linia |
-| **Cień obramowania** | `Zawsze` | Bardzo delikatny, nadaje głębi (Elevation) |
+| **Kolor tła raportu** | `#0B0C10` | Zostaje bez zmian (czarny) |
+| **Główny kolor czcionki** | `#FFFFFF` | Zostaje (biały) |
+| **Tło (Komponentu)** | **Przezroczyste (Transparent)** | **FIX:** To usunie te ciężkie fioletowe bloki |
+| **Kolor obramowania** | **#7F7FFF** (Indygo) | To stworzy delikatną "neonową ramkę" |
+| **Grubość obramowania** | **2** | Żeby ramka była wyraźna, ale cienka |
+| **Promień obramowania** | **24** | Zaokrąglone rogi (zostaje) |
 
 ---
 
-## 2. Style Danych i Wykresów (Screen 2)
+## 2. Jak naprawić "Grupowanie" (Summary / Trends)
 
-Dla wykresów używamy Twojej palety indygo-cyan:
+Na Twoim screenie te duże niebieskie bloki to prawdopodobnie **Kształty (Shapes)** użyte jako tło.
+1.  Kliknij w ten duży prostokąt.
+2.  Zmień jego **Kolor wypełnienia** na **Przezroczysty**.
+3.  Zmień jego **Kolor obramowania** na `#7F7FFF` (Indygo).
+4.  Ustaw **Grubość obramowania** na `1` lub `2`.
 
-| Pole w Looker Studio | Wartość / Opis |
+Dzięki temu uzyskasz efekt "lekkich kontenerów", które nie przytłaczają danych.
+
+---
+
+## 3. Wykresy i Dane (High Contrast)
+
+Aby dane były czytelne na czarnym tle:
+
+| Element | Kolor | Rola |
+| :--- | :--- | :--- |
+| **Główna seria danych** | `#45F3FF` (Cyan) | Świetnie "świeci" na czarnym tle |
+| **Druga seria danych** | `#7F7FFF` (Indygo) | Mniej rzuca się w oczy, dobra do porównań |
+| **Siatka wykresu** | `#1E2028` | Prawie niewidoczna, tylko dla orientacji |
+
+---
+
+## 4. Dodatkowe Style (Screen 3)
+| Pole | Wartość |
 | :--- | :--- |
-| **Paleta wykresu** | **Indygo (#7F7FFF)**, **Cyan (#45F3FF)**, **Róż (#FF45A4)** |
-| **Kontrast tekstu** | `Wysoki` |
-| **Kolor siatki** | `#1E2028` (bardzo ciemna, niemal niewidoczna) |
-| **Kolor zmiany dodatniej** | `#45F3FF` (Cyan zamiast zielonego - bardziej futurystyczny) |
-| **Kolor zmiany ujemnej** | `#FF45A4` (Mocny róż zamiast czerwonego) |
-| **Tytuł wykresu** | Pokaż po najechaniu / Kolor: `#FFFFFF` |
-
----
-
-## 3. Style Uzupełniające (Screen 3)
-
-Te ustawienia wpływają na interaktywne elementy i akcenty:
-
-| Pole w Looker Studio | Wartość / Kod HEX | Uwagi |
-| :--- | :--- | :--- |
-| **Rodzina czcionki uzup.** | `Roboto` | Spójność z bazą |
-| **Kolor czcionki uzup.** | `#7F7FFF` | Twoje firmowe indygo |
-| **Kolor uzupełniający tła** | `#45F3FF` | Cyan (dla kontrastowych guzików) |
+| **Kolor czcionki uzup.**| `#A0A4B8` (Muted) |
+| **Kolor tła pola tekst.** | `#0B0C10` (Czysta czerń) |
+| **Ukryj obramowania** | **WŁĄCZONE** |
 
 ---
 
