@@ -71,14 +71,19 @@ Po spięciu Tagów z Wyzwalaczami, na stronie głównej obszaru roboczego klikni
 ---
 
 ## 4. Microsoft Clarity (Nagrania sesji i Heatmapy)
-To narzędzie pozwoli Ci oglądać, jak użytkownicy poruszają się po stronie. 
+To narzędzie pozwoli Ci oglądać, jak użytkownicy poruszają się po stronie (nagrania wideo i mapy kliknięć).
 
-1. Załóż darmowe konto na [Microsoft Clarity](https://clarity.microsoft.com/).
-2. Dodaj nową witrynę i przejdź do zakładki **Settings** -> **Setup**.
-3. Wybierz metodę instalacji: **Install on a third-party platform** i wybierz **Google Tag Manager**.
-4. Zaloguj się przez Google – Clarity **samo** stworzy odpowiedni Tag w Twoim GTM.
-5. Jeśli wolisz ręcznie: Skopiuj swój "Project ID" z ustawień Clarity, wróć do GTM, dodaj Nowy Tag, wybierz typ **Microsoft Clarity** (jeśli nie ma, pobierz go z Galerii Szablonów Społeczności) i wklej swoje ID. 
-6. Reguła dla tego tagu: **All Pages** (Wszystkie strony).
+**Twój Project ID: `vpinnzqu01`**
+
+**Instrukcja wpięcia przez GTM (Zalecane dla szybkości strony):**
+1.  W GTM przejdź do sekcji **Tagi** -> **Nowy**.
+2.  Nazwij go: `Clarity - Session Recording`.
+3.  Kliknij **Konfiguracja tagu** -> wyszukaj w galerii szablonów (Community Template Gallery) tag o nazwie **"Microsoft Clarity"**.
+4.  W polu **Clarity Project ID** wklej: `vpinnzqu01`.
+5.  W sekcji **Reguły (Triggers)** wybierz **All Pages** (lub Initialization - All Pages).
+6.  Zapisz i **Opublikuj** zmiany w GTM.
+
+Dzięki temu kod Clarity nie będzie bezpośrednio w HTML-u, a GTM załaduje go w sposób optymalny, nie spowalniając renderowania strony.
 
 ---
 
