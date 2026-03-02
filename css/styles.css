@@ -156,8 +156,11 @@ h4 {
 }
 
 .glass-nav.scrolled {
-    padding: 10px 0;
     background: rgba(11, 12, 16, 0.9);
+}
+
+.glass-nav.scrolled .nav-container {
+    padding: 10px 24px;
 }
 
 .glass-card {
