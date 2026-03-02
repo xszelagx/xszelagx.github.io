@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <meta name="description"
+        content="Poznaj 5 powodów dla których raportowanie samego GA4 przestało działać w 2026 r. Dlaczego panel Google Analytics jest gorszy dla marketingu e-commerce od wizualizacji Looker Studio?">
+
+    <title>Looker Studio vs Google Analytics 4 (GA4): Wady Analytics i ucieczka do BI | Mikołaj Szeląg</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <link rel="icon" type="image/png" href="../favicon.png?v=2">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico?v=2">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png?v=2">
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Looker Studio vs Google Analytics 4 (GA4) – Dlaczego puste raporty GA4 to za mało?",
+          "author": {
+            "@type": "Person",
+            "name": "Mikołaj Szeląg"
+          },
+          "datePublished": "2026-03-02",
+          "description": "Zrozum barierę wizualizacyjną Google Analytics 4. Kiedy warto wyciągnąć dane z panelu GA4 do profesjonalnego dashboardu Looker Studio z obsługą kosztów ROAS."
+        }
+    </script>
+</head>
+
+<body>
+    <!-- GTM Noscript -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="/" class="logo">Szeląg<span>.</span>Data</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+                <div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Growth Marketing</span>
+                        <span>02 Marca 2026</span>
+                        <span>⏱️ 5 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Looker Studio vs Google Analytics 4: <span class="gradient-text">Dlaczego
+                            raporty w samym GA4 to stanowczo za mało?</span></h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <!-- MAIN CONTENT -->
+                    <div class="post-content">
+                        <p>Znikające wskaźniki Bouncing Rate. Komunikat o próbkowaniu danych ("Thresholding applied").
+                            Eksploracje, które rozpadają się, jeśli źle skrzyżujesz ze sobą Event Name i kanały
+                            źródłowe. Brzmi znajomo? Jeśli spędzasz w panelu Google Analytics 4 dziennie więcej niż 30
+                            minut, przepalasz swój marketingowy czas.</p>
+
+                        <p>Przejście ze starego Google Analytics Universal (UA) na najnowsze środowisko GA4 zmieniło
+                            definicje wizualizacyjne w chmurach. Nowy moduł <strong>„Eksploracji” i bazowych raportów
+                                GA4 po prostu nie radzi sobie z obsługą wielokanałowych dyrektorów B2B oraz e-commerce
+                                menedżerów</strong>. Pojedynek tych narządzi (Google Analytics 4 vs Looker Studio)
+                            rozstrzygnięty został już z początkiem wprowadzenia hurtowni.</p>
+
+                        <h2>1. Próbkowanie i próg danych (Słynne "Thresholding") w interfejsie GA4</h2>
+                        <p>GA4 zostało zaprojektowane z myślą o ochronie RODO użytkowników (urządzenia iOS vs Android).
+                            W natywnym panelu Twoje wykresy nagle zaczną pokazywać okrągłe zero dla konwersji ze
+                            specyficznych kampanii (gdzie np. ruch jest rzędu "tylko" 15-30 unikalnych kliknięć).</p>
+                        <p>Niestety GA4 z góry blokuje podgląd nisko-wolumenowy z obawy przed deanonimizacją klienta. W
+                            biznesie Looker Studio służy nam do ominięcia tej nakładki graficznej – w Lookerze możesz
+                            wyciągnąć niezagregowane koszty niemal w całości.</p>
+
+                        <h2>2. Looker łączy systemy: Koszty reklam Meta Ads w panelu GA4?</h2>
+                        <p>Kolekcjonowanie ruchu to jedno. A koszty? Niestety – natywny moduł GA4 pozwala spiąć się za
+                            darmo rewelacyjnie wyłącznie z platformą Google Ads. Co z gigantycznym lewarem kampanii
+                            TikTok Ads, LinkedIn Ads (b2b) czy klasycznym Faceboookiem?</p>
+
+                        <p>Aby przeliczyć Twój globalny koszt pożądania Klienta (tzw. LTV, CPA lub uniwersalny ROAS w
+                            E-commerce), potrzebujesz narzędzia Data Blending. W Google Data Studio <a
+                                href="./laczenie-wielu-zrodel-danych-blending-looker-studio.html">łączymy źródła np. po
+                                wspólnej dacie</a> i otrzymujemy perfekcyjny jeden słupek KPI – sumujący przychody z
+                            Analytics do kosztów z wydatków 5 pozostałych firm reklamowych. Samodzielnie nie wyklikasz i
+                            nie ustandaryzujesz tego w oknie Exploracji GA4.</p>
+
+                        <h2>3. Czas załadowania strony dla inwestorów/Zarządu B2B</h2>
+                        <p>Eksploracje w GA4 (Moduł: Explore) gubią karty przy wylogowaniu. Przekazanie do przejrzenia
+                            gotowego lejka decyzyjnego GA4 (Zob. <a
+                                href="./analityka-ecommerce-lejki-sprzedazy-looker-studio.html">Jak budować lejki
+                                poprawnie w Looker E-commerce</a>) Twojemu szefostwu czy zewnętrznemu inwestorowi
+                            graniczy dzisiaj z cudem szkoleniowym.</p>
+
+                        <h2>Złota Zasada na rok 2026: Trzyczęściowy podział ról w architekturze GCP</h2>
+                        <ul>
+                            <li><strong>Google Analytics 4 (GA4):</strong> Pełni dzisiaj wyłącznie rolę agregatora w
+                                kodzie JS i Event trackera (Wrzuca logi z Twojej witryny WWW poprzez API).</li>
+                            <li><strong>Google BigQuery (Opcjonalnie dla DUŻYCH sklepów):</strong> <a
+                                    href="./co-to-jest-bigquery-darmowy-limit.html">Baza hurtowni rzędu 10 milionów
+                                    dziennych zapytań e-commerce SQL.</a> Eliminuje na zawsze limit Quotas.</li>
+                            <li><strong>Looker Studio (Moduł BI):</strong> Finalny obraz całego ekosystemu łączący na
+                                kafelkach Excelowe cele (Targety obrotowe) z GA4 i wydatkami.</li>
+                        </ul>
+
+                        <blockquote>"Skup się na strategii, a nie na ręcznej filtracji paneli narzędziowych i
+                            odnajdywaniu zagubionego wejścia z kampanii na FB."</blockquote>
+
+                    </div>
+
+                    <!-- SIDEBAR -->
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Google Data &
+                                Cloud Consultant</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Przeniesienie
+                                firmowych i agnecyjnych działań z Analytics 4 na spersonalizowany serwer raportowy.
+                                Wyciągam biznes ze skomplikowanych danych pod chmurą.</p>
+                        </div>
+
+                        <div class="cta-card">
+                            <h3>Zmęczony znikającymi statystykami GA4?</h3>
+                            <p>Zbudujmy system analityczny na wzór Big-Techu. Pozbądź się ograniczeń ręcznego
+                                odpytywania baz.</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Porozmawiajmy o
+                                Architekturze</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Szeląg<span>.</span>Data</div>
+            <p>&copy; <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

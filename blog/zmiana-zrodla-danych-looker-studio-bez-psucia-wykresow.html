@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <meta name="description"
+        content="Jak przypiąć lub podmienić źródło danych Data Source (Bazy, Arkusze Google) z Looker Studio tak by nie połamać tabel? System Error i Invalid Configuration Fix.">
+
+    <title>Zmiana źródła danych w Looker Studio bez psucia wykresów | Mikołaj Szeląg</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <link rel="icon" type="image/png" href="../favicon.png?v=2">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico?v=2">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png?v=2">
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Jak zmienić lub podmienić Źródła Danych API w Looker Studio zachowując spójność Dashboardów",
+          "author": {
+            "@type": "Person",
+            "name": "Mikołaj Szeląg"
+          },
+          "datePublished": "2026-03-02",
+          "description": "Metoda rozwiązywania błędu Unknown lub System Error na wykresach Looker. Poprawna mapa wymiarów (Data Mapping) dla plików Arkuszy i tabel z BigQuery."
+        }
+    </script>
+</head>
+
+<body>
+    <!-- GTM Noscript -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="/" class="logo">Szeląg<span>.</span>Data</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+                <div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Błędy API i Serwisu (Fix)</span>
+                        <span>02 Marca 2026</span>
+                        <span>⏱️ 5 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Zmiana źródła danych w Looker Studio: <span class="gradient-text">Jak
+                            podmienić bazę bez niszczenia wykresów na błędne?</span></h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <!-- MAIN CONTENT -->
+                    <div class="post-content">
+                        <p>Z biegiem lat każda firma dochodzi do wniosku "Stop! Przepisujemy się z 4 gigabajtowych logów
+                            w Arkuszach na profesjonalną bazę danych jak MySQL czy GCP". Zespół przesiada się na nową
+                            Hurtownię Danych, wchodzi w Tryb Edycji (Edit) starego raportu Looker i w rogu zmienia
+                            "Podpięcie stare na Nowe".</p>
+
+                        <p>Wszystkie wykresy – każdy z osobna – stają się natychmiast mroczną czarną pustynią oblepioną
+                            napisami <a href="./obsluga-bledow-system-error-null-looker-studio.html">Configuration Error
+                                oraz Inavlid / Unknown Dimension.</a> Twoja misternie pleciona przez tydzień siatka
+                            raportowa dla Zarządu właśnie padła. Jak uniknąć tej programistycznej zapaści B2B podczas <a
+                                href="./tworzenie-szablonow-kopiowanie-raportow-looker-studio.html">klonowania projektów
+                                u klienta</a>?</p>
+
+                        <h2>Gdzie leży klucz problemu? (Mismatch Engine)</h2>
+                        <p>Kiedy projektowałeś na kafelku stary i bezpieczny wykres dla działu Menedżerów np. w roku
+                            2024, wrzuciłeś na niego za pomocą techniki Drag-and-Drop wymiar o nazwie, powiedzmy:
+                            <code>Sprzedaż_Całkowita</code>. System zapamiętał sobie ciąg znaków (tzw. "String
+                            identifier") na amen.</p>
+
+                        <p>Jeśli teraz podepniesz nową superwydajną tabelę <a
+                                href="./co-to-jest-bigquery-darmowy-limit.html">Data BigQuery</a>, ale dla zespołu
+                            inżynierów w chmurze kolumna nazwana została tam sztywnym językiem programistów czyli SQL
+                            jako <code>total_sales_val</code>, to w tym punkcie serwery Looker Studio się rozczarowują i
+                            poddają się bez walki. Looker po stronie logiki (szukając poprzedniej struktury w nazwie
+                            podpiętej, nowej bazy) absolutnie **NIE WIE**, co nanieść na dany wykres, informując
+                            lakonicznie Unknown Dimension (Nieznany wiersz w bazie zapytanej).</p>
+
+                        <h2>Poprawne kroki podmiany z opcją zmapowania ("Data Mapping")</h2>
+                        <p>Nie należy przepinać źródła rzucając się na dany kafelek z prawego ucha grafiki. Musisz wejść
+                            na główną zakładkę w GDS.</p>
+
+                        <ol>
+                            <li>Z paska Menu wejdź w <strong>Zasób -> Zarządzaj dodanymi źródłami danych</strong>
+                                (Manage Added Data Sources).</li>
+                            <li>Zlokalizuj stare źródło. Użyj opcji <strong>EDYTUJ</strong>. Następnie kliknij jeszcze
+                                raz opcję <strong>EDYTUJ KONFIGURACJĘ</strong>.</li>
+                            <li>Wskaż chmurze nową docelową Tabelę. Następnie Looker w nowym, wspaniałym ekranie, o
+                                którym zapominają pracownicy B2B zada Ci kluczowe inżynieryjne pytanie typu "Mapping".
+                                Pokaże lewą kolumnę i prawą u dołu z napisem <strong>Zmapuj lub wyrzuć / Połącz</strong>
+                                (W zależności od wersji językowej).</li>
+                        </ol>
+
+                        <p>To na tym rzadko odwiedzanym ekranie parowania musisz ręcznie mu podpowiedzieć (jak dziecku
+                            za rękę), że jego stara kolumna (Left) np. <code>Koszty_PLN</code>, odpowiada nowej (Right)
+                            kolumnie w innej Twojej bazie o wbudowanej innej wewnętrznie nazwie u Data Scientisy, czyli
+                            <code>spend_val_pln</code>. Gdy przemapujesz logi po kafelkach w dół – całość wyjdzie
+                            obronną ręką na starcie w mgnieniu obrotu buforowania pulpitu, zachowując przy życiu nawet
+                            wybiórcze filtry w nagłówkach i w stopkach plików!</p>
+
+                        <h3>Standard Single Source Of Truth na 2026 i ratunek SQL</h3>
+                        <p>Z powyższego powodu w agencjach, ułatwiając i wdrażając na stałe tzw. Single Source of Truth
+                            <a href="./jak-wdrozyc-looker-studio-w-firmie-b2b-checklista.html">(Jedno źródło Prawdy o
+                                Zarobkach Biznesu)</a> stwarza się dla firm surowe repozytoria hurtowni (Cloud)
+                            operujące np. sztywnym j. angielskim i konwencją <i>Snake Case</i>. Niezależnie od podpięcia
+                            dla różnych miast sklepu, na matrycy Lookera i u źródła w bazie panuje harmonia nazw –
+                            pozwalając na nieskończone modyfikowanie źródeł pliku od E-commerce bez milisekundy obawień
+                            o zepsute tabele.</p>
+                    </div>
+
+                    <!-- SIDEBAR -->
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Ekspert Integracji
+                                i Fixowania Baz i Hurtownii (GCP)</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Przeniesienie
+                                firmowych Dashboardów ładujących Excel w tryb chmury to operacja obarczona utratą
+                                spójności danych raportowych (Data integrity). Przeprowadzam MŚP przez ten most "bez
+                                strat w ofiarach i wykresach handlowych". Ustandaryzowuje SSOT (Single Source Of Truth).
+                            </p>
+                        </div>
+
+                        <div class="cta-card">
+                            <h3>Ktoś zmienił nagłówki w Exclu i wszystko "leży i nie działa"?</h3>
+                            <p>Zapomnij o błądzącym błędzie systemowym. Ustawiam wprost twarde limity danych opierając
+                                organizację IT Twojej firmy o bazodanowe złącza Google BigQuery (Hurtownia SQL) oporne
+                                na ludzkie błędy.</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Porozmawiajmy o Architekturze i
+                                Audycie Błędów</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Szeląg<span>.</span>Data</div>
+            <p>&copy; <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <meta name="description"
+        content="Jak poprawnie podłączyć Arkusze Google do Looker Studio aby uniknąć błędów formatowania danych? Przewodnik po wpięciu Google Sheets w Dashboard B2B.">
+
+    <title>Jak połączyć Arkusze Google (Google Sheets) z Looker Studio bez błędów? | Mikołaj Szeląg</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <link rel="icon" type="image/png" href="../favicon.png?v=2">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico?v=2">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png?v=2">
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Jak połączyć Arkusze Google z Looker Studio unikając błędów?",
+          "author": {
+            "@type": "Person",
+            "name": "Mikołaj Szeląg"
+          },
+          "datePublished": "2026-03-02",
+          "description": "Zasady formatowania Google Sheets do eksportu (nagłówki, daty i waluty). Rozwiązywanie konfliktów bazy przy łączeniu danych (Data Source) w GDS."
+        }
+    </script>
+</head>
+
+<body>
+    <!-- GTM Noscript -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="/" class="logo">Szeląg<span>.</span>Data</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+                <div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Integracje Danych</span>
+                        <span>02 Marca 2026</span>
+                        <span>⏱️ 5 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Jak połączyć Arkusze Google z Looker Studio <span class="gradient-text">bez
+                            błędów systemowych?</span></h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <!-- MAIN CONTENT -->
+                    <div class="post-content">
+                        <p>Z pozoru to proces wzięty żywcem z książki dla Amatorów: Klikasz "Dodaj Dane" -> wybierasz
+                            kartę "Google Sheets" -> zatwierdzasz. Cieszysz się swoimi wykresami raptem 3 tygodnie.
+                            Potem zespół wchodzi do Arkusza Google, dopisuje w pierwszej linii kolorowe puste pole lub
+                            nową kolumnę z zapytaniem... a cały Dashboard świeci wielką czerwoną plakietką <strong>Błędu
+                                Źródła Danych</strong>.</p>
+
+                        <p>Połączenie Arkuszy z Google Data Studio (obecnie Looker) musi rygorystycznie opierać się o
+                            czyste nawyki bazodanowe. Narzędzie BI to nie miejsce na kreatywną i chaotyczną edycję. Jak
+                            więc sformatować Arkusz, zanim w ogóle pomyślisz o tworzeniu z niego raportów analitycznych?
+                        </p>
+
+                        <h2>1. Żelazna Zasada Wiersza Tytułowego (Header Row)</h2>
+                        <p>Looker Studio zaczytuje wymiary z pierwszego zdefiniowanego wiersza w pliku. Ten wiersz musi
+                            być całkowicie <strong>jednolity, bez złączonych komórek (Merge Cells) i podwójnych wierszy
+                                tytułowych</strong>.</p>
+
+                        <ul>
+                            <li><strong>Źle:</strong> Wiersz numer 1 złączony napis "Sprzedaż Roczna". Wiersz nr 2
+                                podzielony na "Koszty" i "Zysk".</li>
+                            <li><strong>Świetnie (BI Standard):</strong> Wiersz numer 1, kolumna A = Data, Kolumna B =
+                                Koszty, Kolumna C = Zysk. Żadnych łączonych nagłówków, pustych wierszy oddzielających i
+                                zbędnych opisów przed Wierszem 1. Zobacz artykuł <a
+                                    href="./vlookup-vs-join-sql-roznice-hurtownia.html">o rygorach w budowaniu hurtowni
+                                    dla Excela i Google Sheets</a>.</li>
+                        </ul>
+
+                        <h2>2. Formatowanie Dat to klucz to osi X na wykresach</h2>
+                        <p>Looker ma wbudowany genialny system kalendarzy, który rozkłada Twoje wiersze np. na tygodnie
+                            i lata obrotowe firmy. Lecz jeśli w Arkuszu trzymasz daty jako zwykły ciąg znaków (Tekst) w
+                            formacie: `12 Września 2024`, system BI kompletnie zwariuje wyświetlając tzw. "Błąd
+                            Konfiguracji Serii Dat".</p>
+                        <p>Upewnij się, że kolumna daty wewnątrz Google Sheets korzysta z natywnego formatu
+                            <strong>RRRR-MM-DD</strong> lub że każda "komórka" reaguje poprawnie na dwuklik
+                            minikalendarza. Inaczej Looker potraktuje to jako zwyczajny tekst literowy (String).</p>
+
+                        <h2>3. Puste kolumny wewnątrz korpusu danych</h2>
+                        <p>Każda dodana na chybił trafił kolumna pomiędzy ciągiem danych sprawi, że raport "złapie
+                            przerwę" na konektorze API i uzna, że baza się nagle urwała. Usuwaj zbędne kolumny
+                            całkowicie z arkusza roboczego. W Arkuszu nie może być również ukrytych filtrów, dlatego
+                            najlepszym rozwiązaniem jest po podłączeniu <a
+                                href="./jak-zabezpieczyc-dane-udostepnione-arkusze-google.html">narzucić blokadę edycji
+                                i całkowicie zabronić zespołom ingerencji w nagłówki</a> raportów źródłowych.</p>
+
+                        <h2>4. Co jeśli dodałem nową kolumnę z danymi dla Zarządu?</h2>
+                        <p>Gdy do podpiętego pliku dodasz nową wartościową komórkę np. "Region Klienta", sam
+                            <strong>Looker domyślnie jej na pulpicie nie odświeży</strong>. Otwierając gotowy dashboard
+                            musisz:</p>
+                        <ol>
+                            <li>Wejść w zakładkę <strong>Zasób</strong> na górnym pasku.</li>
+                            <li>Wybrać <strong>Zarządzaj dodanymi źródłami danych</strong>.</li>
+                            <li>Znaleźć połączony Arkusz i pukać zębatkę (Edycję).</li>
+                            <li>Kliknąć ogromny napis w lewym dolnym logowaniu: <strong>"ODŚWIEŻ POLA" (Refresh
+                                    Fields)</strong>.</li>
+                        </ol>
+                        <p>Dzięki temu system przeładuje schemat Excela z dysku i zaciągnie świeżutką kolumnę "Region
+                            Klienta" prosto do Twoich rąk analitycznych, ratując raport przed <a
+                                href="./obsluga-bledow-system-error-null-looker-studio.html">błędami System Error</a>.
+                        </p>
+
+                        <h3>Wniosek</h3>
+                        <p>Jeśli Twoje Arkusze ważą ponad 40 Megabajtów i przypominają choinkę korporacyjną w tabelach
+                            przestawnych, żaden połącznik natywny nie zda tu egzaminu i odświeżanie zabierze całe wieki.
+                            Taką chmurę trzeba w całości podpiąć z pomocą ustrukturyzowanej infrastruktury Google
+                            BigQuery, pozbywając się ociężałości przeglądarkowej.</p>
+                    </div>
+
+                    <!-- SIDEBAR -->
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Ekspert Hurtowni i
+                                Baz Danych</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Optymalizacja
+                                Arkuszy to zaledwie początek. Pomagam firmom ukrócić samowolę raportową transformując
+                                luźne arkusze kalkulacyjne w potężne silniki BigQuery.</p>
+                        </div>
+
+                        <div class="cta-card">
+                            <h3>Arkusze ładują się za długo?</h3>
+                            <p>Zapomnij o błądzącym raporcie, który zacina przeglądarki. Połączmy procesy tak, by
+                                ustandaryzować dane z użyciem szybkich języków Apps Script (SSOT).</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Porozmawiajmy o
+                                Architekturze</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Szeląg<span>.</span>Data</div>
+            <p>&copy; <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

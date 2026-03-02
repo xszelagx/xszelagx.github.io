@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <meta name="description"
+        content="Jaka jest różnica między Looker (Core) a chmurowym powszechnym Google Looker Studio? Czym jest język LookML i które z tych dwóch rozwiązań opłaca się w małej/średniej firmie?">
+
+    <title>Looker vs Looker Studio: Czym różnią się te dwa systemy od Google? | Mikołaj Szeląg</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <link rel="icon" type="image/png" href="../favicon.png?v=2">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico?v=2">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png?v=2">
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Looker vs Looker Studio - Czym różnią się w ekosystemie Google Cloud?",
+          "author": {
+            "@type": "Person",
+            "name": "Mikołaj Szeląg"
+          },
+          "datePublished": "2026-03-02",
+          "description": "Wyjaśnienie pułapki rynkowej rebrandingu narzędzi Business Intelligence Google. Enterprise Looker Core na języku LookML kontra domowe Google Data Studio."
+        }
+    </script>
+</head>
+
+<body>
+    <!-- GTM Noscript -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="/" class="logo">Szeląg<span>.</span>Data</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+                <div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Porównania Ekosystemów (BI)</span>
+                        <span>02 Marca 2026</span>
+                        <span>⏱️ 5 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Looker (Core) vs Looker Studio: <span class="gradient-text">Czym różnią się
+                            te dwa narzędzia Data & Cloud?</span></h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <!-- MAIN CONTENT -->
+                    <div class="post-content">
+                        <p>Kiedy w 2022 roku Google przeprowadziło dramatyczny firmowy rebranding starego Google Data
+                            Studio na „Looker Studio”, na grupach i forach doradczych Business Intelligence zapanowała
+                            powszechna dezinformacja.</p>
+
+                        <p>Zarządy zaczęły poszukiwać wdrożeń "Lookera", nie mając świadomości, że Google posiada
+                            obecnie <strong>dwa kompletnie osobne produkty</strong> dzielące zbieżną nazwę, które są
+                            kierowane do dwóch drastycznie różnych kategorii finansowych w B2B. Zobacz, czym różni się
+                            potężny platformowy "Enterprise Looker" od elastycznego, masowego "Looker Studio".</p>
+
+                        <h2>1. Główna różnica: Architektura i język środowiska</h2>
+                        <p>Sercem rynkowym platformy „Looker” (tego właściwego, wykupionego przez Google w 2019 roku
+                            korporacyjnego giganta) jest jego własny warstwowy model o nazwie <strong>LookML</strong>.
+                        </p>
+
+                        <p>Język bazodanowy <em>LookML</em> działa jak kompilator kodu i strażnik jednego, wspólnego
+                            źródła prawdy analitycznej. Specjalnie wyszkoleni programiści Data definiują w Lookerze
+                            wymiary w ten sposób, by całe działy firmy liczyły np. "Roczny Zysk na Terytorium DACH"
+                            zawsze i absolutnie za pomocą narzuconej odgórnie matrycy. Wyklucza to rozjazdy Excelowe.
+                            Looker Core sam przekłada ten swój unikalny język LookML na kwerendy czystego oprogramowania
+                            SQL wspierając takie relacyjne machiny jak Teradata, Redshift (AWS), Snowflake czy
+                            naturalnie dedykowane <a href="./co-to-jest-bigquery-darmowy-limit.html">środowisko własne
+                                GCP – Google BigQuery</a>. Nie ma tu miejsca na chałupnicze tabele przestawne.</p>
+
+                        <p>Tymczasem <a href="./co-to-jest-looker-studio-przewodnik-bi-google.html">powstające masowo
+                                bez licencji Looker Studio</a> nie posiada języka LookML.</p>
+                        <ul>
+                            <li>W Looker Studio <strong>to Ty sam musisz wiedzieć, jak policzyć marżę, stosując zwykłe
+                                    bloki typu "Pola Obliczeniowe" we własnych metrykach.</strong> Możesz to zepsuć
+                                wedle własnego widzimisię.</li>
+                            <li>Dzięki temu podpięcie danych zajmuje Ci jednak 5 minut w locie, a nie tygodnie ustalania
+                                ramowej polityki logowania i korporacyjnego <em>Data Governance</em> z udziałem
+                                certyfikowanego Analityka.</li>
+                        </ul>
+
+                        <h2>2. Cenniki i Koszty Korporacyjne Systemów (Pricing)</h2>
+                        <p>To nie jest wariant typu <a href="./looker-studio-pro-vs-free-roznice-cena.html">"Darmowe
+                                konto Google vs Licencja Firmowa 9$/User".</a> Tutaj mówimy o przepaści kosztów
+                            inwestycyjnych rzędu tysięcy dolarów miesięcznie na rzecz Enterprise.</p>
+
+                        <p>Pełny <strong>Looker Core</strong> to autorytet wymagający twardych budżetów platformowych
+                            (umowy roczne opiewające średnio na dziesiątki tysięcy dolarów) na potężne wdrożenia dla
+                            e-commerce liderów, systemów bankowych, czy potężnych marek B2B potrzebujących platform
+                            analitycznych wdzierających się głęboko za pomocą natywnego API we własne systemy zewnętrzne
+                            (np. portalowe <em>Embedded Analytics</em> za opłatą). <strong>Darmowe Looker
+                                Studio</strong> kosztuje Cię równo: Zero (nie uwzględniając płatnych konektorów
+                            reklamowych czy operacji hurtowni BigQuery).</p>
+
+                        <h3>Które rozwiązanie wdrażać dla Twojej firmy? (Use Case)</h3>
+                        <p>Jeżeli kierujesz średniej lub wysokiej klasy 30-osobowym B2B (MŚP) i chcesz zamknąć bałagan
+                            powymienianych dysków raportujących Exceli do jednolitego panelowego kokpitu online -
+                            potrzebujesz po prostu <strong>rozwiązania Google Looker Studio na sterydach (z bazą danych
+                                BigQuery).</strong></p>
+                        <p>Tylko prawdziwe molochy z branży finansowej wymagają narzucenia twardego schematu danych
+                            językiem LookML przez Enterprise Looker.</p>
+                    </div>
+
+                    <!-- SIDEBAR -->
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Google Cloud
+                                Architect</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Gdzie firmy płacą
+                                gigantyczne rachunki za zbyteczne oprogramowanie korporacyjne, ja wprowadzam zwinność i
+                                czysty inżynieryjny rachunek zysków i strat (Looker Studio + SQL).</p>
+                        </div>
+
+                        <div class="cta-card">
+                            <h3>Chcesz oszczędzić 80% na integracji BI?</h3>
+                            <p>Zleć mi poprowadzenie darmowego w 100% środowiska wizualizacyjnego dla Twojej marki na
+                                bazie Looker Studio połączonego rurą BigQuery. Omijaj płatne obciążenia platformowe.</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Porozmawiajmy o
+                                Architektutze</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Szeląg<span>.</span>Data</div>
+            <p>&copy; <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

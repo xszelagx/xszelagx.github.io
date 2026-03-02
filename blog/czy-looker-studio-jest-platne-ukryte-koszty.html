@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        // Domyślnie odrzucamy ciasteczka przed załadowaniem GTM
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+    <!-- End Google Analytics -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <meta name="description"
+        content="Czy Looker Studio (Google Data Studio) jest naprawdę darmowe? Poznaj ukryte koszty zapytań e-commerce, limity API (GA4 Quota) i metody optymalizacji B2B." />
+
+    <title>Czy Looker Studio jest płatne? Poznaj ukryte koszty i limity API | Mikołaj Szeląg</title>
+
+    <!-- Google Fonts: Outfit for modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <link rel="icon" type="image/png" href="../favicon.png?v=2">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico?v=2">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png?v=2">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Czy Looker Studio jest płatne? Ukryte koszty i limity API Data Studio",
+          "image": "https://xszelagx.github.io/favicon.png",  
+          "author": {
+            "@type": "Person",
+            "name": "Mikołaj Szeląg",
+            "url": "https://xszelagx.github.io/"
+          },  
+          "publisher": {
+            "@type": "Organization",
+            "name": "Szeląg Data",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://xszelagx.github.io/favicon.png"
+            }
+          },
+          "datePublished": "2026-03-02",
+          "description": "Dowiedz się, czy Looker Studio generuje ukryte koszty. Wyjaśniamy limity API Google Analytics 4, koszty przetwarzań w BigQuery oraz wtyczek Supermetrics na rok 2026."
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Background Animations -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <!-- Navigation -->
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="/" class="logo">Szeląg<span>.</span>Data</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Post Header -->
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Koszta Operacyjne (GCP)</span>
+                        <span>02 Marca 2026</span>
+                        <span>⏱️ 5 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Czy Looker Studio jest płatne? <span class="gradient-text">Ukryte koszty i
+                            limity API</span> których nie znasz</h1>
+                </div>
+            </header>
+
+            <!-- Post Content and Sidebar -->
+            <div class="container">
+                <div class="post-layout">
+
+                    <!-- Main Content Column -->
+                    <div class="post-content">
+                        <p>Znasz to uczucie, gdy dostawca technologii Cloud rzuca hasłem <strong>„w 100% za
+                                darmo”</strong>,
+                            a po kilku miesiącach faktury B2B zaczynają dziwnie eskalować? Menedżerowie, widząc
+                            rachunki, siwieją, zadając mi ciągle jedno pytanie: <strong>Czy Looker Studio faktycznie
+                                jest całkowicie
+                                bezpłatne?</strong></p>
+
+                        <p>Odpowiedź brzmi: To zależy od architektury. Samo środowisko i wyświetlanie dashboardów
+                            <strong>jest i prawdopodobnie zawsze będzie darmowe</strong> (poza wersją <a
+                                href="./looker-studio-pro-vs-free-roznice-cena.html">Looker Studio Pro</a>). Jednak w
+                            ekosystemie Business Intelligence, to nie wizualizacja kosztuje. Kosztuje
+                            <strong>transfer i przeliczanie danych z zewnętrznych API</strong>. W tym poradniku obalę
+                            mity
+                            na temat płatności i pokażę Ci, jak wyeliminować ukryte koszty operacyjne w 2026 roku.
+                        </p>
+
+                        <h2>1. Skąd biorą się koszty, skoro aplikacja jest darmowa?</h2>
+                        <p>Wyobraź sobie Looker Studio jako bardzo drogi, ale darmowy do wypożyczenia samochód. Problem
+                            w tym, że <strong>Google nie funduje paliwa (danych)</strong> spalanego przez ten
+                            samochód. Koszty pojawiają się w trzech newralgicznych miejscach lejka Data Pipeline:</p>
+
+                        <ol>
+                            <li><strong>Limity GA4 (API Quotas)</strong> – Google ograniczyło ilość wierszy pobieranych
+                                z GA4 bezpośrednio do Lookera, zmuszając większe sklepy E-commerce do migracji na chmurę
+                                bazodanową.</li>
+                            <li><strong>Przetwarzanie zapytań SQL</strong> – Przejście na BigQuery to naturalny
+                                lewaryzm,
+                                jednak jeśli źle napiszesz instrukcję, zapłacisz Google Cloud za zeskanowane Terabajty
+                                danych.</li>
+                            <li><strong>Płatne Konektory Zewnętrzne (Supermetrics/Catchr)</strong> – Google dostarcza
+                                darmowe przepusty do własnych usług (Google Ads, Search Console), lecz łączenie Facebook
+                                Ads, LinkedIn, czy Shopify z reguły wymaga bardzo drogiej i odnawialnej subskrypcji firm
+                                trzecich.</li>
+                        </ol>
+
+                        <blockquote>
+                            "Looker Studio jest całkowicie darmową szybą wystawową Twojego biznesu, ale towar
+                            sprowadzany na tę wystawę
+                            (z Hurtowni Danych czy Facebook Ads) kosztuje logistykę i transfer na łączach API."
+                        </blockquote>
+
+                        <h2>2. "Quota Error" w GA4 – Kiedy Analytics rzuca nam kłody</h2>
+                        <p>Standardowy konektor <strong>Google Analytics 4 do Looker Studio</strong> (dawniej Google
+                            Data
+                            Studio) jest całkowicie bezpłatny. Dla małej firmy usługowej sprawdzi się idealnie.
+                            Jednak co jeśli prowadzisz duży sklep intersujący miesięcznie miliony kliknięć w e-commerce?
+                        </p>
+
+                        <p>W 2022 roku Google nałożyło sztuczny i drastyczny <a target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://developers.google.com/analytics/devguides/reporting/data/v1/quotas">Limit
+                                Pobrań
+                                przez API (Google Analytics Data API)</a>. Objawia się on legendarnym, czerwonym
+                            komunikatem
+                            <strong>"Wyczerpano Limit Google Analytics" ("Google Analytics Quota Exceeded")</strong>.
+                        </p>
+
+                        <p>Zmusza to Zarząd m.in do pchania wszystkich logów GA4 bezpośrednio do hurtowni bazodanowej
+                            BigQuery,
+                            by odciążyć nakładki Lookera. Pamiętaj tylko o genialnej integracji – przeczytaj <a
+                                href="./looker-studio-bigquery-integracja-performance.html">jak stworzyć wydajny
+                                dashboard
+                                Looker Studio + BigQuery</a>, by uniknąć problemów sprzętowych.</p>
+
+                        <h2>3. Cennik BigQuery – Mity i optymalizacja zapytań (SQL)</h2>
+                        <p>Google ma rewelacyjną przynętę w postaci darmowej warstwy <strong>„Free Tier” w
+                                BigQuery</strong>. Zapewnia ona mianowicie darmowe skanowanie aż do <strong>1 TB daych
+                                co w każdym pojedynczym miesiącu.</strong> (Wielu klientom przed moimi audytami
+                            wystarcza
+                            to w 100% na parę lat prowadzenia działalności).</p>
+
+                        <p>Problem rodzi się dopiero, gdy niedoświadczony analityk podpina wielką tabelę z GPC prosto
+                            pod wizualną tabelę w Looker Studio. Użytkownik zmienia filt dat z "Dziś" na "Ostatnie 3
+                            lata", Looker
+                            wysyła sygnał przetworzenia kilkudziesięciu Gigabajtów do BigQuery i... na fakturze nagle
+                            masz
+                            opłatę 40 USD dziennie.</p>
+
+                        <p>Dlatego kładę ogromny nacisk na <a
+                                href="./koszty-w-bigquery-jak-analizowac-za-darmo-poradnik.html">partycjonowanie oraz
+                                zrozumienie
+                                kosztów chmury GCP</a>.</p>
+
+                        <h2>4. Płatne wtyczki partnerskie – Uderzenie w budżet marketingowy</h2>
+                        <p>Chcesz pobrać listę kampanii wykluczających ze zwrotami dla bazy <strong>Facebook Ads,
+                                TikTok, Allegro czy Criteo?</strong> Jeśli szukasz ich w pasku systemowym „Konektorów
+                            Google”, czeka Cię
+                            głębokie rozczarowanie.</p>
+
+                        <p>Z pomocą przychodzą zewnętrzni Partnerzy (tzw. "Partner Connectors" - Supermetrics, Power My
+                            Analytics).
+                            Abonament za taką ekstrakcję potrafi oscylować od 200 euro aż do <strong>kilku tysięcy
+                                złotych</strong> (w skali rocznej).</p>
+
+                        <p>Alternatywa na 2026? Własne integracje API na podstawie webhooków kierowanych do BigQuery
+                            zbudowanych za grosze. Sprawdź, dlaczego to się opłaca jako usługa zewnętrznego
+                            oprogramowania
+                            <a href="./jak-polaczyc-facebook-ads-z-google-bigquery-gcp.html">w moim wpisie o transferach
+                                z kampanii
+                                Facebook Ads/Google Ads na instytuty bazy danych BigQuery</a>.
+                        </p>
+
+                        <h3>Wnioski końcowe</h3>
+                        <p><strong>Czy Looker Studio jest płatne?</strong> Interfejs i tworzenie jest całkowicie
+                            za darmo dla ogółu (z nielicznymi wyjątkami korporacji i Looker Studio Pro). Wykastrowane z
+                            pieniędzy zostajesz jedynie przez ustrukturyzowane bramki przesyłające dane. Jako
+                            certyfikowany inżynier ds. automatyzacji doradzam
+                            Ci jedno: <em>zbuduj jedną zoptymalizowaną hurtownię chmurową danych B2B, a opłaty skurczą
+                                się do 10 groszy na miesiąc utrzymania hostingu bazy.</em></p>
+                    </div>
+
+                    <!-- Sidebar Column -->
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Ekspert Wdrożeń
+                                Cloud
+                            </p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Optymalizuję
+                                korporacyjne rachunki z chmury (GCP). Buduję silniki integracyjne w Pythonie wycinające
+                                90% czasu potrzebnego na tworzenie sztywnych raportów BI Looker od wdrożenia pierwszego
+                                skryptu.</p>
+                        </div>
+
+                        <div class="cta-card">
+                            <h3>Rachunki z chmury poszybowały w górę?</h3>
+                            <p>Zaprogramowanie zapytań bazy po łebkach wywołuje skanowanie nieużytych gigabajtów danch
+                                rzędu setek euro tygodniowo. Czas najwyższy to okiełznać i zmodyfikować strukturę.</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Pokaż mi swój Data Pipeline</a>
+                        </div>
+                    </aside>
+
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Szeląg<span>.</span>Data</div>
+            <p>&copy; <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9N5S4NW0L8');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
+    <meta name="description"
+        content="Jak podłączyć Google Analytics 4 (GA4) do Looker Studio? Dlaczego natywny konektor nie widzi metryk i dlaczego E-commerce potrzebuje zrzutów BigQuery.">
+
+    <title>Jak podłączyć GA4 do Looker Studio? (Konektor vs BigQuery) | Mikołaj Szeląg</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <link rel="icon" type="image/png" href="../favicon.png?v=2">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico?v=2">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png?v=2">
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Jak podłączyć GA4 do Looker Studio? Ograniczenia i błędy w Custom Dimensions",
+          "author": {
+            "@type": "Person",
+            "name": "Mikołaj Szeląg"
+          },
+          "datePublished": "2026-03-02",
+          "description": "Dlaczego domyślny konektor z Google Analytics 4 nie zaciąga wszystkich danych ze sklepu internetowego do Looker Studio (GDS)? Optymalizacja za pomocą bazy hurtowni (BQ)."
+        }
+    </script>
+</head>
+
+<body>
+    <!-- GTM Noscript -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="/" class="logo">Szeląg<span>.</span>Data</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Strona Główna</a></li>
+                    <li><a href="/#about">Dlaczego Warto?</a></li>
+                    <li><a href="/#services">Usługi</a></li>
+                    <li><a href="/#case-studies">Realizacje</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
+                </ul>
+                <div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <header class="post-header">
+                <div class="container">
+                    <a href="/blog.html"
+                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">&larr;
+                        Wróć do artykułów</a>
+                    <div class="post-meta">
+                        <span class="post-tag">Integracje Ekosystemów B2B</span>
+                        <span>02 Marca 2026</span>
+                        <span>⏱️ 5 min czytania</span>
+                    </div>
+                    <h1 class="post-title">Jak połączyć GA4 z Looker Studio? <span class="gradient-text">Ograniczenia
+                            natywnego konektora API a BigQuery</span></h1>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="post-layout">
+                    <!-- MAIN CONTENT -->
+                    <div class="post-content">
+                        <p><a href="./looker-studio-vs-ga4-wady-ograniczenia.html">Już wiesz dlaczego sam panel Google
+                                Analytics w 2026 r. jest wysoce niewystarczający w skali E-commerce.</a> Przechodzisz na
+                            Looker Studio, instalujesz natywny, wbudowany od twórców konektor pt. "Google Analytics" i
+                            budujesz wymiarowy raport... do czasu, kiedy Twojej firmie okazuje się, że <strong>wykresy
+                                nie widzą połowy tego, co zbierałeś z wysiłkiem używając Google Tag Managera na sklepie
+                                (GTM).</strong> Gdzie zniknęły te wszystkie niestandardowe "zdarzenia" (Events) B2B?</p>
+
+                        <h2>Brakujące niestandardowe wymiary (Custom Dimensions) w Lookerze</h2>
+                        <p>Domyślny konektor analityczny to nakładka Data API, która radzi sobie genialnie z twardymi,
+                            standardowymi parametrami (np. <code>Miasto, Data, Użytkownik i Transakcje</code>).</p>
+
+                        <p>Kiedy jednak wepniesz do GTM'a jako analityk E-commerce parametr własny np.
+                            <code>Kategoria_Autora_Bloga</code> lub <code>Rozmiar_Koszulki</code> przyporządkowując go
+                            na pułapie Custom Dimensions na swoim panelu w Administracji GA4 – standardowy konektor
+                            często omija tę flagę w Looker Studio. Aby ją dostrzec na swoim nowym Dashboardzie nierzadko
+                            musisz go manualnie odświeżać lub w ogóle traci on spójność z metrykami z racji specyfiki
+                            kaskadowej <em>Agregacji Eventowej </em> samej architektury od Analytics.</p>
+
+                        <h2>Limit Zapytań (Quota Limits) to rzeź dla korporacji</h2>
+                        <p>Jak pisałem w zbiorczym ujęciu w wątku <a
+                                href="./czy-looker-studio-jest-platne-ukryte-koszty.html">ukrytych kosztów API Looker
+                                Studio</a>, puszczanie surowego strumienia z Analytics dla wyrafinowanej tabeli,
+                            zwłaszcza z wykorzystaniem filtrów (np. 4 lata sprzedaży z podziałem po marżach i SKU)
+                            niechybnie zabije każdą darmową warstwę na ekranie dając słynny Quota Exceeded (Limit
+                            Zapytania).</p>
+
+                        <p>Odświeżenie kilkudziesięciu użytkowników w firmie zużywa Twoje "Tokeny" w mgnieniu oka, po
+                            czym kafelek całkowicie "Umiera" wyrzucając błędy w samym środku rozzłoszczonego zebrania
+                            inwestorskiego.</p>
+
+                        <h2>Darmowy zrzut w Google BigQuery dla wyższego E-commerce lekiem na całe zło</h2>
+                        <p>Z powyższych frustracji wynikła w ostatnich latach gigantyczna moda na migrację. Posiadacze
+                            E-Commerce odpinają natywny, okrojony i nałożony obwarowaniami "Analyticsowy" wierzchołek
+                            API.</p>
+                        <p>Zamiast niego otwierają na zewnątrz (darmowo w ramach panelu ustawień Admina) opcję
+                            strumieniowego dziennego eksportu Raw Logów GA4 do magazynu połączonego z chmurką.</p>
+
+                        <p>W efekcie w <a href="./co-to-jest-bigquery-darmowy-limit.html">Google BigQuery</a>
+                            (środowisko tabel Bazy w SQL w ramach wewnątrz ekosystemu firmy rzędu setek GB) ładuje w
+                            całości niezmącone "Czyste" od ucięć zdarzenia kliknięcie po kliknięciu.</p>
+
+                        <ul>
+                            <li>Do tak ustandaryzowanej hurtowni podnosisz rękawicę wywołując SQL script wyciągający te
+                                nieszczęsne parametry niestandardowe <code>Rozmiary Koszulek</code> i konwersje ze
+                                ścieżki (CPO).</li>
+                            <li>Dopiero teraz Looker Studio loguje się jako końcówka dla BigQuery Connector.</li>
+                            <li>Twoje tokeny za odświeżanie to "nieograniczony pakiet chmury GCP". Problem znika w
+                                sekundę stając się ułamkiem problemu Data Enginera na B2B! Pozbywasz się spiętych kabli
+                                z usterkowymi narzędziami. Sprawdź, dlaczego w ogóle zachęcam do modelizacji na <a
+                                    href="./vlookup-vs-join-sql-roznice-hurtownia.html">bazach danych w zamian arkuszy
+                                    Google Sheets.</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- SIDEBAR -->
+                    <aside class="post-sidebar">
+                        <div class="author-card">
+                            <div class="author-avatar">👨‍💻</div>
+                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Frontend BI /
+                                Cloud Engineer</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Przełączam rygor
+                                analityczny na zunifikowany mechanizm w hurtowni SQL. Przestajesz gubić 30% kliknięć
+                                klientów we własnych tabelach GA4 po odcięciu rygorów nakładanych przez ochronę
+                                deanonimizacji Analytics.</p>
+                        </div>
+
+                        <div class="cta-card">
+                            <h3>Dashboard staje, a dane się mrożą przez braki GA4?</h3>
+                            <p>Zapomnij o błądzącym błędzie systemowym braku tokenów za odświeżanie C-Levelu. Ustawiam
+                                wprost hurtownię bazy dla sklepu internetowego pod Google BigQuery (Bypass Analytics API
+                                Limitations).</p>
+                            <a href="/#contact" class="btn btn-primary"
+                                style="width: 100%; text-align: center; padding: 12px;">Porozmawiamy o Migracji
+                                (GCP)</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Szeląg<span>.</span>Data</div>
+            <p>&copy; <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
