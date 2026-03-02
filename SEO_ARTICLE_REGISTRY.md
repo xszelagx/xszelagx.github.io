@@ -572,6 +572,45 @@ Poniżej znajduje się pełna lista unikalnych tagów (Kategorii) faktycznie prz
   - `jak-wgrac-dane-do-looker-studio-konektory.html`
   - `co-to-jest-looker-studio-przewodnik-bi-google.html`
 
-## 3. Kategoryzacja w Sitemap.xml
+## 3. Dynamiczne Ładowanie Artykułów na blog.html
+
+**Data wdrożenia:** 2 Marca 2026
+
+Artykuły na stronie `blog.html` **nie są już wpisywane statycznie w HTML**. Zamiast tego ładowane są dynamicznie z pliku `blog-articles.json` za pomocą JavaScript (`fetch()`).
+
+### Jak dodać nowy artykuł:
+1. Utwórz plik HTML artykułu w folderze `blog/`
+2. Dodaj wpis na **początku** tablicy w `blog-articles.json`:
+```json
+{
+  "slug": "nazwa-pliku-bez-html",
+  "title": "Tytuł artykułu",
+  "description": "Meta opis (max ~160 znaków)",
+  "tag": "Nazwa Tagu",
+  "date": "DD Miesiąca RRRR",
+  "category": "looker-studio|sheets-apps-script|bigquery-gcp|seo-analityka|automatyzacja-drive|bezpieczenstwo",
+  "emoji": "📊"
+}
+```
+3. Dodaj wpis do tego rejestru (`SEO_ARTICLE_REGISTRY.md`)
+4. Dodaj URL do `sitemap.xml`
+5. `git push` — gotowe!
+
+### Funkcjonalności:
+- **Filtrowanie po kategoriach** — przyciski na stronie bloga
+- **Paginacja** — "Pokaż więcej artykułów" (po 12 na stronę)
+- **Sortowanie** — wg kolejności w JSON (najnowsze na górze)
+
+### Dostępne kategorie (data-filter):
+| Kategoria | Etykieta na stronie |
+|---|---|
+| `looker-studio` | Looker Studio |
+| `sheets-apps-script` | Google Sheets & Apps Script |
+| `bigquery-gcp` | BigQuery & GCP |
+| `seo-analityka` | SEO & Analityka |
+| `automatyzacja-drive` | Automatyzacja Google Drive |
+| `bezpieczenstwo` | Bezpieczeństwo Danych |
+
+## 4. Kategoryzacja w Sitemap.xml
 Wszelkie adresy artykułów wstrzykiwane są jako link absolutny pod koniec węzła `<urlset>` w pliku sitemap.xml.
 
