@@ -135,62 +135,6 @@
             padding: 0 24px
         }
 
-        .glass-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(11, 12, 16, .7);
-            backdrop-filter: var(--blur-glass);
-            -webkit-backdrop-filter: var(--blur-glass);
-            border-bottom: 1px solid var(--surface-border);
-            transition: var(--transition-smooth)
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 24px;
-            transition: var(--transition-smooth)
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            text-decoration: none;
-            color: var(--text-main);
-            letter-spacing: -1px
-        }
-
-        .logo span {
-            color: var(--primary)
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            align-items: center;
-            gap: 30px
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 600;
-            font-size: 1rem;
-            transition: var(--transition-smooth);
-            opacity: .8
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            flex-direction: column;
-            gap: 5px
-        }
-
         .bar {
             width: 25px;
             height: 3px;
@@ -404,15 +348,15 @@
 
     <header class="glass-nav">
         <div class="container nav-container">
-            <a href="#" class="logo">Szeląg<span>.</span>Data</a>
+            <a href="index.html" class="logo">Szeląg<span>.</span>Data</a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#home">Strona Główna</a></li>
-                    <li><a href="#about">Dlaczego Warto?</a></li>
-                    <li><a href="#services">Usługi</a></li>
-                    <li><a href="#case-studies">Realizacje</a></li>
+                    <li><a href="./#home">Strona Główna</a></li>
+                    <li><a href="./#about">Dlaczego Warto?</a></li>
+                    <li><a href="./#services">Usługi</a></li>
+                    <li><a href="./#case-studies">Realizacje</a></li>
                     <li><a href="blog.html">Blog</a></li>
-                    <li><a href="#contact" class="btn-primary-small">Kontakt</a></li>
+                    <li><a href="./#contact" class="btn-primary-small">Kontakt</a></li>
                 </ul>
                 <div class="hamburger">
                     <span class="bar"></span>

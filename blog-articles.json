@@ -1,0 +1,560 @@
+[
+  {
+    "slug": "mapy-ciepla-heatmaps-formatowanie-warunkowe-looker-studio",
+    "title": "Tabele Przestawne to za mało: Dodaj potęgę Mapy Ciepła u siebie w Looker Studio",
+    "description": "Projektowanie bezlitosnych map ciepła i tabel formatowanych warunkowo w architekturze korpo Looker. Jak wzrokiem znajdować ukryte spadki marży do BigQuery (B2B/BI).",
+    "tag": "Formatowanie i UI na Pulpitach",
+    "date": "25 Maja 2026",
+    "category": "looker-studio",
+    "emoji": "🔥"
+  },
+  {
+    "slug": "najczestsze-bledy-kpi-w-raportach-looker-studio-bi",
+    "title": "Sztuka niszczenia przejrzystości raportu menedżerskiego: Top 5 grzechów głównych w BI.",
+    "description": "Masz pełny raport biznesowy ale wygląda jak abstrakcyjna rzeźba? Omijaj te błędy wizualne w darmowym ekosystemie Business Intelligence chmury Google (GDS).",
+    "tag": "User Experience w Analityce",
+    "date": "24 Maja 2026",
+    "category": "looker-studio",
+    "emoji": "❌"
+  },
+  {
+    "slug": "laczenie-wielu-zrodel-danych-blending-looker-studio",
+    "title": "Jak połączyć Koszt i Zysk na jednej linii: Techniki Data Blending (Looker Studio)",
+    "description": "Połącz koszta reklam na wyciągnięcie zysku z CRM do jednej tabeli. Odkryj sekrety łączenia źródeł Blending Options na żywo w GDS (Looker Studio) B2B.",
+    "tag": "Transformacje Graficzne BI",
+    "date": "20 Maja 2026",
+    "category": "looker-studio",
+    "emoji": "🔗"
+  },
+  {
+    "slug": "bezpieczenstwo-danych-row-level-security-w-looker-studio-gcp",
+    "title": "Ograniczenie wglądu i bezpieczne udostępnianie w Looker Studio: Zasady filtru Emailu na żywo (RLS).",
+    "description": "Udostepnianie obcym klientom swoich dashboardów Google Data Studio to rzeźba pod bezpieczeństwo w firmach B2B. Zastosowanie RLS dla Twoich raportów i filtracji adresów email.",
+    "tag": "Bezpieczeństwo Danych DWH",
+    "date": "15 Maja 2026",
+    "category": "bezpieczenstwo",
+    "emoji": "🔒"
+  },
+  {
+    "slug": "looker-studio-czy-power-bi-wybor-narzedzia-bi",
+    "title": "Looker Studio czy sztywne licencje PowerBI? Które narzędzie BI do wdrożeń de facto popłaca.",
+    "description": "Narzędzia rywalizujące w Business Intelligence w świecie korporacyjnym. Obiektywne wady i zalety środowiska chmurowego Looker Studio nad kosztownym rozwiązaniem od firm Microsoft i Tableau.",
+    "tag": "Porównania Ekosystemów (BI)",
+    "date": "10 Maja 2026",
+    "category": "looker-studio",
+    "emoji": "⚔️"
+  },
+  {
+    "slug": "dashboard-menedzerski-kpi-raporty-w-looker-studio-gcp",
+    "title": "Projekt idealnego raportu dla Zarządu CEO: Psychologia menedżerska Looker Studio",
+    "description": "Projektowanie przejrzystych dashboardów B2B w Looker Studio (Google Data Studio). Jak oddzielić szum analityczny od strategicznych raportów (KPI) dla CEO/CFO.",
+    "tag": "Wizualizacja Danych BI",
+    "date": "05 Maja 2026",
+    "category": "looker-studio",
+    "emoji": "📈"
+  },
+  {
+    "slug": "connected-sheets-polaczenie-arkusza-z-baza-bigquery",
+    "title": "Miliardy logów na dłoni laika: Connected Sheets do platformy BigQuery",
+    "description": "Poznaj rewolucyjną opcję Connected Sheets. Steruj milionami wierszy hurtowni BigQuery z przytomności zwykłego i czystego interfejsu darmowych Google Sheets (B2B).",
+    "tag": "Hybrydyzacja Cloud i Arkuszy (BigQuery)",
+    "date": "30 Kwietnia 2026",
+    "category": "looker-studio",
+    "emoji": "🔌"
+  },
+  {
+    "slug": "vlookup-vs-join-sql-roznice-hurtownia",
+    "title": "Dlaczego Wyszukaj.Pionowo (VLOOKUP) odchodzi w niepamięć: Potęga frazy SQL JOIN",
+    "description": "Poznaj miażdżące różnice w optymalizacji i wdrożeniach na B2B pomiędzy arkuszami bazującymi na Wyszukaj.Pionowo (VLOOKUP) a solidnymi zapytaniami z rodziny JOIN (SQL).",
+    "tag": "Różnice: Excel a Bazy Danych",
+    "date": "25 Kwietnia 2026",
+    "category": "bigquery-gcp",
+    "emoji": "⚡"
+  },
+  {
+    "slug": "ile-trwa-wdrozenie-analityki-data-pipeline-gcp",
+    "title": "Cykl życia Data Pipeline: Ile miesięcy wymaga budowa solidnego systemu BI?",
+    "description": "Czas wdrożenia analityki w e-commerce. Analiza cyklu życia DWH (Data Pipeline) – od integracji surowej bazy przez BigQuery aż po dashboard B2B w Looker Studio.",
+    "tag": "Wdrażanie Architektury w Biznesie",
+    "date": "20 Kwietnia 2026",
+    "category": "looker-studio",
+    "emoji": "⏳"
+  },
+  {
+    "slug": "jak-polaczyc-facebook-ads-z-google-bigquery-gcp",
+    "title": "Integracja ROI: Eksport danych z Facebook Ads & Google Ads prosto do BigQuery",
+    "description": "Połącz dane marketingowe z różnych systemów reklamowych (FB Ads, Google Ads) do jednej nadrzędnej bazy dla skutecznego mierzenia wskaźników ROI w B2B.",
+    "tag": "Zarządzanie Kampaniami (Marketing)",
+    "date": "12 Kwietnia 2026",
+    "category": "looker-studio",
+    "emoji": "🎯"
+  },
+  {
+    "slug": "partycjonowanie-vs-klastrowanie-sql-gcp-koszty",
+    "title": "Ograniczenie Rachunku w Chmurze o 95%. Partycje vs. Klastrowanie w Google BigQuery.",
+    "description": "Partycjonowanie kontra Klastrowanie w BigQuery. Narzędzia z obszaru Data Engineer potrafiące urwać nawet do 95 procent kosztów faktur API Google Cloud (GCP).",
+    "tag": "Optymalizacja SQL & GCP",
+    "date": "08 Kwietnia 2026",
+    "category": "bigquery-gcp",
+    "emoji": "🗂️"
+  },
+  {
+    "slug": "koszty-w-bigquery-jak-analizowac-za-darmo-poradnik",
+    "title": "Mity o horrendalnie drogim Google BigQuery: Jak analizować dane rzędu TB praktycznie za darmo?",
+    "description": "Poznaj ukryty system kosztów w Google Cloud. Darmowe BigQuery to 1 TB bezpłatnych logów SQL miesięcznie. Jak bezpiecznie optymalizować rachunek GCP (Pricing).",
+    "tag": "Koszta Operacyjne (GCP)",
+    "date": "05 Kwietnia 2026",
+    "category": "bigquery-gcp",
+    "emoji": "💸"
+  },
+  {
+    "slug": "co-to-jest-bigquery-darmowy-limit",
+    "title": "Ograniczenie do 10,000,000 wierszy Google Sheets: Co z tym BigQuery?",
+    "description": "Poznaj Google BigQuery (GCP). Idealna usługa B2B na ominięcie limitu wierszy w Google Sheets z zerowymi kosztami dla mniejszych firm na start.",
+    "tag": "Google BigQuery (GCP)",
+    "date": "01 Kwietnia 2026",
+    "category": "looker-studio",
+    "emoji": "☁️"
+  },
+  {
+    "slug": "tworzenie-formularzy-zlecen-google-forms-sheets",
+    "title": "Obieg dokumentów od podstawówki po B2B: Google Forms + Google Sheets",
+    "description": "Projekt na interaktywny oraz wysoce zoptymalizowany pod automatyzację obieg zapytań we wdrożeniach i firmach stacjonarnych z wykorzystaniem chmury od Google Forms.",
+    "tag": "Systemy Formularzy i Ankiet",
+    "date": "25 Marca 2026",
+    "category": "sheets-apps-script",
+    "emoji": "📝"
+  },
+  {
+    "slug": "5-funkcji-google-sheets-query-importrange-filter",
+    "title": "Potęga Google Sheets w analizie (B2B): Poznaj sekrety QUERY()",
+    "description": "Poznaj składnię genialnych i bezbłędnych funkcji Google Sheets dla inżynierów. Zobacz praktyczne zastosowanie QUERY, IMPORTRANGE, FILTER oraz ARRAYFORMULA w B2B.",
+    "tag": "ZAAWANSOWANE FUNKCJE",
+    "date": "18 Marca 2026",
+    "category": "sheets-apps-script",
+    "emoji": "🧠"
+  },
+  {
+    "slug": "jak-zabezpieczyc-dane-udostepnione-arkusze-google",
+    "title": "Jak poprawnie zabezpieczyć wrażliwe dane w udostępnianych Arkuszach Google?",
+    "description": "Chroń dane B2B i pracowników przed przypadkowym udostępnieniem na zewnątrz Arkusza Google. Blokady edycji, Row-Level Security, ukrywanie funkcji przed zarządem.",
+    "tag": "Zarządzanie bezpieczeństwem IT",
+    "date": "15 Marca 2026",
+    "category": "bezpieczenstwo",
+    "emoji": "🛡️"
+  },
+  {
+    "slug": "pobieranie-danych-api-arkusze-google-bez-wtyczek",
+    "title": "Dane z Rest API prosto do Arkuszy Google (Bez płacenia za Zapiera).",
+    "description": "Skrypt do pobierania JSON z zewnętrznego API bezpośrednio do Twoich Google Sheets (UrlFetchApp). Omijaj limity i twórz własne webhooki B2B za darmo.",
+    "tag": "Integracje API i Webhooki",
+    "date": "12 Marca 2026",
+    "category": "sheets-apps-script",
+    "emoji": "🌐"
+  },
+  {
+    "slug": "automatyczne-wysylanie-maili-google-sheets-apps-script",
+    "title": "Automatyczne wysyłanie maili z daty w Google Sheets: Koniec z zaległymi płatnościami",
+    "description": "Skrypt Apps Script do automatycznego wysyłania emaili i przypomnień o płatnościach z Google Sheets z wykorzystaniem daty (Time-driven triggers). Wdróż to w B2B.",
+    "tag": "Apps Script i Kodowanie",
+    "date": "08 Marca 2026",
+    "category": "sheets-apps-script",
+    "emoji": "📧"
+  },
+  {
+    "slug": "kiedy-excel-przestaje-wystarczac-migracja-google-workspace",
+    "title": "Kiedy Excel przestał wystarczyć w Twojej firmie? Czas na Google Workspace.",
+    "description": "Poznaj 3 wyraźne sygnały pokazujące, kiedy lokalnie stacjonarny Excel zaczyna hamować rozwój firmy B2B. Zobacz zalety migracji do Arkuszy Google (Google Workspace).",
+    "tag": "Google Sheets & Automatyzacja",
+    "date": "04 Marca 2026",
+    "category": "sheets-apps-script",
+    "emoji": "📊"
+  },
+  {
+    "slug": "czy-looker-studio-jest-platne-ukryte-koszty",
+    "title": "Czy Looker Studio jest płatne? Ukryte koszty i limity API których nie znasz",
+    "description": "Czy Looker Studio (Google Data Studio) jest naprawdę darmowe? Poznaj ukryte koszty zapytań e-commerce, limity API (GA4 Quota) i metody optymalizacji B2B.",
+    "tag": "Koszta Operacyjne (GCP)",
+    "date": "02 Marca 2026",
+    "category": "bigquery-gcp",
+    "emoji": "💰"
+  },
+  {
+    "slug": "dashboard-reklamowy-facebook-ads-google-ads-looker-studio",
+    "title": "Jak połączyć reklamy Facebook Ads i Google Ads na jednym Dashboardzie w Looker?",
+    "description": "Jak połączyć kampanie Facebook Ads z Google Ads w jednym widoku (Looker Studio)? Poradnik ujednolicania kosztów marketingowych (ROAS) dla eCommerce.",
+    "tag": "Zarządzanie Kampaniami (Marketing)",
+    "date": "02 Marca 2026",
+    "category": "looker-studio",
+    "emoji": "🎯"
+  },
+  {
+    "slug": "dlaczego-looker-studio-dziala-wolno-optymalizacja",
+    "title": "Dlaczego Looker Studio nagle działa tak wolno? 5 sposobów na inżynieryjną optymalizację",
+    "description": "Dlaczego Looker Studio (Google Data Studio) działa i odświeża się tak wolno? Poznaj 5 inżynieryjnych strategii B2B na przyspieszenie ładowania pulpitów wizualizacyjnych.",
+    "tag": "High Performance BI",
+    "date": "02 Marca 2026",
+    "category": "looker-studio",
+    "emoji": "🏎️"
+  },
+  {
+    "slug": "jak-korzystac-z-looker-studio-z-arkuszem-excel",
+    "title": "Jak korzystać z Looker Studio z arkuszem Excel?",
+    "description": "Jak podłączyć lokalny plik z Microsoft Excel bezpośrednio do chmurowego Looker Studio (Data Studio). Różnice między File Upload a migracją na Arkusze Google.",
+    "tag": "Integracje Danych",
+    "date": "02 Marca 2026",
+    "category": "looker-studio",
+    "emoji": "📊"
+  },
+  {
+    "slug": "jak-liczyc-srednia-wazona-looker-studio-bledy-agregacji",
+    "title": "Jak policzyć średnią ważoną w Looker Studio? Rozwiązanie pułapki agregacji (SUM/SUM)",
+    "description": "Jak wyliczyć średnią ważoną w Looker Studio? Rozwiązujemy znany błąd agregacji danych SUM(a)/SUM(b) i pułapki matematyczne z Google Sheets i BigQuery.",
+    "tag": "Wizualizacja Danych BI",
+    "date": "02 Marca 2026",
+    "category": "looker-studio",
+    "emoji": "🧮"
+  },
+  {
+    "slug": "jak-podlaczyc-ga4-do-looker-studio-konektor-vs-bigquery",
+    "title": "Jak połączyć GA4 z Looker Studio? Ograniczenia natywnego konektora API a BigQuery",
+    "description": "Jak podłączyć Google Analytics 4 (GA4) do Looker Studio? Dlaczego natywny konektor nie widzi metryk i dlaczego E-commerce potrzebuje zrzutów BigQuery.",
+    "tag": "Integracje Ekosystemów B2B",
+    "date": "02 Marca 2026",
+    "category": "looker-studio",
+    "emoji": "🔌"
+  },
+  {
+    "slug": "jak-polaczyc-arkusze-google-sheets-looker-studio",
+    "title": "Jak połączyć Arkusze Google z Looker Studio bez błędów systemowych?",
+    "description": "Jak poprawnie podłączyć Arkusze Google do Looker Studio aby uniknąć błędów formatowania danych? Przewodnik po wpięciu Google Sheets w Dashboard B2B.",
+    "tag": "Integracje Danych",
+    "date": "02 Marca 2026",
+    "category": "looker-studio",
+    "emoji": "🔗"
+  },
+  {
+    "slug": "jak-wdrozyc-looker-studio-w-firmie-b2b-checklista",
+    "title": "Jak wdrożyć Looker Studio do firmy B2B? Metodologia i Checklista dla Zarządu",
+    "description": "Jak poprawnie wdrożyć Looker Studio w firmie B2B? Checklista dla zarządu, kroki instalacji Google Cloud i budowania SSOT (Hurtowni BigQuery) krok po kroku.",
+    "tag": "Strategia Analityczna (C-Level)",
+    "date": "02 Marca 2026",
+    "category": "looker-studio",
+    "emoji": "📋"
+  },
+  {
+    "slug": "looker-studio-vs-ga4-wady-ograniczenia",
+    "title": "Looker Studio vs Google Analytics 4: Dlaczego raporty w samym GA4 to stanowczo za mało?",
+    "description": "Poznaj 5 powodów dla których raportowanie samego GA4 przestało działać w 2026 r. Dlaczego panel Google Analytics jest gorszy dla marketingu e-commerce od wizualizacji Looker Studio?",
+    "tag": "Growth Marketing",
+    "date": "02 Marca 2026",
+    "category": "looker-studio",
+    "emoji": "📉"
+  },
+  {
+    "slug": "looker-studio-vs-looker-core-roznice",
+    "title": "Looker (Core) vs Looker Studio: Czym różnią się te dwa narzędzia Data & Cloud?",
+    "description": "Jaka jest różnica między Looker (Core) a chmurowym powszechnym Google Looker Studio? Czym jest język LookML i które z tych dwóch rozwiązań opłaca się w małej/średniej firmie?",
+    "tag": "Porównania Ekosystemów (BI)",
+    "date": "02 Marca 2026",
+    "category": "looker-studio",
+    "emoji": "🏢"
+  },
+  {
+    "slug": "looker-studio-vs-tableau-porownanie-narzedzi-bi",
+    "title": "Looker Studio vs Tableau: Porównanie możliwości i kosztów wdrożenia (2026)",
+    "description": "Tableau czy Looker Studio? Porównanie kosztów, wdrożenia analityki B2B i barier wejścia dla firm. Darmowe narzędzie BI od Google vs korporacyjne Tableau.",
+    "tag": "Porównania Ekosystemów (BI)",
+    "date": "02 Marca 2026",
+    "category": "looker-studio",
+    "emoji": "⚖️"
+  },
+  {
+    "slug": "najlepsze-darmowe-szablony-templates-looker-studio-ecommerce",
+    "title": "Najlepsze darmowe szablony (templates) Looker Studio dla B2B, SEO i E-commerce",
+    "description": "Szukasz gotowych i darmowych szablonów Looker Studio? Sprawdź galerie dashboardów B2B dla Agencji SEO, sklepów E-commerce, Logistyki i E-mail marketingu.",
+    "tag": "Wizualizacja Danych BI",
+    "date": "02 Marca 2026",
+    "category": "looker-studio",
+    "emoji": "🖼️"
+  },
+  {
+    "slug": "tworzenie-szablonow-kopiowanie-raportow-looker-studio",
+    "title": "Jak stworzyć własny szablon raportu w Looker Studio? Obejście z klonowaniem instancji",
+    "description": "Niestety, Looker Studio nie ma opcji Zapisz jako Szablon. Jak skopiować gotowy Dashboard i wdrożyć go u 10 różnych klientów wymieniając źródła bazodanowe (Data Sources).",
+    "tag": "Zarządzanie Zespołem Data",
+    "date": "02 Marca 2026",
+    "category": "looker-studio",
+    "emoji": "👯"
+  },
+  {
+    "slug": "zmiana-zrodla-danych-looker-studio-bez-psucia-wykresow",
+    "title": "Zmiana źródła danych w Looker Studio: Jak podmienić bazę bez niszczenia wykresów na błędne?",
+    "description": "Jak przypiąć lub podmienić źródło danych Data Source (Bazy, Arkusze Google) z Looker Studio tak by nie połamać tabel? System Error i Invalid Configuration Fix.",
+    "tag": "Błędy API i Serwisu (Fix)",
+    "date": "02 Marca 2026",
+    "category": "looker-studio",
+    "emoji": "🔄"
+  },
+  {
+    "slug": "google-sheets-jako-darmowy-crm-jak-to-zrobic-apps-script",
+    "title": "Darmowy CRM w Arkuszach: Jak to zrobić z użyciem Apps Script?",
+    "description": "Dowiedz się, jak zamienić darmowe Arkusze Google w pełnoprawny system CRM dzięki Google Apps Script, bez opłat licencyjnych. Własny CRM w arkuszach to oszczędność B2B.",
+    "tag": "Google Sheets & Apps Script",
+    "date": "01 Marca 2026",
+    "category": "sheets-apps-script",
+    "emoji": "💼"
+  },
+  {
+    "slug": "automatyczne-generowanie-raportow-pdf-google-docs-apps-script",
+    "title": "Automatyczne generowanie raportów PDF z Google Docs i Sheets — Apps Script",
+    "description": "Jak automatycznie generować PDF z szablonów Google Docs i Sheets za pomocą Apps Script. Masowe tworzenie faktur, umów i raportów — bez ręcznego eksportowania.",
+    "tag": "Automatyzacja Google Drive",
+    "date": "28 Lutego 2026",
+    "category": "automatyzacja-drive",
+    "emoji": "📄"
+  },
+  {
+    "slug": "automatyczne-porzadkowanie-plikow-dysk-google-apps-script",
+    "title": "Automatyczne porządkowanie plików na Dysku Google za pomocą Apps Script",
+    "description": "Skrypt Apps Script do automatycznego sortowania, przenoszenia i archiwizacji plików na Google Drive. Ustaw triggery czasowe i zapomnij o ręcznym porządkowaniu folderów.",
+    "tag": "Automatyzacja Google Drive",
+    "date": "28 Lutego 2026",
+    "category": "automatyzacja-drive",
+    "emoji": "🗂️"
+  },
+  {
+    "slug": "automatyzacja-uprawnien-google-drive-udostepnianie-apps-script",
+    "title": "Automatyzacja uprawnień na Google Drive: Masowe udostępnianie i cofanie dostępów",
+    "description": "Jak zarządzać uprawnieniami setek plików na Google Drive za pomocą Apps Script. Masowe udostępnianie folderów, cofanie dostępów i audyt kto ma wgląd do firmowych danych.",
+    "tag": "Automatyzacja Google Drive",
+    "date": "28 Lutego 2026",
+    "category": "automatyzacja-drive",
+    "emoji": "🔐"
+  },
+  {
+    "slug": "dashboard-seo-looker-studio-pozycje-ctr-indeksacja",
+    "title": "Dashboard SEO w Looker Studio: Monitoruj pozycje, CTR i indeksację",
+    "description": "Krok po kroku jak zbudować dashboard SEO w Looker Studio. Podłącz Search Console, monitoruj pozycje, CTR, impressions i indeksację nowych stron w czasie rzeczywistym.",
+    "tag": "SEO & Analityka",
+    "date": "28 Lutego 2026",
+    "category": "seo-analityka",
+    "emoji": "📊"
+  },
+  {
+    "slug": "raportowanie-efektywnosci-content-marketingu-looker-studio-ga4",
+    "title": "Raportowanie efektywności content marketingu w Looker Studio: GA4 + Search Console",
+    "description": "Jak zmierzyć, które artykuły blogowe generują konwersje, a które pusty ruch. Dashboard Looker Studio łączący GA4 i Search Console do audytu treści i ROI content marketingu.",
+    "tag": "SEO & Analityka",
+    "date": "28 Lutego 2026",
+    "category": "seo-analityka",
+    "emoji": "📈"
+  },
+  {
+    "slug": "analityka-ecommerce-lejki-sprzedazy-looker-studio",
+    "title": "Analityka eCommerce w Looker Studio: Od kliknięcia do zakupu",
+    "description": "Zwiększ sprzedaż w swoim sklepie. Dowiedz się, jak wykorzystać Looker Studio do analizy lejka zakupowego, porzuconych koszyków i ROAS w eCommerce.",
+    "tag": "Growth Marketing",
+    "date": "25 Lutego 2026",
+    "category": "looker-studio",
+    "emoji": "📊"
+  },
+  {
+    "slug": "analiza-kohortowa-looker-studio-ga4-retention",
+    "title": "Analiza Kohortowa w Looker Studio: Jak mierzyć lojalność klientów z GA4?",
+    "description": "Dowiedz się, jak stworzyć analizę kohortową w Looker Studio, wykorzystując dane z GA4. Mierz retencję użytkowników i lojalność klientów na dashboardzie BI.",
+    "tag": "Growth Marketing",
+    "date": "25 Lutego 2026",
+    "category": "looker-studio",
+    "emoji": "🔄"
+  },
+  {
+    "slug": "automatyczne-raporty-pdf-looker-studio-email",
+    "title": "Automatyczne raporty PDF z Looker Studio na maila: Jak skonfigurować harmonogram?",
+    "description": "Dowiedz się, jak skonfigurować harmonogram wysyłki raportów PDF z Looker Studio prosto na maila Twojego zespołu. Automatyzacja raportowania biznesowego.",
+    "tag": "Automatyzacja",
+    "date": "25 Lutego 2026",
+    "category": "looker-studio",
+    "emoji": "📧"
+  },
+  {
+    "slug": "automatyzacja-raportow-integracja-api-crm-looker-studio",
+    "title": "Automatyzacja raportów SME: Integracja danych z systemów CRM i ERP z Looker Studio przez API",
+    "description": "Omiń drogie konektory. Dowiedz się, jak automatycznie pobierać dane z API Twojego CRM lub ERP do Looker Studio za pomocą Google Apps Script.",
+    "tag": "Automatyzacja procesów",
+    "date": "25 Lutego 2026",
+    "category": "looker-studio",
+    "emoji": "📊"
+  },
+  {
+    "slug": "bezpieczenstwo-danych-row-level-security-looker-studio",
+    "title": "Bezpieczeństwo w Looker Studio: Row-Level Security (RLS) i Filtrowanie Emailem",
+    "description": "Chroń swoje dane. Dowiedz się, jak stosować Row-Level Security w Looker Studio, aby użytkownicy widzieli tylko te dane, do których mają prawo.",
+    "tag": "Security & Privacy",
+    "date": "25 Lutego 2026",
+    "category": "bezpieczenstwo",
+    "emoji": "🛡️"
+  },
+  {
+    "slug": "co-to-jest-looker-studio-przewodnik-bi-google",
+    "title": "Co to jest Looker Studio? Kompletny przewodnik po darmowym narzędziu BI od Google",
+    "description": "Poznaj Looker Studio (dawniej Google Data Studio). Dowiedz się, czym jest darmowe narzędzie BI, jak działa i dlaczego jest kluczowe dla analityki Twojej firmy.",
+    "tag": "Podstawy BI",
+    "date": "25 Lutego 2026",
+    "category": "looker-studio",
+    "emoji": "📖"
+  },
+  {
+    "slug": "dashboard-menedzerski-kpi-looker-studio",
+    "title": "Dashboard Menedżerski w Looker Studio: 7 KPI, które musisz śledzić",
+    "description": "Projektowanie dashboardów dla zarządu. Poznaj listę 7 kluczowych KPI w Looker Studio, które pomogą Ci trzymać rękę na pulsie Twojego biznesu.",
+    "tag": "Management Excellence",
+    "date": "25 Lutego 2026",
+    "category": "looker-studio",
+    "emoji": "📊"
+  },
+  {
+    "slug": "jak-wgrac-dane-do-looker-studio-konektory",
+    "title": "Jak wgrać dane do Looker Studio? Przegląd konektorów: od Google Sheets po BigQuery",
+    "description": "Dowiedz się, jak połączyć dane z Looker Studio. Przegląd darmowych i płatnych konektorów: od Arkuszy Google po BigQuery i API.",
+    "tag": "Integracje Danych",
+    "date": "25 Lutego 2026",
+    "category": "looker-studio",
+    "emoji": "🔌"
+  },
+  {
+    "slug": "laczenie-danych-data-blending-looker-studio",
+    "title": "Łączenie danych w Looker Studio (Data Blending): Jak spiąć Facebook Ads z Google Ads w jednym widoku",
+    "description": "Poznaj techniki Data Blending w Looker Studio. Dowiedz się, jak połączyć dane z Facebook Ads, Google Ads i CRM w jednym widoku bez użycia SQL.",
+    "tag": "Zaawansowane techniki",
+    "date": "25 Lutego 2026",
+    "category": "looker-studio",
+    "emoji": "📊"
+  },
+  {
+    "slug": "looker-studio-bigquery-integracja-performance",
+    "title": "Looker Studio + BigQuery: Jak stworzyć ultra-wydajny dashboard dla dużych zbiorów danych",
+    "description": "Połącz moc BigQuery z wizualizacją Looker Studio. Dowiedz się, jak stworzyć wydajny system analityczny dla milionów wierszy danych w Google Cloud.",
+    "tag": "High Performance BI",
+    "date": "25 Lutego 2026",
+    "category": "looker-studio",
+    "emoji": "⚡"
+  },
+  {
+    "slug": "looker-studio-bigquery-quota-exceeded-blad-fix",
+    "title": "Jak naprawić błąd Quota Exceeded w Looker Studio i BigQuery?",
+    "description": "Twoje raporty przestały działać? Dowiedz się, jak naprawić błąd Quota Exceeded w Looker Studio łączącym się z BigQuery. Optymalizacja kosztów i wydajności.",
+    "tag": "Technical Troubleshooting",
+    "date": "25 Lutego 2026",
+    "category": "looker-studio",
+    "emoji": "🔧"
+  },
+  {
+    "slug": "looker-studio-czy-excel-porownanie-raportowanie",
+    "title": "Looker Studio czy Excel? Dlaczego Twoja firma potrzebuje interaktywnych raportów",
+    "description": "Porównanie Looker Studio i Excela. Poznaj 5 powodów, dla których dashboardy BI wygrywają z arkuszami kalkulacyjnymi w raportowaniu biznesowym B2B.",
+    "tag": "Business Value",
+    "date": "25 Lutego 2026",
+    "category": "looker-studio",
+    "emoji": "⚔️"
+  },
+  {
+    "slug": "looker-studio-czy-power-bi-wybor-narzedzia",
+    "title": "Looker Studio czy Power BI? Które narzędzie wybrać w 2026?",
+    "description": "Szczere porównanie Looker Studio i Power BI. Poznaj wady i zalety obu narzędzi BI i dowiedz się, które lepiej sprawdzi się w Twojej firmie.",
+    "tag": "Industry Insights",
+    "date": "25 Lutego 2026",
+    "category": "looker-studio",
+    "emoji": "📊"
+  },
+  {
+    "slug": "looker-studio-logistyka-spedycja-dashboard-kpi",
+    "title": "Looker Studio dla Logistyki: Monitoring KPI w transporcie",
+    "description": "Dashboardy BI dla logistyki i spedycji. Dowiedz się, jak monitorować KPI w transporcie: koszt za kilometr, wydajność floty i optymalizacja tras w Looker Studio.",
+    "tag": "Logistics BI",
+    "date": "25 Lutego 2026",
+    "category": "looker-studio",
+    "emoji": "🚛"
+  },
+  {
+    "slug": "looker-studio-pro-vs-free-roznice-cena",
+    "title": "Looker Studio Pro vs Free: Kiedy Twoja firma powinna przejść na płatną wersję?",
+    "description": "Czy warto płacić za Looker Studio Pro? Zobacz porównanie wersji darmowej i płatnej. Poznaj funkcje Enterprise: Team Workspaces, SLA i Asset Management.",
+    "tag": "Enterprise BI",
+    "date": "25 Lutego 2026",
+    "category": "looker-studio",
+    "emoji": "🏢"
+  },
+  {
+    "slug": "monitoring-dostepow-looker-studio-bezpieczenstwo-danych",
+    "title": "Monitoring dostępów w Looker Studio: Jak dbać o bezpieczeństwo danych?",
+    "description": "Dowiedz się, jak sprawdzić, kto przegląda Twoje raporty w Looker Studio. Monitoring danych, audyt dostępów i bezpieczeństwo analityki w Twojej firmie.",
+    "tag": "Security & Governance",
+    "date": "25 Lutego 2026",
+    "category": "bezpieczenstwo",
+    "emoji": "🛡️"
+  },
+  {
+    "slug": "obsluga-bledow-system-error-null-looker-studio",
+    "title": "Obsługa błędów \"System Error\" i Null w Looker Studio",
+    "description": "Twoje wykresy pokazują Null lub błąd systemowy? Dowiedz się, jak profesjonalnie obsługiwać błędy danych w Looker Studio używając funkcji IFNULL i CASE.",
+    "tag": "Data Quality",
+    "date": "25 Lutego 2026",
+    "category": "looker-studio",
+    "emoji": "⚠️"
+  },
+  {
+    "slug": "parametry-looker-studio-dynamiczny-sql-bigquery",
+    "title": "Parametry w Looker Studio: Dynamiczne zapytania SQL w BigQuery",
+    "description": "Tutorial: Jak używać parametrów w Looker Studio do sterowania kodem SQL w BigQuery. Dowiedz się, jak dać użytkownikom pełną kontrolę nad danymi.",
+    "tag": "SQL & BigQuery",
+    "date": "25 Lutego 2026",
+    "category": "looker-studio",
+    "emoji": "⚙️"
+  },
+  {
+    "slug": "pierwszy-dashboard-looker-studio-tutorial",
+    "title": "Pierwszy dashboard w Looker Studio: 5 kroków od surowych danych do wizualizacji",
+    "description": "Tutorial Looker Studio: Poznaj 5 prostych kroków, jak zbudować swój pierwszy dashboard analityczny. Od połączenia danych po publikację raportu BI.",
+    "tag": "Tutorial",
+    "date": "25 Lutego 2026",
+    "category": "looker-studio",
+    "emoji": "📊"
+  },
+  {
+    "slug": "pola-obliczeniowe-regex-looker-studio-zaawansowane",
+    "title": "Pola obliczeniowe i Regex w Looker Studio: Jak wycisnąć więcej z Twoich danych?",
+    "description": "Zaawansowane techniki Looker Studio. Dowiedz się, jak używać pól obliczeniowych i wyrażeń regularnych (Regex) do czyszczenia i kategoryzacji Twoich danych.",
+    "tag": "Technical Mastery",
+    "date": "25 Lutego 2026",
+    "category": "looker-studio",
+    "emoji": "📊"
+  },
+  {
+    "slug": "roi-wdrozenia-analityki-looker-studio-biznes",
+    "title": "Ile kosztuje brak analityki? ROI z wdrożenia Looker Studio",
+    "description": "Analityka to inwestycja, nie koszt. Dowiedz się, jak obliczyć ROI z wdrożenia dashboardów BI i ile czasu możesz zaoszczędzić dzięki automatyzacji.",
+    "tag": "Business Strategy",
+    "date": "25 Lutego 2026",
+    "category": "looker-studio",
+    "emoji": "📊"
+  },
+  {
+    "slug": "techniczne-seo-looker-studio-dashboard-search-console",
+    "title": "Techniczne SEO w Looker Studio: Search Console + Crawlery",
+    "description": "Dashboardy SEO w Looker Studio. Dowiedz się, jak połączyć dane z Google Search Console, Screaming Frog i Ahrefs w jeden potężny system monitoringu Twojej strony.",
+    "tag": "Technical SEO",
+    "date": "25 Lutego 2026",
+    "category": "seo-analityka",
+    "emoji": "🔍"
+  },
+  {
+    "slug": "zdjecia-produktow-w-looker-studio-images-from-url",
+    "title": "Jak wyświetlać zdjęcia produktów w Looker Studio?",
+    "description": "Tutorial: Jak wyświetlać zdjęcia produktów prosto z URL w raportach Looker Studio. Wzbogać swoje dashboardy eCommerce o warstwę wizualną.",
+    "tag": "eCommerce Growth",
+    "date": "25 Lutego 2026",
+    "category": "looker-studio",
+    "emoji": "🖼️"
+  }
+]
