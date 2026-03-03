@@ -1,18 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="pl">
-
 <head>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
-    <title>5 Krytycznych Błędów niszczących analizy w Looker Studio | Mikołaj Szeląg</title>
-    <meta name="description"
-        content="Masz pełny raport biznesowy ale wygląda jak abstrakcyjna rzeźba? Omijaj te błędy wizualne w darmowym ekosystemie Business Intelligence chmury Google (GDS).">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-
-    <!-- Google Consent Mode v2 (must load before GTM) -->
-    <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" name="google-site-verification">
+<title>5 Krytycznych Błędów niszczących analizy... | Mikołaj Szeląg</title>
+<meta content="Masz pełny raport biznesowy ale wygląda jak abstrakcyjna rzeźba? Omijaj te błędy wizualne w darmowym ekosystemie Business Intelligence chmury Google (GDS)." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://www.googletagmanager.com" rel="preconnect"/>
+<!-- Google Consent Mode v2 (must load before GTM) -->
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('consent', 'default', {
@@ -22,8 +20,8 @@
             'analytics_storage': 'denied'
         });
     </script>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
             w[l] = window.dataLayer || []; w[l].push({
                 'gtm.start':
                     new Date().getTime(), event: 'gtm.js'
@@ -31,24 +29,22 @@
                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
-    <script>
+<!-- Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-9N5S4NW0L8', { 'debug_mode': true });
     </script>
-
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"></noscript>
-    <link rel="preload" as="style" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/styles.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
-
-    <link rel="canonical" href="https://xszelagx.github.io/blog/najczestsze-bledy-kpi-w-raportach-looker-studio-bi.html" />
-    <script type="application/ld+json">
+<link as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="preload"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<link as="style" href="../css/styles.css" rel="preload"/>
+<link href="../css/styles.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="../css/styles.css" rel="stylesheet"/></noscript>
+<link href="https://xszelagx.github.io/blog/najczestsze-bledy-kpi-w-raportach-looker-studio-bi.html" rel="canonical">
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -67,8 +63,7 @@
       "url": "https://xszelagx.github.io/blog/najczestsze-bledy-kpi-w-raportach-looker-studio-bi.html"
     }
     </script>
-
-    <script type="application/ld+json">
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -90,162 +85,164 @@
       }]
     }
     </script>
-    <link rel="icon" type="image/png" href="../favicon.png?v=2">
-    <link rel="icon" type="image/x-icon" href="../favicon.ico?v=2">
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png?v=2">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="5 Krytycznych Błędów niszczących analizy w Looker Studio | Mikołaj Szeląg">
-    <meta property="og:description" content="Masz pełny raport biznesowy ale wygląda jak abstrakcyjna rzeźba? Omijaj te błędy wizualne w darmowym ekosystemie Business Intelligence chmury Google (GDS).">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"></noscript>
-    <link rel="preload" as="style" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/styles.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
-
-    <link rel="canonical" href="https://xszelagx.github.io/blog/najczestsze-bledy-kpi-w-raportach-looker-studio-bi.html">
-    <meta property="og:url" content="https://xszelagx.github.io/blog/najczestsze-bledy-kpi-w-raportach-looker-studio-bi.html">
-    <meta property="og:type" content="article">
-    <meta property="og:image" content="https://xszelagx.github.io/favicon.png">
-    <meta property="og:site_name" content="Mikołaj Szeląg - Automatyzacja BI & Google Cloud">
-</head>
-
+<link href="../favicon.png?v=2" rel="icon" type="image/png"/>
+<link href="../favicon.ico?v=2" rel="icon" type="image/x-icon"/>
+<link href="../apple-touch-icon.png?v=2" rel="apple-touch-icon"/>
+<!-- Open Graph Meta Tags -->
+<meta content="5 Krytycznych Błędów niszczących analizy... | Mikołaj Szeląg" property="og:title"/>
+<meta content="Masz pełny raport biznesowy ale wygląda jak abstrakcyjna rzeźba? Omijaj te błędy wizualne w darmowym ekosystemie Business Intelligence chmury Google (GDS)." property="og:description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://www.googletagmanager.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="preload"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<link as="style" href="../css/styles.css" rel="preload"/>
+<link href="../css/styles.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="../css/styles.css" rel="stylesheet"/></noscript>
+<link href="https://xszelagx.github.io/blog/najczestsze-bledy-kpi-w-raportach-looker-studio-bi.html" rel="canonical"/>
+<meta content="https://xszelagx.github.io/blog/najczestsze-bledy-kpi-w-raportach-looker-studio-bi.html" property="og:url"/>
+<meta content="article" property="og:type"/>
+<meta content="https://xszelagx.github.io/favicon.png" property="og:image"/>
+<meta content="Mikołaj Szeląg - Automatyzacja BI &amp; Google Cloud" property="og:site_name"/>
+</link></meta></head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <div class="bg-orb orb-1"></div>
-    <div class="bg-orb orb-2"></div>
-    <header class="glass-nav">
-        <div class="container nav-container">
-            <a href="../index.html" class="logo">Szeląg<span>.</span>Data</a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="../">Strona Główna</a></li>
-                    <li><a href="../#about">Dlaczego Warto?</a></li>
-                    <li><a href="../#services">Usługi</a></li>
-                    <li><a href="../#case-studies">Realizacje</a></li>
-                    <li><a href="../blog.html">Blog</a></li>
-                    <li><a href="../#contact" class="btn-primary-small">Kontakt</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <article>
-            <header class="post-header">
-                <div class="container">
-                    <a href="../blog.html"
-                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">←
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="bg-orb orb-1"></div>
+<div class="bg-orb orb-2"></div>
+<header class="glass-nav">
+<div class="container nav-container">
+<a class="logo" href="../index.html">Szeląg<span>.</span>Data</a>
+<nav>
+<ul class="nav-links">
+<li><a href="../">Strona Główna</a></li>
+<li><a href="../#about">Dlaczego Warto?</a></li>
+<li><a href="../#services">Usługi</a></li>
+<li><a href="../#case-studies">Realizacje</a></li>
+<li><a href="../blog.html">Blog</a></li>
+<li><a class="btn-primary-small" href="../#contact">Kontakt</a></li>
+</ul>
+<div class="hamburger">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</div>
+</nav>
+</div>
+</header>
+<main>
+<article>
+<header class="post-header">
+<div class="container">
+<a href="../blog.html" style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">←
                         Wróć do artykułów</a>
-                    <div class="post-meta">
-                        <span class="post-tag">User Experience w Analityce</span>
-                        <span>24 Maja 2026</span>
-                        <span>⏱️ 4 min czytania</span>
-                    </div>
-                    <h1 class="post-title">Sztuka niszczenia przejrzystości raportu menedżerskiego: <span
-                            class="gradient-text">Top 5 grzechów głównych w BI.</span></h1>
-                </div>
-            </header>
-
-            <div class="container">
-                <div class="post-layout">
-                    <div class="post-content">
-                        <p>Słaba platforma Data Pipeline kosztuje budżet opłatą do Google Cloud w nocy. Słաբo
+<div class="post-meta">
+<span class="post-tag">User Experience w Analityce</span>
+<span>24 Maja 2026</span>
+<span>⏱️ 4 min czytania</span>
+</div>
+<h1 class="post-title">Sztuka niszczenia przejrzystości raportu menedżerskiego: <span class="gradient-text">Top 5 grzechów głównych w BI.</span></h1>
+</div>
+</header>
+<div class="container">
+<div class="post-layout">
+<div class="post-content">
+<p>Słaba platforma Data Pipeline kosztuje budżet opłatą do Google Cloud w nocy. Słաբo
                             "namalowany" pulpit menedżerski kosztuje organizację pomyłkę strategiczną podczas
                             prezentacji walnego zgromadzenia przy wielomilionowym budżecie. Błędny projekt <em>UX (User
                                 Experience)</em> w Business Intelligence może skłonić firmę do śmiertelnego obcięcia
                             inwestycji w złym dziale.</p>
-
-                        <h2>Top 5 Najczęstszych Pomyłek Architektów BI (Graficznych)</h2>
-
-                        <h3>1. Ślepota na wykresach tortowych (Pie Charts z 30 wymiarami)</h3>
-                        <p>Zawsze gdy musisz przedstawić skalę rynku państw w Unii Europejskiej z udziałem sprzedaży,
+<h2>Top 5 Najczęstszych Pomyłek Architektów BI (Graficznych)</h2>
+<h3>1. Ślepota na wykresach tortowych (Pie Charts z 30 wymiarami)</h3>
+<p>Zawsze gdy musisz przedstawić skalę rynku państw w Unii Europejskiej z udziałem sprzedaży,
                             deweloper odruchowo pociągnie z paska Wykres Kołowy. A następnie podzieli go na dwadzieścia
                             osiem zlewających się ze sobą niebieskich rogalów. Ludzkie oczy nie potrafią w ułamku
                             sekundy odczytać kątów nachylenia okręgu! Gdy masz więcej niż zaledwie pięć ułamków do
                             wykazania ─ używaj zawsze opadających w dół Wykresów Słupkowych (Bar Charts), posortowanych
                             od najwyższego na górze.</p>
-
-                        <h3>2. Brak kontrastu w sygnałach metryk (Scorecards z szarością)</h3>
-                        <p>Pół okienka KPI w lewym górnym rogu z wydatkiem kampanii i przychodem. Wszystko zapisane
+<h3>2. Brak kontrastu w sygnałach metryk (Scorecards z szarością)</h3>
+<p>Pół okienka KPI w lewym górnym rogu z wydatkiem kampanii i przychodem. Wszystko zapisane
                             obojętną korporacyjną szarą strefą (Hexcode #333). Szef musi wczytywać się po malutkim
                             wzroście i odnosić na kartce minusy by domyśleć się spadku. Włącz natywną funkcję
                             <strong>"Zestawienia Porównywalne do poprz.miesiąca"</strong> i zezwól na zieloną czy
                             czerwoną strzałkę opadającą pod główną wartością obrotową.</p>
-
-                        <h3>3. Kaskadowy obłęd Filtrowania (Filtry odświeżające filtry obok)</h3>
-                        <p>Wrzuciłeś 10 paneli filtrowania (Pola DropDown list): Data, Dział, Kraj, Kierownik. W
+<h3>3. Kaskadowy obłęd Filtrowania (Filtry odświeżające filtry obok)</h3>
+<p>Wrzuciłeś 10 paneli filtrowania (Pola DropDown list): Data, Dział, Kraj, Kierownik. W
                             środowisku bez chmury (zwykłe z złącza), każde kliknięcie filtra każe odpytywać bazę
                             połączoną, często blokując podgląd do końca skryptu. Organizuj menu precyzyjnemu
                             ograniczaniu i wyłącz w nich opcje "aktualizacji krzyżowej poszczególnych komórek" by nie
                             mordować cierpliwości prezesury przed zmianą zwykłej daty suwaczkiem.</p>
-
-                        <h3>4. Podwójna oś Y - koszmar korelacji niepowiązanych</h3>
-                        <p>Chęć dorzucenia Ilości sztuk Paczek pobok Wydatków na Kampanie (Jedno do 1500, a drugie w
+<h3>4. Podwójna oś Y - koszmar korelacji niepowiązanych</h3>
+<p>Chęć dorzucenia Ilości sztuk Paczek pobok Wydatków na Kampanie (Jedno do 1500, a drugie w
                             dziesiątkach milionów) na jednym grafie załamuje całkowicie czytelnika B2B oznaczając dwie
                             różnie wyśrodkowane krawedzie Y na raz obok słupków. Przerzuć to na dwa bardzo mocno
                             pomniejszone a nakładane pod sobą małe wykresy liniowe ─ uzyskując rewelacyjny styl (Small
                             Multiples).</p>
-
-                        <blockquote>
+<blockquote>
                             "Projektuj jak dla laika używającego paska kalkulatora w telefonie. Zastąp rzędowy raport
                             objaśniającym zbiorem od góry opadającym po drobnych dopytywaczach, w sposób na zasadzie
                             zsuwanego tunelu czytania."
                         </blockquote>
-
-                    </div>
-
-                    <aside class="post-sidebar">
-                        <div class="author-card">
-                            <div class="author-avatar">👨‍💻</div>
-                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
-                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Lead Data UX
+</div>
+<aside class="post-sidebar">
+<div class="author-card">
+<div class="author-avatar">👨‍💻</div>
+<h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+<p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Lead Data UX
                                 Designer</p>
-                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Odnajduję
+<p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Odnajduję
                                 niesamowitą pasję w dekonstrukcji ociężałych, brudnych wielkich raportów korporacyjnych
                                 pod wdrożenia przejrzystych intuicyjnych paneli z barwami firmowymi ograniczając
                                 kognitywne cierpienia menedżerów.</p>
-                        </div>
-                        <div class="cta-card">
-                            <h3>Spędzacie 2 godziny we wtorek rano próbując odczytać spadek sprzedaży z okrutnej
+</div>
+<div class="cta-card">
+<h3>Spędzacie 2 godziny we wtorek rano próbując odczytać spadek sprzedaży z okrutnej
                                 macierzy na Excelu?</h3>
-                            <p>To patologia rynków firm B2B. Zgłoś mi obecne "dzieło" a wyprowadzę interaktywną makiety
+<p>To patologia rynków firm B2B. Zgłoś mi obecne "dzieło" a wyprowadzę interaktywną makiety
                                 ułatwiającej sterowanie do poziomu minimalizmu ─ by kadry skupiły się twardo na
                                 wnioskach zamiast uczenia się instrukcji odszyfrowania okien grafu.</p>
-                            <a href="/#contact" class="btn btn-primary"
-                                style="width: 100%; text-align: center; padding: 12px;">Zamów Redesign Interfejsu BI</a>
-                        </div>
-                    </aside>
-                </div>
-            </div>
-        </article>
-    </main>
-
-    <footer class="glass-footer">
-        <div class="container footer-content">
-            <div class="footer-logo">Szeląg<span>.</span>Data</div>
-            <p>© <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
-            <div class="social-links">
-                <a href="/polityka-prywatnosci.html">Polityka Prywatności</a>
-                <a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank" rel="noopener noreferrer"
-                    aria-label="LinkedIn">LinkedIn</a>
-            </div>
-        </div>
-    </footer>
-    
-
-    <script src="../js/script.js"></script>
+<a class="btn btn-primary" href="/#contact" style="width: 100%; text-align: center; padding: 12px;">Zamów Redesign Interfejsu BI</a>
+</div>
+</aside>
+</div>
+</div>
+<!-- RELATED ARTICLES -->
+<section class="related-articles" style="margin-top: 60px; border-top: 1px solid var(--surface-border); padding-top: 40px;">
+<div class="container">
+<h2 style="margin-bottom: 30px;">Przeczytaj również:</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+<a class="glass-card" href="laczenie-wielu-zrodel-danych-blending-looker-studio.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">🔗</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Transformacje Graficzne BI</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Jak połączyć Koszt i Zysk na jednej linii: Techniki Data Blending (Looker Studio)</h4>
+</a>
+<a class="glass-card" href="bezpieczenstwo-danych-row-level-security-w-looker-studio-gcp.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">🔒</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Bezpieczeństwo Danych DWH</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Ograniczenie wglądu i bezpieczne udostępnianie w Looker Studio: Zasady filtru Emailu na żywo (RLS).</h4>
+</a>
+<a class="glass-card" href="looker-studio-czy-power-bi-wybor-narzedzia-bi.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">⚔️</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Porównania Ekosystemów (BI)</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Looker Studio czy sztywne licencje PowerBI? Które narzędzie BI do wdrożeń de facto popłaca.</h4>
+</a>
+</div>
+</div>
+</section>
+<!-- END RELATED ARTICLES -->
+</article>
+</main>
+<footer class="glass-footer">
+<div class="container footer-content">
+<div class="footer-logo">Szeląg<span>.</span>Data</div>
+<p>© <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+<div class="social-links">
+<a href="/polityka-prywatnosci.html">Polityka Prywatności</a>
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/mikolaj-szelag/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+</div>
+</div>
+</footer>
+<script src="../js/script.js"></script>
 </body>
-
 </html>

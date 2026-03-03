@@ -1,19 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="pl">
-
 <head>
-    
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
-    <meta name="description"
-        content="Tableau czy Looker Studio? Porównanie kosztów, wdrożenia analityki B2B i barier wejścia dla firm. Darmowe narzędzie BI od Google vs korporacyjne Tableau.">
-
-    <title>Google Looker Studio vs Tableau – Porównanie kosztów BI (2026) | Mikołaj Szeląg</title>
-
-    <!-- Google Consent Mode v2 (must load before GTM) -->
-    <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" name="google-site-verification">
+<meta content="Tableau czy Looker Studio? Porównanie kosztów, wdrożenia analityki B2B i barier wejścia dla firm. Darmowe narzędzie BI od Google vs korporacyjne Tableau." name="description"/>
+<title>Google Looker Studio vs Tableau – Porówn... | Mikołaj Szeląg</title>
+<!-- Google Consent Mode v2 (must load before GTM) -->
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('consent', 'default', {
@@ -23,8 +18,8 @@
             'analytics_storage': 'denied'
         });
     </script>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
             w[l] = window.dataLayer || []; w[l].push({
                 'gtm.start':
                     new Date().getTime(), event: 'gtm.js'
@@ -32,28 +27,23 @@
                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
-    <script>
+<!-- Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-9N5S4NW0L8', { 'debug_mode': true });
     </script>
-
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css">
-
-    <link rel="icon" type="image/png" href="../favicon.png?v=2">
-    <link rel="icon" type="image/x-icon" href="../favicon.ico?v=2">
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png?v=2">
-
-    <!-- Schema -->
-    <script type="application/ld+json">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="../css/styles.css" rel="stylesheet"/>
+<link href="../favicon.png?v=2" rel="icon" type="image/png"/>
+<link href="../favicon.ico?v=2" rel="icon" type="image/x-icon"/>
+<link href="../apple-touch-icon.png?v=2" rel="apple-touch-icon"/>
+<!-- Schema -->
+<script type="application/ld+json">
         {
           "@context": "https://schema.org",
           "@type": "BlogPosting",
@@ -66,163 +56,156 @@
           "description": "Starcie gigantów Business Intelligence: Looker (GCP) i Tableau (Salesforce). Kiedy warto płacić licencje Tableau, a komu w 100% wystarczy darmowe Google Data Studio."
         }
     </script>
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Google Looker Studio vs Tableau – Porównanie kosztów BI (2026) | Mikołaj Szeląg">
-    <meta property="og:description" content="Tableau czy Looker Studio? Porównanie kosztów, wdrożenia analityki B2B i barier wejścia dla firm. Darmowe narzędzie BI od Google vs korporacyjne Tableau.">
-
-    
-
-
-    
-</head>
-
+<!-- Open Graph Meta Tags -->
+<meta content="Google Looker Studio vs Tableau – Porówn... | Mikołaj Szeląg" property="og:title"/>
+<meta content="Tableau czy Looker Studio? Porównanie kosztów, wdrożenia analityki B2B i barier wejścia dla firm. Darmowe narzędzie BI od Google vs korporacyjne Tableau." property="og:description"/>
+</meta></head>
 <body>
-    <!-- GTM Noscript -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-
-    <div class="bg-orb orb-1"></div>
-    <div class="bg-orb orb-2"></div>
-
-    <header class="glass-nav">
-        <div class="container nav-container">
-            <a href="/" class="logo">Szeląg<span>.</span>Data</a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="/">Strona Główna</a></li>
-                    <li><a href="/#about">Dlaczego Warto?</a></li>
-                    <li><a href="/#services">Usługi</a></li>
-                    <li><a href="/#case-studies">Realizacje</a></li>
-                    <li><a href="/blog.html">Blog</a></li>
-                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
-                </ul>
-                <div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <article>
-            <header class="post-header">
-                <div class="container">
-                    <a href="/blog.html"
-                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">←
+<!-- GTM Noscript -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<div class="bg-orb orb-1"></div>
+<div class="bg-orb orb-2"></div>
+<header class="glass-nav">
+<div class="container nav-container">
+<a class="logo" href="/">Szeląg<span>.</span>Data</a>
+<nav>
+<ul class="nav-links">
+<li><a href="/">Strona Główna</a></li>
+<li><a href="/#about">Dlaczego Warto?</a></li>
+<li><a href="/#services">Usługi</a></li>
+<li><a href="/#case-studies">Realizacje</a></li>
+<li><a href="/blog.html">Blog</a></li>
+<li><a class="btn-primary-small" href="/#contact">Kontakt</a></li>
+</ul>
+<div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+</nav>
+</div>
+</header>
+<main>
+<article>
+<header class="post-header">
+<div class="container">
+<a href="/blog.html" style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">←
                         Wróć do artykułów</a>
-                    <div class="post-meta">
-                        <span class="post-tag">Porównania Ekosystemów (BI)</span>
-                        <span>02 Marca 2026</span>
-                        <span>⏱️ 6 min czytania</span>
-                    </div>
-                    <h1 class="post-title">Looker Studio vs Tableau: <span class="gradient-text">Porównanie możliwości i
+<div class="post-meta">
+<span class="post-tag">Porównania Ekosystemów (BI)</span>
+<span>02 Marca 2026</span>
+<span>⏱️ 6 min czytania</span>
+</div>
+<h1 class="post-title">Looker Studio vs Tableau: <span class="gradient-text">Porównanie możliwości i
                             kosztów wdrożenia (2026)</span></h1>
-                </div>
-            </header>
-
-            <div class="container">
-                <div class="post-layout">
-                    <!-- MAIN CONTENT -->
-                    <div class="post-content">
-                        <p>Na rynku Data Science toczy się odwieczna wojna pomiędzy ciężkimi systemami dla analityków, a
+</div>
+</header>
+<div class="container">
+<div class="post-layout">
+<!-- MAIN CONTENT -->
+<div class="post-content">
+<p>Na rynku Data Science toczy się odwieczna wojna pomiędzy ciężkimi systemami dla analityków, a
                             zwinnymi narzędziami chmurowymi. <strong>Tableau</strong> (obecnie kupione przez giganta
                             Salesforce) przez lata stanowiło niedościgniony wzór BI. Tymczasem Google wdarło się do gry
                             ze swoim lekkim <strong>Looker Studio (dawniej Data Studio)</strong>.</p>
-
-                        <p>Dzisiejszy C-level i CEO firmy nie szuka już tylko potężnego silnika za miliony dolarów –
-                            szuka skalowalnych kosztów i najprostszego podłączenia <a
-                                href="./co-to-jest-bigquery-darmowy-limit.html">chmury takiej jak publiczne BigQuery
+<p>Dzisiejszy C-level i CEO firmy nie szuka już tylko potężnego silnika za miliony dolarów –
+                            szuka skalowalnych kosztów i najprostszego podłączenia <a href="./co-to-jest-bigquery-darmowy-limit.html">chmury takiej jak publiczne BigQuery
                             </a>. Sprawdźmy, co wygrywa w bezpośrednim starciu na rok 2026.</p>
-
-                        <h2>1. Koszty i budżetowanie (Licencje vs Chmura)</h2>
-                        <p>Ten punkt to technologiczny i finansowy nokaut. Budżetowanie <strong>Tableau wiąże się z
+<h2>1. Koszty i budżetowanie (Licencje vs Chmura)</h2>
+<p>Ten punkt to technologiczny i finansowy nokaut. Budżetowanie <strong>Tableau wiąże się z
                                 licencjami za „każdą głowę”</strong> (Tableau Viewer, Explorer, Creator). Jeśli chcesz
                             zbudować szeroką analitykę w organizacji na 150 osób, musisz opłacać cyklicznie gigantyczne
                             licencje typu <em>Viewer</em> tylko za to, by zespół magazynowy mógł otworzyć i zobaczyć
                             gotowy raport przeglądarki! To tysiące Euro miesięcznie.</p>
-
-                        <p>Z kolei <strong>Looker Studio to w 100% darmowe środowisko webowe podpięte do Twojego konta
-                                Gmail.</strong> W przeciwieństwie do <a
-                                href="./looker-studio-czy-power-bi-wybor-narzedzia-bi.html">płatnego pakietu Office
-                                PowerBI</a> oraz Tableau, w architekturze Google <a
-                                href="./czy-looker-studio-jest-platne-ukryte-koszty.html">zapłacisz tylko za wysyłany
+<p>Z kolei <strong>Looker Studio to w 100% darmowe środowisko webowe podpięte do Twojego konta
+                                Gmail.</strong> W przeciwieństwie do <a href="./looker-studio-czy-power-bi-wybor-narzedzia-bi.html">płatnego pakietu Office
+                                PowerBI</a> oraz Tableau, w architekturze Google <a href="./czy-looker-studio-jest-platne-ukryte-koszty.html">zapłacisz tylko za wysyłany
                                 strumień danych i zapytania do bazy</a>. Jeśli Twój model zakłada oszczędności finansowe
                             na start, Looker nie ma tu żadnego technicznego pobicia na współczesnym rynku.</p>
-
-                        <h2>2. Wizualizacje i potencjał potęgi Analitycznej (Data Science)</h2>
-                        <p>Tutaj następuje zwrot w stronę Tableau. To tytan graficzny i potęga obliczeniowa, dedykowana
+<h2>2. Wizualizacje i potencjał potęgi Analitycznej (Data Science)</h2>
+<p>Tutaj następuje zwrot w stronę Tableau. To tytan graficzny i potęga obliczeniowa, dedykowana
                             inżynierom używającym bibliotek <em>R</em> czy środowiska <em>Python</em>.</p>
-
-                        <p>Choć Looker Studio uważa się potocznie za zwinne i oparte o szybkie widgety Drag n’ Drop, z
+<p>Choć Looker Studio uważa się potocznie za zwinne i oparte o szybkie widgety Drag n’ Drop, z
                             wbudowaną filtracją i estetycznym graficznym interfejsem – <strong>samo rozwiązanie nie
                                 narysuje skomplikowanych matematycznych matryc 3D</strong> ani wykresów z wybujałymi
                             logarytmami statystycznymi.</p>
-
-                        <p>Innymi słowy: <strong>Gdy CEO potrzebuje monitorować zyski, marżę i zbiory KPI w logistyce –
+<p>Innymi słowy: <strong>Gdy CEO potrzebuje monitorować zyski, marżę i zbiory KPI w logistyce –
                                 wygrywa w przedziale czasowym Looker (w kilkanaście dni wdrożysz projekt
                                 wizualizacji).</strong> Gdy potrzebujesz armii Data Scientistów do symulowania
                             trajektorii pacjentów w badaniach onkologicznych dla farmakologii – potrzebujesz ciężkiej
                             machiny Tableau.</p>
-
-                        <h2>3. Czas Nauka vs ROI dla Firmy i Agencji</h2>
-                        <p>Krzywa uczenia się (Learning Curve) Tableau to zazwyczaj <strong>pół roku ciężkich
-                                studiów.</strong> Interfejs w Looker Studio ogarniesz w tydzień – jest intuicyjny jak <a
-                                href="./looker-studio-czy-excel-porownanie-raportowanie.html">konstruowanie Arkuszy
+<h2>3. Czas Nauka vs ROI dla Firmy i Agencji</h2>
+<p>Krzywa uczenia się (Learning Curve) Tableau to zazwyczaj <strong>pół roku ciężkich
+                                studiów.</strong> Interfejs w Looker Studio ogarniesz w tydzień – jest intuicyjny jak <a href="./looker-studio-czy-excel-porownanie-raportowanie.html">konstruowanie Arkuszy
                                 Google (Google Sheets) i zastępuje na wielu polach samego Excela.</a></p>
-
-                        <ul>
-                            <li>W Looker Studio proces <em>"Baza Danych (GCP) -> Raport dla Szefa"</em> zamykasz na
+<ul>
+<li>W Looker Studio proces <em>"Baza Danych (GCP) -&gt; Raport dla Szefa"</em> zamykasz na
                                 dwóch serwerach z opłaceniem kosztów wewnątrz Google Workspace.</li>
-                            <li>Zatrudnienie Specjalisty Lookera na zlecenie projektowe w 2026 r. jest wielokrotnie
+<li>Zatrudnienie Specjalisty Lookera na zlecenie projektowe w 2026 r. jest wielokrotnie
                                 bardziej opłacalne niż tworzenie "in-house" etatu pod Tableau Dev ze średnią pensją
                                 około $100k rocznie.</li>
-                        </ul>
-
-                        <h3>Wnioski: Które wpisać w stack firmy?</h3>
-                        <p>Dla małych i średnich korporacji B2B, E-commerce, czy branż usługowych odpowiedź może być
+</ul>
+<h3>Wnioski: Które wpisać w stack firmy?</h3>
+<p>Dla małych i średnich korporacji B2B, E-commerce, czy branż usługowych odpowiedź może być
                             tylko jedna: <strong>Google Looker Studio wygrywa dzięki swojej zwinności organizacyjnej i
                                 bezlicencyjnym systemom na użytkownika.</strong> Wybierasz Tableau tylko, jeśli Twój
                             zarząd oczekuje twardej analityki akademickiej Big Data wymagającej ogromnego zaangażowania
                             zespołu programistów.</p>
-                    </div>
-
-                    <!-- SIDEBAR -->
-                    <aside class="post-sidebar">
-                        <div class="author-card">
-                            <div class="author-avatar">👨‍💻</div>
-                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
-                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Google Cloud
+</div>
+<!-- SIDEBAR -->
+<aside class="post-sidebar">
+<div class="author-card">
+<div class="author-avatar">👨‍💻</div>
+<h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+<p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Google Cloud
                                 Engineering Consultant</p>
-                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Oswajam dyrektorów
+<p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Oswajam dyrektorów
                                 i zarządy darmowymi, innowacyjnymi wizualizacjami biznesowymi od Google Cloud. Zmieniam
                                 arkusze Excel na ekosystemy webowe oparty o BigQuery.</p>
-                        </div>
-
-                        <div class="cta-card">
-                            <h3>Bariera wejścia do BI paraliżuje Wasz Dział Zysków?</h3>
-                            <p>Zapomnij o wielomiesięcznych wdrożeniach Tableau i bolesnym systemie licencjonowania per
+</div>
+<div class="cta-card">
+<h3>Bariera wejścia do BI paraliżuje Wasz Dział Zysków?</h3>
+<p>Zapomnij o wielomiesięcznych wdrożeniach Tableau i bolesnym systemie licencjonowania per
                                 Viewer. Przeprowadzę Wasz model firmowy przez ekosystem skalowalny darmowego Looker
                                 Studio (GCP).</p>
-                            <a href="/#contact" class="btn btn-primary"
-                                style="width: 100%; text-align: center; padding: 12px;">Sprawdź Moje Konsultacje</a>
-                        </div>
-                    </aside>
-                </div>
-            </div>
-        </article>
-    </main>
-
-    <!-- Footer -->
-    <footer class="glass-footer">
-        <div class="container footer-content">
-            <div class="footer-logo">Szeląg<span>.</span>Data</div>
-            <p>© <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
-            <div class="social-links">
-                <a href="/polityka-prywatnosci.html">Polityka Prywatności</a>
-                <a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank">LinkedIn</a>
-            </div>
-        </div>
-    </footer>
-    <script src="../js/script.js"></script>
+<a class="btn btn-primary" href="/#contact" style="width: 100%; text-align: center; padding: 12px;">Sprawdź Moje Konsultacje</a>
+</div>
+</aside>
+</div>
+</div>
+<!-- RELATED ARTICLES -->
+<section class="related-articles" style="margin-top: 60px; border-top: 1px solid var(--surface-border); padding-top: 40px;">
+<div class="container">
+<h2 style="margin-bottom: 30px;">Przeczytaj również:</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+<a class="glass-card" href="najlepsze-darmowe-szablony-templates-looker-studio-ecommerce.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">🖼️</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Wizualizacja Danych BI</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Najlepsze darmowe szablony (templates) Looker Studio dla B2B, SEO i E-commerce</h4>
+</a>
+<a class="glass-card" href="tworzenie-szablonow-kopiowanie-raportow-looker-studio.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">👯</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Zarządzanie Zespołem Data</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Jak stworzyć własny szablon raportu w Looker Studio? Obejście z klonowaniem instancji</h4>
+</a>
+<a class="glass-card" href="zmiana-zrodla-danych-looker-studio-bez-psucia-wykresow.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">🔄</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Błędy API i Serwisu (Fix)</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Zmiana źródła danych w Looker Studio: Jak podmienić bazę bez niszczenia wykresów na błędne?</h4>
+</a>
+</div>
+</div>
+</section>
+<!-- END RELATED ARTICLES -->
+</article>
+</main>
+<!-- Footer -->
+<footer class="glass-footer">
+<div class="container footer-content">
+<div class="footer-logo">Szeląg<span>.</span>Data</div>
+<p>© <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+<div class="social-links">
+<a href="/polityka-prywatnosci.html">Polityka Prywatności</a>
+<a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank">LinkedIn</a>
+</div>
+</div>
+</footer>
+<script src="../js/script.js"></script>
 </body>
-
 </html>

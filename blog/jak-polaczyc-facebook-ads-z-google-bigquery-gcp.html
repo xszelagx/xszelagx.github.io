@@ -1,18 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="pl">
-
 <head>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
-    <title>Eksport danych z Facebook Ads i Google Ads do BigQuery | Mikołaj Szeląg</title>
-    <meta name="description"
-        content="Połącz dane marketingowe z różnych systemów reklamowych (FB Ads, Google Ads) do jednej nadrzędnej bazy dla skutecznego mierzenia wskaźników ROI w B2B.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-
-    <!-- Google Consent Mode v2 (must load before GTM) -->
-    <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" name="google-site-verification">
+<title>Eksport danych z Facebook Ads i Google A... | Mikołaj Szeląg</title>
+<meta content="Połącz dane marketingowe z różnych systemów reklamowych (FB Ads, Google Ads) do jednej nadrzędnej bazy dla skutecznego mierzenia wskaźników ROI w B2B." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://www.googletagmanager.com" rel="preconnect"/>
+<!-- Google Consent Mode v2 (must load before GTM) -->
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('consent', 'default', {
@@ -22,8 +20,8 @@
             'analytics_storage': 'denied'
         });
     </script>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
             w[l] = window.dataLayer || []; w[l].push({
                 'gtm.start':
                     new Date().getTime(), event: 'gtm.js'
@@ -31,24 +29,22 @@
                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
-    <script>
+<!-- Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-9N5S4NW0L8', { 'debug_mode': true });
     </script>
-
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"></noscript>
-    <link rel="preload" as="style" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/styles.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
-
-    <link rel="canonical" href="https://xszelagx.github.io/blog/jak-polaczyc-facebook-ads-z-google-bigquery-gcp.html" />
-    <script type="application/ld+json">
+<link as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="preload"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<link as="style" href="../css/styles.css" rel="preload"/>
+<link href="../css/styles.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="../css/styles.css" rel="stylesheet"/></noscript>
+<link href="https://xszelagx.github.io/blog/jak-polaczyc-facebook-ads-z-google-bigquery-gcp.html" rel="canonical">
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -67,8 +63,7 @@
       "url": "https://xszelagx.github.io/blog/jak-polaczyc-facebook-ads-z-google-bigquery-gcp.html"
     }
     </script>
-
-    <script type="application/ld+json">
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -90,167 +85,170 @@
       }]
     }
     </script>
-    <link rel="icon" type="image/png" href="../favicon.png?v=2">
-    <link rel="icon" type="image/x-icon" href="../favicon.ico?v=2">
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png?v=2">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Eksport danych z Facebook Ads i Google Ads do BigQuery | Mikołaj Szeląg">
-    <meta property="og:description" content="Połącz dane marketingowe z różnych systemów reklamowych (FB Ads, Google Ads) do jednej nadrzędnej bazy dla skutecznego mierzenia wskaźników ROI w B2B.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"></noscript>
-    <link rel="preload" as="style" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/styles.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
-
-    <link rel="canonical" href="https://xszelagx.github.io/blog/jak-polaczyc-facebook-ads-z-google-bigquery-gcp.html">
-    <meta property="og:url" content="https://xszelagx.github.io/blog/jak-polaczyc-facebook-ads-z-google-bigquery-gcp.html">
-    <meta property="og:type" content="article">
-    <meta property="og:image" content="https://xszelagx.github.io/favicon.png">
-    <meta property="og:site_name" content="Mikołaj Szeląg - Automatyzacja BI & Google Cloud">
-</head>
-
+<link href="../favicon.png?v=2" rel="icon" type="image/png"/>
+<link href="../favicon.ico?v=2" rel="icon" type="image/x-icon"/>
+<link href="../apple-touch-icon.png?v=2" rel="apple-touch-icon"/>
+<!-- Open Graph Meta Tags -->
+<meta content="Eksport danych z Facebook Ads i Google A... | Mikołaj Szeląg" property="og:title"/>
+<meta content="Połącz dane marketingowe z różnych systemów reklamowych (FB Ads, Google Ads) do jednej nadrzędnej bazy dla skutecznego mierzenia wskaźników ROI w B2B." property="og:description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://www.googletagmanager.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="preload"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<link as="style" href="../css/styles.css" rel="preload"/>
+<link href="../css/styles.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="../css/styles.css" rel="stylesheet"/></noscript>
+<link href="https://xszelagx.github.io/blog/jak-polaczyc-facebook-ads-z-google-bigquery-gcp.html" rel="canonical"/>
+<meta content="https://xszelagx.github.io/blog/jak-polaczyc-facebook-ads-z-google-bigquery-gcp.html" property="og:url"/>
+<meta content="article" property="og:type"/>
+<meta content="https://xszelagx.github.io/favicon.png" property="og:image"/>
+<meta content="Mikołaj Szeląg - Automatyzacja BI &amp; Google Cloud" property="og:site_name"/>
+</link></meta></head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <div class="bg-orb orb-1"></div>
-    <div class="bg-orb orb-2"></div>
-    <header class="glass-nav">
-        <div class="container nav-container">
-            <a href="../index.html" class="logo">Szeląg<span>.</span>Data</a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="../">Strona Główna</a></li>
-                    <li><a href="../#about">Dlaczego Warto?</a></li>
-                    <li><a href="../#services">Usługi</a></li>
-                    <li><a href="../#case-studies">Realizacje</a></li>
-                    <li><a href="../blog.html">Blog</a></li>
-                    <li><a href="../#contact" class="btn-primary-small">Kontakt</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <article>
-            <header class="post-header">
-                <div class="container">
-                    <a href="../blog.html"
-                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">←
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="bg-orb orb-1"></div>
+<div class="bg-orb orb-2"></div>
+<header class="glass-nav">
+<div class="container nav-container">
+<a class="logo" href="../index.html">Szeląg<span>.</span>Data</a>
+<nav>
+<ul class="nav-links">
+<li><a href="../">Strona Główna</a></li>
+<li><a href="../#about">Dlaczego Warto?</a></li>
+<li><a href="../#services">Usługi</a></li>
+<li><a href="../#case-studies">Realizacje</a></li>
+<li><a href="../blog.html">Blog</a></li>
+<li><a class="btn-primary-small" href="../#contact">Kontakt</a></li>
+</ul>
+<div class="hamburger">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</div>
+</nav>
+</div>
+</header>
+<main>
+<article>
+<header class="post-header">
+<div class="container">
+<a href="../blog.html" style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">←
                         Wróć do artykułów</a>
-                    <div class="post-meta">
-                        <span class="post-tag">Zarządzanie Kampaniami (Marketing)</span>
-                        <span>12 Kwietnia 2026</span>
-                        <span>⏱️ 5 min czytania</span>
-                    </div>
-                    <h1 class="post-title">Integracja ROI: Eksport danych z Facebook Ads & Google Ads <span
-                            class="gradient-text">prosto do BigQuery</span></h1>
-                </div>
-            </header>
-
-            <div class="container">
-                <div class="post-layout">
-                    <div class="post-content">
-                        <p>Zarządzanie budżetem rzędu kilkuset tysięcy złotych na kilku niezależnych platformach
+<div class="post-meta">
+<span class="post-tag">Zarządzanie Kampaniami (Marketing)</span>
+<span>12 Kwietnia 2026</span>
+<span>⏱️ 5 min czytania</span>
+</div>
+<h1 class="post-title">Integracja ROI: Eksport danych z Facebook Ads &amp; Google Ads <span class="gradient-text">prosto do BigQuery</span></h1>
+</div>
+</header>
+<div class="container">
+<div class="post-layout">
+<div class="post-content">
+<p>Zarządzanie budżetem rzędu kilkuset tysięcy złotych na kilku niezależnych platformach
                             sprawia, że szacowanie zwrotu z inwestycji staje się w pewnym momencie wyliczaniem
                             wróżbitów. Posiadanie oddzielnych silosów — systemu od raportowania w Facebook Business
                             Managerze obok całkowicie odciętego menedżera Google Ads — pęta Twoje ręce w modelowaniu
                             precyzyjnego Lejka Atrybucji. <strong>Wymuszenie centralizacji poprzez transferowanie całego
                                 tego zgiełku metryk za kulisy BigQuery to wejście do elity e-commerce.</strong></p>
-
-                        <h2>Data Transfer wchodzący "Natywnie" krok po kroku</h2>
-                        <p>Połączenie infrastruktury Google z infrastrukturą Google (czyli wpięcie Google Ads pod bazę
+<h2>Data Transfer wchodzący "Natywnie" krok po kroku</h2>
+<p>Połączenie infrastruktury Google z infrastrukturą Google (czyli wpięcie Google Ads pod bazę
                             BigQuery DWH) nie wymaga skomplikowanego kodowania. Gigant z Mountain View osadza w BigQuery
                             moduł <em>BigQuery Data Transfer Service</em>. Po kilkunastu intuicyjnych autoryzacjach i
                             kliknięciach na platformie "Konfiguruj Nowy Transfer" – BigQuery codziennie pobiera gotowe
                             gigabajty zdarzeń z Ads, obudowując je w gotowe, potężne relacje bazo-danowe (widoki).</p>
-
-                        <h2>Co od strony innej korporacji? Połączenie z Facebook Ads.</h2>
-                        <p>Z metapołączeniem (Mety i Facebooka) sprawa wygląda marginalnie inaczej ze względu na brak
+<h2>Co od strony innej korporacji? Połączenie z Facebook Ads.</h2>
+<p>Z metapołączeniem (Mety i Facebooka) sprawa wygląda marginalnie inaczej ze względu na brak
                             "gotowych na wczoraj" połączeń pomiędzy konkurentami. Rozwiązania dla Agencji oraz
                             niezależnych B2B redukują się powszechnie do dwóch dominujących scenariuszy, redukując opory
                             na każdym kroku transferowania danych rzędu JSON/API:</p>
-
-                        <ul>
-                            <li><strong>"No Code" Middleware Platformy (np. Supermetrics / Fivetran):</strong>
+<ul>
+<li><strong>"No Code" Middleware Platformy (np. Supermetrics / Fivetran):</strong>
                                 Rewelacyjne serwisy pośredniczące dla potężnych agencji marketingowych, które na kilka
                                 kliknięć wykonują za Ciebie całą mechaniczną logistykę podłączeń i utrzymania
                                 (Maintenance) certyfikatów bezpieczeństwa pomiędzy FB Api, a Twoim serwerem GCP. Problem
                                 polega na olbrzymich licencjach - koszty tych firm sięgają nieraz do kilkunastu Dolarów
                                 miesięcznie, redukując marżowość małych i średnich sklepów.</li>
-                            <li><strong>Serwery Cloud Functions na języku Python / Node.JS (Spersonalizowana
+<li><strong>Serwery Cloud Functions na języku Python / Node.JS (Spersonalizowana
                                     Rzeźba):</strong> Własna, darmowa chmurkowa "wtyczka" wykonana przez doświadczonych
                                 Inżynierów. Inżynier Danych (Data Engineer) pisze na żądanie skrypt Python, który budzi
                                 się (Cron Job), ściąga pętlą raport JSON bezpośrednio ze zlecenia Marketing API
                                 Facebooka i wrzuca go centralnie i bezpiecznie w ramy kolumnowe BigQuery. Model darmowy
                                 pod względem miesięcznym wdrożonym systemie na resztę zlecenia.</li>
-                        </ul>
-
-                        <blockquote>
+</ul>
+<blockquote>
                             "Nawet idealna klastrowa optymalizacja reklam na poziomie algorytmów samej Mety zblednie w
                             precyzji przed potęgą ludzkiego raportu BI (Looker Studio) sprzężonego z jednoczesnym
                             rozliczeniem konwersji pomiędzy kosztami z obu dróg (Google VS Facebook) zespolonymi ze sobą
                             w BigQuery w obłokowym łączeniu Join."
                         </blockquote>
-
-                        <h3>Konkluzja</h3>
-                        <p>Zbieranie danych z rozsypanych kont generuje błędy i spisy ręczne dla analityka prowadzącego
+<h3>Konkluzja</h3>
+<p>Zbieranie danych z rozsypanych kont generuje błędy i spisy ręczne dla analityka prowadzącego
                             twój sklep poprzez Arkusz Excel. Odseparuj się od tego absurdu integracją i wywal twarde
                             dane przez API do bazodanej hurtowni, gdzie stają się ułożone pod zaawansowane skrypty
                             Looker Studio.</p>
-
-                    </div>
-
-                    <aside class="post-sidebar">
-                        <div class="author-card">
-                            <div class="author-avatar">👨‍💻</div>
-                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
-                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Architekt
+</div>
+<aside class="post-sidebar">
+<div class="author-card">
+<div class="author-avatar">👨‍💻</div>
+<h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+<p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Architekt
                                 Centralizacji Raportowej</p>
-                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Przelewam
+<p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Przelewam
                                 rozrzucony od dekad budżet reklamowy w pojedynczy, zrozumiały model statystyczny
                                 zaoszczędzając działy Marketingu od niepotrzebnego manualnego generowania dziennych
                                 wyników w poczwórnych arkuszach.</p>
-                        </div>
-                        <div class="cta-card">
-                            <h3>Sprawiedliwie podziel swój zysk ROI z Menedżerem B2B</h3>
-                            <p>Zaprogramuję pełny pomost (Pipelines) dla najpotężniejszych zjawisk rynkowych
+</div>
+<div class="cta-card">
+<h3>Sprawiedliwie podziel swój zysk ROI z Menedżerem B2B</h3>
+<p>Zaprogramuję pełny pomost (Pipelines) dla najpotężniejszych zjawisk rynkowych
                                 (Facebook/Google Ads) wtłaczające odłamki w zorganizowany graf wewnątrz taniego Google
                                 Cloud Platform. Pozwoli to realnie skalkulować Twoje ROI biznesowe.</p>
-                            <a href="/#contact" class="btn btn-primary"
-                                style="width: 100%; text-align: center; padding: 12px;">Znajdźmy Rozwiązanie
+<a class="btn btn-primary" href="/#contact" style="width: 100%; text-align: center; padding: 12px;">Znajdźmy Rozwiązanie
                                 Pipeline</a>
-                        </div>
-                    </aside>
-                </div>
-            </div>
-        </article>
-    </main>
-
-    <footer class="glass-footer">
-        <div class="container footer-content">
-            <div class="footer-logo">Szeląg<span>.</span>Data</div>
-            <p>© <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
-            <div class="social-links">
-                <a href="/polityka-prywatnosci.html">Polityka Prywatności</a>
-                <a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank" rel="noopener noreferrer"
-                    aria-label="LinkedIn">LinkedIn</a>
-            </div>
-        </div>
-    </footer>
-    
-
-    <script src="../js/script.js"></script>
+</div>
+</aside>
+</div>
+</div>
+<!-- RELATED ARTICLES -->
+<section class="related-articles" style="margin-top: 60px; border-top: 1px solid var(--surface-border); padding-top: 40px;">
+<div class="container">
+<h2 style="margin-bottom: 30px;">Przeczytaj również:</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+<a class="glass-card" href="partycjonowanie-vs-klastrowanie-sql-gcp-koszty.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">🗂️</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Optymalizacja SQL &amp; GCP</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Ograniczenie Rachunku w Chmurze o 95%. Partycje vs. Klastrowanie w Google BigQuery.</h4>
+</a>
+<a class="glass-card" href="koszty-w-bigquery-jak-analizowac-za-darmo-poradnik.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">💸</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Koszta Operacyjne (GCP)</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Mity o horrendalnie drogim Google BigQuery: Jak analizować dane rzędu TB praktycznie za darmo?</h4>
+</a>
+<a class="glass-card" href="co-to-jest-bigquery-darmowy-limit.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">☁️</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Google BigQuery (GCP)</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Ograniczenie do 10,000,000 wierszy Google Sheets: Co z tym BigQuery?</h4>
+</a>
+</div>
+</div>
+</section>
+<!-- END RELATED ARTICLES -->
+</article>
+</main>
+<footer class="glass-footer">
+<div class="container footer-content">
+<div class="footer-logo">Szeląg<span>.</span>Data</div>
+<p>© <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+<div class="social-links">
+<a href="/polityka-prywatnosci.html">Polityka Prywatności</a>
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/mikolaj-szelag/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+</div>
+</div>
+</footer>
+<script src="../js/script.js"></script>
 </body>
-
 </html>

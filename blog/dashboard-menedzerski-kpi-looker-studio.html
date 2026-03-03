@@ -1,17 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="pl">
-
 <head>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Menedżerski w Looker Studio: 7 KPI, które musisz śledzić | Mikołaj Szeląg</title>
-    <meta name="description"
-        content="Projektowanie dashboardów dla zarządu. Poznaj listę 7 kluczowych KPI w Looker Studio, które pomogą Ci trzymać rękę na pulsie Twojego biznesu.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-
-    <!-- Google Consent Mode v2 (must load before GTM) -->
-    <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard Menedżerski w Looker Studio: 7... | Mikołaj Szeląg</title>
+<meta content="Projektowanie dashboardów dla zarządu. Poznaj listę 7 kluczowych KPI w Looker Studio, które pomogą Ci trzymać rękę na pulsie Twojego biznesu." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://www.googletagmanager.com" rel="preconnect"/>
+<!-- Google Consent Mode v2 (must load before GTM) -->
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('consent', 'default', {
@@ -21,8 +19,8 @@
             'analytics_storage': 'denied'
         });
     </script>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
             w[l] = window.dataLayer || []; w[l].push({
                 'gtm.start':
                     new Date().getTime(), event: 'gtm.js'
@@ -30,25 +28,22 @@
                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
-    <script>
+<!-- Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-9N5S4NW0L8', { 'debug_mode': true });
     </script>
-
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"></noscript>
-    <link rel="preload" as="style" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/styles.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
-    <link rel="canonical"
-        href="https://xszelagx.github.io/blog/dashboard-menedzerski-kpi-looker-studio.html" />
-
-    <script type="application/ld+json">
+<link as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="preload"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<link as="style" href="../css/styles.css" rel="preload"/>
+<link href="../css/styles.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="../css/styles.css" rel="stylesheet"/></noscript>
+<link href="https://xszelagx.github.io/blog/dashboard-menedzerski-kpi-looker-studio.html" rel="canonical">
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -66,7 +61,7 @@
       }
     }
     </script>
-    <script type="application/ld+json">
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -88,145 +83,150 @@
       }]
     }
     </script>
-    <link rel="icon" type="image/png" href="../favicon.png?v=2">
-    <link rel="icon" type="image/x-icon" href="../favicon.ico?v=2">
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png?v=2">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Dashboard Menedżerski w Looker Studio: 7 KPI, które musisz śledzić | Mikołaj Szeląg">
-    <meta property="og:description" content="Projektowanie dashboardów dla zarządu. Poznaj listę 7 kluczowych KPI w Looker Studio, które pomogą Ci trzymać rękę na pulsie Twojego biznesu.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"></noscript>
-    <link rel="preload" as="style" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/styles.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
-    <link rel="canonical"
-        href="https://xszelagx.github.io/blog/dashboard-menedzerski-kpi-looker-studio.html">
-    <meta property="og:url" content="https://xszelagx.github.io/blog/dashboard-menedzerski-kpi-looker-studio.html">
-    <meta property="og:type" content="article">
-    <meta property="og:image" content="https://xszelagx.github.io/favicon.png">
-    <meta property="og:site_name" content="Mikołaj Szeląg - Automatyzacja BI & Google Cloud">
-</head>
-
+<link href="../favicon.png?v=2" rel="icon" type="image/png"/>
+<link href="../favicon.ico?v=2" rel="icon" type="image/x-icon"/>
+<link href="../apple-touch-icon.png?v=2" rel="apple-touch-icon"/>
+<!-- Open Graph Meta Tags -->
+<meta content="Dashboard Menedżerski w Looker Studio: 7... | Mikołaj Szeląg" property="og:title"/>
+<meta content="Projektowanie dashboardów dla zarządu. Poznaj listę 7 kluczowych KPI w Looker Studio, które pomogą Ci trzymać rękę na pulsie Twojego biznesu." property="og:description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://www.googletagmanager.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="preload"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<link as="style" href="../css/styles.css" rel="preload"/>
+<link href="../css/styles.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="../css/styles.css" rel="stylesheet"/></noscript>
+<link href="https://xszelagx.github.io/blog/dashboard-menedzerski-kpi-looker-studio.html" rel="canonical"/>
+<meta content="https://xszelagx.github.io/blog/dashboard-menedzerski-kpi-looker-studio.html" property="og:url"/>
+<meta content="article" property="og:type"/>
+<meta content="https://xszelagx.github.io/favicon.png" property="og:image"/>
+<meta content="Mikołaj Szeląg - Automatyzacja BI &amp; Google Cloud" property="og:site_name"/>
+</link></head>
 <body>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <div class="bg-orb orb-1"></div>
-    <div class="bg-orb orb-2"></div>
-    <header class="glass-nav">
-        <div class="container nav-container">
-            <a href="../index.html" class="logo">Szeląg<span>.</span>Data</a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="../index.html">Strona Główna</a></li>
-                    <li><a href="../index.html#about">Dlaczego Warto?</a></li>
-                    <li><a href="../index.html#services">Usługi</a></li>
-                    <li><a href="../index.html#case-studies">Realizacje</a></li>
-                    <li><a href="../blog.html">Blog</a></li>
-                    <li><a href="../index.html#contact" class="btn-primary-small">Kontakt</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <article>
-            <header class="post-header">
-                <div class="container">
-                    <a href="../blog.html"
-                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">←
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<div class="bg-orb orb-1"></div>
+<div class="bg-orb orb-2"></div>
+<header class="glass-nav">
+<div class="container nav-container">
+<a class="logo" href="../index.html">Szeląg<span>.</span>Data</a>
+<nav>
+<ul class="nav-links">
+<li><a href="../index.html">Strona Główna</a></li>
+<li><a href="../index.html#about">Dlaczego Warto?</a></li>
+<li><a href="../index.html#services">Usługi</a></li>
+<li><a href="../index.html#case-studies">Realizacje</a></li>
+<li><a href="../blog.html">Blog</a></li>
+<li><a class="btn-primary-small" href="../index.html#contact">Kontakt</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main>
+<article>
+<header class="post-header">
+<div class="container">
+<a href="../blog.html" style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">←
                         Wróć do artykułów</a>
-                    <div class="post-meta">
-                        <span class="post-tag">Management Excellence</span>
-                        <span>25 Lutego 2026</span>
-                        <span>⏱️ 7 min czytania</span>
-                    </div>
-                    <h1 class="post-title">Dashboard Menedżerski w <span class="gradient-text">Looker Studio</span>: 7
+<div class="post-meta">
+<span class="post-tag">Management Excellence</span>
+<span>25 Lutego 2026</span>
+<span>⏱️ 7 min czytania</span>
+</div>
+<h1 class="post-title">Dashboard Menedżerski w <span class="gradient-text">Looker Studio</span>: 7
                         KPI, które musisz śledzić</h1>
-                </div>
-            </header>
-
-            <div class="container">
-                <div class="post-layout">
-                    <div class="post-content">
-                        <p>Zarząd nie ma czasu na analizowanie 50 wykresów dziennie. Im potrzebne są odpowiedzi na
+</div>
+</header>
+<div class="container">
+<div class="post-layout">
+<div class="post-content">
+<p>Zarząd nie ma czasu na analizowanie 50 wykresów dziennie. Im potrzebne są odpowiedzi na
                             kluczowe pytania: "Ile zarobiliśmy?", "Ile wydaliśmy?", "Gdzie tracimy?". Dobry dashboard
                             menedżerski to taki, który mieści się na ekranie laptopa i w ciągu 10 sekund daje pełny
                             obraz sytuacji.</p>
-
-                        <h2>Zasada 5 Pytań</h2>
-                        <p>Zanim zaczniesz budować raport w Looker Studio, zadaj sobie pytanie: czy ten wykres pomaga
+<h2>Zasada 5 Pytań</h2>
+<p>Zanim zaczniesz budować raport w Looker Studio, zadaj sobie pytanie: czy ten wykres pomaga
                             podjąć decyzję? Jeśli nie – usuń go. Dashboard to nie archiwum danych, to instrument
                             nawigacyjny.</p>
-
-                        <h3>Lista 7 Złotych KPI:</h3>
-                        <ul>
-                            <li><strong>ROAS (Return on Ad Spend):</strong> Czy Twoje reklamy zarabiają? Jeśli ROAS
+<h3>Lista 7 Złotych KPI:</h3>
+<ul>
+<li><strong>ROAS (Return on Ad Spend):</strong> Czy Twoje reklamy zarabiają? Jeśli ROAS
                                 spada poniżej rentowności, system powinien bić na alarm (formatowanie warunkowe).</li>
-                            <li><strong>CAC (Customer Acquisition Cost):</strong> Ile płacisz za nowego klienta? Czy to
+<li><strong>CAC (Customer Acquisition Cost):</strong> Ile płacisz za nowego klienta? Czy to
                                 nie zjada Twojej marży?</li>
-                            <li><strong>LTV (Lifetime Value):</strong> Ile klient zostawia u Ciebie w ciągu roku? To
+<li><strong>LTV (Lifetime Value):</strong> Ile klient zostawia u Ciebie w ciągu roku? To
                                 ważniejsze niż jednorazowa sprzedaż.</li>
-                            <li><strong>Leads by Source:</strong> Skąd przychodzą najlepsi klienci? (Google Ads, SEO,
+<li><strong>Leads by Source:</strong> Skąd przychodzą najlepsi klienci? (Google Ads, SEO,
                                 LinkedIn).</li>
-                            <li><strong>Sales Pipeline Velocity:</strong> Jak szybko lead zmienia się w klienta?</li>
-                            <li><strong>Burn Rate:</strong> W jakim tempie spalasz budżet operacyjny (kluczowe w
+<li><strong>Sales Pipeline Velocity:</strong> Jak szybko lead zmienia się w klienta?</li>
+<li><strong>Burn Rate:</strong> W jakim tempie spalasz budżet operacyjny (kluczowe w
                                 startupach i SaaS).</li>
-                            <li><strong>Conversion Rate by Device:</strong> Bo czasem błąd na wersji mobilnej kosztuje
+<li><strong>Conversion Rate by Device:</strong> Bo czasem błąd na wersji mobilnej kosztuje
                                 Cię 30% przychodów.</li>
-                        </ul>
-
-                        <blockquote>
+</ul>
+<blockquote>
                             "Menedżer nie potrzebuje więcej danych. Menedżer potrzebuje mniej danych, ale tych
                             właściwych. Dobry dashboard filtruje szum informacyjny."
                         </blockquote>
-
-                        <h2>Wizualizacja ma znaczenie</h2>
-                        <p>Używaj <em>Scorecards</em> dla dużych liczb. Wykresy liniowe zostaw dla trendów. Mapy ciepła
+<h2>Wizualizacja ma znaczenie</h2>
+<p>Używaj <em>Scorecards</em> dla dużych liczb. Wykresy liniowe zostaw dla trendów. Mapy ciepła
                             dla tabel. Pamiętaj: kolor czerwony jest tylko dla problemów. Jeśli wszystko na raporcie
                             jest kolorowe, to nic nie przyciąga wzroku.</p>
-
-                        <h3>Wnioski: Od danych do działania</h3>
-                        <p>Profesjonalny dashboard w Looker Studio to taki, który po minucie czytania kończy się
+<h3>Wnioski: Od danych do działania</h3>
+<p>Profesjonalny dashboard w Looker Studio to taki, który po minucie czytania kończy się
                             wnioskiem: "Musimy zwiększyć budżet na kampanię X" albo "Musimy naprawić koszyk w sklepie
                             Y". Jeśli Twój raport tego nie robi – czas go przebudować.</p>
-
-                        <p>Pomagam projektować dashboardy, które stają się głównym ekranem na monitorach zarządu.
+<p>Pomagam projektować dashboardy, które stają się głównym ekranem na monitorach zarządu.
                             Sprawdź moje realizacje.</p>
-                    </div>
-
-                    <aside class="post-sidebar">
-                        <div class="author-card">
-                            <div class="author-avatar">👨‍💻</div>
-                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
-                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">KPI Strategy
+</div>
+<aside class="post-sidebar">
+<div class="author-card">
+<div class="author-avatar">👨‍💻</div>
+<h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+<p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">KPI Strategy
                                 Consultant</p>
-                        </div>
-                        <div class="cta-card">
-                            <h3>Twój dashboard jest nieczytelny?</h3>
-                            <p>Uporządkuję Twoją analitykę, stosując zasady data visualization klasy światowej. Zobacz,
+</div>
+<div class="cta-card">
+<h3>Twój dashboard jest nieczytelny?</h3>
+<p>Uporządkuję Twoją analitykę, stosując zasady data visualization klasy światowej. Zobacz,
                                 co mogę dla Ciebie zrobić.</p>
-                            <a href="../index.html#case-studies" class="btn btn-primary"
-                                style="width: 100%; text-align: center; padding: 12px;">Pokaż Realizacje</a>
-                        </div>
-                    </aside>
-                </div>
-            </div>
-        </article>
-    </main>
-
-    <footer class="glass-footer">
-        <div class="container footer-content">
-            <div class="footer-logo">Szeląg<span>.</span>Data</div>
-            <p>© 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
-        </div>
-    </footer>
-    
-
-    <script src="../js/script.js"></script>
+<a class="btn btn-primary" href="../index.html#case-studies" style="width: 100%; text-align: center; padding: 12px;">Pokaż Realizacje</a>
+</div>
+</aside>
+</div>
+</div>
+<!-- RELATED ARTICLES -->
+<section class="related-articles" style="margin-top: 60px; border-top: 1px solid var(--surface-border); padding-top: 40px;">
+<div class="container">
+<h2 style="margin-bottom: 30px;">Przeczytaj również:</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+<a class="glass-card" href="jak-wgrac-dane-do-looker-studio-konektory.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">🔌</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Integracje Danych</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Jak wgrać dane do Looker Studio? Przegląd konektorów: od Google Sheets po BigQuery</h4>
+</a>
+<a class="glass-card" href="laczenie-danych-data-blending-looker-studio.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">📊</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Zaawansowane techniki</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Łączenie danych w Looker Studio (Data Blending): Jak spiąć Facebook Ads z Google Ads w jednym widoku</h4>
+</a>
+<a class="glass-card" href="looker-studio-bigquery-integracja-performance.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">⚡</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">High Performance BI</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Looker Studio + BigQuery: Jak stworzyć ultra-wydajny dashboard dla dużych zbiorów danych</h4>
+</a>
+</div>
+</div>
+</section>
+<!-- END RELATED ARTICLES -->
+</article>
+</main>
+<footer class="glass-footer">
+<div class="container footer-content">
+<div class="footer-logo">Szeląg<span>.</span>Data</div>
+<p>© 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+</div>
+</footer>
+<script src="../js/script.js"></script>
 </body>
-
 </html>

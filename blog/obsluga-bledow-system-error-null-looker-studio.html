@@ -1,17 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="pl">
-
 <head>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obsługa błędów "System Error" i Null w Looker Studio | Mikołaj Szeląg</title>
-    <meta name="description"
-        content="Twoje wykresy pokazują Null lub błąd systemowy? Dowiedz się, jak profesjonalnie obsługiwać błędy danych w Looker Studio używając funkcji IFNULL i CASE.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-
-    <!-- Google Consent Mode v2 (must load before GTM) -->
-    <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Obsługa błędów "System Error" i Null w L... | Mikołaj Szeląg</title>
+<meta content="Twoje wykresy pokazują Null lub błąd systemowy? Dowiedz się, jak profesjonalnie obsługiwać błędy danych w Looker Studio używając funkcji IFNULL i CASE." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://www.googletagmanager.com" rel="preconnect"/>
+<!-- Google Consent Mode v2 (must load before GTM) -->
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('consent', 'default', {
@@ -21,8 +19,8 @@
             'analytics_storage': 'denied'
         });
     </script>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
             w[l] = window.dataLayer || []; w[l].push({
                 'gtm.start':
                     new Date().getTime(), event: 'gtm.js'
@@ -30,25 +28,22 @@
                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
-    <script>
+<!-- Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-9N5S4NW0L8', { 'debug_mode': true });
     </script>
-
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"></noscript>
-    <link rel="preload" as="style" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/styles.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
-    <link rel="canonical"
-        href="https://xszelagx.github.io/blog/obsluga-bledow-system-error-null-looker-studio.html" />
-
-    <script type="application/ld+json">
+<link as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="preload"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<link as="style" href="../css/styles.css" rel="preload"/>
+<link href="../css/styles.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="../css/styles.css" rel="stylesheet"/></noscript>
+<link href="https://xszelagx.github.io/blog/obsluga-bledow-system-error-null-looker-studio.html" rel="canonical">
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -66,139 +61,143 @@
       }
     }
     </script>
-    <link rel="icon" type="image/png" href="../favicon.png?v=2">
-    <link rel="icon" type="image/x-icon" href="../favicon.ico?v=2">
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png?v=2">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Obsługa błędów "System Error" i Null w Looker Studio | Mikołaj Szeląg">
-    <meta property="og:description" content="Twoje wykresy pokazują Null lub błąd systemowy? Dowiedz się, jak profesjonalnie obsługiwać błędy danych w Looker Studio używając funkcji IFNULL i CASE.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"></noscript>
-    <link rel="preload" as="style" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/styles.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
-    <link rel="canonical"
-        href="https://xszelagx.github.io/blog/obsluga-bledow-system-error-null-looker-studio.html">
-    <meta property="og:url" content="https://xszelagx.github.io/blog/obsluga-bledow-system-error-null-looker-studio.html">
-    <meta property="og:type" content="article">
-    <meta property="og:image" content="https://xszelagx.github.io/favicon.png">
-    <meta property="og:site_name" content="Mikołaj Szeląg - Automatyzacja BI & Google Cloud">
-</head>
-
+<link href="../favicon.png?v=2" rel="icon" type="image/png"/>
+<link href="../favicon.ico?v=2" rel="icon" type="image/x-icon"/>
+<link href="../apple-touch-icon.png?v=2" rel="apple-touch-icon"/>
+<!-- Open Graph Meta Tags -->
+<meta content='Obsługa błędów "System Error" i Null w L... | Mikołaj Szeląg' error"="" i="" looker="" mikołaj="" null="" property="og:title" studio="" system="" szeląg"="" w="" |=""/>
+<meta content="Twoje wykresy pokazują Null lub błąd systemowy? Dowiedz się, jak profesjonalnie obsługiwać błędy danych w Looker Studio używając funkcji IFNULL i CASE." property="og:description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://www.googletagmanager.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="preload"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<link as="style" href="../css/styles.css" rel="preload"/>
+<link href="../css/styles.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="../css/styles.css" rel="stylesheet"/></noscript>
+<link href="https://xszelagx.github.io/blog/obsluga-bledow-system-error-null-looker-studio.html" rel="canonical"/>
+<meta content="https://xszelagx.github.io/blog/obsluga-bledow-system-error-null-looker-studio.html" property="og:url"/>
+<meta content="article" property="og:type"/>
+<meta content="https://xszelagx.github.io/favicon.png" property="og:image"/>
+<meta content="Mikołaj Szeląg - Automatyzacja BI &amp; Google Cloud" property="og:site_name"/>
+</link></head>
 <body>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <div class="bg-orb orb-1"></div>
-    <div class="bg-orb orb-2"></div>
-    <header class="glass-nav">
-        <div class="container nav-container">
-            <a href="../index.html" class="logo">Szeląg<span>.</span>Data</a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="../index.html">Strona Główna</a></li>
-                    <li><a href="../index.html#about">Dlaczego Warto?</a></li>
-                    <li><a href="../index.html#services">Usługi</a></li>
-                    <li><a href="../index.html#case-studies">Realizacje</a></li>
-                    <li><a href="../blog.html">Blog</a></li>
-                    <li><a href="../index.html#contact" class="btn-primary-small">Kontakt</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <article>
-            <header class="post-header">
-                <div class="container">
-                    <a href="../blog.html"
-                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">←
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<div class="bg-orb orb-1"></div>
+<div class="bg-orb orb-2"></div>
+<header class="glass-nav">
+<div class="container nav-container">
+<a class="logo" href="../index.html">Szeląg<span>.</span>Data</a>
+<nav>
+<ul class="nav-links">
+<li><a href="../index.html">Strona Główna</a></li>
+<li><a href="../index.html#about">Dlaczego Warto?</a></li>
+<li><a href="../index.html#services">Usługi</a></li>
+<li><a href="../index.html#case-studies">Realizacje</a></li>
+<li><a href="../blog.html">Blog</a></li>
+<li><a class="btn-primary-small" href="../index.html#contact">Kontakt</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main>
+<article>
+<header class="post-header">
+<div class="container">
+<a href="../blog.html" style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">←
                         Wróć do artykułów</a>
-                    <div class="post-meta">
-                        <span class="post-tag">Data Quality</span>
-                        <span>25 Lutego 2026</span>
-                        <span>⏱️ 6 min czytania</span>
-                    </div>
-                    <h1 class="post-title">Obsługa błędów <span class="gradient-text">"System Error"</span> i Null w
+<div class="post-meta">
+<span class="post-tag">Data Quality</span>
+<span>25 Lutego 2026</span>
+<span>⏱️ 6 min czytania</span>
+</div>
+<h1 class="post-title">Obsługa błędów <span class="gradient-text">"System Error"</span> i Null w
                         Looker Studio</h1>
-                </div>
-            </header>
-
-            <div class="container">
-                <div class="post-layout">
-                    <div class="post-content">
-                        <p>Dla analityka nie ma nic gorszego niż prezentacja raportu przed zarządem, na którym zamiast
+</div>
+</header>
+<div class="container">
+<div class="post-layout">
+<div class="post-content">
+<p>Dla analityka nie ma nic gorszego niż prezentacja raportu przed zarządem, na którym zamiast
                             liczb widać napisy "Null" lub różowy komunikat "System Error". To nie tylko psuje estetykę,
                             ale przede wszystkim podważa zaufanie do danych. Dowiedz się, jak profesjonalnie obsługiwać
                             "dziury" w danych w Looker Studio.</p>
-
-                        <h2>Dlaczego widzę błąd systemowy?</h2>
-                        <p>Zazwyczaj błąd systemowy pojawia się, gdy Looker Studio nie potrafi przetworzyć
-                            skomplikowanej formuły lub gdy <a
-                                href="./looker-studio-bigquery-quota-exceeded-blad-fix.html">przekroczysz limity Quota w
+<h2>Dlaczego widzę błąd systemowy?</h2>
+<p>Zazwyczaj błąd systemowy pojawia się, gdy Looker Studio nie potrafi przetworzyć
+                            skomplikowanej formuły lub gdy <a href="./looker-studio-bigquery-quota-exceeded-blad-fix.html">przekroczysz limity Quota w
                                 BigQuery</a>. Czasem winne są puste wartości (null), które powodują błędy w operacjach
                             matematycznych (np. dzielenie przez zero).</p>
-
-                        <h2>Magiczna funkcja IFNULL()</h2>
-                        <p>To Twoja pierwsza linia obrony. Jeśli kolumna 'Sprzedaż' może posiadać puste wartości, użyj
+<h2>Magiczna funkcja IFNULL()</h2>
+<p>To Twoja pierwsza linia obrony. Jeśli kolumna 'Sprzedaż' może posiadać puste wartości, użyj
                             pola obliczeniowego: `IFNULL(Sprzedaż, 0)`. Looker Studio zamieni każdą lukę na zero, co
                             pozwoli na poprawne sumowanie i średnie bez sypania błędami.</p>
-
-                        <h2>CASE – Twoje centrum dowodzenia</h2>
-                        <p>Za pomocą instrukcji `CASE` możesz nie tylko zastępować nulle, ale też grupować błędy w
+<h2>CASE – Twoje centrum dowodzenia</h2>
+<p>Za pomocą instrukcji `CASE` możesz nie tylko zastępować nulle, ale też grupować błędy w
                             czytelne kategorie. Przykład: `CASE WHEN Nazwa Produktu IS NULL THEN "Inne / Brak nazwy"
                             ELSE Nazwa Produktu END`. Dzięki temu Twoje tabele zawsze będą kompletne i profesjonalne.
                         </p>
-
-                        <ul>
-                            <li><strong>Filtracja błędów:</strong> Możesz stworzyć filtr na poziomie raportu, który
+<ul>
+<li><strong>Filtracja błędów:</strong> Możesz stworzyć filtr na poziomie raportu, który
                                 automatycznie ukrywa rekordy z błędnymi danymi.</li>
-                            <li><strong>Formatowanie warunkowe:</strong> Pomaluj komórkę na czerwono, jeśli dane są
+<li><strong>Formatowanie warunkowe:</strong> Pomaluj komórkę na czerwono, jeśli dane są
                                 niekompletne, by menedżer wiedział, że musi je uzupełnić w CRM.</li>
-                        </ul>
-
-                        <blockquote>
+</ul>
+<blockquote>
                             "Jakość danych to nie tylko ich poprawność, ale też sposób, w jaki radzisz sobie z ich
                             brakiem. Dobry dashboard to taki, który opowiada historię nawet wtedy, gdy brakuje kilku
                             stron."
                         </blockquote>
-
-                        <p>Uporządkuję Twoje źródła danych i sprawię, że dashboardy będą odporne na błędy, czyste i
+<p>Uporządkuję Twoje źródła danych i sprawię, że dashboardy będą odporne na błędy, czyste i
                             godne zaufania. Zapraszam do kontaktu w celu optymalizacji jakości Twoich danych.</p>
-                    </div>
-
-                    <aside class="post-sidebar">
-                        <div class="author-card">
-                            <div class="author-avatar">👨‍💻</div>
-                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
-                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Data Quality
+</div>
+<aside class="post-sidebar">
+<div class="author-card">
+<div class="author-avatar">👨‍💻</div>
+<h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+<p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Data Quality
                                 Engineer</p>
-                        </div>
-                        <div class="cta-card">
-                            <h3>Masz dość błędów w swoich raportach?</h3>
-                            <p>Wdrożę dla Ciebie mechanizmy sanitacji i walidacji danych bezpośrednio w Looker Studio.
+</div>
+<div class="cta-card">
+<h3>Masz dość błędów w swoich raportach?</h3>
+<p>Wdrożę dla Ciebie mechanizmy sanitacji i walidacji danych bezpośrednio w Looker Studio.
                                 Spraw, by Twoje dashboardy były nieomylne.</p>
-                            <a href="../index.html#contact" class="btn btn-primary"
-                                style="width: 100%; text-align: center; padding: 12px;">Napraw moje dane</a>
-                        </div>
-                    </aside>
-                </div>
-            </div>
-        </article>
-    </main>
-
-    <footer class="glass-footer">
-        <div class="container footer-content">
-            <div class="footer-logo">Szeląg<span>.</span>Data</div>
-            <p>© 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
-        </div>
-    </footer>
-    
-
-    <script src="../js/script.js"></script>
+<a class="btn btn-primary" href="../index.html#contact" style="width: 100%; text-align: center; padding: 12px;">Napraw moje dane</a>
+</div>
+</aside>
+</div>
+</div>
+<!-- RELATED ARTICLES -->
+<section class="related-articles" style="margin-top: 60px; border-top: 1px solid var(--surface-border); padding-top: 40px;">
+<div class="container">
+<h2 style="margin-bottom: 30px;">Przeczytaj również:</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+<a class="glass-card" href="parametry-looker-studio-dynamiczny-sql-bigquery.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">⚙️</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">SQL &amp; BigQuery</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Parametry w Looker Studio: Dynamiczne zapytania SQL w BigQuery</h4>
+</a>
+<a class="glass-card" href="pierwszy-dashboard-looker-studio-tutorial.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">📊</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Tutorial</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Pierwszy dashboard w Looker Studio: 5 kroków od surowych danych do wizualizacji</h4>
+</a>
+<a class="glass-card" href="pola-obliczeniowe-regex-looker-studio-zaawansowane.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">📊</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Technical Mastery</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Pola obliczeniowe i Regex w Looker Studio: Jak wycisnąć więcej z Twoich danych?</h4>
+</a>
+</div>
+</div>
+</section>
+<!-- END RELATED ARTICLES -->
+</article>
+</main>
+<footer class="glass-footer">
+<div class="container footer-content">
+<div class="footer-logo">Szeląg<span>.</span>Data</div>
+<p>© 2026 Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+</div>
+</footer>
+<script src="../js/script.js"></script>
 </body>
-
 </html>

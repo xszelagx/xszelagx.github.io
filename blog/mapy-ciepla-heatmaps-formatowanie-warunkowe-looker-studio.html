@@ -1,18 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="pl">
-
 <head>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
-    <title>Potęga Map Ciepła i Tabel Przestawnych w przestrzeni Looker Studio | Mikołaj Szeląg</title>
-    <meta name="description"
-        content="Projektowanie bezlitosnych map ciepła i tabel formatowanych warunkowo w architekturze korpo Looker. Jak wzrokiem znajdować ukryte spadki marży do BigQuery (B2B/BI).">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-
-    <!-- Google Consent Mode v2 (must load before GTM) -->
-    <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" name="google-site-verification">
+<title>Potęga Map Ciepła i Tabel Przestawnych w... | Mikołaj Szeląg</title>
+<meta content="Projektowanie bezlitosnych map ciepła i tabel formatowanych warunkowo w architekturze korpo Looker. Jak wzrokiem znajdować ukryte spadki marży do BigQuery (B..." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://www.googletagmanager.com" rel="preconnect"/>
+<!-- Google Consent Mode v2 (must load before GTM) -->
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('consent', 'default', {
@@ -22,8 +20,8 @@
             'analytics_storage': 'denied'
         });
     </script>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
             w[l] = window.dataLayer || []; w[l].push({
                 'gtm.start':
                     new Date().getTime(), event: 'gtm.js'
@@ -31,24 +29,22 @@
                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
-    <script>
+<!-- Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-9N5S4NW0L8', { 'debug_mode': true });
     </script>
-
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"></noscript>
-    <link rel="preload" as="style" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/styles.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
-
-    <link rel="canonical" href="https://xszelagx.github.io/blog/mapy-ciepla-heatmaps-formatowanie-warunkowe-looker-studio.html" />
-    <script type="application/ld+json">
+<link as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="preload"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<link as="style" href="../css/styles.css" rel="preload"/>
+<link href="../css/styles.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="../css/styles.css" rel="stylesheet"/></noscript>
+<link href="https://xszelagx.github.io/blog/mapy-ciepla-heatmaps-formatowanie-warunkowe-looker-studio.html" rel="canonical">
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -67,8 +63,7 @@
       "url": "https://xszelagx.github.io/blog/mapy-ciepla-heatmaps-formatowanie-warunkowe-looker-studio.html"
     }
     </script>
-
-    <script type="application/ld+json">
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -90,161 +85,166 @@
       }]
     }
     </script>
-    <link rel="icon" type="image/png" href="../favicon.png?v=2">
-    <link rel="icon" type="image/x-icon" href="../favicon.ico?v=2">
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png?v=2">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Potęga Map Ciepła i Tabel Przestawnych w przestrzeni Looker Studio | Mikołaj Szeląg">
-    <meta property="og:description" content="Projektowanie bezlitosnych map ciepła i tabel formatowanych warunkowo w architekturze korpo Looker. Jak wzrokiem znajdować ukryte spadki marży do BigQuery (B2B/BI).">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"></noscript>
-    <link rel="preload" as="style" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/styles.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
-
-    <link rel="canonical" href="https://xszelagx.github.io/blog/mapy-ciepla-heatmaps-formatowanie-warunkowe-looker-studio.html">
-    <meta property="og:url" content="https://xszelagx.github.io/blog/mapy-ciepla-heatmaps-formatowanie-warunkowe-looker-studio.html">
-    <meta property="og:type" content="article">
-    <meta property="og:image" content="https://xszelagx.github.io/favicon.png">
-    <meta property="og:site_name" content="Mikołaj Szeląg - Automatyzacja BI & Google Cloud">
-</head>
-
+<link href="../favicon.png?v=2" rel="icon" type="image/png"/>
+<link href="../favicon.ico?v=2" rel="icon" type="image/x-icon"/>
+<link href="../apple-touch-icon.png?v=2" rel="apple-touch-icon"/>
+<!-- Open Graph Meta Tags -->
+<meta content="Potęga Map Ciepła i Tabel Przestawnych w... | Mikołaj Szeląg" property="og:title"/>
+<meta content="Projektowanie bezlitosnych map ciepła i tabel formatowanych warunkowo w architekturze korpo Looker. Jak wzrokiem znajdować ukryte spadki marży do BigQuery (B..." property="og:description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://www.googletagmanager.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="preload"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<link as="style" href="../css/styles.css" rel="preload"/>
+<link href="../css/styles.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="../css/styles.css" rel="stylesheet"/></noscript>
+<link href="https://xszelagx.github.io/blog/mapy-ciepla-heatmaps-formatowanie-warunkowe-looker-studio.html" rel="canonical"/>
+<meta content="https://xszelagx.github.io/blog/mapy-ciepla-heatmaps-formatowanie-warunkowe-looker-studio.html" property="og:url"/>
+<meta content="article" property="og:type"/>
+<meta content="https://xszelagx.github.io/favicon.png" property="og:image"/>
+<meta content="Mikołaj Szeląg - Automatyzacja BI &amp; Google Cloud" property="og:site_name"/>
+</link></meta></head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <div class="bg-orb orb-1"></div>
-    <div class="bg-orb orb-2"></div>
-    <header class="glass-nav">
-        <div class="container nav-container">
-            <a href="../index.html" class="logo">Szeląg<span>.</span>Data</a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="../">Strona Główna</a></li>
-                    <li><a href="../#about">Dlaczego Warto?</a></li>
-                    <li><a href="../#services">Usługi</a></li>
-                    <li><a href="../#case-studies">Realizacje</a></li>
-                    <li><a href="../blog.html">Blog</a></li>
-                    <li><a href="../#contact" class="btn-primary-small">Kontakt</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <article>
-            <header class="post-header">
-                <div class="container">
-                    <a href="../blog.html"
-                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">←
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="bg-orb orb-1"></div>
+<div class="bg-orb orb-2"></div>
+<header class="glass-nav">
+<div class="container nav-container">
+<a class="logo" href="../index.html">Szeląg<span>.</span>Data</a>
+<nav>
+<ul class="nav-links">
+<li><a href="../">Strona Główna</a></li>
+<li><a href="../#about">Dlaczego Warto?</a></li>
+<li><a href="../#services">Usługi</a></li>
+<li><a href="../#case-studies">Realizacje</a></li>
+<li><a href="../blog.html">Blog</a></li>
+<li><a class="btn-primary-small" href="../#contact">Kontakt</a></li>
+</ul>
+<div class="hamburger">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</div>
+</nav>
+</div>
+</header>
+<main>
+<article>
+<header class="post-header">
+<div class="container">
+<a href="../blog.html" style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">←
                         Wróć do artykułów</a>
-                    <div class="post-meta">
-                        <span class="post-tag">Formatowanie i UI na Pulpitach</span>
-                        <span>25 Maja 2026</span>
-                        <span>⏱️ 5 min czytania</span>
-                    </div>
-                    <h1 class="post-title">Tabele Przestawne to za mało: <span class="gradient-text">Dodaj potęgę Mapy
+<div class="post-meta">
+<span class="post-tag">Formatowanie i UI na Pulpitach</span>
+<span>25 Maja 2026</span>
+<span>⏱️ 5 min czytania</span>
+</div>
+<h1 class="post-title">Tabele Przestawne to za mało: <span class="gradient-text">Dodaj potęgę Mapy
                             Ciepła u siebie w Looker Studio</span></h1>
-                </div>
-            </header>
-
-            <div class="container">
-                <div class="post-layout">
-                    <div class="post-content">
-                        <p>Zestawienie setek wierszy w nudnej tabelarycznej macierzy "Białe Tło / Czarne Literki"
+</div>
+</header>
+<div class="container">
+<div class="post-layout">
+<div class="post-content">
+<p>Zestawienie setek wierszy w nudnej tabelarycznej macierzy "Białe Tło / Czarne Literki"
                             (częste chociażby przy wyciągach w bankowości PDF) powoduje w głowie natychmiastową
                             stagnację decyzyjną. Kiedy musisz porównać skuteczność obrotową w poniedziałki rano w
                             dwudziestu wariantach e-commerce... samo scrollowanie zabije 15 minut dla pracownika. Dopnij
                             do tego inteligentne rozwiązania <strong>Heatmaps.</strong></p>
-
-                        <h2>Psychologia barw w analityce "Conditional Formatting"</h2>
-                        <p>Funkcje Formatowania Warunkowego (Conditional Formatting) umieszczone w "Panelu Właściwości"
+<h2>Psychologia barw w analityce "Conditional Formatting"</h2>
+<p>Funkcje Formatowania Warunkowego (Conditional Formatting) umieszczone w "Panelu Właściwości"
                             (Properties) każdego okna tabeli w systemach Looker zezwalają analitykom zaprogramowanie
                             "Ściany Kolorów", po jakiej gałka oczna bacznie pożegluje odruchowo tuż po załadownaniu
                             widoku.</p>
-
-                        <h3>Przykłady ekstremalnie użytecznych zastosowań Heat-map w BI:</h3>
-                        <ul>
-                            <li><strong>Analizy ruchu logowań po dacie w SaaS:</strong> Oś górna kolumn (Poniedziałek –
+<h3>Przykłady ekstremalnie użytecznych zastosowań Heat-map w BI:</h3>
+<ul>
+<li><strong>Analizy ruchu logowań po dacie w SaaS:</strong> Oś górna kolumn (Poniedziałek –
                                 Niedziela). Rzędy boczne (Godziny 00:00 - 24:00). Silnik maluje najciemniejszą czerwień
                                 na kwadracikach "18:00 - Sobota". Już bez znajomości wskaźników zysku ─ prezes
                                 e-commerce jednym rzutem z 2 metrów od ekranu ustala, że sobota od wczesnego wieczora
                                 połyka mu najwięcej ruchu serwerowego by wymusić nową autoryzację dla AWS!</li>
-                            <li><strong>Alerty Rentowności dla 100 Kampanii Reklamowych:</strong> Potężne agencje B2B
+<li><strong>Alerty Rentowności dla 100 Kampanii Reklamowych:</strong> Potężne agencje B2B
                                 zmuszają media_buyerów do scrollowania stu wierszy poszukując ujemnej sumy budżetowania
                                 ROI. Dzięki Formatowaniu Warunkowemu wytyczasz:
-                                <code>"Jeżeli Marża jest < -5%, Zabarw Wiersz Ostrą Błękitną Fuksją"</code>. Rano
+                                <code>"Jeżeli Marża jest &lt; -5%, Zabarw Wiersz Ostrą Błękitną Fuksją"</code>. Rano
                                 analityk nie pożera danych 100 spółek, a jego wzrok wyciąga idealnie twarde dwa płonące
                                 kolorem podświetlone alarmy firm ze stu podanych by móc w milisekundy kliknąć pauzę
                                 kampani na Menedżerze Mety!</li>
-                        </ul>
-
-                        <blockquote>
+</ul>
+<blockquote>
                             "Sama estetyka malowania urojeniem bywa błędem, ale Heatmapa nakładana i rzutowana z
                             szacunkiem do stonowanej kolorystyki ─ o 10 krotność podbudowuje wydajność decyzyjną
                             menedżera. Baza z gęstego, niewyraźnego obłoku "cyferek szarych i czarnych księgowych" staje
                             się interaktywnym dzwonkiem ostrzegawczym operacji operatywnych korporacji."
                         </blockquote>
-
-                        <h2>Tabele Przestawne na szczycie (Pivot Tables)</h2>
-                        <p>W połączeniu z funkcjonalnością "Pivot" osadzaną na ramy w Looker - nie jesteś również
+<h2>Tabele Przestawne na szczycie (Pivot Tables)</h2>
+<p>W połączeniu z funkcjonalnością "Pivot" osadzaną na ramy w Looker - nie jesteś również
                             zmuszany programować twardo pod zapleczem DWH relacji podsumowujących krzyże. Pivot Table
                             rozbija automatycznie sumaryczne kategorie kolumn na osobne wektory ─ podświetlając całą
                             siatkę gotową wizualizacją w uciętym graficznie po środku interfejsie nie przeciążając okna
                             użytkownika do zwieszania okna.</p>
-
-                    </div>
-
-                    <aside class="post-sidebar">
-                        <div class="author-card">
-                            <div class="author-avatar">👨‍💻</div>
-                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
-                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Kreator Przewag BI
+</div>
+<aside class="post-sidebar">
+<div class="author-card">
+<div class="author-avatar">👨‍💻</div>
+<h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+<p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Kreator Przewag BI
                                 z Google Datastudio / Looker</p>
-                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Malujemy dane na
+<p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Malujemy dane na
                                 żywych organizmach podpiętych e-commerce aby odciąć firmowe patologie przegapiania strat
                                 pod koniec gęstego dnia biznesu B2B na złączeniu cykli budżetowych.</p>
-                        </div>
-                        <div class="cta-card">
-                            <h3>Spadki konwersji giną Wam bezwiednie w olbrzymich płachtach szarego tekstu i tabelek w
+</div>
+<div class="cta-card">
+<h3>Spadki konwersji giną Wam bezwiednie w olbrzymich płachtach szarego tekstu i tabelek w
                                 piątki?</h3>
-                            <p>To błąd oprogramowania i wizji UX. Usiądźmy nad Waszą analityką BigQuery, i pozwól
+<p>To błąd oprogramowania i wizji UX. Usiądźmy nad Waszą analityką BigQuery, i pozwól
                                 zaprojektować dzwonki, automatyzacje barw i potężnie bijący w serce Dashboard, by nic
                                 więcej w historii nie zaszło niekomunikatywnego w organizacji budżetowania.</p>
-                            <a href="/#contact" class="btn btn-primary"
-                                style="width: 100%; text-align: center; padding: 12px;">Wyznacz Nowy Model Obchodu z
+<a class="btn btn-primary" href="/#contact" style="width: 100%; text-align: center; padding: 12px;">Wyznacz Nowy Model Obchodu z
                                 BI</a>
-                        </div>
-                    </aside>
-                </div>
-            </div>
-        </article>
-    </main>
-
-    <footer class="glass-footer">
-        <div class="container footer-content">
-            <div class="footer-logo">Szeląg<span>.</span>Data</div>
-            <p>© <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
-            <div class="social-links">
-                <a href="/polityka-prywatnosci.html">Polityka Prywatności</a>
-                <a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank" rel="noopener noreferrer"
-                    aria-label="LinkedIn">LinkedIn</a>
-            </div>
-        </div>
-    </footer>
-    
-
-    <script src="../js/script.js"></script>
+</div>
+</aside>
+</div>
+</div>
+<!-- RELATED ARTICLES -->
+<section class="related-articles" style="margin-top: 60px; border-top: 1px solid var(--surface-border); padding-top: 40px;">
+<div class="container">
+<h2 style="margin-bottom: 30px;">Przeczytaj również:</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+<a class="glass-card" href="najczestsze-bledy-kpi-w-raportach-looker-studio-bi.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">❌</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">User Experience w Analityce</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Sztuka niszczenia przejrzystości raportu menedżerskiego: Top 5 grzechów głównych w BI.</h4>
+</a>
+<a class="glass-card" href="laczenie-wielu-zrodel-danych-blending-looker-studio.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">🔗</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Transformacje Graficzne BI</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Jak połączyć Koszt i Zysk na jednej linii: Techniki Data Blending (Looker Studio)</h4>
+</a>
+<a class="glass-card" href="bezpieczenstwo-danych-row-level-security-w-looker-studio-gcp.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">🔒</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Bezpieczeństwo Danych DWH</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Ograniczenie wglądu i bezpieczne udostępnianie w Looker Studio: Zasady filtru Emailu na żywo (RLS).</h4>
+</a>
+</div>
+</div>
+</section>
+<!-- END RELATED ARTICLES -->
+</article>
+</main>
+<footer class="glass-footer">
+<div class="container footer-content">
+<div class="footer-logo">Szeląg<span>.</span>Data</div>
+<p>© <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+<div class="social-links">
+<a href="/polityka-prywatnosci.html">Polityka Prywatności</a>
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/mikolaj-szelag/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+</div>
+</div>
+</footer>
+<script src="../js/script.js"></script>
 </body>
-
 </html>

@@ -1,19 +1,17 @@
 <!DOCTYPE html>
+
 <html lang="pl">
-
 <head>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
-    <title>Google Sheets jako darmowy CRM: Jak to zrobić z użyciem Apps Script? | Mikołaj Szeląg</title>
-    <meta name="description"
-        content="Dowiedz się, jak zamienić darmowe Arkusze Google w pełnoprawny system CRM dzięki Google Apps Script, bez opłat licencyjnych. Własny CRM w arkuszach to oszczędność B2B.">
-    <!-- Google Fonts: Outfit for modern look -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-
-    <!-- Google Consent Mode v2 (must load before GTM) -->
-    <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" name="google-site-verification">
+<title>Google Sheets jako darmowy CRM: Jak to z... | Mikołaj Szeląg</title>
+<meta content="Dowiedz się, jak zamienić darmowe Arkusze Google w pełnoprawny system CRM dzięki Google Apps Script, bez opłat licencyjnych. Własny CRM w arkuszach to oszczę..." name="description"/>
+<!-- Google Fonts: Outfit for modern look -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://www.googletagmanager.com" rel="preconnect"/>
+<!-- Google Consent Mode v2 (must load before GTM) -->
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('consent', 'default', {
@@ -23,8 +21,8 @@
             'analytics_storage': 'denied'
         });
     </script>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
             w[l] = window.dataLayer || []; w[l].push({
                 'gtm.start':
                     new Date().getTime(), event: 'gtm.js'
@@ -32,26 +30,24 @@
                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
-    <script>
+<!-- Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-9N5S4NW0L8', { 'debug_mode': true });
     </script>
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"></noscript>
-    <!-- Custom CSS -->
-    <link rel="preload" as="style" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/styles.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
-
-    <link rel="canonical" href="https://xszelagx.github.io/blog/google-sheets-jako-darmowy-crm-jak-to-zrobic-apps-script.html" />
-    <script type="application/ld+json">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="preload"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<!-- Custom CSS -->
+<link as="style" href="../css/styles.css" rel="preload"/>
+<link href="../css/styles.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="../css/styles.css" rel="stylesheet"/></noscript>
+<link href="https://xszelagx.github.io/blog/google-sheets-jako-darmowy-crm-jak-to-zrobic-apps-script.html" rel="canonical">
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -70,8 +66,7 @@
       "url": "https://xszelagx.github.io/blog/google-sheets-jako-darmowy-crm-jak-to-zrobic-apps-script.html"
     }
     </script>
-
-    <script type="application/ld+json">
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -93,135 +88,121 @@
       }]
     }
     </script>
-    <link rel="icon" type="image/png" href="../favicon.png?v=2">
-    <link rel="icon" type="image/x-icon" href="../favicon.ico?v=2">
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png?v=2">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Google Sheets jako darmowy CRM: Jak to zrobić z użyciem Apps Script? | Mikołaj Szeląg">
-    <meta property="og:description" content="Dowiedz się, jak zamienić darmowe Arkusze Google w pełnoprawny system CRM dzięki Google Apps Script, bez opłat licencyjnych. Własny CRM w arkuszach to oszczędność B2B.">
-    <!-- Google Fonts: Outfit for modern look -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"></noscript>
-    <!-- Custom CSS -->
-    <link rel="preload" as="style" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/styles.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
-
-    <link rel="canonical" href="https://xszelagx.github.io/blog/google-sheets-jako-darmowy-crm-jak-to-zrobic-apps-script.html">
-    <meta property="og:url" content="https://xszelagx.github.io/blog/google-sheets-jako-darmowy-crm-jak-to-zrobic-apps-script.html">
-    <meta property="og:type" content="article">
-    <meta property="og:image" content="https://xszelagx.github.io/favicon.png">
-    <meta property="og:site_name" content="Mikołaj Szeląg - Automatyzacja BI & Google Cloud">
-</head>
-
+<link href="../favicon.png?v=2" rel="icon" type="image/png"/>
+<link href="../favicon.ico?v=2" rel="icon" type="image/x-icon"/>
+<link href="../apple-touch-icon.png?v=2" rel="apple-touch-icon"/>
+<!-- Open Graph Meta Tags -->
+<meta content="Google Sheets jako darmowy CRM: Jak to z... | Mikołaj Szeląg" property="og:title"/>
+<meta content="Dowiedz się, jak zamienić darmowe Arkusze Google w pełnoprawny system CRM dzięki Google Apps Script, bez opłat licencyjnych. Własny CRM w arkuszach to oszczę..." property="og:description"/>
+<!-- Google Fonts: Outfit for modern look -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://www.googletagmanager.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="preload"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<!-- Custom CSS -->
+<link as="style" href="../css/styles.css" rel="preload"/>
+<link href="../css/styles.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="../css/styles.css" rel="stylesheet"/></noscript>
+<link href="https://xszelagx.github.io/blog/google-sheets-jako-darmowy-crm-jak-to-zrobic-apps-script.html" rel="canonical"/>
+<meta content="https://xszelagx.github.io/blog/google-sheets-jako-darmowy-crm-jak-to-zrobic-apps-script.html" property="og:url"/>
+<meta content="article" property="og:type"/>
+<meta content="https://xszelagx.github.io/favicon.png" property="og:image"/>
+<meta content="Mikołaj Szeląg - Automatyzacja BI &amp; Google Cloud" property="og:site_name"/>
+</link></meta></head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <!-- Background Animations -->
-    <div class="bg-orb orb-1"></div>
-    <div class="bg-orb orb-2"></div>
-
-    <!-- Navigation -->
-    <header class="glass-nav">
-        <div class="container nav-container">
-            <a href="../index.html" class="logo">Szeląg<span>.</span>Data</a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="../">Strona Główna</a></li>
-                    <li><a href="../#about">Dlaczego Warto?</a></li>
-                    <li><a href="../#services">Usługi</a></li>
-                    <li><a href="../#case-studies">Realizacje</a></li>
-                    <li><a href="../blog.html">Blog</a></li>
-                    <li><a href="../#contact" class="btn-primary-small">Kontakt</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <!-- Post Header -->
-        <article>
-            <header class="post-header">
-                <div class="container">
-                    <a href="../blog.html"
-                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">←
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Background Animations -->
+<div class="bg-orb orb-1"></div>
+<div class="bg-orb orb-2"></div>
+<!-- Navigation -->
+<header class="glass-nav">
+<div class="container nav-container">
+<a class="logo" href="../index.html">Szeląg<span>.</span>Data</a>
+<nav>
+<ul class="nav-links">
+<li><a href="../">Strona Główna</a></li>
+<li><a href="../#about">Dlaczego Warto?</a></li>
+<li><a href="../#services">Usługi</a></li>
+<li><a href="../#case-studies">Realizacje</a></li>
+<li><a href="../blog.html">Blog</a></li>
+<li><a class="btn-primary-small" href="../#contact">Kontakt</a></li>
+</ul>
+<div class="hamburger">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</div>
+</nav>
+</div>
+</header>
+<main>
+<!-- Post Header -->
+<article>
+<header class="post-header">
+<div class="container">
+<a href="../blog.html" style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">←
                         Wróć do artykułów</a>
-                    <div class="post-meta">
-                        <span class="post-tag">Google Sheets & Apps Script</span>
-                        <span>01 Marca 2026</span>
-                        <span>⏱️ 5 min czytania</span>
-                    </div>
-                    <h1 class="post-title">Darmowy CRM w Arkuszach: <span class="gradient-text">Jak to zrobić z użyciem
+<div class="post-meta">
+<span class="post-tag">Google Sheets &amp; Apps Script</span>
+<span>01 Marca 2026</span>
+<span>⏱️ 5 min czytania</span>
+</div>
+<h1 class="post-title">Darmowy CRM w Arkuszach: <span class="gradient-text">Jak to zrobić z użyciem
                             Apps Script?</span></h1>
-                </div>
-            </header>
-
-            <!-- Post Content and Sidebar -->
-            <div class="container">
-                <div class="post-layout">
-
-                    <!-- Main Content Column -->
-                    <div class="post-content">
-                        <p><strong>Wdrożenie zaawansowanego systemu CRM w firmie B2B czy Software House bardzo rzadko
+</div>
+</header>
+<!-- Post Content and Sidebar -->
+<div class="container">
+<div class="post-layout">
+<!-- Main Content Column -->
+<div class="post-content">
+<p><strong>Wdrożenie zaawansowanego systemu CRM w firmie B2B czy Software House bardzo rzadko
                                 musi wiązać się z rachunkiem licencyjnym opiewającym na tysiące dolarów.</strong> O ile
                             potężne korporacje wymagają środowisk takich jak Salesforce czy HubSpot, dla mniejszych
                             zespołów często w zupełności wystarczy <em>darmowy crm zrobiony w Google Sheets</em>. Pod
                             warunkiem, że wdroży się do niego solidną logikę JavaScript.</p>
-
-                        <h2>Gdzie leży problem natywnych Arkuszy Google?</h2>
-                        <p>Zapewne spotkałeś się z bałaganem. Gdy zespół sprzedaży liczy 5 osób i wszystkie edytują
+<h2>Gdzie leży problem natywnych Arkuszy Google?</h2>
+<p>Zapewne spotkałeś się z bałaganem. Gdy zespół sprzedaży liczy 5 osób i wszystkie edytują
                             wiersze w jednym pliku, nietrudno o nagłe wykasowanie komórki z kluczowym adresem email,
                             pomylenie targetów czy utknięcie na ręcznym przeglądaniu historii zmian. Ograniczenia
                             „gołego Excella w chmurze” powodują bóle głowy, co wymusza zakup licencji komercyjnych
                             programów.</p>
-
-                        <p>Tutaj wkracza jednak <strong>Google Apps Script (GAS)</strong>. Środowisko deweloperskie
+<p>Tutaj wkracza jednak <strong>Google Apps Script (GAS)</strong>. Środowisko deweloperskie
                             serwerowo powiązane z Twoim e-mailem, które pozwala pisać kod JavaScript reagujący na
                             wydarzenia w arkuszu.</p>
-
-                        <h2>Trzy Fazy Przejścia na Własny CRM z Apps Script</h2>
-                        <ul>
-                            <li><strong>Automatyczny przydział i Lock:</strong> Gdy lead spływa do arkusza (czy to z
+<h2>Trzy Fazy Przejścia na Własny CRM z Apps Script</h2>
+<ul>
+<li><strong>Automatyczny przydział i Lock:</strong> Gdy lead spływa do arkusza (czy to z
                                 landing pages, czy dodany ręcznie), dedykowany skrypt automatycznie blokuje komórkę
                                 przed przypadkową edycją. Kto jako pierwszy dopisze swoje inicjały pod Klientem –
                                 blokuje szanse na „podebranie bazy” przez innego handlowca.</li>
-                            <li><strong>Trigger zmian (Wydarzenie OnEdit):</strong> Możemy oskryptować system logowania
+<li><strong>Trigger zmian (Wydarzenie OnEdit):</strong> Możemy oskryptować system logowania
                                 kontaktów. Jeśli ktoś z zespołu zmieni status np. na <em>"Wysłano Umowę"</em>, skrypt
                                 automatycznie zaktualizuje wiersz „Ostatnia aktywność” dodając oznacznik daty
                                 (timestamp) serwerowej, a w sąsiedniej zakładce utworzy zapis archiwalny w celach
                                 audytowych.</li>
-                            <li><strong>Dynamiczne maile Follow-Up:</strong> Z poziomu komórki z checkboxem potrafimy
+<li><strong>Dynamiczne maile Follow-Up:</strong> Z poziomu komórki z checkboxem potrafimy
                                 wypychać dedykowane templatki z użyciem wbudowanej klasy <code>MailApp</code> bez
                                 otwierania Gmaila. Wyobraź sobie handlowca wysyłającego po spotkaniu oficjalne
                                 podziękowanie B2B w ciągu sekundy.</li>
-                        </ul>
-
-                        <blockquote>
+</ul>
+<blockquote>
                             "Możliwości Apps Script sprawiają, że arkusz zamienia się we wbudowaną aplikację Backendową,
                             oszczędzając mniejszym spółkom potężne zasoby kapitałowe (ROI)."
                         </blockquote>
-
-                        <h2>Jak stworzyć szybki Follow-Up w arkuszu (Snippet)</h2>
-                        <p>Oto prosta funkcja tworząca natychmiastową asystę mailową przy zaznaczeniu checkboxa "Wyślij
+<h2>Jak stworzyć szybki Follow-Up w arkuszu (Snippet)</h2>
+<p>Oto prosta funkcja tworząca natychmiastową asystę mailową przy zaznaczeniu checkboxa "Wyślij
                             status" w arkuszu Google:</p>
-                        <pre><code>function onEdit(e) {
+<pre><code>function onEdit(e) {
   const sheet = e.source.getActiveSheet();
   const range = e.range;
 
   // Sprawdzamy, czy modyfikowana kolumna to kolumna 6 (Checkbox wysłania)
-  if (sheet.getName() === "Leady CRM" && range.getColumn() === 6 && e.value === "TRUE") {
+  if (sheet.getName() === "Leady CRM" &amp;&amp; range.getColumn() === 6 &amp;&amp; e.value === "TRUE") {
     const row = range.getRow();
     const email = sheet.getRange(row, 2).getValue();
     const fname = sheet.getRange(row, 1).getValue();
@@ -238,57 +219,70 @@ Dziękuję za udaną rozmowę. Dołączam materiały informacyjne."
   }
 }
 </code></pre>
-
-                        <h3>Wnioski końcowe</h3>
-                        <p>Integracja darmowego <strong>Google Apps Script</strong> pozwoliła mi w kilkunastu projektach
+<h3>Wnioski końcowe</h3>
+<p>Integracja darmowego <strong>Google Apps Script</strong> pozwoliła mi w kilkunastu projektach
                             E-Commerce odciąć powiązania z wolnymi wtyczkami, za które trzeba płacić abonamenty (np.
                             Zapier czy Make). Jeśli tylko proces CRM będzie dobrze zaprogramowany i otestowany, Arkusze
                             Google to rozwiązanie niezniszczalne we wstępnej fazie rozwoju małej bazy B2B.</p>
-                    </div>
-
-                    <!-- Sidebar Column -->
-                    <aside class="post-sidebar">
-                        <div class="author-card">
-                            <div class="author-avatar">👨‍💻</div>
-                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
-                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Ekspert Automatyki
+</div>
+<!-- Sidebar Column -->
+<aside class="post-sidebar">
+<div class="author-card">
+<div class="author-avatar">👨‍💻</div>
+<h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+<p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Ekspert Automatyki
                                 Oprogramowania i BI</p>
-                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Na co dzień
+<p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Na co dzień
                                 zajmuję się budowaniem zautomatyzowanych, niezawodnych ekosystemów analitycznych wokół
                                 BigQuery, Looker Studio i Arkuszy Google.</p>
-                        </div>
-
-                        <div class="cta-card">
-                            <h3>Masz podobny problem na tapecie?</h3>
-                            <p>Nie musisz samodzielnie rzeźbić kodu i męczyć się z limitami czasu wykonywania Apps
+</div>
+<div class="cta-card">
+<h3>Masz podobny problem na tapecie?</h3>
+<p>Nie musisz samodzielnie rzeźbić kodu i męczyć się z limitami czasu wykonywania Apps
                                 Script. Zleć to komuś, kto na co dzień implementuje bezbłędne struktury backendowe w
                                 Google Workspace.</p>
-                            <a href="/#contact" class="btn btn-primary"
-                                style="width: 100%; text-align: center; padding: 12px;">Umów Darmowy Audyt</a>
-                        </div>
-                    </aside>
-
-                </div>
-            </div>
-        </article>
-    </main>
-
-    <!-- Footer -->
-    <footer class="glass-footer">
-        <div class="container footer-content">
-            <div class="footer-logo">Szeląg<span>.</span>Data</div>
-            <p>© <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
-            <div class="social-links">
-                <a href="/polityka-prywatnosci.html">Polityka Prywatności</a>
-                <a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank" rel="noopener noreferrer"
-                    aria-label="LinkedIn">LinkedIn</a>
-            </div>
-        </div>
-    </footer>
-    
-
-
-    <script src="../js/script.js"></script>
+<a class="btn btn-primary" href="/#contact" style="width: 100%; text-align: center; padding: 12px;">Umów Darmowy Audyt</a>
+</div>
+</aside>
+</div>
+</div>
+<!-- RELATED ARTICLES -->
+<section class="related-articles" style="margin-top: 60px; border-top: 1px solid var(--surface-border); padding-top: 40px;">
+<div class="container">
+<h2 style="margin-bottom: 30px;">Przeczytaj również:</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+<a class="glass-card" href="automatyczne-generowanie-raportow-pdf-google-docs-apps-script.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">📄</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Automatyzacja Google Drive</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Automatyczne generowanie raportów PDF z Google Docs i Sheets — Apps Script</h4>
+</a>
+<a class="glass-card" href="automatyczne-porzadkowanie-plikow-dysk-google-apps-script.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">🗂️</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Automatyzacja Google Drive</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Automatyczne porządkowanie plików na Dysku Google za pomocą Apps Script</h4>
+</a>
+<a class="glass-card" href="automatyzacja-uprawnien-google-drive-udostepnianie-apps-script.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">🔐</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Automatyzacja Google Drive</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Automatyzacja uprawnień na Google Drive: Masowe udostępnianie i cofanie dostępów</h4>
+</a>
+</div>
+</div>
+</section>
+<!-- END RELATED ARTICLES -->
+</article>
+</main>
+<!-- Footer -->
+<footer class="glass-footer">
+<div class="container footer-content">
+<div class="footer-logo">Szeląg<span>.</span>Data</div>
+<p>© <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+<div class="social-links">
+<a href="/polityka-prywatnosci.html">Polityka Prywatności</a>
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/mikolaj-szelag/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+</div>
+</div>
+</footer>
+<script src="../js/script.js"></script>
 </body>
-
 </html>

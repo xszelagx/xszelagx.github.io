@@ -2,12 +2,14 @@
 <html lang="pl">
 
 <head>
-    
+
     <!-- End Google Analytics -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
     <title>Wpis na Blogu | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Przeczytaj najnowszy wpis na blogu Mikołaja Szeląga o automatyzacji BI, BigQuery i Google Apps Script.">
 
     <!-- Google Consent Mode v2 (must load before GTM) -->
     <script>
@@ -27,7 +29,7 @@
                     new Date().getTime(), event: 'gtm.js'
             }); var f = d.getElementsByTagName(s)[0],
                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
@@ -179,6 +181,40 @@
 
                 </div>
             </div>
+
+            <!-- RELATED ARTICLES PLACEHOLDER (Use inject_related_articles.py to populate) -->
+            <section class="related-articles"
+                style="margin-top: 60px; border-top: 1px solid var(--surface-border); padding-top: 40px;">
+                <div class="container">
+                    <h2 style="margin-bottom: 30px;">Przeczytaj również:</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                        <!-- Placeholder Card 1 -->
+                        <a href="#" class="glass-card"
+                            style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+                            <span style="font-size: 2rem; margin-bottom: 15px;">🔍</span>
+                            <span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Analiza Danych</span>
+                            <h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Tytuł powiązanego artykułu
+                                pojawi się tutaj</h4>
+                        </a>
+                        <!-- Placeholder Card 2 -->
+                        <a href="#" class="glass-card"
+                            style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+                            <span style="font-size: 2rem; margin-bottom: 15px;">📈</span>
+                            <span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Looker Studio</span>
+                            <h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Kolejna propozycja do
+                                przeczytania</h4>
+                        </a>
+                        <!-- Placeholder Card 3 -->
+                        <a href="#" class="glass-card"
+                            style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+                            <span style="font-size: 2rem; margin-bottom: 15px;">⚙️</span>
+                            <span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Automatyzacja</span>
+                            <h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Zautomatyzuj swoje
+                                raportowanie</h4>
+                        </a>
+                    </div>
+                </div>
+            </section>
         </article>
     </main>
 

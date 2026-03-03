@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
     <title>Blog o Automatyzacji i Analizie Danych | Mikołaj Szeląg</title>
+    <meta name="description"
+        content="Artykuły o automatyzacji procesów, analityce BI, Google Apps Script i optymalizacji BigQuery. Dowiedz się, jak wykorzystać dane w biznesie.">
     <!-- Google Fonts: Outfit for modern look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://www.googletagmanager.com">
@@ -106,74 +108,204 @@
                 <div class="blog-grid" id="blog-grid">
                     <!-- Articles loaded dynamically from blog-articles.json -->
                 </div>
-                <!-- SEO: crawlable links for bots that don't execute JS -->
-                <div id="blog-links-fallback" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">
-                    <a href="./blog/mapy-ciepla-heatmaps-formatowanie-warunkowe-looker-studio.html">Tabele Przestawne to za mało: Dodaj potęgę Mapy Ciepła u siebie w Looker Studio</a>
-                    <a href="./blog/najczestsze-bledy-kpi-w-raportach-looker-studio-bi.html">Sztuka niszczenia przejrzystości raportu menedżerskiego: Top 5 grzechów głównych w BI.</a>
-                    <a href="./blog/laczenie-wielu-zrodel-danych-blending-looker-studio.html">Jak połączyć Koszt i Zysk na jednej linii: Techniki Data Blending (Looker Studio)</a>
-                    <a href="./blog/bezpieczenstwo-danych-row-level-security-w-looker-studio-gcp.html">Ograniczenie wglądu i bezpieczne udostępnianie w Looker Studio: Zasady filtru Emailu na żywo (RLS).</a>
-                    <a href="./blog/looker-studio-czy-power-bi-wybor-narzedzia-bi.html">Looker Studio czy sztywne licencje PowerBI? Które narzędzie BI do wdrożeń de facto popłaca.</a>
-                    <a href="./blog/dashboard-menedzerski-kpi-raporty-w-looker-studio-gcp.html">Projekt idealnego raportu dla Zarządu CEO: Psychologia menedżerska Looker Studio</a>
-                    <a href="./blog/connected-sheets-polaczenie-arkusza-z-baza-bigquery.html">Miliardy logów na dłoni laika: Connected Sheets do platformy BigQuery</a>
-                    <a href="./blog/vlookup-vs-join-sql-roznice-hurtownia.html">Dlaczego Wyszukaj.Pionowo (VLOOKUP) odchodzi w niepamięć: Potęga frazy SQL JOIN</a>
-                    <a href="./blog/ile-trwa-wdrozenie-analityki-data-pipeline-gcp.html">Cykl życia Data Pipeline: Ile miesięcy wymaga budowa solidnego systemu BI?</a>
-                    <a href="./blog/jak-polaczyc-facebook-ads-z-google-bigquery-gcp.html">Integracja ROI: Eksport danych z Facebook Ads & Google Ads prosto do BigQuery</a>
-                    <a href="./blog/partycjonowanie-vs-klastrowanie-sql-gcp-koszty.html">Ograniczenie Rachunku w Chmurze o 95%. Partycje vs. Klastrowanie w Google BigQuery.</a>
-                    <a href="./blog/koszty-w-bigquery-jak-analizowac-za-darmo-poradnik.html">Mity o horrendalnie drogim Google BigQuery: Jak analizować dane rzędu TB praktycznie za darmo?</a>
-                    <a href="./blog/co-to-jest-bigquery-darmowy-limit.html">Ograniczenie do 10,000,000 wierszy Google Sheets: Co z tym BigQuery?</a>
-                    <a href="./blog/tworzenie-formularzy-zlecen-google-forms-sheets.html">Obieg dokumentów od podstawówki po B2B: Google Forms + Google Sheets</a>
-                    <a href="./blog/5-funkcji-google-sheets-query-importrange-filter.html">Potęga Google Sheets w analizie (B2B): Poznaj sekrety QUERY()</a>
-                    <a href="./blog/jak-zabezpieczyc-dane-udostepnione-arkusze-google.html">Jak poprawnie zabezpieczyć wrażliwe dane w udostępnianych Arkuszach Google?</a>
-                    <a href="./blog/pobieranie-danych-api-arkusze-google-bez-wtyczek.html">Dane z Rest API prosto do Arkuszy Google (Bez płacenia za Zapiera).</a>
-                    <a href="./blog/automatyczne-wysylanie-maili-google-sheets-apps-script.html">Automatyczne wysyłanie maili z daty w Google Sheets: Koniec z zaległymi płatnościami</a>
-                    <a href="./blog/kiedy-excel-przestaje-wystarczac-migracja-google-workspace.html">Kiedy Excel przestał wystarczyć w Twojej firmie? Czas na Google Workspace.</a>
-                    <a href="./blog/czy-looker-studio-jest-platne-ukryte-koszty.html">Czy Looker Studio jest płatne? Ukryte koszty i limity API których nie znasz</a>
-                    <a href="./blog/dashboard-reklamowy-facebook-ads-google-ads-looker-studio.html">Jak połączyć reklamy Facebook Ads i Google Ads na jednym Dashboardzie w Looker?</a>
-                    <a href="./blog/dlaczego-looker-studio-dziala-wolno-optymalizacja.html">Dlaczego Looker Studio nagle działa tak wolno? 5 sposobów na inżynieryjną optymalizację</a>
-                    <a href="./blog/jak-korzystac-z-looker-studio-z-arkuszem-excel.html">Jak korzystać z Looker Studio z arkuszem Excel?</a>
-                    <a href="./blog/jak-liczyc-srednia-wazona-looker-studio-bledy-agregacji.html">Jak policzyć średnią ważoną w Looker Studio? Rozwiązanie pułapki agregacji (SUM/SUM)</a>
-                    <a href="./blog/jak-podlaczyc-ga4-do-looker-studio-konektor-vs-bigquery.html">Jak połączyć GA4 z Looker Studio? Ograniczenia natywnego konektora API a BigQuery</a>
-                    <a href="./blog/jak-polaczyc-arkusze-google-sheets-looker-studio.html">Jak połączyć Arkusze Google z Looker Studio bez błędów systemowych?</a>
-                    <a href="./blog/jak-wdrozyc-looker-studio-w-firmie-b2b-checklista.html">Jak wdrożyć Looker Studio do firmy B2B? Metodologia i Checklista dla Zarządu</a>
-                    <a href="./blog/looker-studio-vs-ga4-wady-ograniczenia.html">Looker Studio vs Google Analytics 4: Dlaczego raporty w samym GA4 to stanowczo za mało?</a>
-                    <a href="./blog/looker-studio-vs-looker-core-roznice.html">Looker (Core) vs Looker Studio: Czym różnią się te dwa narzędzia Data & Cloud?</a>
-                    <a href="./blog/looker-studio-vs-tableau-porownanie-narzedzi-bi.html">Looker Studio vs Tableau: Porównanie możliwości i kosztów wdrożenia (2026)</a>
-                    <a href="./blog/najlepsze-darmowe-szablony-templates-looker-studio-ecommerce.html">Najlepsze darmowe szablony (templates) Looker Studio dla B2B, SEO i E-commerce</a>
-                    <a href="./blog/tworzenie-szablonow-kopiowanie-raportow-looker-studio.html">Jak stworzyć własny szablon raportu w Looker Studio? Obejście z klonowaniem instancji</a>
-                    <a href="./blog/zmiana-zrodla-danych-looker-studio-bez-psucia-wykresow.html">Zmiana źródła danych w Looker Studio: Jak podmienić bazę bez niszczenia wykresów na błędne?</a>
-                    <a href="./blog/google-sheets-jako-darmowy-crm-jak-to-zrobic-apps-script.html">Darmowy CRM w Arkuszach: Jak to zrobić z użyciem Apps Script?</a>
-                    <a href="./blog/automatyczne-generowanie-raportow-pdf-google-docs-apps-script.html">Automatyczne generowanie raportów PDF z Google Docs i Sheets — Apps Script</a>
-                    <a href="./blog/automatyczne-porzadkowanie-plikow-dysk-google-apps-script.html">Automatyczne porządkowanie plików na Dysku Google za pomocą Apps Script</a>
-                    <a href="./blog/automatyzacja-uprawnien-google-drive-udostepnianie-apps-script.html">Automatyzacja uprawnień na Google Drive: Masowe udostępnianie i cofanie dostępów</a>
-                    <a href="./blog/dashboard-seo-looker-studio-pozycje-ctr-indeksacja.html">Dashboard SEO w Looker Studio: Monitoruj pozycje, CTR i indeksację</a>
-                    <a href="./blog/raportowanie-efektywnosci-content-marketingu-looker-studio-ga4.html">Raportowanie efektywności content marketingu w Looker Studio: GA4 + Search Console</a>
-                    <a href="./blog/analityka-ecommerce-lejki-sprzedazy-looker-studio.html">Analityka eCommerce w Looker Studio: Od kliknięcia do zakupu</a>
-                    <a href="./blog/analiza-kohortowa-looker-studio-ga4-retention.html">Analiza Kohortowa w Looker Studio: Jak mierzyć lojalność klientów z GA4?</a>
-                    <a href="./blog/automatyczne-raporty-pdf-looker-studio-email.html">Automatyczne raporty PDF z Looker Studio na maila: Jak skonfigurować harmonogram?</a>
-                    <a href="./blog/automatyzacja-raportow-integracja-api-crm-looker-studio.html">Automatyzacja raportów SME: Integracja danych z systemów CRM i ERP z Looker Studio przez API</a>
-                    <a href="./blog/bezpieczenstwo-danych-row-level-security-looker-studio.html">Bezpieczeństwo w Looker Studio: Row-Level Security (RLS) i Filtrowanie Emailem</a>
-                    <a href="./blog/co-to-jest-looker-studio-przewodnik-bi-google.html">Co to jest Looker Studio? Kompletny przewodnik po darmowym narzędziu BI od Google</a>
-                    <a href="./blog/dashboard-menedzerski-kpi-looker-studio.html">Dashboard Menedżerski w Looker Studio: 7 KPI, które musisz śledzić</a>
-                    <a href="./blog/jak-wgrac-dane-do-looker-studio-konektory.html">Jak wgrać dane do Looker Studio? Przegląd konektorów: od Google Sheets po BigQuery</a>
-                    <a href="./blog/laczenie-danych-data-blending-looker-studio.html">Łączenie danych w Looker Studio (Data Blending): Jak spiąć Facebook Ads z Google Ads w jednym widoku</a>
-                    <a href="./blog/looker-studio-bigquery-integracja-performance.html">Looker Studio + BigQuery: Jak stworzyć ultra-wydajny dashboard dla dużych zbiorów danych</a>
-                    <a href="./blog/looker-studio-bigquery-quota-exceeded-blad-fix.html">Jak naprawić błąd Quota Exceeded w Looker Studio i BigQuery?</a>
-                    <a href="./blog/looker-studio-czy-excel-porownanie-raportowanie.html">Looker Studio czy Excel? Dlaczego Twoja firma potrzebuje interaktywnych raportów</a>
-                    <a href="./blog/looker-studio-czy-power-bi-wybor-narzedzia.html">Looker Studio czy Power BI? Które narzędzie wybrać w 2026?</a>
-                    <a href="./blog/looker-studio-logistyka-spedycja-dashboard-kpi.html">Looker Studio dla Logistyki: Monitoring KPI w transporcie</a>
-                    <a href="./blog/looker-studio-pro-vs-free-roznice-cena.html">Looker Studio Pro vs Free: Kiedy Twoja firma powinna przejść na płatną wersję?</a>
-                    <a href="./blog/monitoring-dostepow-looker-studio-bezpieczenstwo-danych.html">Monitoring dostępów w Looker Studio: Jak dbać o bezpieczeństwo danych?</a>
-                    <a href="./blog/obsluga-bledow-system-error-null-looker-studio.html">Obsługa błędów "System Error" i Null w Looker Studio</a>
-                    <a href="./blog/parametry-looker-studio-dynamiczny-sql-bigquery.html">Parametry w Looker Studio: Dynamiczne zapytania SQL w BigQuery</a>
-                    <a href="./blog/pierwszy-dashboard-looker-studio-tutorial.html">Pierwszy dashboard w Looker Studio: 5 kroków od surowych danych do wizualizacji</a>
-                    <a href="./blog/pola-obliczeniowe-regex-looker-studio-zaawansowane.html">Pola obliczeniowe i Regex w Looker Studio: Jak wycisnąć więcej z Twoich danych?</a>
-                    <a href="./blog/roi-wdrozenia-analityki-looker-studio-biznes.html">Ile kosztuje brak analityki? ROI z wdrożenia Looker Studio</a>
-                    <a href="./blog/techniczne-seo-looker-studio-dashboard-search-console.html">Techniczne SEO w Looker Studio: Search Console + Crawlery</a>
-                    <a href="./blog/zdjecia-produktow-w-looker-studio-images-from-url.html">Jak wyświetlać zdjęcia produktów w Looker Studio?</a>
+                <!-- SEO: crawlable links for bots -->
+                <div id="blog-links-fallback" class="blog-links-fallback"
+                    style="margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--surface-border);">
+                    <h3 style="margin-bottom: 20px; font-size: 1.2rem; color: var(--text-muted);">Wszystkie Artykuły
+                        (Sitemap):</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; font-size: 0.9rem;">
+                        <a href="./blog/mapy-ciepla-heatmaps-formatowanie-warunkowe-looker-studio.html"
+                            style="color: var(--text-muted); text-decoration: none;">Tabele Przestawne to za mało: Dodaj
+                            potęgę Mapy Ciepła u siebie w Looker Studio</a> |
+                        <a href="./blog/najczestsze-bledy-kpi-w-raportach-looker-studio-bi.html"
+                            style="color: var(--text-muted); text-decoration: none;">Sztuka niszczenia przejrzystości
+                            raportu menedżerskiego: Top 5 grzechów głównych w BI.</a> |
+                        <a href="./blog/laczenie-wielu-zrodel-danych-blending-looker-studio.html"
+                            style="color: var(--text-muted); text-decoration: none;">Jak połączyć Koszt i Zysk na jednej
+                            linii: Techniki Data Blending (Looker Studio)</a> |
+                        <a href="./blog/bezpieczenstwo-danych-row-level-security-w-looker-studio-gcp.html"
+                            style="color: var(--text-muted); text-decoration: none;">Ograniczenie wglądu i bezpieczne
+                            udostępnianie w Looker Studio: Zasady filtru Emailu na żywo (RLS).</a> |
+                        <a href="./blog/looker-studio-czy-power-bi-wybor-narzedzia-bi.html"
+                            style="color: var(--text-muted); text-decoration: none;">Looker Studio czy sztywne licencje
+                            PowerBI? Które narzędzie BI do wdrożeń de facto popłaca.</a> |
+                        <a href="./blog/dashboard-menedzerski-kpi-raporty-w-looker-studio-gcp.html"
+                            style="color: var(--text-muted); text-decoration: none;">Projekt idealnego raportu dla
+                            Zarządu CEO: Psychologia menedżerska Looker Studio</a> |
+                        <a href="./blog/connected-sheets-polaczenie-arkusza-z-baza-bigquery.html"
+                            style="color: var(--text-muted); text-decoration: none;">Miliardy logów na dłoni laika:
+                            Connected Sheets do platformy BigQuery</a> |
+                        <a href="./blog/vlookup-vs-join-sql-roznice-hurtownia.html"
+                            style="color: var(--text-muted); text-decoration: none;">Dlaczego Wyszukaj.Pionowo (VLOOKUP)
+                            odchodzi w niepamięć: Potęga frazy SQL JOIN</a> |
+                        <a href="./blog/ile-trwa-wdrozenie-analityki-data-pipeline-gcp.html"
+                            style="color: var(--text-muted); text-decoration: none;">Cykl życia Data Pipeline: Ile
+                            miesięcy wymaga budowa solidnego systemu BI?</a> |
+                        <a href="./blog/jak-polaczyc-facebook-ads-z-google-bigquery-gcp.html"
+                            style="color: var(--text-muted); text-decoration: none;">Integracja ROI: Eksport danych z
+                            Facebook Ads & Google Ads prosto do BigQuery</a> |
+                        <a href="./blog/partycjonowanie-vs-klastrowanie-sql-gcp-koszty.html"
+                            style="color: var(--text-muted); text-decoration: none;">Ograniczenie Rachunku w Chmurze o
+                            95%. Partycje vs. Klastrowanie w Google BigQuery.</a> |
+                        <a href="./blog/koszty-w-bigquery-jak-analizowac-za-darmo-poradnik.html"
+                            style="color: var(--text-muted); text-decoration: none;">Mity o horrendalnie drogim Google
+                            BigQuery: Jak analizować dane rzędu TB praktycznie za darmo?</a> |
+                        <a href="./blog/co-to-jest-bigquery-darmowy-limit.html"
+                            style="color: var(--text-muted); text-decoration: none;">Ograniczenie do 10,000,000 wierszy
+                            Google Sheets: Co z tym BigQuery?</a> |
+                        <a href="./blog/tworzenie-formularzy-zlecen-google-forms-sheets.html"
+                            style="color: var(--text-muted); text-decoration: none;">Obieg dokumentów od podstawówki po
+                            B2B: Google Forms + Google Sheets</a> |
+                        <a href="./blog/5-funkcji-google-sheets-query-importrange-filter.html"
+                            style="color: var(--text-muted); text-decoration: none;">Potęga Google Sheets w analizie
+                            (B2B): Poznaj sekrety QUERY()</a> |
+                        <a href="./blog/jak-zabezpieczyc-dane-udostepnione-arkusze-google.html"
+                            style="color: var(--text-muted); text-decoration: none;">Jak poprawnie zabezpieczyć wrażliwe
+                            dane w udostępnianych Arkuszach Google?</a> |
+                        <a href="./blog/pobieranie-danych-api-arkusze-google-bez-wtyczek.html"
+                            style="color: var(--text-muted); text-decoration: none;">Dane z Rest API prosto do Arkuszy
+                            Google (Bez płacenia za Zapiera).</a> |
+                        <a href="./blog/automatyczne-wysylanie-maili-google-sheets-apps-script.html"
+                            style="color: var(--text-muted); text-decoration: none;">Automatyczne wysyłanie maili z daty
+                            w Google Sheets: Koniec z zaległymi płatnościami</a> |
+                        <a href="./blog/kiedy-excel-przestaje-wystarczac-migracja-google-workspace.html"
+                            style="color: var(--text-muted); text-decoration: none;">Kiedy Excel przestał wystarczyć w
+                            Twojej firmie? Czas na Google Workspace.</a> |
+                        <a href="./blog/czy-looker-studio-jest-platne-ukryte-koszty.html"
+                            style="color: var(--text-muted); text-decoration: none;">Czy Looker Studio jest płatne?
+                            Ukryte koszty i limity API których nie znasz</a> |
+                        <a href="./blog/dashboard-reklamowy-facebook-ads-google-ads-looker-studio.html"
+                            style="color: var(--text-muted); text-decoration: none;">Jak połączyć reklamy Facebook Ads i
+                            Google Ads na jednym Dashboardzie w Looker?</a> |
+                        <a href="./blog/dlaczego-looker-studio-dziala-wolno-optymalizacja.html"
+                            style="color: var(--text-muted); text-decoration: none;">Dlaczego Looker Studio nagle działa
+                            tak wolno? 5 sposobów na inżynieryjną optymalizację</a> |
+                        <a href="./blog/jak-korzystac-z-looker-studio-z-arkuszem-excel.html"
+                            style="color: var(--text-muted); text-decoration: none;">Jak korzystać z Looker Studio z
+                            arkuszem Excel?</a> |
+                        <a href="./blog/jak-liczyc-srednia-wazona-looker-studio-bledy-agregacji.html"
+                            style="color: var(--text-muted); text-decoration: none;">Jak policzyć średnią ważoną w
+                            Looker Studio? Rozwiązanie pułapki agregacji (SUM/SUM)</a> |
+                        <a href="./blog/jak-podlaczyc-ga4-do-looker-studio-konektor-vs-bigquery.html"
+                            style="color: var(--text-muted); text-decoration: none;">Jak połączyć GA4 z Looker Studio?
+                            Ograniczenia natywnego konektora API a BigQuery</a> |
+                        <a href="./blog/jak-polaczyc-arkusze-google-sheets-looker-studio.html"
+                            style="color: var(--text-muted); text-decoration: none;">Jak połączyć Arkusze Google z
+                            Looker Studio bez błędów systemowych?</a> |
+                        <a href="./blog/jak-wdrozyc-looker-studio-w-firmie-b2b-checklista.html"
+                            style="color: var(--text-muted); text-decoration: none;">Jak wdrożyć Looker Studio do firmy
+                            B2B? Metodologia i Checklista dla Zarządu</a> |
+                        <a href="./blog/looker-studio-vs-ga4-wady-ograniczenia.html"
+                            style="color: var(--text-muted); text-decoration: none;">Looker Studio vs Google Analytics
+                            4: Dlaczego raporty w samym GA4 to stanowczo za mało?</a> |
+                        <a href="./blog/looker-studio-vs-looker-core-roznice.html"
+                            style="color: var(--text-muted); text-decoration: none;">Looker (Core) vs Looker Studio:
+                            Czym różnią się te dwa narzędzia Data & Cloud?</a> |
+                        <a href="./blog/looker-studio-vs-tableau-porownanie-narzedzi-bi.html"
+                            style="color: var(--text-muted); text-decoration: none;">Looker Studio vs Tableau:
+                            Porównanie możliwości i kosztów wdrożenia (2026)</a> |
+                        <a href="./blog/najlepsze-darmowe-szablony-templates-looker-studio-ecommerce.html"
+                            style="color: var(--text-muted); text-decoration: none;">Najlepsze darmowe szablony
+                            (templates) Looker Studio dla B2B, SEO i E-commerce</a> |
+                        <a href="./blog/tworzenie-szablonow-kopiowanie-raportow-looker-studio.html"
+                            style="color: var(--text-muted); text-decoration: none;">Jak stworzyć własny szablon raportu
+                            w Looker Studio? Obejście z klonowaniem instancji</a> |
+                        <a href="./blog/zmiana-zrodla-danych-looker-studio-bez-psucia-wykresow.html"
+                            style="color: var(--text-muted); text-decoration: none;">Zmiana źródła danych w Looker
+                            Studio: Jak podmienić bazę bez niszczenia wykresów na błędne?</a> |
+                        <a href="./blog/google-sheets-jako-darmowy-crm-jak-to-zrobic-apps-script.html"
+                            style="color: var(--text-muted); text-decoration: none;">Darmowy CRM w Arkuszach: Jak to
+                            zrobić z użyciem Apps Script?</a> |
+                        <a href="./blog/automatyczne-generowanie-raportow-pdf-google-docs-apps-script.html"
+                            style="color: var(--text-muted); text-decoration: none;">Automatyczne generowanie raportów
+                            PDF z Google Docs i Sheets — Apps Script</a> |
+                        <a href="./blog/automatyczne-porzadkowanie-plikow-dysk-google-apps-script.html"
+                            style="color: var(--text-muted); text-decoration: none;">Automatyczne porządkowanie plików
+                            na Dysku Google za pomocą Apps Script</a> |
+                        <a href="./blog/automatyzacja-uprawnien-google-drive-udostepnianie-apps-script.html"
+                            style="color: var(--text-muted); text-decoration: none;">Automatyzacja uprawnień na Google
+                            Drive: Masowe udostępnianie i cofanie dostępów</a> |
+                        <a href="./blog/dashboard-seo-looker-studio-pozycje-ctr-indeksacja.html"
+                            style="color: var(--text-muted); text-decoration: none;">Dashboard SEO w Looker Studio:
+                            Monitoruj pozycje, CTR i indeksację</a> |
+                        <a href="./blog/raportowanie-efektywnosci-content-marketingu-looker-studio-ga4.html"
+                            style="color: var(--text-muted); text-decoration: none;">Raportowanie efektywnosci content
+                            marketingu w Looker Studio: GA4 + Search Console</a> |
+                        <a href="./blog/analityka-ecommerce-lejki-sprzedazy-looker-studio.html"
+                            style="color: var(--text-muted); text-decoration: none;">Analityka eCommerce w Looker
+                            Studio: Od kliknięcia do zakupu</a> |
+                        <a href="./blog/analiza-kohortowa-looker-studio-ga4-retention.html"
+                            style="color: var(--text-muted); text-decoration: none;">Analiza Kohortowa w Looker Studio:
+                            Jak mierzyć lojalność klientów z GA4?</a> |
+                        <a href="./blog/automatyczne-raporty-pdf-looker-studio-email.html"
+                            style="color: var(--text-muted); text-decoration: none;">Automatyczne raporty PDF z Looker
+                            Studio na maila: Jak skonfigurować harmonogram?</a> |
+                        <a href="./blog/automatyzacja-raportow-integracja-api-crm-looker-studio.html"
+                            style="color: var(--text-muted); text-decoration: none;">Automatyzacja raportów SME:
+                            Integracja danych z systemów CRM i ERP z Looker Studio przez API</a> |
+                        <a href="./blog/bezpieczenstwo-danych-row-level-security-looker-studio.html"
+                            style="color: var(--text-muted); text-decoration: none;">Bezpieczeństwo w Looker Studio:
+                            Row-Level Security (RLS) i Filtrowanie Emailem</a> |
+                        <a href="./blog/co-to-jest-looker-studio-przewodnik-bi-google.html"
+                            style="color: var(--text-muted); text-decoration: none;">Co to jest Looker Studio? Kompletny
+                            przewodnik po darmowym narzędziu BI od Google</a> |
+                        <a href="./blog/dashboard-menedzerski-kpi-looker-studio.html"
+                            style="color: var(--text-muted); text-decoration: none;">Dashboard Menedżerski w Looker
+                            Studio: 7 KPI, które musisz śledzić</a> |
+                        <a href="./blog/jak-wgrac-dane-do-looker-studio-konektory.html"
+                            style="color: var(--text-muted); text-decoration: none;">Jak wgrać dane do Looker Studio?
+                            Przegląd konektorów: od Google Sheets po BigQuery</a> |
+                        <a href="./blog/laczenie-danych-data-blending-looker-studio.html"
+                            style="color: var(--text-muted); text-decoration: none;">Łączenie danych w Looker Studio
+                            (Data Blending): Jak spiąć Facebook Ads z Google Ads w jednym widoku</a> |
+                        <a href="./blog/looker-studio-bigquery-integracja-performance.html"
+                            style="color: var(--text-muted); text-decoration: none;">Looker Studio + BigQuery: Jak
+                            stworzyć ultra-wydajny dashboard dla dużych zbiorów danych</a> |
+                        <a href="./blog/looker-studio-bigquery-quota-exceeded-blad-fix.html"
+                            style="color: var(--text-muted); text-decoration: none;">Jak naprawić błąd Quota Exceeded w
+                            Looker Studio i BigQuery?</a> |
+                        <a href="./blog/looker-studio-czy-excel-porownanie-raportowanie.html"
+                            style="color: var(--text-muted); text-decoration: none;">Looker Studio czy Excel? Dlaczego
+                            Twoja firma potrzebuje interaktywnych raportów</a> |
+                        <a href="./blog/looker-studio-czy-power-bi-wybor-narzedzia.html"
+                            style="color: var(--text-muted); text-decoration: none;">Looker Studio czy Power BI? Które
+                            narzędzie wybrać w 2026?</a> |
+                        <a href="./blog/looker-studio-logistyka-spedycja-dashboard-kpi.html"
+                            style="color: var(--text-muted); text-decoration: none;">Looker Studio dla Logistyki:
+                            Monitoring KPI w transporcie</a> |
+                        <a href="./blog/looker-studio-pro-vs-free-roznice-cena.html"
+                            style="color: var(--text-muted); text-decoration: none;">Looker Studio Pro vs Free: Kiedy
+                            Twoja firma powinna przejść na płatną wersję?</a> |
+                        <a href="./blog/monitoring-dostepow-looker-studio-bezpieczenstwo-danych.html"
+                            style="color: var(--text-muted); text-decoration: none;">Monitoring dostępów w Looker
+                            Studio: Jak dbać o bezpieczeństwo danych?</a> |
+                        <a href="./blog/obsluga-bledow-system-error-null-looker-studio.html"
+                            style="color: var(--text-muted); text-decoration: none;">Obsługa błędów "System Error" i
+                            Null w Looker Studio</a> |
+                        <a href="./blog/parametry-looker-studio-dynamiczny-sql-bigquery.html"
+                            style="color: var(--text-muted); text-decoration: none;">Parametry w Looker Studio:
+                            Dynamiczne zapytania SQL w BigQuery</a> |
+                        <a href="./blog/pierwszy-dashboard-looker-studio-tutorial.html"
+                            style="color: var(--text-muted); text-decoration: none;">Pierwszy dashboard w Looker Studio:
+                            5 kroków od surowych danych do wizualizacji</a> |
+                        <a href="./blog/pola-obliczeniowe-regex-looker-studio-zaawansowane.html"
+                            style="color: var(--text-muted); text-decoration: none;">Pola obliczeniowe i Regex w Looker
+                            Studio: Jak wycisnąć więcej z Twoich danych?</a> |
+                        <a href="./blog/roi-wdrozenia-analityki-looker-studio-biznes.html"
+                            style="color: var(--text-muted); text-decoration: none;">Ile kosztuje brak analityki? ROI z
+                            wdrożenia Looker Studio</a> |
+                        <a href="./blog/techniczne-seo-looker-studio-dashboard-search-console.html"
+                            style="color: var(--text-muted); text-decoration: none;">Techniczne SEO w Looker Studio:
+                            Search Console + Crawlery</a> |
+                        <a href="./blog/zdjecia-produktow-w-looker-studio-images-from-url.html"
+                            style="color: var(--text-muted); text-decoration: none;">Jak wyświetlać zdjęcia produktów w
+                            Looker Studio?</a>
+                    </div>
                 </div>
 
                 <div class="text-center" style="margin-top: 50px;">
-                    <button id="load-more-btn" class="btn btn-secondary" style="display:none;">Pokaż więcej artykułów</button>
+                    <button id="load-more-btn" class="btn btn-secondary" style="display:none;">Pokaż więcej
+                        artykułów</button>
                 </div>
             </div>
         </section>
@@ -234,14 +366,14 @@
 
     <!-- Blog Renderer -->
     <script>
-    (function() {
-        const ARTICLES_PER_PAGE = 12;
-        let allArticles = [];
-        let visibleCount = ARTICLES_PER_PAGE;
-        let activeFilter = 'all';
+        (function () {
+            const ARTICLES_PER_PAGE = 12;
+            let allArticles = [];
+            let visibleCount = ARTICLES_PER_PAGE;
+            let activeFilter = 'all';
 
-        function renderCard(a) {
-            return `<article class="blog-card" data-category="${a.category}" onclick="window.location.href='./blog/${a.slug}.html'">
+            function renderCard(a) {
+                return `<article class="blog-card" data-category="${a.category}" onclick="window.location.href='./blog/${a.slug}.html'">
                 <div class="blog-card-image">${a.emoji}</div>
                 <div class="blog-card-content">
                     <div class="blog-meta"><span class="blog-tag">${a.tag}</span><span>${a.date}</span></div>
@@ -250,44 +382,44 @@
                     <a href="./blog/${a.slug}.html" class="read-more">Czytaj dalej &rarr;</a>
                 </div>
             </article>`;
-        }
+            }
 
-        function getFiltered() {
-            if (activeFilter === 'all') return allArticles;
-            return allArticles.filter(a => a.category === activeFilter);
-        }
+            function getFiltered() {
+                if (activeFilter === 'all') return allArticles;
+                return allArticles.filter(a => a.category === activeFilter);
+            }
 
-        function render() {
-            const grid = document.getElementById('blog-grid');
-            const btn = document.getElementById('load-more-btn');
-            const filtered = getFiltered();
-            const toShow = filtered.slice(0, visibleCount);
-            grid.innerHTML = toShow.map(renderCard).join('');
-            btn.style.display = visibleCount < filtered.length ? '' : 'none';
-        }
+            function render() {
+                const grid = document.getElementById('blog-grid');
+                const btn = document.getElementById('load-more-btn');
+                const filtered = getFiltered();
+                const toShow = filtered.slice(0, visibleCount);
+                grid.innerHTML = toShow.map(renderCard).join('');
+                btn.style.display = visibleCount < filtered.length ? '' : 'none';
+            }
 
-        fetch('./blog-articles.json')
-            .then(r => r.json())
-            .then(data => {
-                allArticles = data;
-                render();
-
-                document.getElementById('load-more-btn').addEventListener('click', function() {
-                    visibleCount += ARTICLES_PER_PAGE;
+            fetch('./blog-articles.json')
+                .then(r => r.json())
+                .then(data => {
+                    allArticles = data;
                     render();
-                });
 
-                document.querySelectorAll('.category-btn').forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        document.querySelector('.category-btn.active').classList.remove('active');
-                        this.classList.add('active');
-                        activeFilter = this.dataset.filter;
-                        visibleCount = ARTICLES_PER_PAGE;
+                    document.getElementById('load-more-btn').addEventListener('click', function () {
+                        visibleCount += ARTICLES_PER_PAGE;
                         render();
                     });
+
+                    document.querySelectorAll('.category-btn').forEach(btn => {
+                        btn.addEventListener('click', function () {
+                            document.querySelector('.category-btn.active').classList.remove('active');
+                            this.classList.add('active');
+                            activeFilter = this.dataset.filter;
+                            visibleCount = ARTICLES_PER_PAGE;
+                            render();
+                        });
+                    });
                 });
-            });
-    })();
+        })();
     </script>
 
     <script src="js/script.js"></script>

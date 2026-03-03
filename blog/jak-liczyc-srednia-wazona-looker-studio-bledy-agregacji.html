@@ -1,19 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="pl">
-
 <head>
-    
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
-    <meta name="description"
-        content="Jak wyliczyć średnią ważoną w Looker Studio? Rozwiązujemy znany błąd agregacji danych SUM(a)/SUM(b) i pułapki matematyczne z Google Sheets i BigQuery.">
-
-    <title>Jak liczyć Średnią Ważoną w Looker Studio? (Błędy i rozwiązywanie) | Mikołaj Szeląg</title>
-
-    <!-- Google Consent Mode v2 (must load before GTM) -->
-    <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" name="google-site-verification">
+<meta content="Jak wyliczyć średnią ważoną w Looker Studio? Rozwiązujemy znany błąd agregacji danych SUM(a)/SUM(b) i pułapki matematyczne z Google Sheets i BigQuery." name="description"/>
+<title>Jak liczyć Średnią Ważoną w Looker Studi... | Mikołaj Szeląg</title>
+<!-- Google Consent Mode v2 (must load before GTM) -->
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('consent', 'default', {
@@ -23,8 +18,8 @@
             'analytics_storage': 'denied'
         });
     </script>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
             w[l] = window.dataLayer || []; w[l].push({
                 'gtm.start':
                     new Date().getTime(), event: 'gtm.js'
@@ -32,28 +27,23 @@
                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
-    <script>
+<!-- Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-9N5S4NW0L8', { 'debug_mode': true });
     </script>
-
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css">
-
-    <link rel="icon" type="image/png" href="../favicon.png?v=2">
-    <link rel="icon" type="image/x-icon" href="../favicon.ico?v=2">
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png?v=2">
-
-    <!-- Schema -->
-    <script type="application/ld+json">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="../css/styles.css" rel="stylesheet"/>
+<link href="../favicon.png?v=2" rel="icon" type="image/png"/>
+<link href="../favicon.ico?v=2" rel="icon" type="image/x-icon"/>
+<link href="../apple-touch-icon.png?v=2" rel="apple-touch-icon"/>
+<!-- Schema -->
+<script type="application/ld+json">
         {
           "@context": "https://schema.org",
           "@type": "BlogPosting",
@@ -67,162 +57,153 @@
           "description": "Rozwiązywanie najpopularniejszego matematycznego błędu Lookera. Naucz się tworzenia zagnieżdżonych obliczeń w Lookerze by uzyskać poprawną Marżę lub ROAS."
         }
     </script>
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Jak liczyć Średnią Ważoną w Looker Studio? (Błędy i rozwiązywanie) | Mikołaj Szeląg">
-    <meta property="og:description" content="Jak wyliczyć średnią ważoną w Looker Studio? Rozwiązujemy znany błąd agregacji danych SUM(a)/SUM(b) i pułapki matematyczne z Google Sheets i BigQuery.">
-
-    
-
-
-    
-</head>
-
+<!-- Open Graph Meta Tags -->
+<meta content="Jak liczyć Średnią Ważoną w Looker Studi... | Mikołaj Szeląg" property="og:title"/>
+<meta content="Jak wyliczyć średnią ważoną w Looker Studio? Rozwiązujemy znany błąd agregacji danych SUM(a)/SUM(b) i pułapki matematyczne z Google Sheets i BigQuery." property="og:description"/>
+</meta></head>
 <body>
-    <!-- GTM Noscript -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-
-    <div class="bg-orb orb-1"></div>
-    <div class="bg-orb orb-2"></div>
-
-    <header class="glass-nav">
-        <div class="container nav-container">
-            <a href="/" class="logo">Szeląg<span>.</span>Data</a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="/">Strona Główna</a></li>
-                    <li><a href="/#about">Dlaczego Warto?</a></li>
-                    <li><a href="/#services">Usługi</a></li>
-                    <li><a href="/#case-studies">Realizacje</a></li>
-                    <li><a href="/blog.html">Blog</a></li>
-                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
-                </ul>
-                <div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <article>
-            <header class="post-header">
-                <div class="container">
-                    <a href="/blog.html"
-                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">←
+<!-- GTM Noscript -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<div class="bg-orb orb-1"></div>
+<div class="bg-orb orb-2"></div>
+<header class="glass-nav">
+<div class="container nav-container">
+<a class="logo" href="/">Szeląg<span>.</span>Data</a>
+<nav>
+<ul class="nav-links">
+<li><a href="/">Strona Główna</a></li>
+<li><a href="/#about">Dlaczego Warto?</a></li>
+<li><a href="/#services">Usługi</a></li>
+<li><a href="/#case-studies">Realizacje</a></li>
+<li><a href="/blog.html">Blog</a></li>
+<li><a class="btn-primary-small" href="/#contact">Kontakt</a></li>
+</ul>
+<div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+</nav>
+</div>
+</header>
+<main>
+<article>
+<header class="post-header">
+<div class="container">
+<a href="/blog.html" style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">←
                         Wróć do artykułów</a>
-                    <div class="post-meta">
-                        <span class="post-tag">Wizualizacja Danych BI</span>
-                        <span>02 Marca 2026</span>
-                        <span>⏱️ 5 min czytania</span>
-                    </div>
-                    <h1 class="post-title">Jak policzyć średnią ważoną w Looker Studio? <span
-                            class="gradient-text">Rozwiązanie pułapki agregacji (SUM/SUM)</span></h1>
-                </div>
-            </header>
-
-            <div class="container">
-                <div class="post-layout">
-                    <!-- MAIN CONTENT -->
-                    <div class="post-content">
-                        <p>To absolutnie najczęstszy powód frustracji analityków przechodzących z Excela na Looker
+<div class="post-meta">
+<span class="post-tag">Wizualizacja Danych BI</span>
+<span>02 Marca 2026</span>
+<span>⏱️ 5 min czytania</span>
+</div>
+<h1 class="post-title">Jak policzyć średnią ważoną w Looker Studio? <span class="gradient-text">Rozwiązanie pułapki agregacji (SUM/SUM)</span></h1>
+</div>
+</header>
+<div class="container">
+<div class="post-layout">
+<!-- MAIN CONTENT -->
+<div class="post-content">
+<p>To absolutnie najczęstszy powód frustracji analityków przechodzących z Excela na Looker
                             Studio. Wrzucasz do tabeli
                             <code>Koszty Kampanii A: 200 PLN, Koszty Kampanii B: 30 PLN. Przychód A: 500 PLN, Przychód B: 50 PLN.</code>
-                        </p>
-
-                        <p>Chcesz zrobić jedno pole pt. "Współczynnik ROI", więc wpisujesz w pole obliczeniowe:
+</p>
+<p>Chcesz zrobić jedno pole pt. "Współczynnik ROI", więc wpisujesz w pole obliczeniowe:
                             <code>Przychód / Wydatki</code>. I wtedy w wierszu PODSUMOWUJĄCYM na samym dole (Total)
                             wychodzą absolutnie bzdurne matematyczne koszmarki, które nijak się mają do kalkulatora.
                             Dlaczego tak się dzieje i jak poprawnie wyciągać <strong>średnią ważoną</strong>?</p>
-
-                        <h2>Główna pułapka systemu BI: Średnia Średnich (AVG)</h2>
-                        <p>Silniki Big Data jak <a href="./co-to-jest-bigquery-darmowy-limit.html">BigQuery</a> oraz
+<h2>Główna pułapka systemu BI: Średnia Średnich (AVG)</h2>
+<p>Silniki Big Data jak <a href="./co-to-jest-bigquery-darmowy-limit.html">BigQuery</a> oraz
                             nakładki takie jak Looker (czy Tableau) wyliczają rekordy "Z góry na Dół".</p>
-
-                        <p>Gdy stworzysz nowe pole u siebie klikając na ikonę `fx` wpisując zwykły wzór "Przychód /
+<p>Gdy stworzysz nowe pole u siebie klikając na ikonę `fx` wpisując zwykły wzór "Przychód /
                             Wydatki", to dla każdego z setek rekordów z dnia na Twojej stronie wskaźnik wynosi np.
                             <code>2.5</code>, dla drugiego <code>1.6</code>. Co robi Looker z kolumną u samego dołu
                             tabelki dla Całego Roku? <strong style="color: var(--primary)">Bierze wszystkie wyniki,
                                 zsumuje je w kolumnie i wyciągnie "Average" (Dzieląc przez liczbę dni)</strong>.</p>
-
-                        <p>Jest to matematyczny kardynalny błąd. Dniem ze sprzedażą 5,000 PLN przypisał taką samą wagę
+<p>Jest to matematyczny kardynalny błąd. Dniem ze sprzedażą 5,000 PLN przypisał taką samą wagę
                             (np. dzielnik / 30) co dniowi ze sprzedażą 1,20 PLN! Średnia ze średnich dla handlowca
                             zawsze jest zafałszowana. Co gorsza, używając funkcji <code>AVG(metryka)</code> system
-                            zakwestionuje Ci logikę i rzuci czerwonym komunikatem przy próbie <a
-                                href="./laczenie-wielu-zrodel-danych-blending-looker-studio.html">Data Blendingu
-                                (Łączenia Środowisk)</a> lub raportowania z <a
-                                href="./jak-polaczyc-arkusze-google-sheets-looker-studio.html">Google Sheets.</a></p>
-
-                        <h2>Jedyna słuszna metoda ułamkowa: SUM(a) / SUM(b)</h2>
-                        <p>Jeśli liczysz w kampaniach CPC (Koszt za kliknięcie), ROAS (Zwrot z inwestycji) z <a
-                                href="./dashboard-reklamowy-facebook-ads-google-ads-looker-studio.html">Facebook Ads
+                            zakwestionuje Ci logikę i rzuci czerwonym komunikatem przy próbie <a href="./laczenie-wielu-zrodel-danych-blending-looker-studio.html">Data Blendingu
+                                (Łączenia Środowisk)</a> lub raportowania z <a href="./jak-polaczyc-arkusze-google-sheets-looker-studio.html">Google Sheets.</a></p>
+<h2>Jedyna słuszna metoda ułamkowa: SUM(a) / SUM(b)</h2>
+<p>Jeśli liczysz w kampaniach CPC (Koszt za kliknięcie), ROAS (Zwrot z inwestycji) z <a href="./dashboard-reklamowy-facebook-ads-google-ads-looker-studio.html">Facebook Ads
                             </a> – nigdy nie wrzucaj na dzielnik "gołych", bezbronnych wymiarów. Musisz opatulić je
                             systemową funkcją Sumowania zanim podzielisz:</p>
-
-                        <p
-                            style="background-color: var(--bg-card); padding: 15px; border-radius: 8px; border-left: 4px solid var(--primary); font-family: monospace;">
-                            SUM(Przychody i obrót ogółem) / SUM(Wydatki reklamowe)<br>
-                            SUM(Gross_Margin) / SUM(Revenue)<br>
+<p style="background-color: var(--bg-card); padding: 15px; border-radius: 8px; border-left: 4px solid var(--primary); font-family: monospace;">
+                            SUM(Przychody i obrót ogółem) / SUM(Wydatki reklamowe)<br/>
+                            SUM(Gross_Margin) / SUM(Revenue)<br/>
                             SUM(Osoby_Na_Stronie) / SUM(Sesje_Ogółem)
                         </p>
-
-                        <p>Takie przypisanie formuły wymusza na kodzie wierszy następujący tok myślenia: "Tabela w
+<p>Takie przypisanie formuły wymusza na kodzie wierszy następujący tok myślenia: "Tabela w
                             Looker Studio, przedziel te dwie liczby DOPIERO WTEDY, gdy ostatecznie zsumujesz w koszyku
                             po lewej cały swój roczny Przychód oraz, do odrębnego koszyka (drugie SUM), złożysz w całość
                             Roczne Wydatki. Wtedy i tylko w tedy przedziel je matematycznie <code>/</code> przez
                             siebie".</p>
-
-                        <p>Dzięki temu dni (wagi handlowca) nabierają odpowiednich proporcji – wielki skok 500 klików
+<p>Dzięki temu dni (wagi handlowca) nabierają odpowiednich proporcji – wielki skok 500 klików
                             przeważy ujemne średnie z wtorków. Znika błąd logiki, a Twoja Średnia Ważona idealnie po
                             równa się kalkulatorowi po stronie szefa firmy.</p>
-
-                        <h2>Błąd: "Cannot mix metrics with dimensions"</h2>
-                        <p>Pamiętaj, by w wyżej podanym bloku np. <code>SUM(revenue)</code> po wrzuceniu wymiaru na
+<h2>Błąd: "Cannot mix metrics with dimensions"</h2>
+<p>Pamiętaj, by w wyżej podanym bloku np. <code>SUM(revenue)</code> po wrzuceniu wymiaru na
                             <em>Pole Obliczeniowe</em>, typ tego pola musi być ustawiony z boku ekranu na absolutne
                             <strong>POLE METRYCZNE Numeryczne</strong>, z wbudowaną autentykacją np. "Procenty".
-                            Narzędzia BI bywają kapryśne, gdy <a
-                                href="./najczestsze-bledy-kpi-w-raportach-looker-studio-bi.html">użytkownicy mieszają
+                            Narzędzia BI bywają kapryśne, gdy <a href="./najczestsze-bledy-kpi-w-raportach-looker-studio-bi.html">użytkownicy mieszają
                                 liczby rzędowe przypisując je do Pól Wymiarów (Dimensions tekstu).</a></p>
-                    </div>
-
-                    <!-- SIDEBAR -->
-                    <aside class="post-sidebar">
-                        <div class="author-card">
-                            <div class="author-avatar">👨‍💻</div>
-                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
-                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Google Cloud
+</div>
+<!-- SIDEBAR -->
+<aside class="post-sidebar">
+<div class="author-card">
+<div class="author-avatar">👨‍💻</div>
+<h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+<p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Google Cloud
                                 Architect</p>
-                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Przeniesienie
+<p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Przeniesienie
                                 firmowych Dashboardów Excelel na SSOT. Waliduję formuły matematyczne i poprawność
                                 twardych danych za pomocą architektury SQL GCP.</p>
-                        </div>
-
-                        <div class="cta-card">
-                            <h3>Dane na Kafelkach i u Dyrektora nie pokrywają się?</h3>
-                            <p>Zapomnij o chaotycznie zbudowanych złączeniach reklamowych mamiących i oszukujących
+</div>
+<div class="cta-card">
+<h3>Dane na Kafelkach i u Dyrektora nie pokrywają się?</h3>
+<p>Zapomnij o chaotycznie zbudowanych złączeniach reklamowych mamiących i oszukujących
                                 rzeczywisty zwrot B2B agencji. Zweryfikuję zawiłe pola obliczeniowe opierając je na
                                 twardej tabeli roboczej.</p>
-                            <a href="/#contact" class="btn btn-primary"
-                                style="width: 100%; text-align: center; padding: 12px;">Porozmawiajmy o Architektrurze
+<a class="btn btn-primary" href="/#contact" style="width: 100%; text-align: center; padding: 12px;">Porozmawiajmy o Architektrurze
                                 (Audyt)</a>
-                        </div>
-                    </aside>
-                </div>
-            </div>
-        </article>
-    </main>
-
-    <!-- Footer -->
-    <footer class="glass-footer">
-        <div class="container footer-content">
-            <div class="footer-logo">Szeląg<span>.</span>Data</div>
-            <p>© <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
-            <div class="social-links">
-                <a href="/polityka-prywatnosci.html">Polityka Prywatności</a>
-                <a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank">LinkedIn</a>
-            </div>
-        </div>
-    </footer>
-    <script src="../js/script.js"></script>
+</div>
+</aside>
+</div>
+</div>
+<!-- RELATED ARTICLES -->
+<section class="related-articles" style="margin-top: 60px; border-top: 1px solid var(--surface-border); padding-top: 40px;">
+<div class="container">
+<h2 style="margin-bottom: 30px;">Przeczytaj również:</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+<a class="glass-card" href="jak-podlaczyc-ga4-do-looker-studio-konektor-vs-bigquery.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">🔌</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Integracje Ekosystemów B2B</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Jak połączyć GA4 z Looker Studio? Ograniczenia natywnego konektora API a BigQuery</h4>
+</a>
+<a class="glass-card" href="jak-polaczyc-arkusze-google-sheets-looker-studio.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">🔗</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Integracje Danych</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Jak połączyć Arkusze Google z Looker Studio bez błędów systemowych?</h4>
+</a>
+<a class="glass-card" href="jak-wdrozyc-looker-studio-w-firmie-b2b-checklista.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">📋</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Strategia Analityczna (C-Level)</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Jak wdrożyć Looker Studio do firmy B2B? Metodologia i Checklista dla Zarządu</h4>
+</a>
+</div>
+</div>
+</section>
+<!-- END RELATED ARTICLES -->
+</article>
+</main>
+<!-- Footer -->
+<footer class="glass-footer">
+<div class="container footer-content">
+<div class="footer-logo">Szeląg<span>.</span>Data</div>
+<p>© <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+<div class="social-links">
+<a href="/polityka-prywatnosci.html">Polityka Prywatności</a>
+<a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank">LinkedIn</a>
+</div>
+</div>
+</footer>
+<script src="../js/script.js"></script>
 </body>
-
 </html>

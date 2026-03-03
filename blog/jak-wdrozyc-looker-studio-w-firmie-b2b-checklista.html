@@ -1,19 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="pl">
-
 <head>
-
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" />
-    <meta name="description"
-        content="Jak poprawnie wdrożyć Looker Studio w firmie B2B? Checklista dla zarządu, kroki instalacji Google Cloud i budowania SSOT (Hurtowni BigQuery) krok po kroku.">
-
-    <title>Wdrożenie Looker Studio do B2B: Checklista i Metodologia 2026 | Mikołaj Szeląg</title>
-
-    <!-- Google Consent Mode v2 (must load before GTM) -->
-    <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="AgOFMb0H0diUrjON6CzVKbUoCC3vLVckCswXYAPjsIo" name="google-site-verification">
+<meta content="Jak poprawnie wdrożyć Looker Studio w firmie B2B? Checklista dla zarządu, kroki instalacji Google Cloud i budowania SSOT (Hurtowni BigQuery) krok po kroku." name="description"/>
+<title>Wdrożenie Looker Studio do B2B: Checklis... | Mikołaj Szeląg</title>
+<!-- Google Consent Mode v2 (must load before GTM) -->
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('consent', 'default', {
@@ -23,8 +18,8 @@
             'analytics_storage': 'denied'
         });
     </script>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
             w[l] = window.dataLayer || []; w[l].push({
                 'gtm.start':
                     new Date().getTime(), event: 'gtm.js'
@@ -32,28 +27,23 @@
                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MLPQLFN4');</script>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
-    <script>
+<!-- Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9N5S4NW0L8"></script>
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-9N5S4NW0L8', { 'debug_mode': true });
     </script>
-
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css">
-
-    <link rel="icon" type="image/png" href="../favicon.png?v=2">
-    <link rel="icon" type="image/x-icon" href="../favicon.ico?v=2">
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png?v=2">
-
-    <!-- Schema -->
-    <script type="application/ld+json">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="../css/styles.css" rel="stylesheet"/>
+<link href="../favicon.png?v=2" rel="icon" type="image/png"/>
+<link href="../favicon.ico?v=2" rel="icon" type="image/x-icon"/>
+<link href="../apple-touch-icon.png?v=2" rel="apple-touch-icon"/>
+<!-- Schema -->
+<script type="application/ld+json">
         {
           "@context": "https://schema.org",
           "@type": "BlogPosting",
@@ -66,170 +56,164 @@
           "description": "Metodologia wdrażania systemów raportowania wizualnego Looker Studio z użyciem Google BigQuery w firmach średniego i dużego MŚP. Zbuduj kulturę data-driven w organizacji."
         }
     </script>
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Wdrożenie Looker Studio do B2B: Checklista i Metodologia 2026 | Mikołaj Szeląg">
-    <meta property="og:description"
-        content="Jak poprawnie wdrożyć Looker Studio w firmie B2B? Checklista dla zarządu, kroki instalacji Google Cloud i budowania SSOT (Hurtowni BigQuery) krok po kroku.">
-    <meta property="og:url"
-        content="https://xszelagx.github.io/blog/jak-wdrozyc-looker-studio-w-firmie-b2b-checklista.html">
-    <meta property="og:type" content="article">
-    <meta property="og:image" content="https://xszelagx.github.io/favicon.png">
-    <meta property="og:site_name" content="Mikołaj Szeląg - Automatyzacja BI & Google Cloud">
-</head>
-
+<!-- Open Graph Meta Tags -->
+<meta content="Wdrożenie Looker Studio do B2B: Checklis... | Mikołaj Szeląg" property="og:title"/>
+<meta content="Jak poprawnie wdrożyć Looker Studio w firmie B2B? Checklista dla zarządu, kroki instalacji Google Cloud i budowania SSOT (Hurtowni BigQuery) krok po kroku." property="og:description"/>
+<meta content="https://xszelagx.github.io/blog/jak-wdrozyc-looker-studio-w-firmie-b2b-checklista.html" property="og:url"/>
+<meta content="article" property="og:type"/>
+<meta content="https://xszelagx.github.io/favicon.png" property="og:image"/>
+<meta content="Mikołaj Szeląg - Automatyzacja BI &amp; Google Cloud" property="og:site_name"/>
+</meta></head>
 <body>
-    <!-- GTM Noscript -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-
-    <div class="bg-orb orb-1"></div>
-    <div class="bg-orb orb-2"></div>
-
-    <header class="glass-nav">
-        <div class="container nav-container">
-            <a href="/" class="logo">Szeląg<span>.</span>Data</a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="/">Strona Główna</a></li>
-                    <li><a href="/#about">Dlaczego Warto?</a></li>
-                    <li><a href="/#services">Usługi</a></li>
-                    <li><a href="/#case-studies">Realizacje</a></li>
-                    <li><a href="/blog.html">Blog</a></li>
-                    <li><a href="/#contact" class="btn-primary-small">Kontakt</a></li>
-                </ul>
-                <div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <article>
-            <header class="post-header">
-                <div class="container">
-                    <a href="/blog.html"
-                        style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">←
+<!-- GTM Noscript -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-MLPQLFN4" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<div class="bg-orb orb-1"></div>
+<div class="bg-orb orb-2"></div>
+<header class="glass-nav">
+<div class="container nav-container">
+<a class="logo" href="/">Szeląg<span>.</span>Data</a>
+<nav>
+<ul class="nav-links">
+<li><a href="/">Strona Główna</a></li>
+<li><a href="/#about">Dlaczego Warto?</a></li>
+<li><a href="/#services">Usługi</a></li>
+<li><a href="/#case-studies">Realizacje</a></li>
+<li><a href="/blog.html">Blog</a></li>
+<li><a class="btn-primary-small" href="/#contact">Kontakt</a></li>
+</ul>
+<div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+</nav>
+</div>
+</header>
+<main>
+<article>
+<header class="post-header">
+<div class="container">
+<a href="/blog.html" style="color: var(--text-muted); text-decoration: none; display: inline-block; margin-bottom: 30px;">←
                         Wróć do artykułów</a>
-                    <div class="post-meta">
-                        <span class="post-tag">Strategia Analityczna (C-Level)</span>
-                        <span>02 Marca 2026</span>
-                        <span>⏱️ 5 min czytania</span>
-                    </div>
-                    <h1 class="post-title">Jak wdrożyć Looker Studio do firmy B2B? <span
-                            class="gradient-text">Metodologia i Checklista dla Zarządu</span></h1>
-                </div>
-            </header>
-
-            <div class="container">
-                <div class="post-layout">
-                    <!-- MAIN CONTENT -->
-                    <div class="post-content">
-                        <p>Z reguły wdrażanie Business Intelligence (BI) kojarzy się Zarządowi ze spalaniem tysięcy
-                            godzin specjalistów i kosztami wielkich <a
-                                href="./looker-studio-vs-tableau-porownanie-narzedzi-bi.html">narzędzi pokroju
+<div class="post-meta">
+<span class="post-tag">Strategia Analityczna (C-Level)</span>
+<span>02 Marca 2026</span>
+<span>⏱️ 5 min czytania</span>
+</div>
+<h1 class="post-title">Jak wdrożyć Looker Studio do firmy B2B? <span class="gradient-text">Metodologia i Checklista dla Zarządu</span></h1>
+</div>
+</header>
+<div class="container">
+<div class="post-layout">
+<!-- MAIN CONTENT -->
+<div class="post-content">
+<p>Z reguły wdrażanie Business Intelligence (BI) kojarzy się Zarządowi ze spalaniem tysięcy
+                            godzin specjalistów i kosztami wielkich <a href="./looker-studio-vs-tableau-porownanie-narzedzi-bi.html">narzędzi pokroju
                                 korporacyjnego Tableau</a>. Looker (GDS), jako darmowa przeglądarkowa wersja chmury
                             Google pozwala pominąć opłaty operacyjne na usera, ale jej implementacja techniczna (bez
                             wcześniejszego "Data Pipeline") bywa klęską całego inżynieryjnego systemu.</p>
-
-                        <p>Kiedy C-Level pośpieszy się i sam poskleja luźno w raport chaotyczne pozycje kampanii "pod
+<p>Kiedy C-Level pośpieszy się i sam poskleja luźno w raport chaotyczne pozycje kampanii "pod
                             publiczkę inwestora" – taki zestaw runie pod pierwszym cięższym zapytaniem o obiektywną
-                            ustrukturyzowaną <a
-                                href="./jak-liczyc-srednia-wazona-looker-studio-bledy-agregacji.html">średnią sprzedaży
+                            ustrukturyzowaną <a href="./jak-liczyc-srednia-wazona-looker-studio-bledy-agregacji.html">średnią sprzedaży
                                 w miesiącu</a>.</p>
-
-                        <h2>Autorska Metodologia Wdrożeniowa Data Driven 2026</h2>
-
-                        <h3>Faza 1: Rozpoznanie (Business Requirements)</h3>
-                        <p>Looker Studio to głupi ekran telewizora – pokazuje jedynie to, o co zapytasz dysk pod nim.
+<h2>Autorska Metodologia Wdrożeniowa Data Driven 2026</h2>
+<h3>Faza 1: Rozpoznanie (Business Requirements)</h3>
+<p>Looker Studio to głupi ekran telewizora – pokazuje jedynie to, o co zapytasz dysk pod nim.
                             Klu projektu sprowadza się do znalezienia pytania badawczego (Prawdy). Menedżerowie
                             zazwyczaj pragną otrzymać wskaźnik CAC (Cost of Acquisition) – "Ile kosztował Klient". Jeśli
                             Dział Marketingu trzyma w budżetach Excel i uważa go za zaktualizowany kwartalnik, a zarząd
                             opiera wizję na Fakturach rocznych od Księgowości (Stripe) to żadne połączenie tego w
-                            chmurze bez zablokowania dostępu ("Single Source of Truth") się nie zepnie. Sprawdź, <a
-                                href="../blog.html">czemu w logistyce dane się
+                            chmurze bez zablokowania dostępu ("Single Source of Truth") się nie zepnie. Sprawdź, <a href="../blog.html">czemu w logistyce dane się
                                 "rozjeżdżają".</a></p>
-
-                        <h3>Faza 2: Konstrukcja Data Pipeline (Google Cloud/BigQuery)</h3>
-                        <p>Jedyna prawdziwa implementacja dająca efekty bez <a
-                                href="./obsluga-bledow-system-error-null-looker-studio.html">błędów awaryjności (System
+<h3>Faza 2: Konstrukcja Data Pipeline (Google Cloud/BigQuery)</h3>
+<p>Jedyna prawdziwa implementacja dająca efekty bez <a href="./obsluga-bledow-system-error-null-looker-studio.html">błędów awaryjności (System
                                 Error)</a> i zamrażania strony na 2 minuty to wyniesienie procesowania obok. Wszystkie
                             logi GA4 (Ruch e-commerce) i logi sprzedażowe sklepu internetowego lądują za sprawą skryptu
                             API SQL prosto na <strong>Google BigQuery</strong>.</p>
-                        <p>Zobacz poradnik techniczny <a href="./co-to-jest-bigquery-darmowy-limit.html">dlaczego
+<p>Zobacz poradnik techniczny <a href="./co-to-jest-bigquery-darmowy-limit.html">dlaczego
                                 hurtownia GCP eliminuje wąskie gardła.</a> Tam, używając partycjonowanych widoków
                             dziennych (Views) "ubijasz surowe gliny" łącząc kliki z kampanii, z zyskami bazy danych
                             Firebase.</p>
-
-                        <h3>Faza 3: Looker to "Kabel od Monitora"</h3>
-                        <p>Gdy w BigQuery drzemie idealna "Szeroka Tabela" z 20 znormalizowanymi kolumnami dla wybranego
+<h3>Faza 3: Looker to "Kabel od Monitora"</h3>
+<p>Gdy w BigQuery drzemie idealna "Szeroka Tabela" z 20 znormalizowanymi kolumnami dla wybranego
                             przedziału E-commerce - całe modelowanie grafiki w Looker to raptem "3 Kliknięcia"
                             wyzwolenia pól przeciągnij-upuść (Drag 'N' Drop). Masz sztywny widget bez pola do
                             nadinterpretacji przez niższy personel.</p>
-
-                        <h3>Faza 4: Dystrybucja i Ograniczenia Dostępów (Row-Level Security)</h3>
-                        <p>Jeśli sprzedajesz towar we Francji 10 handlowcami – to każdy z nich jako regionalny manager
+<h3>Faza 4: Dystrybucja i Ograniczenia Dostępów (Row-Level Security)</h3>
+<p>Jeśli sprzedajesz towar we Francji 10 handlowcami – to każdy z nich jako regionalny manager
                             powinien móc obejrzeć wynik swojej strefy po wejściu na wspólny link (URL) pulpitu zarządu.
                         </p>
-                        <p>Zaprogramowanie tego wyklucza manualne filtrowanie, zrób to w 1 dzień używając autoryzacji
+<p>Zaprogramowanie tego wyklucza manualne filtrowanie, zrób to w 1 dzień używając autoryzacji
                             Google (Gmail Login). Looker zapyta "kim jesteś?", po czym natychmiast odetnie nieuprawniony
                             wgląd w pensje na innych oddziałach. Poznaj te techniczne niuanse wkładając do stacku GCP
-                            wbudowane funkcje chmury w oparciu o <a
-                                href="./bezpieczenstwo-danych-row-level-security-w-looker-studio-gcp.html">Row-Level
+                            wbudowane funkcje chmury w oparciu o <a href="./bezpieczenstwo-danych-row-level-security-w-looker-studio-gcp.html">Row-Level
                                 Security dla użytkowników B2B w Looker Studio.</a></p>
-
-                        <h3>Bonus: Automatyczna wysyłka statusów PDF (Cron)</h3>
-                        <p>Finalnym krokiem wprowadzania automatyki wizualnej i tzw. <a href="../blog.html">kultury
+<h3>Bonus: Automatyczna wysyłka statusów PDF (Cron)</h3>
+<p>Finalnym krokiem wprowadzania automatyki wizualnej i tzw. <a href="../blog.html">kultury
                                 (Data-Driven)</a> jest
                             całkowite zapominanie o panelu BI. W piątek o 15:00 serwery Lookera w całości, z uciętymi
                             widokami samoczynnie wrzucą na skrzynkę Twojego prezesa piękny list ze zdjęciem wykonania
-                            budżetowego z mijającego właśnie kwartału rykoszetem omijając logowanie <a
-                                href="./automatyczne-raporty-pdf-looker-studio-email.html">(Zarządzanie raportami
+                            budżetowego z mijającego właśnie kwartału rykoszetem omijając logowanie <a href="./automatyczne-raporty-pdf-looker-studio-email.html">(Zarządzanie raportami
                                 mailowymi)</a>.</p>
-
-                        <p>Jeśli implementujesz cokolwiek w 2026 roku – zacznij od znalezienia bazy (danych źródłowych)
+<p>Jeśli implementujesz cokolwiek w 2026 roku – zacznij od znalezienia bazy (danych źródłowych)
                             wspólnie z zewnętrznym konsultantem ds inżynierii architektury Google Workspace.</p>
-                    </div>
-
-                    <!-- SIDEBAR -->
-                    <aside class="post-sidebar">
-                        <div class="author-card">
-                            <div class="author-avatar">👨‍💻</div>
-                            <h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
-                            <p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Google Cloud
+</div>
+<!-- SIDEBAR -->
+<aside class="post-sidebar">
+<div class="author-card">
+<div class="author-avatar">👨‍💻</div>
+<h3 style="margin-bottom: 5px;">Mikołaj Szeląg</h3>
+<p style="color: var(--primary); font-size: 0.9rem; margin-bottom: 15px;">Google Cloud
                                 Architect</p>
-                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Przeniesienie
+<p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Przeniesienie
                                 firmowych i agencyjnych dysków Excel z rozerwanych działów IT. Projektowanie centralnej
                                 platformy B2B BigQuery dla setek managerów z ubezpieczeniami zabezpieczenia (URL/SSOT).
                             </p>
-                        </div>
-
-                        <div class="cta-card">
-                            <h3>Bojkot Nowych Technologii przez zespół?</h3>
-                            <p>Zapomnij o chaotycznym nadbudowaniu zbytecznych paneli w Google Adwords i rozdartych
+</div>
+<div class="cta-card">
+<h3>Bojkot Nowych Technologii przez zespół?</h3>
+<p>Zapomnij o chaotycznym nadbudowaniu zbytecznych paneli w Google Adwords i rozdartych
                                 raportach. Zaplanuję w Twoim startupie bezboleśny system migracji rur danych E-commerce
                                 w jedno przejrzyste miejsce. Skalowalnie.</p>
-                            <a href="/#contact" class="btn btn-primary"
-                                style="width: 100%; text-align: center; padding: 12px;">Plan Wdrożenia Agencji / Firmy
+<a class="btn btn-primary" href="/#contact" style="width: 100%; text-align: center; padding: 12px;">Plan Wdrożenia Agencji / Firmy
                                 B2B</a>
-                        </div>
-                    </aside>
-                </div>
-            </div>
-        </article>
-    </main>
-
-    <!-- Footer -->
-    <footer class="glass-footer">
-        <div class="container footer-content">
-            <div class="footer-logo">Szeląg<span>.</span>Data</div>
-            <p>© <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
-            <div class="social-links">
-                <a href="/polityka-prywatnosci.html">Polityka Prywatności</a>
-                <a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank">LinkedIn</a>
-            </div>
-        </div>
-    </footer>
-    <script src="../js/script.js"></script>
+</div>
+</aside>
+</div>
+</div>
+<!-- RELATED ARTICLES -->
+<section class="related-articles" style="margin-top: 60px; border-top: 1px solid var(--surface-border); padding-top: 40px;">
+<div class="container">
+<h2 style="margin-bottom: 30px;">Przeczytaj również:</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+<a class="glass-card" href="looker-studio-vs-ga4-wady-ograniczenia.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">📉</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Growth Marketing</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Looker Studio vs Google Analytics 4: Dlaczego raporty w samym GA4 to stanowczo za mało?</h4>
+</a>
+<a class="glass-card" href="looker-studio-vs-looker-core-roznice.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">🏢</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Porównania Ekosystemów (BI)</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Looker (Core) vs Looker Studio: Czym różnią się te dwa narzędzia Data &amp; Cloud?</h4>
+</a>
+<a class="glass-card" href="looker-studio-vs-tableau-porownanie-narzedzi-bi.html" style="text-decoration: none; padding: 20px; transition: var(--transition-smooth); display: flex; flex-direction: column;">
+<span style="font-size: 2rem; margin-bottom: 15px;">⚖️</span>
+<span class="post-tag" style="font-size: 0.8rem; margin-bottom: 10px;">Porównania Ekosystemów (BI)</span>
+<h4 style="color: var(--text-main); line-height: 1.4; margin: 0;">Looker Studio vs Tableau: Porównanie możliwości i kosztów wdrożenia (2026)</h4>
+</a>
+</div>
+</div>
+</section>
+<!-- END RELATED ARTICLES -->
+</article>
+</main>
+<!-- Footer -->
+<footer class="glass-footer">
+<div class="container footer-content">
+<div class="footer-logo">Szeląg<span>.</span>Data</div>
+<p>© <span id="year"></span> Mikołaj Szeląg. Wszelkie prawa zastrzeżone.</p>
+<div class="social-links">
+<a href="/polityka-prywatnosci.html">Polityka Prywatności</a>
+<a href="https://www.linkedin.com/in/mikolaj-szelag/" target="_blank">LinkedIn</a>
+</div>
+</div>
+</footer>
+<script src="../js/script.js"></script>
 </body>
-
 </html>
